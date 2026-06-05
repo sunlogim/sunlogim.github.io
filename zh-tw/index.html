@@ -1,0 +1,126 @@
+<!DOCTYPE html><html lang="zh-Hant"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>向日葵遠端連線 / 卡頓故障診斷查詢 - 連線失敗、黑畫面、延遲高一鍵排查</title>
+<meta name="description" content="向日葵遠端控制連不上、黑畫面、卡頓延遲高？輸入或點選症狀（裝置離線、連線逾時、存取密碼錯誤、防火牆攔截、公司網連不上、看得到無法操作、走轉發、免費版30幀），查 L1 官方排查口徑 + L2 網路層深度真因（P2P vs 轉發、NAT 穿透、連接埠範圍、幀率分級），對照真實情境快速恢復連線。">
+<link rel="canonical" href="https://sunlogim.github.io/zh-tw/">
+<link rel="alternate" hreflang="zh-Hans" href="https://sunlogim.github.io/">
+<link rel="alternate" hreflang="en" href="https://sunlogim.github.io/en/">
+<link rel="alternate" hreflang="ja" href="https://sunlogim.github.io/ja/">
+<link rel="alternate" hreflang="zh-Hant" href="https://sunlogim.github.io/zh-tw/">
+<link rel="alternate" hreflang="x-default" href="https://sunlogim.github.io/">
+<link rel="stylesheet" href="/style.css">
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "WebApplication",
+   "name": "向日葵遠端連線 / 卡頓故障診斷查詢",
+   "url": "https://sunlogim.github.io/zh-tw/",
+   "applicationCategory": "UtilitiesApplication",
+   "operatingSystem": "Web browser",
+   "inLanguage": "zh-Hant",
+   "description": "向日葵遠端控制連不上、黑畫面、卡頓延遲高？輸入或點選症狀（裝置離線、連線逾時、存取密碼錯誤、防火牆攔截、公司網連不上、看得到無法操作、走轉發、免費版30幀），查 L1 官方排查口徑 + L2 網路層深度真因（P2P vs 轉發、NAT 穿透、連接埠範圍、幀率分級），對照真實情境快速恢復連線。",
+   "isAccessibleForFree": true,
+   "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+   }
+  },
+  {
+   "@type": "FAQPage",
+   "inLanguage": "zh-Hant",
+   "url": "https://sunlogim.github.io/zh-tw/",
+   "mainEntity": [
+    {
+     "@type": "Question",
+     "name": "向日葵遠端「裝置離線」怎麼辦？",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "確認被控端電腦開機、連網、未睡眠，向日葵用戶端在執行且顯示「已登入」；網路不穩就重啟路由器或換網路 離線 = 被控端根本沒上線，先別查網路：睡眠後網卡常斷連、筆電闔蓋斷 WiFi、Android 省電模式殺背景；Windows 可查 services.msc 裡「向日葵遠端控制」服務是否在跑 被控端長期無人值守：開「開機自啟 + 自動登入 + 無人值守存取」，Android 把向日葵加省電白名單"
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "向日葵遠端「連線逾時」怎麼辦？",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "先關掉兩端防火牆 / 防毒再試；兩端登出重登；都更新到最新版；換個網路環境（手機熱點） 90% 的「連線失敗」卡在第 2 階段「建立通道」：15=P2P 打不通且轉發也失敗（網路太差），3=網路層被阻斷；換熱點能連基本就是網路 / 防火牆問題 分三階段定位：帳號驗證 → 建立通道 → 畫面傳輸；逾時幾乎都在「建立通道」"
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "向日葵遠端「存取密碼錯誤」怎麼辦？",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "確認輸入的是「存取密碼」而不是向日葵帳號的登入密碼；到被控端重設存取密碼後再連 存取密碼是被控端單獨設的遠控密碼，常被改過或與登入密碼混淆；改密碼後主控端要用新密碼 存取密碼 ≠ 登入密碼：被控端「設定 → 安全」裡查看 / 重設存取密碼"
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "向日葵遠端「防火牆攔截」怎麼辦？",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "把向日葵加入防火牆 / 安全軟體信任：Windows Defender 防火牆「允許應用程式」勾選 SunloginClient；360 / 火絨 / 卡巴加信任 加白名單要加整個安裝目錄（如 C:\\Program Files (x86)\\Oray\\SunLogin\\），別只加主程式 exe——向日葵執行時會呼叫多個元件 快速驗證：完全退出安全軟體（不只是關即時防護）再連，能連上就 100% 是它攔的"
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "向日葵遠端「公司網連不上」怎麼辦？",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "讓公司 IT 放行向日葵白名單；或被控端臨時用手機熱點繞過；試向日葵 SOS 版（走不同連線方式） 企業網常有上網行為管理裝置（深信服 / 網康 / 華為 Secospace），向日葵走 TCP 443（與 HTTPS 同連接埠）會被 DPI 識別阻斷；社群經驗：企業路由放行 TCP 51020–51030 + UDP 50000–50010，或把連線模式由「高速」切「相容」(走更通用的 80/443) 判斷是不是公司網：兩端都換手機熱點，能連就 100% 是公司網攔的"
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "向日葵遠端「黑畫面」怎麼辦？",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "被控端給向日葵授權：macOS「系統設定 → 隱私權與安全性」勾選螢幕錄製 / 輔助使用 / 完全取用磁碟；Windows 試切換桌面模式 / 重連 黑畫面多為擷取權限缺失或顯卡 / 獨顯切換、鎖定畫面保護；被控端獨顯筆電可在電源原則裡讓向日葵用內顯擷取 macOS Ventura 後權限路徑改到「系統設定」，搜尋欄搜「螢幕錄製」最快"
+     }
+    }
+   ]
+  }
+ ]
+}
+</script>
+</head>
+<body><div class="wrap"><main>
+<nav class="lang">語言：<a href="/">简体中文</a> · <a href="/en/">English</a> · <a href="/ja/">日本語</a> · <strong>繁體中文</strong></nav>
+<h1>向日葵遠端連線 / 卡頓故障診斷查詢</h1>
+<figure class="i4png"><picture><source type="image/webp" srcset="/img/cover_tw.webp"><img src="/img/cover_tw.png" alt="向日葵遠端連線與卡頓故障診斷查詢工具示意圖" fetchpriority="high" width="1120" height="746" style="width:100%;height:auto;border-radius:12px;border:1px solid #eee"></picture><figcaption>圖：向日葵遠端連線 / 卡頓故障診斷查詢（L1 官方排查 + L2 網路層真因）</figcaption></figure>
+<p>向日葵遠端控制最惱人的就是<strong>連不上</strong>和<strong>卡頓</strong>。輸入或點選你遇到的<strong>症狀</strong>（如 <code>裝置離線</code>、<code>連線逾時</code>、<code>存取密碼錯誤</code>、<code>防火牆攔截</code>、<code>看得到無法操作</code>、<code>卡頓延遲高</code>、<code>免費版30幀</code>），先看 <strong>L1 官方排查</strong> 怎麼做，再看 <strong>L2 網路層深度真因</strong>（P2P 直連 vs 伺服器轉發、NAT 穿透、連接埠範圍），最後對照真實情境。需要桌面端可到 <a href="https://sunlogim.com/">向日葵遠端控制官網下載</a>。</p>
+<input id="q" placeholder="輸入症狀，例如 連線失敗 / 黑畫面 / 卡頓 / 裝置離線" autocomplete="off">
+<button id="go">查詢</button>
+<div id="out"></div>
+<h2>第一步：依官方口徑排查（L1·先做這 4 步）</h2>
+<p>向日葵官方給的連線失敗排查就 4 步、全程在軟體內：① <strong>帳號與裝置綁定</strong>——主控與被控登入同一個向日葵帳號；② <strong>裝置狀態與網路</strong>——被控端開機連網、未睡眠（睡眠可用「喚醒功能」，需提前開啟）；③ <strong>防火牆與權限</strong>——把向日葵加入防火牆信任、開啟「允許遠端控制」和「無人值守存取」、存取密碼正確；④ <strong>版本與重啟</strong>——兩端都更新到最新版、重啟用戶端、清快取。更系統的圖文見 <a href="https://sunlogim.com/lianjie/">向日葵連線失敗排查教學</a>。</p>
+<div class="cat"><div class="catbox"><b>網路 / 穿透類</b><span class="cs">連線逾時 · 防火牆攔截 · 公司網 · 走轉發 / P2P</span><div>通道建立失敗或走轉發延遲高。先排防火牆信任 + 換網路；深層看 P2P 是否打通、企業網 DPI 與 NAT 類型。</div></div><div class="catbox"><b>帳號 / 權限類</b><span class="cs">裝置離線 · 存取密碼錯 · 帳號不一致 · 喚醒失敗</span><div>被控端在線 + 兩端同帳號是前提。存取密碼 ≠ 登入密碼；token 過期需重登；睡眠靠「喚醒」。</div></div><div class="catbox"><b>畫面 / 效能類</b><span class="cs">黑畫面 · 看得到無法操作 · 卡頓延遲 · 畫質糊 · 免費30幀</span><div>連上後的體驗問題。授權（螢幕錄製 / 輔助使用）、桌面模式、幀率分級與被控端效能是關鍵。</div></div><div class="catbox"><b>版本 / 協定類</b><span class="cs">協定版本不符 · 更新後異常</span><div>兩端版本差距大易不相容（錯誤碼 30）；都更新到最新版、重啟清快取。</div></div></div><figure><svg viewBox="0 0 720 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="向日葵遠端連線與卡頓診斷流程圖" style="width:100%;height:auto;border:1px solid #eee;border-radius:12px;background:#fff"><text x="20" y="28" font-family="system-ui,Arial" font-size="15.5" font-weight="700" fill="#1d1d1f">向日葵遠端連線 / 卡頓診斷流程（按現象歸類）</text><rect x="20" y="46" width="150" height="46" rx="10" fill="#111"/><text x="95" y="74" text-anchor="middle" font-family="system-ui,Arial" font-size="13" fill="#fff">發起遠端連線</text><path d="M170 69 H206" stroke="#999" stroke-width="2" fill="none" marker-end="url(#a)"/><rect x="206" y="46" width="172" height="46" rx="10" fill="#fff5e6" stroke="#ffe0b0"/><text x="292" y="74" text-anchor="middle" font-family="system-ui,Arial" font-size="13" fill="#b45309">連得上嗎？</text><rect x="440" y="20" width="262" height="56" rx="10" fill="#ecfdf5" stroke="#bbf7e0"/><text x="455" y="42" font-family="system-ui,Arial" font-size="12.5" fill="#047857">連上但卡頓 → 看效能：</text><text x="455" y="62" font-family="system-ui,Arial" font-size="11.5" fill="#065f46">走轉發？畫質過高？幀率限制？被控端效能</text><rect x="440" y="86" width="262" height="56" rx="10" fill="#fef2f2" stroke="#fecaca"/><text x="455" y="108" font-family="system-ui,Arial" font-size="12.5" fill="#b91c1c">連不上 → 看錯誤類：</text><text x="455" y="128" font-family="system-ui,Arial" font-size="11.5" fill="#991b1b">裝置離線？防火牆？帳號 / 密碼？版本</text><path d="M378 60 H410 V48 H440" stroke="#10b981" stroke-width="2" fill="none" marker-end="url(#a)"/><path d="M378 78 H410 V114 H440" stroke="#ef4444" stroke-width="2" fill="none" marker-end="url(#a)"/><text x="20" y="178" font-family="system-ui,Arial" font-size="13" font-weight="700" fill="#1d1d1f">四類故障（逐項看 L1 / L2）</text><g font-family="system-ui,Arial" font-size="12"><rect x="20" y="190" width="162" height="92" rx="10" fill="#fff5e6" stroke="#ffe0b0"/><text x="32" y="212" font-weight="700" fill="#b45309">① 網路 / 穿透</text><text x="32" y="234" fill="#555" font-size="11">轉發 / P2P · 防火牆 · 公司網</text><rect x="194" y="190" width="162" height="92" rx="10" fill="#eef4ff" stroke="#cfe0ff"/><text x="206" y="212" font-weight="700" fill="#1d4ed8">② 帳號 / 權限</text><text x="206" y="234" fill="#555" font-size="11">離線 · 存取密碼 · 喚醒</text><rect x="368" y="190" width="162" height="92" rx="10" fill="#ecfdf5" stroke="#bbf7e0"/><text x="380" y="212" font-weight="700" fill="#047857">③ 畫面 / 效能</text><text x="380" y="234" fill="#555" font-size="11">黑畫面 · 卡頓 · 畫質 · 30幀</text><rect x="542" y="190" width="160" height="92" rx="10" fill="#fef2f2" stroke="#fecaca"/><text x="554" y="212" font-weight="700" fill="#b91c1c">④ 版本 / 協定</text><text x="554" y="234" fill="#555" font-size="11">版本不符 · 更新異常</text></g><defs><marker id="a" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0 0 L6 3 L0 6 z" fill="#999"/></marker></defs></svg><figcaption>圖1：向日葵連線 / 卡頓診斷流程——先看連不連得上，再按類別歸因</figcaption></figure>
+<h2>第二步：連上了還卡 / 還連不上 → 網路層深度真因（L2）</h2>
+<p>關鍵認知：<strong>連不上多半卡在「建立通道」、卡頓多半卡在「走了轉發」</strong>。向日葵先用 <strong>P2P 穿透</strong> 把兩端打通（延遲最低 20–50ms），打不通才走<strong>貝銳伺服器轉發</strong>（延遲 80–200ms）——用戶端左下角會顯示「P2P」或「轉發」。下圖是連線自檢面板示意；深層判因還要看：對稱 NAT / 路由器 UPnP、企業網 DPI 與連接埠範圍、幀率受螢幕更新率限制。</p>
+<figure><svg viewBox="0 0 720 320" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="向日葵遠端連線自檢面板示意圖" style="width:100%;height:auto;border:1px solid #eee;border-radius:12px;background:#fff"><text x="20" y="28" font-family="system-ui,Arial" font-size="15.5" font-weight="700" fill="#1d1d1f">連線自檢面板示意（綠=正常 / 紅=問題點）</text><rect x="20" y="42" width="680" height="226" rx="14" fill="#f8fafc" stroke="#e2e8f0"/><text x="38" y="66" font-family="system-ui,Arial" font-size="12.5" font-weight="700" fill="#475569">檢查項</text><text x="300" y="66" font-family="system-ui,Arial" font-size="12" fill="#94a3b8">目前狀態</text><text x="610" y="66" font-family="system-ui,Arial" font-size="12" fill="#94a3b8">判定</text><line x1="38" y1="74" x2="682" y2="74" stroke="#e2e8f0" stroke-width="1"/><text x="38" y="98" font-family="system-ui,Arial" font-size="13" fill="#1d1d1f">兩端帳號一致</text><text x="300" y="98" font-family="system-ui,Arial" font-size="12.5" fill="#16a34a">同一向日葵帳號</text><circle cx="612" cy="94" r="6" fill="#16a34a"/><text x="628" y="98" font-family="system-ui,Arial" font-size="12" fill="#16a34a">正常</text><text x="38" y="128" font-family="system-ui,Arial" font-size="13" fill="#1d1d1f">被控端在線</text><text x="300" y="128" font-family="system-ui,Arial" font-size="12.5" fill="#16a34a">在線 · 未睡眠</text><circle cx="612" cy="124" r="6" fill="#16a34a"/><text x="628" y="128" font-family="system-ui,Arial" font-size="12" fill="#16a34a">正常</text><text x="38" y="158" font-family="system-ui,Arial" font-size="13" fill="#1d1d1f">防火牆放行</text><text x="300" y="158" font-family="system-ui,Arial" font-size="12.5" fill="#ef4444">被安全軟體攔截</text><circle cx="612" cy="154" r="6" fill="#ef4444"/><text x="628" y="158" font-family="system-ui,Arial" font-size="12" fill="#ef4444">問題</text><text x="38" y="188" font-family="system-ui,Arial" font-size="13" fill="#1d1d1f">連線模式</text><text x="300" y="188" font-family="system-ui,Arial" font-size="12.5" fill="#ef4444">轉發 · 延遲高</text><circle cx="612" cy="184" r="6" fill="#ef4444"/><text x="628" y="188" font-family="system-ui,Arial" font-size="12" fill="#ef4444">問題</text><text x="38" y="218" font-family="system-ui,Arial" font-size="13" fill="#1d1d1f">用戶端版本</text><text x="300" y="218" font-family="system-ui,Arial" font-size="12.5" fill="#16a34a">兩端最新</text><circle cx="612" cy="214" r="6" fill="#16a34a"/><text x="628" y="218" font-family="system-ui,Arial" font-size="12" fill="#16a34a">正常</text><text x="38" y="248" font-family="system-ui,Arial" font-size="13" fill="#1d1d1f">存取密碼</text><text x="300" y="248" font-family="system-ui,Arial" font-size="12.5" fill="#16a34a">正確</text><circle cx="612" cy="244" r="6" fill="#16a34a"/><text x="628" y="248" font-family="system-ui,Arial" font-size="12" fill="#16a34a">正常</text><text x="20" y="296" font-family="system-ui,Arial" font-size="11.5" fill="#94a3b8">註：紅 = 需處理的問題點；連上但走「轉發」=延遲高，開路由器 UPnP 爭取 P2P 直連。</text></svg><figcaption>圖2：連線自檢面板示意（綠=正常 / 紅=問題點）</figcaption></figure>
+<figure class="i4png"><picture><source type="image/webp" srcset="/img/board_tw.webp"><img src="/img/board_tw.png" alt="向日葵遠端連線自檢面板紅綠項示意圖" loading="lazy" width="1120" height="746" style="width:100%;height:auto;border-radius:12px;border:1px solid #eee"></picture><figcaption>圖：連不上看「建立通道」，卡頓看是否走「轉發」——開 UPnP 爭取 P2P 直連</figcaption></figure>
+<h2>全部症狀對照表（L1 先排查 · L2 深度真因）</h2>
+<table id="tbl"></table>
+<section class="i4data">
+<h2>向日葵遠端連線 / 卡頓數據（2026 估算）</h2>
+<p>以下為綜合向日葵官方說明與公開遠端控制社群經驗的 <strong>2026 估算</strong>（非原廠官方數字、非一手實測，僅供參考）：</p>
+<table>
+<tr><th>面向</th><th>估算</th></tr>
+<tr><td>連線失敗成因分布（估算）</td><td>防火牆 / 安全軟體 <strong>≈50%</strong> &gt; 被控端離線 / 睡眠 <strong>≈20%</strong> &gt; 帳號 / 密碼 <strong>≈15%</strong> &gt; 版本 / 協定 <strong>≈10%</strong></td></tr>
+<tr><td>卡頓成因分布（社群實測）</td><td>走轉發 <strong>35%</strong> &gt; 畫質過高 25% &gt; 被控端效能 20% &gt; 網路差 15% &gt; 幀率限制 5%</td></tr>
+<tr><td>P2P 直連 vs 伺服器轉發 延遲</td><td>P2P 約 <strong>20–50ms</strong>，轉發約 <strong>80–200ms</strong></td></tr>
+<tr><td>幀率上限（免費 / 付費 / 遊戲版）</td><td><strong>30 / 60 / 144</strong> 幀（144 需顯卡 + 螢幕支援 144Hz）</td></tr>
+<tr><td>開 UPnP 爭取 P2P 的收益</td><td>打穿率顯著提高，實測延遲可從 ~120ms 降到 ~35ms</td></tr>
+<tr><td>延遲可用性分級</td><td>&lt;30ms 接近本機 · 80–150ms 明顯卡頓 · &gt;150ms 基本只能點擊</td></tr>
+</table>
+<p><small>估算口徑：信源基線 + 時間外推（綜合向日葵官方說明與公開遠端控制社群資料），隨版本與網路環境會變；請以向日葵官方最新說明為準。</small></p>
+</section>
+<h2>真實情境速判</h2>
+<ul class="scenes"><li>公司電腦死活連不上、用手機熱點卻秒連：多半是公司網的上網行為管理 / DPI 攔了遠控流量，讓 IT 放行白名單，或被控端臨時走手機熱點。</li><li>連上了但滑鼠拖影、延遲破百：左下角顯示「轉發」就是根源——登入路由器開啟 UPnP 爭取 P2P，實測延遲可從 ~120ms 降到 ~35ms。</li><li>存取密碼反覆提示錯誤：存取密碼不是登入帳號的密碼，到被控端「設定」裡重設存取密碼再連。</li><li>裝置顯示在線卻連線逾時：常是登入 token 過期 / 被控端睡眠斷網，被控端重新登入、或提前開「喚醒」與無人值守。</li><li>拖視窗明顯卡但延遲並不高：免費版幀率上限 30 幀，升級付費可到 60 幀、遊戲版最高 144 幀（需螢幕支援）。</li><li>黑畫面、只能看不能操作：多為權限沒給（macOS 需勾「螢幕錄製 / 輔助使用」），或被控端 CPU / 記憶體跑滿導致編碼跟不上。</li></ul><div class="related"><h2>相關</h2><ul><li><a href="https://sunlogim.com/">向日葵遠端控制官網下載</a></li><li><a href="https://sunlogim.com/lianjie/">向日葵連線失敗排查教學</a></li><li><a href="https://sunlogni.com/">向日葵遠端控制下載（姊妹站）</a></li></ul></div></main>
+<footer>排查步驟與桌面模式 / 幀率參數整理自向日葵官方說明（sunlogin.oray.com）；P2P / 轉發、NAT 穿透、企業網連接埠範圍與錯誤代碼讀法綜合自公開遠端控制社群經驗（非官方）。僅供參考，請以向日葵官方最新說明為準。<br>開放原始碼 · MIT License</footer>
+</div>
+<script src="/zh-tw/codes.js"></script><script src="/app.js"></script>
+</body></html>
