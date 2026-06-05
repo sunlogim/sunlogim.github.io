@@ -1,0 +1,126 @@
+<!DOCTYPE html><html lang="ja"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Sunlogin（ひまわり）リモート 接続失敗 / カクつき 診断検索 - 接続できない・黒画面・遅延を解決</title>
+<meta name="description" content="Sunlogin（ひまわり）リモートコントロールが接続できない・黒画面・カクついて遅延が高い？症状（デバイスオフライン、接続タイムアウト、アクセスパスワード誤り、ファイアウォール遮断、社内ネット、見えるが操作不可、中継モード、無料版30fps）を検索し、L1 公式チェック + L2 ネットワーク層の根本原因（P2P vs 中継、NAT越え、ポート帯、フレームレート段階）を確認、実例と照合して素早く再接続。">
+<link rel="canonical" href="https://sunlogim.github.io/ja/">
+<link rel="alternate" hreflang="zh-Hans" href="https://sunlogim.github.io/">
+<link rel="alternate" hreflang="en" href="https://sunlogim.github.io/en/">
+<link rel="alternate" hreflang="ja" href="https://sunlogim.github.io/ja/">
+<link rel="alternate" hreflang="zh-Hant" href="https://sunlogim.github.io/zh-tw/">
+<link rel="alternate" hreflang="x-default" href="https://sunlogim.github.io/">
+<link rel="stylesheet" href="/style.css">
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "WebApplication",
+   "name": "Sunlogin リモート 接続失敗 / カクつき 診断検索",
+   "url": "https://sunlogim.github.io/ja/",
+   "applicationCategory": "UtilitiesApplication",
+   "operatingSystem": "Web browser",
+   "inLanguage": "ja",
+   "description": "Sunlogin（ひまわり）リモートコントロールが接続できない・黒画面・カクついて遅延が高い？症状（デバイスオフライン、接続タイムアウト、アクセスパスワード誤り、ファイアウォール遮断、社内ネット、見えるが操作不可、中継モード、無料版30fps）を検索し、L1 公式チェック + L2 ネットワーク層の根本原因（P2P vs 中継、NAT越え、ポート帯、フレームレート段階）を確認、実例と照合して素早く再接続。",
+   "isAccessibleForFree": true,
+   "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+   }
+  },
+  {
+   "@type": "FAQPage",
+   "inLanguage": "ja",
+   "url": "https://sunlogim.github.io/ja/",
+   "mainEntity": [
+    {
+     "@type": "Question",
+     "name": "ひまわりリモートで「デバイスオフライン」はどうする？",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "被操作側が起動・オンライン・非スリープで、Sunlogin クライアントが動作し「ログイン済み」表示か確認；ネットが不安定ならルーター再起動かネット変更 オフライン＝被操作側がそもそも上がっていない。まずネットを疑わない：スリープで NIC が切れる、ノートを閉じると Wi-Fi 切断、Android の省電力が常駐を停止；Windows は services.msc で「Sunlogin RemoteControl」サービスを確認 無人運用：自動起動＋自動ログイン＋無人アクセスを有効化、Android は省電力の除外に追加"
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "ひまわりリモートで「接続タイムアウト」はどうする？",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "まず両端のファイアウォール / ウイルス対策を切って再試行；両端でログアウト→再ログイン；両端を最新に更新；ネット変更（スマホのテザリング） 「接続失敗」の90%は段階2「通信路の確立」で停止：15＝P2P 不成立かつ中継も失敗（ネットが悪い）、3＝ネットワーク層で遮断；テザリングでつながれば概ねネット / FW 問題 3段階で切り分け：認証→通信路の確立→画面転送。タイムアウトはほぼ「通信路の確立」"
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "ひまわりリモートで「アクセスパスワード誤り」はどうする？",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "入力したのが Sunlogin アカウントのログインPWではなく「アクセスパスワード」か確認；被操作側でアクセスPWを再設定してから接続 アクセスパスワードは被操作側で別に設定するリモート用PW——変更済み、またはログインPWと混同しがち；変更後は操作側で新PWを使う アクセスPW≠ログインPW：被操作側「設定→セキュリティ」で確認 / 再設定"
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "ひまわりリモートで「ファイアウォール / セキュリティ遮断」はどうする？",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Sunlogin をファイアウォール / セキュリティの信頼に追加：Windows Defender ファイアウォール「アプリの許可」で SunloginClient にチェック；他社製も信頼に追加 信頼にはインストールフォルダ全体（例：C:\\Program Files (x86)\\Oray\\SunLogin\\）を追加し、主exe だけにしない——Sunlogin は実行時に複数コンポーネントを呼ぶ 簡易確認：セキュリティを完全終了（リアルタイム保護だけでなく）して再試行、つながれば100%それが原因"
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "ひまわりリモートで「社内 / 学内ネットワーク」はどうする？",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "会社の IT に Sunlogin を許可してもらう；または被操作側を一時的にスマホのテザリングへ；Sunlogin SOS 版（別の接続経路）を試す 企業網は通信管理機器（DPI）が多い；Sunlogin は TCP 443（HTTPS と同じ）を使い DPI に識別され遮断されうる；コミュニティの知見：企業ルーターで TCP 51020-51030 ＋ UDP 50000-50010 を許可、または接続モードを「高速」から「互換」（より汎用な 80/443）へ 社内ネットか判定：両端をスマホのテザリングに——つながれば100%社内の遮断"
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "ひまわりリモートで「黒画面」はどうする？",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "被操作側で Sunlogin に権限付与：macOS「システム設定→プライバシーとセキュリティ」で画面収録 / アクセシビリティ / フルディスクアクセスにチェック；Windows はモード切替 / 再接続を試す 黒画面は多くがキャプチャ権限不足、GPU / 外部グラフィック切替、ロック画面保護；外部GPUのノートは電源ポリシーで Sunlogin を内蔵GPUキャプチャに macOS Ventura 以降は権限が「システム設定」へ——検索窓で「画面収録」が最速"
+     }
+    }
+   ]
+  }
+ ]
+}
+</script>
+</head>
+<body><div class="wrap"><main>
+<nav class="lang">言語：<a href="/">简体中文</a> · <a href="/en/">English</a> · <strong>日本語</strong> · <a href="/zh-tw/">繁體中文</a></nav>
+<h1>Sunlogin（ひまわり）リモート 接続 / カクつき 診断検索</h1>
+<figure class="i4png"><picture><source type="image/webp" srcset="/img/cover_ja.webp"><img src="/img/cover_ja.png" alt="Sunlogin リモート接続とカクつき診断検索ツールの図" fetchpriority="high" width="1120" height="746" style="width:100%;height:auto;border-radius:12px;border:1px solid #eee"></picture><figcaption>図：Sunlogin リモート接続 / カクつき診断検索（L1 公式チェック + L2 ネットワーク根本原因）</figcaption></figure>
+<p>Sunlogin（ひまわり）リモートで本当に困るのは<strong>接続できない</strong>と<strong>カクつき</strong>。あなたの<strong>症状</strong>（例：<code>デバイスオフライン</code>、<code>接続タイムアウト</code>、<code>アクセスパスワード誤り</code>、<code>ファイアウォール遮断</code>、<code>見えるが操作不可</code>、<code>遅延が高い</code>、<code>無料版30fps</code>）を検索し、まず<strong>L1 公式チェック</strong>、次に<strong>L2 ネットワーク層の根本原因</strong>（P2P 直接接続 vs サーバー中継、NAT越え、ポート帯）、最後に実例を確認します。デスクトップ版は <a href="https://sunlogim.com/">Sunlogin 公式ダウンロード</a> から。</p>
+<input id="q" placeholder="症状を入力（例：接続失敗 / 黒画面 / カクつき / オフライン）" autocomplete="off">
+<button id="go">検索</button>
+<div id="out"></div>
+<h2>ステップ1：公式チェックを実施（L1・まずこの4つ）</h2>
+<p>Sunlogin 公式の接続失敗チェックは4ステップ、すべてアプリ内で：① <strong>アカウントとデバイスの紐付け</strong>——操作側と被操作側を同じ Sunlogin アカウントでログイン；② <strong>デバイス状態とネットワーク</strong>——被操作側が起動・オンライン・スリープでない（スリープは「ウェイク」を事前に有効化）；③ <strong>ファイアウォールと権限</strong>——Sunlogin をファイアウォールの信頼に追加、「リモート操作を許可」と「無人アクセス」を有効化、アクセスパスワードを正しく設定；④ <strong>バージョンと再起動</strong>——両端を最新に更新、クライアント再起動、キャッシュ削除。詳しい手順は <a href="https://sunlogim.com/lianjie/">Sunlogin 接続失敗の対処ガイド</a>。</p>
+<div class="cat"><div class="catbox"><b>ネットワーク / 越え</b><span class="cs">タイムアウト・FW遮断・社内ネット・中継 / P2P</span><div>通信路の確立失敗、または中継で遅延が高い。まず FW 信頼＋ネット変更；深層は P2P が抜けたか、企業網 DPI と NAT 種別。</div></div><div class="catbox"><b>アカウント / 権限</b><span class="cs">オフライン・アクセスPW誤り・アカウント不一致・ウェイク失敗</span><div>被操作側オンライン＋両端同一アカウントが前提。アクセスPW≠ログインPW；token 失効は再ログイン；スリープは「ウェイク」。</div></div><div class="catbox"><b>画面 / 性能</b><span class="cs">黒画面・操作不可・カクつき・ぼやけ・無料30fps</span><div>接続後の体験問題。権限（画面収録 / アクセシビリティ）、デスクトップモード、フレームレート段階と被操作側性能が鍵。</div></div><div class="catbox"><b>バージョン / プロトコル</b><span class="cs">プロトコル版不一致・更新後の不具合</span><div>版差が大きいと非互換になりやすい（エラー30）；両端を最新に更新、再起動しキャッシュ削除。</div></div></div><figure><svg viewBox="0 0 720 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Sunlogin リモート接続とカクつきのフロー" style="width:100%;height:auto;border:1px solid #eee;border-radius:12px;background:#fff"><text x="20" y="28" font-family="system-ui,Arial" font-size="15.5" font-weight="700" fill="#1d1d1f">Sunlogin 接続 / カクつきフロー（現象で分類）</text><rect x="20" y="46" width="150" height="46" rx="10" fill="#111"/><text x="95" y="74" text-anchor="middle" font-family="system-ui,Arial" font-size="13" fill="#fff">リモート接続を開始</text><path d="M170 69 H206" stroke="#999" stroke-width="2" fill="none" marker-end="url(#a)"/><rect x="206" y="46" width="172" height="46" rx="10" fill="#fff5e6" stroke="#ffe0b0"/><text x="292" y="74" text-anchor="middle" font-family="system-ui,Arial" font-size="13" fill="#b45309">つながる？</text><rect x="440" y="20" width="262" height="56" rx="10" fill="#ecfdf5" stroke="#bbf7e0"/><text x="455" y="42" font-family="system-ui,Arial" font-size="12.5" fill="#047857">つながるが重い → 性能：</text><text x="455" y="62" font-family="system-ui,Arial" font-size="11.5" fill="#065f46">中継？画質高すぎ？fps上限？被操作側性能</text><rect x="440" y="86" width="262" height="56" rx="10" fill="#fef2f2" stroke="#fecaca"/><text x="455" y="108" font-family="system-ui,Arial" font-size="12.5" fill="#b91c1c">つながらない → エラー類：</text><text x="455" y="128" font-family="system-ui,Arial" font-size="11.5" fill="#991b1b">オフライン？FW？アカウント / PW？版</text><path d="M378 60 H410 V48 H440" stroke="#10b981" stroke-width="2" fill="none" marker-end="url(#a)"/><path d="M378 78 H410 V114 H440" stroke="#ef4444" stroke-width="2" fill="none" marker-end="url(#a)"/><text x="20" y="178" font-family="system-ui,Arial" font-size="13" font-weight="700" fill="#1d1d1f">4つの分類（各 L1 / L2 を見る）</text><g font-family="system-ui,Arial" font-size="12"><rect x="20" y="190" width="162" height="92" rx="10" fill="#fff5e6" stroke="#ffe0b0"/><text x="32" y="212" font-weight="700" fill="#b45309">1. ネット / NAT</text><text x="32" y="234" fill="#555" font-size="11">中継 / P2P・FW・社内ネット</text><rect x="194" y="190" width="162" height="92" rx="10" fill="#eef4ff" stroke="#cfe0ff"/><text x="206" y="212" font-weight="700" fill="#1d4ed8">2. アカウント / 権限</text><text x="206" y="234" fill="#555" font-size="11">オフライン・アクセスPW・ウェイク</text><rect x="368" y="190" width="162" height="92" rx="10" fill="#ecfdf5" stroke="#bbf7e0"/><text x="380" y="212" font-weight="700" fill="#047857">3. 画面 / 性能</text><text x="380" y="234" fill="#555" font-size="11">黒画面・カクつき・画質・30fps</text><rect x="542" y="190" width="160" height="92" rx="10" fill="#fef2f2" stroke="#fecaca"/><text x="554" y="212" font-weight="700" fill="#b91c1c">4. 版 / プロトコル</text><text x="554" y="234" fill="#555" font-size="11">版不一致・更新不具合</text></g><defs><marker id="a" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0 0 L6 3 L0 6 z" fill="#999"/></marker></defs></svg><figcaption>図1：Sunlogin 接続 / カクつきフロー——まず接続可否、次に原因を分類</figcaption></figure>
+<h2>ステップ2：つながっても重い / つながらない → ネットワーク層の根本原因（L2）</h2>
+<p>要点：<strong>つながらないのは多くが「通信路の確立」で止まり、カクつきは多くが「中継になっている」</strong>。Sunlogin はまず <strong>P2P 越え</strong>で両端をつなぎ（遅延最小 20〜50ms）、つながらない時のみ <strong>ベンダーのサーバー中継</strong>へ（80〜200ms）——クライアント左下に「P2P」か「中継」と表示。下図は接続セルフチェック盤。深層原因：対称 NAT / ルーター UPnP、企業網の DPI とポート帯、フレームレートはモニターのリフレッシュレートに制限される点。</p>
+<figure><svg viewBox="0 0 720 320" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Sunlogin リモート接続セルフチェック盤" style="width:100%;height:auto;border:1px solid #eee;border-radius:12px;background:#fff"><text x="20" y="28" font-family="system-ui,Arial" font-size="15.5" font-weight="700" fill="#1d1d1f">接続セルフチェック盤（緑＝正常 / 赤＝問題点）</text><rect x="20" y="42" width="680" height="226" rx="14" fill="#f8fafc" stroke="#e2e8f0"/><text x="38" y="66" font-family="system-ui,Arial" font-size="12.5" font-weight="700" fill="#475569">チェック項目</text><text x="300" y="66" font-family="system-ui,Arial" font-size="12" fill="#94a3b8">現在の状態</text><text x="610" y="66" font-family="system-ui,Arial" font-size="12" fill="#94a3b8">判定</text><line x1="38" y1="74" x2="682" y2="74" stroke="#e2e8f0" stroke-width="1"/><text x="38" y="98" font-family="system-ui,Arial" font-size="13" fill="#1d1d1f">両端同一アカウント</text><text x="300" y="98" font-family="system-ui,Arial" font-size="12.5" fill="#16a34a">同じ Sunlogin アカウント</text><circle cx="612" cy="94" r="6" fill="#16a34a"/><text x="628" y="98" font-family="system-ui,Arial" font-size="12" fill="#16a34a">正常</text><text x="38" y="128" font-family="system-ui,Arial" font-size="13" fill="#1d1d1f">被操作側オンライン</text><text x="300" y="128" font-family="system-ui,Arial" font-size="12.5" fill="#16a34a">オンライン・非スリープ</text><circle cx="612" cy="124" r="6" fill="#16a34a"/><text x="628" y="128" font-family="system-ui,Arial" font-size="12" fill="#16a34a">正常</text><text x="38" y="158" font-family="system-ui,Arial" font-size="13" fill="#1d1d1f">FW が許可</text><text x="300" y="158" font-family="system-ui,Arial" font-size="12.5" fill="#ef4444">セキュリティに遮断</text><circle cx="612" cy="154" r="6" fill="#ef4444"/><text x="628" y="158" font-family="system-ui,Arial" font-size="12" fill="#ef4444">問題</text><text x="38" y="188" font-family="system-ui,Arial" font-size="13" fill="#1d1d1f">接続モード</text><text x="300" y="188" font-family="system-ui,Arial" font-size="12.5" fill="#ef4444">中継・遅延高</text><circle cx="612" cy="184" r="6" fill="#ef4444"/><text x="628" y="188" font-family="system-ui,Arial" font-size="12" fill="#ef4444">問題</text><text x="38" y="218" font-family="system-ui,Arial" font-size="13" fill="#1d1d1f">クライアント版</text><text x="300" y="218" font-family="system-ui,Arial" font-size="12.5" fill="#16a34a">両端最新</text><circle cx="612" cy="214" r="6" fill="#16a34a"/><text x="628" y="218" font-family="system-ui,Arial" font-size="12" fill="#16a34a">正常</text><text x="38" y="248" font-family="system-ui,Arial" font-size="13" fill="#1d1d1f">アクセスPW</text><text x="300" y="248" font-family="system-ui,Arial" font-size="12.5" fill="#16a34a">正しい</text><circle cx="612" cy="244" r="6" fill="#16a34a"/><text x="628" y="248" font-family="system-ui,Arial" font-size="12" fill="#16a34a">正常</text><text x="20" y="296" font-family="system-ui,Arial" font-size="11.5" fill="#94a3b8">注：赤＝対処すべき問題点。つながっても「中継」=遅延高——ルーター UPnP で P2P を狙う。</text></svg><figcaption>図2：接続セルフチェック盤（緑＝正常 / 赤＝問題点）</figcaption></figure>
+<figure class="i4png"><picture><source type="image/webp" srcset="/img/board_ja.webp"><img src="/img/board_ja.png" alt="Sunlogin リモート接続セルフチェック盤の緑/赤項目の図" loading="lazy" width="1120" height="746" style="width:100%;height:auto;border-radius:12px;border:1px solid #eee"></picture><figcaption>図：つながらない→「通信路」、カクつき→「中継」か確認。UPnP で P2P を狙う</figcaption></figure>
+<h2>全症状の対照表（L1 先にチェック・L2 根本原因）</h2>
+<table id="tbl"></table>
+<section class="i4data">
+<h2>Sunlogin リモート接続 / カクつき データ（2026 推計）</h2>
+<p>以下は Sunlogin 公式ヘルプと公開のリモート操作コミュニティから合成した <strong>2026 年の推計</strong>です（メーカー公式の数字ではなく、一次測定でもなく、参考用）：</p>
+<table>
+<tr><th>項目</th><th>推計</th></tr>
+<tr><td>接続失敗の原因内訳（推計）</td><td>ファイアウォール / セキュリティ <strong>約50%</strong> &gt; 被操作側オフライン / スリープ <strong>約20%</strong> &gt; アカウント / PW <strong>約15%</strong> &gt; バージョン / プロトコル <strong>約10%</strong></td></tr>
+<tr><td>カクつきの原因内訳（コミュニティ実測）</td><td>中継 <strong>35%</strong> &gt; 画質高すぎ 25% &gt; 被操作側性能 20% &gt; ネット悪い 15% &gt; フレーム上限 5%</td></tr>
+<tr><td>P2P 直接 vs サーバー中継 の遅延</td><td>P2P 約 <strong>20-50ms</strong>、中継 約 <strong>80-200ms</strong></td></tr>
+<tr><td>フレームレート上限（無料 / 有料 / ゲーム）</td><td><strong>30 / 60 / 144</strong> fps（144 は GPU とモニター双方が144Hz必要）</td></tr>
+<tr><td>UPnP 有効化で P2P を狙う効果</td><td>抜け率が明確に向上、実測で遅延が約120ms→約35ms</td></tr>
+<tr><td>遅延の実用段階</td><td>&lt;30ms ほぼローカル・80-150ms 明確にカクつく・&gt;150ms ほぼクリックのみ</td></tr>
+</table>
+<p><small>推計の根拠：信頼できる出典 + 時間外挿（Sunlogin 公式ヘルプ + 公開のリモート操作コミュニティ）。バージョンとネット環境で変動。Sunlogin 公式の最新情報を基準に。</small></p>
+</section>
+<h2>実例・クイック判定</h2>
+<ul class="scenes"><li>会社のPCはどうしてもつながらないのにスマホのテザリングだと即接続：多くは社内ネットの通信管理 / DPI がリモート操作を遮断——IT に許可してもらうか、被操作側を一時的にテザリングへ。</li><li>つながったがマウスが残像・遅延が100ms超：左下の「中継」が原因——ルーターの UPnP を有効化して P2P を狙うと、実測で遅延が約120ms→約35ms に。</li><li>アクセスパスワードが何度も誤りと出る：アクセスパスワードはアカウントのログインPWではない——被操作側でアクセスPWを再設定してから接続。</li><li>デバイスはオンライン表示なのに接続タイムアウト：多くはログイン token 失効 / 被操作側がスリープで切断——被操作側で再ログイン、または「ウェイク」と無人アクセスを事前に。</li><li>ウィンドウのドラッグが明らかにカクつくが遅延は高くない：無料版は30fps上限——有料で60fps、ゲーム版は最大144fps（対応モニターが必要）。</li><li>黒画面で見えるだけで操作できない：多くは権限不足（macOS は画面収録 / アクセシビリティ）、または被操作側の CPU / メモリが満杯でエンコードが追いつかない。</li></ul><div class="related"><h2>関連</h2><ul><li><a href="https://sunlogim.com/">Sunlogin 公式ダウンロード</a></li><li><a href="https://sunlogim.com/lianjie/">Sunlogin 接続失敗の対処ガイド</a></li><li><a href="https://sunlogni.com/">Sunlogin リモートコントロール ダウンロード（姉妹サイト）</a></li></ul></div></main>
+<footer>対処手順とデスクトップモード / フレームレートのパラメータは Sunlogin 公式ヘルプ（sunlogin.oray.com）から整理。P2P / 中継、NAT越え、企業網のポート帯やエラーコードの読み方は公開のリモート操作コミュニティを総合（非公式）。参考用です。Sunlogin 公式の最新情報を基準にしてください。<br>オープンソース · MIT License</footer>
+</div>
+<script src="/ja/codes.js"></script><script src="/app.js"></script>
+</body></html>
