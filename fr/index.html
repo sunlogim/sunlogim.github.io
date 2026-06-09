@@ -1,0 +1,151 @@
+<!DOCTYPE html><html lang="fr"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Diagnostic connexion / lag SunLogin à distance - corriger échec de connexion, écran noir, latence élevée</title>
+<meta name="description" content="Le contrôle à distance SunLogin ne se connecte pas, écran noir ou lag avec latence élevée ? Cherchez un symptôme (appareil hors ligne, délai dépassé, mot de passe d'accès erroné, blocage pare-feu, réseau d'entreprise, visible mais non contrôlable, mode relais, 30 fps version gratuite) pour les vérifications officielles L1 et la cause racine couche réseau L2 (P2P vs relais, traversée NAT, plages de ports, paliers de fréquence d'images), puis comparez à des cas réels pour vous reconnecter vite.">
+<link rel="canonical" href="https://sunlogim.github.io/fr/">
+<link rel="alternate" hreflang="zh-Hans" href="https://sunlogim.github.io/">
+<link rel="alternate" hreflang="en" href="https://sunlogim.github.io/en/">
+<link rel="alternate" hreflang="ja" href="https://sunlogim.github.io/ja/">
+<link rel="alternate" hreflang="zh-Hant" href="https://sunlogim.github.io/zh-tw/">
+<link rel="alternate" hreflang="ko" href="https://sunlogim.github.io/ko/">
+<link rel="alternate" hreflang="id" href="https://sunlogim.github.io/id/">
+<link rel="alternate" hreflang="vi" href="https://sunlogim.github.io/vi/">
+<link rel="alternate" hreflang="th" href="https://sunlogim.github.io/th/">
+<link rel="alternate" hreflang="es" href="https://sunlogim.github.io/es/">
+<link rel="alternate" hreflang="pt-BR" href="https://sunlogim.github.io/pt-br/">
+<link rel="alternate" hreflang="de" href="https://sunlogim.github.io/de/">
+<link rel="alternate" hreflang="fr" href="https://sunlogim.github.io/fr/">
+<link rel="alternate" hreflang="ru" href="https://sunlogim.github.io/ru/">
+<link rel="alternate" hreflang="it" href="https://sunlogim.github.io/it/">
+<link rel="alternate" hreflang="pl" href="https://sunlogim.github.io/pl/">
+<link rel="alternate" hreflang="nl" href="https://sunlogim.github.io/nl/">
+<link rel="alternate" hreflang="tr" href="https://sunlogim.github.io/tr/">
+<link rel="alternate" hreflang="ar" href="https://sunlogim.github.io/ar/">
+<link rel="alternate" hreflang="hi" href="https://sunlogim.github.io/hi/">
+<link rel="alternate" hreflang="ms" href="https://sunlogim.github.io/ms/">
+<link rel="alternate" hreflang="fa" href="https://sunlogim.github.io/fa/">
+<link rel="alternate" hreflang="bn" href="https://sunlogim.github.io/bn/">
+<link rel="alternate" hreflang="ta" href="https://sunlogim.github.io/ta/">
+<link rel="alternate" hreflang="te" href="https://sunlogim.github.io/te/">
+<link rel="alternate" hreflang="fil" href="https://sunlogim.github.io/fil/">
+<link rel="alternate" hreflang="ur" href="https://sunlogim.github.io/ur/">
+<link rel="alternate" hreflang="lo" href="https://sunlogim.github.io/lo/">
+<link rel="alternate" hreflang="km" href="https://sunlogim.github.io/km/">
+<link rel="alternate" hreflang="my" href="https://sunlogim.github.io/my/">
+<link rel="alternate" hreflang="x-default" href="https://sunlogim.github.io/">
+<link rel="stylesheet" href="/style.css">
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "WebApplication",
+   "name": "Diagnostic connexion / lag SunLogin",
+   "url": "https://sunlogim.github.io/fr/",
+   "applicationCategory": "UtilitiesApplication",
+   "operatingSystem": "Web browser",
+   "inLanguage": "fr",
+   "description": "Le contrôle à distance SunLogin ne se connecte pas, écran noir ou lag avec latence élevée ? Cherchez un symptôme (appareil hors ligne, délai dépassé, mot de passe d'accès erroné, blocage pare-feu, réseau d'entreprise, visible mais non contrôlable, mode relais, 30 fps version gratuite) pour les vérifications officielles L1 et la cause racine couche réseau L2 (P2P vs relais, traversée NAT, plages de ports, paliers de fréquence d'images), puis comparez à des cas réels pour vous reconnecter vite.",
+   "isAccessibleForFree": true,
+   "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+   }
+  },
+  {
+   "@type": "FAQPage",
+   "inLanguage": "fr",
+   "url": "https://sunlogim.github.io/fr/",
+   "mainEntity": [
+    {
+     "@type": "Question",
+     "name": "SunLogin à distance « Appareil hors ligne » : que faire ?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Vérifiez que le PC hôte est allumé, en ligne, pas en veille, le client SunLogin en cours et « connecté » ; si le réseau est instable redémarrez le routeur ou changez de réseau Hors ligne = l'hôte n'est tout simplement pas en ligne, ne regardez pas le réseau d'abord : après la veille la carte réseau se déconnecte souvent, fermer le capot du portable coupe le WiFi, le mode économie d'Android tue l'arrière-plan ; sous Windows vérifiez dans services.msc si le service « SunLogin » tourne Hôte sans surveillance à long terme : activez « démarrage auto + connexion auto + accès sans surveillance », sous Android ajoutez SunLogin à la liste blanche d'économie d'énergie"
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "SunLogin à distance « Délai dépassé » : que faire ?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Coupez d'abord pare-feu / antivirus des deux côtés et testez ; déconnectez et reconnectez les deux ; mettez à la dernière version ; changez d'environnement réseau (partage du téléphone) 90 % des « échecs de connexion » bloquent à la phase 2 « établir le canal » : 15=P2P ne traverse pas et le relais échoue aussi (réseau trop mauvais), 3=la couche réseau est bloquée ; si ça se connecte en partage, c'est en gros un problème de réseau / pare-feu Localisez en 3 phases : vérifier le compte → établir le canal → transmettre l'image ; le délai dépassé est presque toujours à « établir le canal »"
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "SunLogin à distance « Mot de passe d'accès erroné » : que faire ?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Vérifiez que vous saisissez le « mot de passe d'accès » et non celui de connexion du compte SunLogin ; réinitialisez le mot de passe d'accès sur l'hôte puis reconnectez-vous Le mot de passe d'accès est le mot de passe distant que l'hôte définit à part ; souvent changé ou confondu avec celui de connexion ; après changement, le contrôleur utilise le nouveau Mot de passe d'accès ≠ mot de passe de connexion : voyez / réinitialisez dans « Paramètres → Sécurité » de l'hôte"
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "SunLogin à distance « Blocage pare-feu » : que faire ?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Ajoutez SunLogin à la confiance du pare-feu / sécurité : dans le Pare-feu Windows Defender « autoriser une application » cochez SunloginClient ; ajoutez la confiance dans l'antivirus tiers La liste blanche doit inclure tout le dossier d'installation (ex. C:\\Program Files (x86)\\Oray\\SunLogin\\), pas seulement l'exe principal—SunLogin appelle plusieurs composants à l'exécution Vérification rapide : fermez complètement la sécurité (pas seulement la protection en temps réel) et connectez ; si ça se connecte c'est à 100 % elle qui bloquait"
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "SunLogin à distance « Réseau d'entreprise échoue » : que faire ?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Demandez à l'IT de l'entreprise d'autoriser la liste blanche de SunLogin ; ou utilisez temporairement le partage du téléphone sur l'hôte pour contourner ; essayez SunLogin version SOS (autre mode de connexion) Les réseaux d'entreprise ont souvent des équipements de gestion du comportement internet ; SunLogin via TCP 443 (même port que HTTPS) est identifié et bloqué par le DPI ; expérience de la communauté : autorisez TCP 51020–51030 + UDP 50000–50010 sur le routeur d'entreprise, ou passez le mode de connexion de « haute vitesse » à « compatible » (80/443, plus générique) Pour savoir si c'est le réseau d'entreprise : passez les deux au partage du téléphone ; si ça se connecte c'est à 100 % le blocage du réseau d'entreprise"
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "SunLogin à distance « Écran noir » : que faire ?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Donnez les autorisations à SunLogin sur l'hôte : macOS « Réglages Système → Confidentialité et sécurité » cochez enregistrement d'écran / accessibilité / accès complet au disque ; Windows essayez de changer de mode bureau / reconnecter L'écran noir est souvent un manque d'autorisation de capture ou un basculement de GPU dédié, protection d'écran de verrouillage ; sur les portables à GPU dédié on peut faire capturer SunLogin par l'iGPU dans la politique d'alimentation Depuis macOS Ventura le chemin des autorisations est passé dans « Réglages Système » ; chercher « enregistrement d'écran » dans la recherche est le plus rapide"
+     }
+    }
+   ]
+  }
+ ]
+}
+</script>
+</head>
+<body><div class="wrap"><main>
+<nav class="lang">Langue : <a href="/">简体中文</a> · <a href="/en/">English</a> · <a href="/ja/">日本語</a> · <a href="/zh-tw/">繁體中文</a> · <a href="/ko/">한국어</a> · <a href="/id/">Bahasa Indonesia</a> · <a href="/vi/">Tiếng Việt</a> · <a href="/th/">ไทย</a> · <a href="/es/">Español</a> · <a href="/pt-br/">Português (BR)</a> · <a href="/de/">Deutsch</a> · <strong>Français</strong> · <a href="/ru/">Русский</a> · <a href="/it/">Italiano</a> · <a href="/pl/">Polski</a> · <a href="/nl/">Nederlands</a> · <a href="/tr/">Türkçe</a> · <a href="/ar/">العربية</a> · <a href="/hi/">हिन्दी</a> · <a href="/ms/">Bahasa Melayu</a> · <a href="/fa/">فارسی</a> · <a href="/bn/">বাংলা</a> · <a href="/ta/">தமிழ்</a> · <a href="/te/">తెలుగు</a> · <a href="/fil/">Filipino</a> · <a href="/ur/">اردو</a> · <a href="/lo/">ພາສາລາວ</a> · <a href="/km/">ភាសាខ្មែរ</a> · <a href="/my/">မြန်မာ</a></nav>
+<h1>Diagnostic connexion / lag SunLogin à distance</h1>
+<figure class="i4png"><picture><source type="image/webp" srcset="/img/cover_fr.webp"><img src="/img/cover_fr.png" alt="Illustration de l'outil de diagnostic connexion et lag SunLogin à distance" fetchpriority="high" width="1120" height="746" style="width:100%;height:auto;border-radius:12px;border:1px solid #eee"></picture><figcaption>Figure : Diagnostic connexion / lag SunLogin (vérifications officielles L1 + cause couche réseau L2)</figcaption></figure>
+<p>Les deux vrais casse-têtes du contrôle à distance SunLogin sont <strong>pas de connexion</strong> et <strong>lag</strong>. Cherchez votre <strong>symptôme</strong> (ex. <code>appareil hors ligne</code>, <code>délai dépassé</code>, <code>mot de passe d'accès erroné</code>, <code>blocage pare-feu</code>, <code>visible mais non contrôlable</code>, <code>latence élevée</code>, <code>30 fps gratuit</code>) : d'abord les <strong>vérifications officielles L1</strong>, puis la <strong>cause racine couche réseau L2</strong> (P2P direct vs relais serveur, traversée NAT, plages de ports), enfin des cas réels. Besoin du client bureau ? Voir le <a href="https://sunlogim.com/">téléchargement officiel SunLogin</a>.</p>
+<input id="q" placeholder="Saisissez un symptôme, ex. échec de connexion / écran noir / lag / hors ligne" autocomplete="off">
+<button id="go">Rechercher</button>
+<div id="out"></div>
+<h2>Étape 1 : passer les vérifications officielles (L1 - faites ces 4 d'abord)</h2>
+<p>La liste officielle SunLogin en cas d'échec de connexion ne fait que 4 étapes, toutes dans l'appli : ① <strong>Liaison compte & appareil</strong>—le contrôleur et l'hôte se connectent au même compte SunLogin ; ② <strong>État de l'appareil & réseau</strong>—l'hôte est allumé, en ligne et non en veille (utilisez « Wake » pour un hôte endormi, à activer au préalable) ; ③ <strong>Pare-feu & autorisations</strong>—ajoutez SunLogin à la liste de confiance du pare-feu, activez « Autoriser le contrôle à distance » et « Accès sans surveillance », réglez bien le mot de passe d'accès ; ④ <strong>Version & redémarrage</strong>—mettez les deux côtés à la dernière version, redémarrez le client, videz le cache. Guide plus complet : <a href="https://sunlogim.com/lianjie/">guide de vérification de connexion SunLogin</a>.</p>
+<div class="cat"><div class="catbox"><b>Réseau / Traversée</b><span class="cs">délai dépassé · blocage pare-feu · réseau d'entreprise · relais / P2P</span><div>Échec d'établissement du canal ou latence élevée par relais. Vérifiez la confiance du pare-feu + changez de réseau ; plus en profondeur, si le P2P traverse, le DPI d'entreprise et le type de NAT.</div></div><div class="catbox"><b>Compte / Autorisations</b><span class="cs">appareil hors ligne · mot de passe d'accès erroné · compte différent · échec de wake</span><div>Hôte en ligne + même compte des deux côtés est le prérequis. Mot de passe d'accès ≠ mot de passe de connexion ; jeton expiré demande de se reconnecter ; la veille se résout avec « Wake ».</div></div><div class="catbox"><b>Image / Performance</b><span class="cs">écran noir · visible non contrôlable · lag · flou · 30 fps gratuit</span><div>Problèmes d'expérience après connexion. Autorisations (enregistrement d'écran / accessibilité), mode bureau, palier de fréquence d'images et performance de l'hôte sont la clé.</div></div><div class="catbox"><b>Version / Protocole</b><span class="cs">version de protocole incompatible · anomalie après mise à jour</span><div>Un grand écart de version cause facilement une incompatibilité (code 30) ; mettez les deux à la dernière, redémarrez et videz le cache.</div></div></div><figure><svg viewBox="0 0 720 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Organigramme de diagnostic connexion et lag SunLogin" style="width:100%;height:auto;border:1px solid #eee;border-radius:12px;background:#fff"><text x="20" y="28" font-family="system-ui,Arial" font-size="15.5" font-weight="700" fill="#1d1d1f">Flux de diagnostic connexion / lag SunLogin (par symptôme)</text><rect x="20" y="46" width="150" height="46" rx="10" fill="#111"/><text x="95" y="74" text-anchor="middle" font-family="system-ui,Arial" font-size="13" fill="#fff">Lancer la connexion à distance</text><path d="M170 69 H206" stroke="#999" stroke-width="2" fill="none" marker-end="url(#a)"/><rect x="206" y="46" width="172" height="46" rx="10" fill="#fff5e6" stroke="#ffe0b0"/><text x="292" y="74" text-anchor="middle" font-family="system-ui,Arial" font-size="13" fill="#b45309">Ça se connecte ?</text><rect x="440" y="20" width="262" height="56" rx="10" fill="#ecfdf5" stroke="#bbf7e0"/><text x="455" y="42" font-family="system-ui,Arial" font-size="12.5" fill="#047857">Connecté mais lag → voir la performance :</text><text x="455" y="62" font-family="system-ui,Arial" font-size="11.5" fill="#065f46">relais ? qualité trop haute ? limite fps ? perf de l'hôte</text><rect x="440" y="86" width="262" height="56" rx="10" fill="#fef2f2" stroke="#fecaca"/><text x="455" y="108" font-family="system-ui,Arial" font-size="12.5" fill="#b91c1c">Pas de connexion → voir le type d'erreur :</text><text x="455" y="128" font-family="system-ui,Arial" font-size="11.5" fill="#991b1b">hors ligne ? pare-feu ? compte / mot de passe ? version</text><path d="M378 60 H410 V48 H440" stroke="#10b981" stroke-width="2" fill="none" marker-end="url(#a)"/><path d="M378 78 H410 V114 H440" stroke="#ef4444" stroke-width="2" fill="none" marker-end="url(#a)"/><text x="20" y="178" font-family="system-ui,Arial" font-size="13" font-weight="700" fill="#1d1d1f">Quatre types de panne (voir L1 / L2 par élément)</text><g font-family="system-ui,Arial" font-size="12"><rect x="20" y="190" width="162" height="92" rx="10" fill="#fff5e6" stroke="#ffe0b0"/><text x="32" y="212" font-weight="700" fill="#b45309">① Réseau / Traversée</text><text x="32" y="234" fill="#555" font-size="11">relais / P2P · pare-feu · réseau d'entreprise</text><rect x="194" y="190" width="162" height="92" rx="10" fill="#eef4ff" stroke="#cfe0ff"/><text x="206" y="212" font-weight="700" fill="#1d4ed8">② Compte / Autorisations</text><text x="206" y="234" fill="#555" font-size="11">hors ligne · mot de passe d'accès · wake</text><rect x="368" y="190" width="162" height="92" rx="10" fill="#ecfdf5" stroke="#bbf7e0"/><text x="380" y="212" font-weight="700" fill="#047857">③ Image / Performance</text><text x="380" y="234" fill="#555" font-size="11">écran noir · lag · qualité · 30 fps</text><rect x="542" y="190" width="160" height="92" rx="10" fill="#fef2f2" stroke="#fecaca"/><text x="554" y="212" font-weight="700" fill="#b91c1c">④ Version / Protocole</text><text x="554" y="234" fill="#555" font-size="11">version incompatible · anomalie de mise à jour</text></g><defs><marker id="a" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0 0 L6 3 L0 6 z" fill="#999"/></marker></defs></svg><figcaption>Fig 1 : flux connexion / lag SunLogin—d'abord si ça se connecte, puis classer la cause</figcaption></figure>
+<h2>Étape 2 : toujours du lag / toujours pas de connexion → cause racine couche réseau (L2)</h2>
+<p>Idée clé : <strong>pas-de-connexion bloque souvent à « établir le canal », tandis que le lag signifie souvent qu'on est passé par le relais</strong>. SunLogin tente d'abord la <strong>traversée P2P</strong> pour relier les deux côtés (latence minimale 20–50 ms) ; seulement en cas d'échec il bascule sur le <strong>relais serveur de l'éditeur</strong> (80–200 ms) — le client affiche « P2P » ou « Relais » en bas à gauche. Le schéma est un panneau d'auto-vérification de connexion ; causes plus profondes : NAT symétrique / UPnP du routeur, DPI réseau d'entreprise et plages de ports, et la fréquence d'images limitée par le taux de rafraîchissement de l'écran.</p>
+<figure><svg viewBox="0 0 720 320" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Illustration du panneau d'auto-vérification de connexion SunLogin" style="width:100%;height:auto;border:1px solid #eee;border-radius:12px;background:#fff"><text x="20" y="28" font-family="system-ui,Arial" font-size="15.5" font-weight="700" fill="#1d1d1f">Panneau d'auto-vérification de connexion (vert=ok / rouge=problème)</text><rect x="20" y="42" width="680" height="226" rx="14" fill="#f8fafc" stroke="#e2e8f0"/><text x="38" y="66" font-family="system-ui,Arial" font-size="12.5" font-weight="700" fill="#475569">Point vérifié</text><text x="300" y="66" font-family="system-ui,Arial" font-size="12" fill="#94a3b8">État actuel</text><text x="610" y="66" font-family="system-ui,Arial" font-size="12" fill="#94a3b8">Verdict</text><line x1="38" y1="74" x2="682" y2="74" stroke="#e2e8f0" stroke-width="1"/><text x="38" y="98" font-family="system-ui,Arial" font-size="13" fill="#1d1d1f">Compte identique des deux côtés</text><text x="300" y="98" font-family="system-ui,Arial" font-size="12.5" fill="#16a34a">Même compte SunLogin</text><circle cx="612" cy="94" r="6" fill="#16a34a"/><text x="628" y="98" font-family="system-ui,Arial" font-size="12" fill="#16a34a">OK</text><text x="38" y="128" font-family="system-ui,Arial" font-size="13" fill="#1d1d1f">Hôte en ligne</text><text x="300" y="128" font-family="system-ui,Arial" font-size="12.5" fill="#16a34a">En ligne · pas en veille</text><circle cx="612" cy="124" r="6" fill="#16a34a"/><text x="628" y="128" font-family="system-ui,Arial" font-size="12" fill="#16a34a">OK</text><text x="38" y="158" font-family="system-ui,Arial" font-size="13" fill="#1d1d1f">Pare-feu laisse passer</text><text x="300" y="158" font-family="system-ui,Arial" font-size="12.5" fill="#ef4444">Bloqué par la sécurité</text><circle cx="612" cy="154" r="6" fill="#ef4444"/><text x="628" y="158" font-family="system-ui,Arial" font-size="12" fill="#ef4444">Problème</text><text x="38" y="188" font-family="system-ui,Arial" font-size="13" fill="#1d1d1f">Mode de connexion</text><text x="300" y="188" font-family="system-ui,Arial" font-size="12.5" fill="#ef4444">Relais · latence élevée</text><circle cx="612" cy="184" r="6" fill="#ef4444"/><text x="628" y="188" font-family="system-ui,Arial" font-size="12" fill="#ef4444">Problème</text><text x="38" y="218" font-family="system-ui,Arial" font-size="13" fill="#1d1d1f">Version du client</text><text x="300" y="218" font-family="system-ui,Arial" font-size="12.5" fill="#16a34a">Les deux à jour</text><circle cx="612" cy="214" r="6" fill="#16a34a"/><text x="628" y="218" font-family="system-ui,Arial" font-size="12" fill="#16a34a">OK</text><text x="38" y="248" font-family="system-ui,Arial" font-size="13" fill="#1d1d1f">Mot de passe d'accès</text><text x="300" y="248" font-family="system-ui,Arial" font-size="12.5" fill="#16a34a">Correct</text><circle cx="612" cy="244" r="6" fill="#16a34a"/><text x="628" y="248" font-family="system-ui,Arial" font-size="12" fill="#16a34a">OK</text><text x="20" y="296" font-family="system-ui,Arial" font-size="11.5" fill="#94a3b8">Note : rouge = problème à régler ; connecté mais « relais » = latence élevée, activez l'UPnP du routeur pour le P2P direct.</text></svg><figcaption>Fig 2 : panneau d'auto-vérification de connexion (vert = ok / rouge = problème)</figcaption></figure>
+<figure class="i4png"><picture><source type="image/webp" srcset="/img/board_fr.webp"><img src="/img/board_fr.png" alt="Illustration du panneau d'auto-vérification de connexion SunLogin avec éléments vert/rouge" loading="lazy" width="1120" height="746" style="width:100%;height:auto;border-radius:12px;border:1px solid #eee"></picture><figcaption>Figure : pas de connexion → « établir le canal », lag → si passé par « relais »—activez l'UPnP pour obtenir le P2P direct</figcaption></figure>
+<h2>Tableau complet des symptômes (vérifiez L1 d'abord · cause racine L2)</h2>
+<table id="tbl"></table>
+<section class="i4data">
+<h2>Données connexion / lag SunLogin (estimation 2026)</h2>
+<p>Voici une <strong>estimation 2026</strong> synthétisant l'aide officielle SunLogin et l'expérience de la communauté d'accès à distance publique (ni chiffres officiels de l'éditeur, ni mesures de première main, à titre indicatif seulement) :</p>
+<table>
+<tr><th>Dimension</th><th>Estimation</th></tr>
+<tr><td>Répartition des causes d'échec de connexion (estimation)</td><td>pare-feu / sécurité <strong>≈50 %</strong> &gt; hôte hors ligne / en veille <strong>≈20 %</strong> &gt; compte / mot de passe <strong>≈15 %</strong> &gt; version / protocole <strong>≈10 %</strong></td></tr>
+<tr><td>Répartition des causes de lag (mesure communautaire)</td><td>relais <strong>35 %</strong> &gt; qualité trop haute 25 % &gt; performance de l'hôte 20 % &gt; réseau mauvais 15 % &gt; limite de fps 5 %</td></tr>
+<tr><td>Latence P2P direct vs relais serveur</td><td>P2P environ <strong>20–50 ms</strong>, relais environ <strong>80–200 ms</strong></td></tr>
+<tr><td>Plafond d'images (gratuit / payant / gaming)</td><td><strong>30 / 60 / 144</strong> fps (144 exige GPU + écran 144 Hz)</td></tr>
+<tr><td>Gain d'activer l'UPnP pour le P2P</td><td>le taux de traversée monte fortement ; la latence mesurée peut passer de ~120 ms à ~35 ms</td></tr>
+<tr><td>Paliers d'utilisabilité par latence</td><td>&lt;30 ms quasi local · 80–150 ms nettement saccadé · &gt;150 ms quasi clic seulement</td></tr>
+</table>
+<p><small>Base de l'estimation : référence de sources + extrapolation temporelle (synthèse de l'aide officielle SunLogin et de données de la communauté d'accès à distance publique) ; varie selon la version et l'environnement réseau ; l'information officielle SunLogin la plus récente fait foi.</small></p>
+</section>
+<h2>Diagnostic rapide de cas réels</h2>
+<ul class="scenes"><li>Le PC du bureau ne se connecte absolument pas mais le partage de connexion du téléphone se connecte aussitôt : c'est souvent la gestion du comportement internet / DPI du réseau d'entreprise qui bloque le trafic à distance. Demandez à l'IT d'autoriser la liste blanche, ou utilisez temporairement le partage du téléphone sur l'hôte.</li><li>Ça se connecte mais la souris laisse une traînée et la latence dépasse 100 ms : voir « Relais » en bas à gauche est la cause—connectez-vous au routeur et activez l'UPnP pour obtenir le P2P ; la latence mesurée peut tomber de ~120 ms à ~35 ms.</li><li>Le mot de passe d'accès échoue sans cesse : le mot de passe d'accès n'est pas celui du compte de connexion ; réinitialisez-le dans « Paramètres » de l'hôte puis reconnectez-vous.</li><li>L'appareil apparaît en ligne mais la connexion expire : souvent jeton de connexion expiré / hôte en veille et sans réseau ; reconnectez-vous sur l'hôte, ou activez « Wake » et l'accès sans surveillance à l'avance.</li><li>Déplacer les fenêtres saccade nettement mais la latence n'est pas élevée : le plafond de la version gratuite est 30 fps ; en payant jusqu'à 60 fps et la version gaming jusqu'à 144 fps (écran compatible requis).</li><li>Écran noir, on voit sans pouvoir agir : généralement des autorisations manquent (macOS demande de cocher « enregistrement d'écran / accessibilité »), ou le CPU / RAM de l'hôte est saturé et l'encodage ne suit pas.</li></ul><div class="related"><h2>Connexe</h2><ul><li><a href="https://sunlogim.com/">Téléchargement officiel SunLogin à distance</a></li><li><a href="https://sunlogim.com/lianjie/">Guide de vérification de connexion SunLogin</a></li><li><a href="https://sunlogni.com/">Télécharger SunLogin à distance (site jumeau)</a></li></ul></div></main>
+<footer>Les étapes de vérification ainsi que les modes bureau / paramètres de fréquence d'images sont résumés de l'aide officielle SunLogin (sunlogin.oray.com) ; P2P / relais, traversée NAT, plages de ports en réseau d'entreprise et lecture des codes d'erreur sont synthétisés de l'expérience de la communauté d'accès à distance publique (non officiel). Pour référence seulement ; l'information officielle SunLogin la plus récente fait foi. (non officiel·localisation LLM)<br>Projet open source · MIT License</footer>
+</div>
+<script src="/fr/codes.js"></script><script src="/app.js"></script>
+</body></html>
