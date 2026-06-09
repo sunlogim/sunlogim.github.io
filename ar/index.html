@@ -1,0 +1,151 @@
+<!DOCTYPE html><html lang="ar" dir="rtl"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>تشخيص اتصال / تأخّر SunLogin عن بُعد - إصلاح فشل الاتصال والشاشة السوداء والكمون العالي</title>
+<meta name="description" content="هل لا يتصل التحكم عن بُعد SunLogin، أو شاشة سوداء، أو تأخّر بكمون عالٍ؟ ابحث عن عَرَض (الجهاز غير متصل، انتهاء المهلة، كلمة وصول خاطئة، حظر جدار الحماية، شبكة الشركة، يُرى ولا يُتحكَّم، وضع الترحيل، 30 إطار/ث في النسخة المجانية) لمعرفة فحوص L1 الرسمية والسبب الجذري لطبقة الشبكة L2 (P2P مقابل الترحيل، اجتياز NAT، نطاقات المنافذ، مستويات معدل الإطارات)، وقارن بالحالات الواقعية لإعادة الاتصال بسرعة.">
+<link rel="canonical" href="https://sunlogim.github.io/ar/">
+<link rel="alternate" hreflang="zh-Hans" href="https://sunlogim.github.io/">
+<link rel="alternate" hreflang="en" href="https://sunlogim.github.io/en/">
+<link rel="alternate" hreflang="ja" href="https://sunlogim.github.io/ja/">
+<link rel="alternate" hreflang="zh-Hant" href="https://sunlogim.github.io/zh-tw/">
+<link rel="alternate" hreflang="ko" href="https://sunlogim.github.io/ko/">
+<link rel="alternate" hreflang="id" href="https://sunlogim.github.io/id/">
+<link rel="alternate" hreflang="vi" href="https://sunlogim.github.io/vi/">
+<link rel="alternate" hreflang="th" href="https://sunlogim.github.io/th/">
+<link rel="alternate" hreflang="es" href="https://sunlogim.github.io/es/">
+<link rel="alternate" hreflang="pt-BR" href="https://sunlogim.github.io/pt-br/">
+<link rel="alternate" hreflang="de" href="https://sunlogim.github.io/de/">
+<link rel="alternate" hreflang="fr" href="https://sunlogim.github.io/fr/">
+<link rel="alternate" hreflang="ru" href="https://sunlogim.github.io/ru/">
+<link rel="alternate" hreflang="it" href="https://sunlogim.github.io/it/">
+<link rel="alternate" hreflang="pl" href="https://sunlogim.github.io/pl/">
+<link rel="alternate" hreflang="nl" href="https://sunlogim.github.io/nl/">
+<link rel="alternate" hreflang="tr" href="https://sunlogim.github.io/tr/">
+<link rel="alternate" hreflang="ar" href="https://sunlogim.github.io/ar/">
+<link rel="alternate" hreflang="hi" href="https://sunlogim.github.io/hi/">
+<link rel="alternate" hreflang="ms" href="https://sunlogim.github.io/ms/">
+<link rel="alternate" hreflang="fa" href="https://sunlogim.github.io/fa/">
+<link rel="alternate" hreflang="bn" href="https://sunlogim.github.io/bn/">
+<link rel="alternate" hreflang="ta" href="https://sunlogim.github.io/ta/">
+<link rel="alternate" hreflang="te" href="https://sunlogim.github.io/te/">
+<link rel="alternate" hreflang="fil" href="https://sunlogim.github.io/fil/">
+<link rel="alternate" hreflang="ur" href="https://sunlogim.github.io/ur/">
+<link rel="alternate" hreflang="lo" href="https://sunlogim.github.io/lo/">
+<link rel="alternate" hreflang="km" href="https://sunlogim.github.io/km/">
+<link rel="alternate" hreflang="my" href="https://sunlogim.github.io/my/">
+<link rel="alternate" hreflang="x-default" href="https://sunlogim.github.io/">
+<link rel="stylesheet" href="/style.css">
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "WebApplication",
+   "name": "تشخيص اتصال / تأخّر SunLogin",
+   "url": "https://sunlogim.github.io/ar/",
+   "applicationCategory": "UtilitiesApplication",
+   "operatingSystem": "Web browser",
+   "inLanguage": "ar",
+   "description": "هل لا يتصل التحكم عن بُعد SunLogin، أو شاشة سوداء، أو تأخّر بكمون عالٍ؟ ابحث عن عَرَض (الجهاز غير متصل، انتهاء المهلة، كلمة وصول خاطئة، حظر جدار الحماية، شبكة الشركة، يُرى ولا يُتحكَّم، وضع الترحيل، 30 إطار/ث في النسخة المجانية) لمعرفة فحوص L1 الرسمية والسبب الجذري لطبقة الشبكة L2 (P2P مقابل الترحيل، اجتياز NAT، نطاقات المنافذ، مستويات معدل الإطارات)، وقارن بالحالات الواقعية لإعادة الاتصال بسرعة.",
+   "isAccessibleForFree": true,
+   "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+   }
+  },
+  {
+   "@type": "FAQPage",
+   "inLanguage": "ar",
+   "url": "https://sunlogim.github.io/ar/",
+   "mainEntity": [
+    {
+     "@type": "Question",
+     "name": "SunLogin عن بُعد \"الجهاز غير متصل\" ماذا أفعل؟",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "تأكّد أن حاسوب المضيف مشغّل ومتصل وغير نائم، وأن عميل SunLogin يعمل ويعرض \"مُسجَّل الدخول\"؛ إن كانت الشبكة غير مستقرة أعد تشغيل الموجّه أو غيّر الشبكة غير متصل = المضيف ليس متصلًا أصلًا، لا تنظر للشبكة أولًا: بعد النوم تنقطع بطاقة الشبكة غالبًا، وإغلاق غطاء اللابتوب يقطع الواي فاي، ووضع توفير الطاقة في أندرويد يقتل الخلفية؛ في ويندوز افحص في services.msc هل خدمة \"SunLogin\" تعمل مضيف دون إشراف طويل الأمد: فعّل \"بدء تلقائي + تسجيل دخول تلقائي + وصول دون إشراف\"، وفي أندرويد أضف SunLogin إلى القائمة البيضاء لتوفير الطاقة"
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "SunLogin عن بُعد \"انتهاء مهلة الاتصال\" ماذا أفعل؟",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "أطفئ جدار الحماية / مكافح الفيروسات على الطرفين أولًا وجرّب؛ سجّل خروجًا ودخولًا على الطرفين؛ حدّث إلى الأحدث؛ غيّر بيئة الشبكة (نقطة الهاتف) 90% من \"فشل الاتصال\" يعلق في المرحلة 2 \"إنشاء القناة\": 15=P2P لا يخترق والترحيل يفشل أيضًا (الشبكة سيئة جدًا)، 3=طبقة الشبكة محظورة؛ إن اتصل عبر النقطة فهي أساسًا مشكلة شبكة / جدار حماية حدّد عبر 3 مراحل: التحقق من الحساب → إنشاء القناة → نقل الصورة؛ انتهاء المهلة دائمًا تقريبًا عند \"إنشاء القناة\""
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "SunLogin عن بُعد \"كلمة وصول خاطئة\" ماذا أفعل؟",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "تأكّد أن ما تُدخله هو \"كلمة الوصول\" لا كلمة دخول حساب SunLogin؛ أعد ضبط كلمة الوصول في المضيف ثم اتصل كلمة الوصول كلمة بعيدة منفصلة يضبطها المضيف؛ غالبًا غُيِّرت أو خُلطت بكلمة الدخول؛ بعد التغيير يستخدم المتحكِّم الجديدة كلمة الوصول ≠ كلمة الدخول: انظرها / أعد ضبطها في \"الإعدادات → الأمان\" بالمضيف"
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "SunLogin عن بُعد \"حظر جدار الحماية\" ماذا أفعل؟",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "أضف SunLogin إلى ثقة جدار الحماية / الحماية: في جدار حماية Windows Defender \"السماح لتطبيق\" حدّد SunloginClient؛ أضف الثقة في مكافح الفيروسات الخارجي يجب أن تشمل القائمة البيضاء مجلد التثبيت كاملًا (مثل C:\\Program Files (x86)\\Oray\\SunLogin\\) لا الـexe الرئيسي فقط—يستدعي SunLogin عدة مكونات عند التشغيل تحقّق سريع: أغلق الحماية كليًا (لا الحماية اللحظية فقط) واتصل؛ إن اتصل فهي 100% من حظرته"
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "SunLogin عن بُعد \"شبكة الشركة لا تتصل\" ماذا أفعل؟",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "اطلب من تقنية معلومات الشركة السماح بالقائمة البيضاء لـSunLogin؛ أو استخدم نقطة الهاتف مؤقتًا على المضيف للتجاوز؛ جرّب SunLogin نسخة SOS (طريقة اتصال مختلفة) شبكات المؤسسات غالبًا فيها أجهزة إدارة سلوك الإنترنت؛ SunLogin عبر TCP 443 (نفس منفذ HTTPS) يُكتشف ويُحظر بـDPI؛ خبرة المجتمع: اسمح بـTCP 51020–51030 + UDP 50000–50010 في موجّه المؤسسة، أو غيّر وضع الاتصال من \"عالي السرعة\" إلى \"متوافق\" (80/443 أعم) لتعرف هل هي شبكة الشركة: حوّل الطرفين إلى نقطة الهاتف؛ إن اتصل فهي 100% حظر شبكة الشركة"
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "SunLogin عن بُعد \"شاشة سوداء\" ماذا أفعل؟",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "امنح SunLogin الأذونات في المضيف: macOS \"إعدادات النظام → الخصوصية والأمان\" حدّد تسجيل الشاشة / إمكانية الوصول / الوصول الكامل للقرص؛ ويندوز جرّب تبديل وضع سطح المكتب / إعادة الاتصال الشاشة السوداء غالبًا نقص إذن الالتقاط أو التبديل إلى GPU منفصل، حماية شاشة القفل؛ لابتوبات GPU المنفصل يمكن جعل SunLogin يلتقط عبر iGPU في سياسة الطاقة منذ macOS Ventura انتقل مسار الأذونات إلى \"إعدادات النظام\"؛ البحث عن \"تسجيل الشاشة\" في مربع البحث أسرع"
+     }
+    }
+   ]
+  }
+ ]
+}
+</script>
+</head>
+<body><div class="wrap"><main>
+<nav class="lang">اللغة: <a href="/">简体中文</a> · <a href="/en/">English</a> · <a href="/ja/">日本語</a> · <a href="/zh-tw/">繁體中文</a> · <a href="/ko/">한국어</a> · <a href="/id/">Bahasa Indonesia</a> · <a href="/vi/">Tiếng Việt</a> · <a href="/th/">ไทย</a> · <a href="/es/">Español</a> · <a href="/pt-br/">Português (BR)</a> · <a href="/de/">Deutsch</a> · <a href="/fr/">Français</a> · <a href="/ru/">Русский</a> · <a href="/it/">Italiano</a> · <a href="/pl/">Polski</a> · <a href="/nl/">Nederlands</a> · <a href="/tr/">Türkçe</a> · <strong>العربية</strong> · <a href="/hi/">हिन्दी</a> · <a href="/ms/">Bahasa Melayu</a> · <a href="/fa/">فارسی</a> · <a href="/bn/">বাংলা</a> · <a href="/ta/">தமிழ்</a> · <a href="/te/">తెలుగు</a> · <a href="/fil/">Filipino</a> · <a href="/ur/">اردو</a> · <a href="/lo/">ພາສາລາວ</a> · <a href="/km/">ភាសាខ្មែរ</a> · <a href="/my/">မြန်မာ</a></nav>
+<h1>تشخيص اتصال / تأخّر SunLogin عن بُعد</h1>
+<figure class="i4png"><picture><source type="image/webp" srcset="/img/cover_ar.webp"><img src="/img/cover_ar.png" alt="رسم توضيحي لأداة تشخيص اتصال وتأخّر SunLogin عن بُعد" fetchpriority="high" width="1120" height="746" style="width:100%;height:auto;border-radius:12px;border:1px solid #eee"></picture><figcaption>شكل: تشخيص اتصال / تأخّر SunLogin (فحوص L1 الرسمية + سبب طبقة الشبكة L2)</figcaption></figure>
+<p>أكبر مشكلتين في التحكم عن بُعد SunLogin هما <strong>عدم الاتصال</strong> و<strong>التأخّر</strong>. ابحث عن <strong>عَرَضك</strong> (مثل <code>الجهاز غير متصل</code>، <code>انتهاء المهلة</code>، <code>كلمة وصول خاطئة</code>، <code>حظر جدار الحماية</code>، <code>يُرى ولا يُتحكَّم</code>، <code>كمون عالٍ</code>، <code>30 إطار/ث مجاني</code>): أولًا <strong>فحوص L1 الرسمية</strong>، ثم <strong>السبب الجذري لطبقة الشبكة L2</strong> (P2P مباشر مقابل ترحيل الخادم، اجتياز NAT، نطاقات المنافذ)، وأخيرًا الحالات الواقعية. تحتاج عميل سطح المكتب؟ انظر <a href="https://sunlogim.com/">تنزيل SunLogin الرسمي</a>.</p>
+<input id="q" placeholder="أدخل عَرَضًا، مثل فشل الاتصال / شاشة سوداء / تأخّر / غير متصل" autocomplete="off">
+<button id="go">بحث</button>
+<div id="out"></div>
+<h2>الخطوة 1: نفّذ الفحوص الرسمية (L1 - افعل هذه الأربعة أولًا)</h2>
+<p>قائمة SunLogin الرسمية عند فشل الاتصال أربع خطوات فقط، كلها داخل التطبيق: ① <strong>ربط الحساب والجهاز</strong>—يسجّل المتحكِّم والمضيف الدخول إلى نفس حساب SunLogin؛ ② <strong>حالة الجهاز والشبكة</strong>—المضيف مشغّل ومتصل وليس نائمًا (استخدم "Wake" لمضيف نائم، فعّله مسبقًا)؛ ③ <strong>جدار الحماية والأذونات</strong>—أضف SunLogin إلى قائمة الثقة بجدار الحماية، فعّل "السماح بالتحكم عن بُعد" و"الوصول دون إشراف"، واضبط كلمة الوصول بشكل صحيح؛ ④ <strong>الإصدار وإعادة التشغيل</strong>—حدّث الطرفين إلى أحدث إصدار، أعد تشغيل العميل، امسح ذاكرة التخزين المؤقت. دليل أشمل: <a href="https://sunlogim.com/lianjie/">دليل فحص اتصال SunLogin</a>.</p>
+<div class="cat"><div class="catbox"><b>الشبكة / الاجتياز</b><span class="cs">انتهاء المهلة · حظر جدار الحماية · شبكة الشركة · ترحيل / P2P</span><div>فشل إنشاء القناة أو كمون عالٍ بسبب الترحيل. افحص ثقة جدار الحماية + غيّر الشبكة أولًا؛ أعمق: هل يخترق P2P، DPI المؤسسة ونوع NAT.</div></div><div class="catbox"><b>الحساب / الأذونات</b><span class="cs">الجهاز غير متصل · كلمة وصول خاطئة · حساب مختلف · فشل wake</span><div>المضيف متصل + نفس الحساب على الطرفين شرط. كلمة الوصول ≠ كلمة الدخول؛ الرمز المنتهي يتطلب تسجيل دخول جديد؛ النوم يُحلّ بـ"Wake".</div></div><div class="catbox"><b>الصورة / الأداء</b><span class="cs">شاشة سوداء · يُرى ولا يُتحكَّم · تأخّر · ضبابي · 30 إطار/ث مجاني</span><div>مشكلات التجربة بعد الاتصال. الأذونات (تسجيل الشاشة / إمكانية الوصول)، وضع سطح المكتب، مستوى معدل الإطارات وأداء المضيف هي المفتاح.</div></div><div class="catbox"><b>الإصدار / البروتوكول</b><span class="cs">إصدار البروتوكول غير متطابق · خلل بعد التحديث</span><div>فرق الإصدار الكبير يسبب عدم توافق بسهولة (الكود 30)؛ حدّث الطرفين إلى الأحدث، أعد التشغيل وامسح ذاكرة التخزين المؤقت.</div></div></div><figure><svg viewBox="0 0 720 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="مخطط انسيابي لتشخيص اتصال وتأخّر SunLogin" style="width:100%;height:auto;border:1px solid #eee;border-radius:12px;background:#fff"><text x="20" y="28" font-family="system-ui,Arial" font-size="15.5" font-weight="700" fill="#1d1d1f">مسار تشخيص اتصال / تأخّر SunLogin (حسب العَرَض)</text><rect x="20" y="46" width="150" height="46" rx="10" fill="#111"/><text x="95" y="74" text-anchor="middle" font-family="system-ui,Arial" font-size="13" fill="#fff">ابدأ الاتصال عن بُعد</text><path d="M170 69 H206" stroke="#999" stroke-width="2" fill="none" marker-end="url(#a)"/><rect x="206" y="46" width="172" height="46" rx="10" fill="#fff5e6" stroke="#ffe0b0"/><text x="292" y="74" text-anchor="middle" font-family="system-ui,Arial" font-size="13" fill="#b45309">هل يتصل؟</text><rect x="440" y="20" width="262" height="56" rx="10" fill="#ecfdf5" stroke="#bbf7e0"/><text x="455" y="42" font-family="system-ui,Arial" font-size="12.5" fill="#047857">متصل لكن تأخّر → انظر الأداء:</text><text x="455" y="62" font-family="system-ui,Arial" font-size="11.5" fill="#065f46">ترحيل؟ جودة عالية جدًا؟ حد الإطارات؟ أداء المضيف</text><rect x="440" y="86" width="262" height="56" rx="10" fill="#fef2f2" stroke="#fecaca"/><text x="455" y="108" font-family="system-ui,Arial" font-size="12.5" fill="#b91c1c">لا يتصل → انظر نوع الخطأ:</text><text x="455" y="128" font-family="system-ui,Arial" font-size="11.5" fill="#991b1b">غير متصل؟ جدار الحماية؟ حساب / كلمة؟ إصدار</text><path d="M378 60 H410 V48 H440" stroke="#10b981" stroke-width="2" fill="none" marker-end="url(#a)"/><path d="M378 78 H410 V114 H440" stroke="#ef4444" stroke-width="2" fill="none" marker-end="url(#a)"/><text x="20" y="178" font-family="system-ui,Arial" font-size="13" font-weight="700" fill="#1d1d1f">أربعة أنواع أعطال (انظر L1 / L2 لكل بند)</text><g font-family="system-ui,Arial" font-size="12"><rect x="20" y="190" width="162" height="92" rx="10" fill="#fff5e6" stroke="#ffe0b0"/><text x="32" y="212" font-weight="700" fill="#b45309">① الشبكة / الاجتياز</text><text x="32" y="234" fill="#555" font-size="11">ترحيل / P2P · جدار حماية · شبكة الشركة</text><rect x="194" y="190" width="162" height="92" rx="10" fill="#eef4ff" stroke="#cfe0ff"/><text x="206" y="212" font-weight="700" fill="#1d4ed8">② الحساب / الأذونات</text><text x="206" y="234" fill="#555" font-size="11">غير متصل · كلمة الوصول · wake</text><rect x="368" y="190" width="162" height="92" rx="10" fill="#ecfdf5" stroke="#bbf7e0"/><text x="380" y="212" font-weight="700" fill="#047857">③ الصورة / الأداء</text><text x="380" y="234" fill="#555" font-size="11">شاشة سوداء · تأخّر · جودة · 30 إطار/ث</text><rect x="542" y="190" width="160" height="92" rx="10" fill="#fef2f2" stroke="#fecaca"/><text x="554" y="212" font-weight="700" fill="#b91c1c">④ الإصدار / البروتوكول</text><text x="554" y="234" fill="#555" font-size="11">إصدار غير متطابق · خلل تحديث</text></g><defs><marker id="a" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0 0 L6 3 L0 6 z" fill="#999"/></marker></defs></svg><figcaption>شكل 1: مسار اتصال / تأخّر SunLogin—أولًا هل يتصل، ثم صنّف السبب</figcaption></figure>
+<h2>الخطوة 2: لا يزال هناك تأخّر / لا يزال لا يتصل → السبب الجذري لطبقة الشبكة (L2)</h2>
+<p>الفكرة الأساسية: <strong>عدم الاتصال يعلق عادةً عند "إنشاء القناة"، بينما التأخّر يعني عادةً أنه مرّ عبر الترحيل</strong>. يحاول SunLogin أولًا <strong>اجتياز P2P</strong> لربط الطرفين (أدنى كمون 20–50 مللي ثانية)؛ وعند الفشل فقط يلجأ إلى <strong>ترحيل خادم المورّد</strong> (80–200 مللي ثانية) — يعرض العميل "P2P" أو "Relay" أسفل اليسار. الرسم لوحة فحص ذاتي للاتصال؛ الأسباب الأعمق: NAT متماثل / UPnP الموجّه، DPI شبكة المؤسسة ونطاقات المنافذ، ومعدل الإطارات المحدود بمعدل تحديث الشاشة.</p>
+<figure><svg viewBox="0 0 720 320" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="رسم توضيحي للوحة فحص اتصال SunLogin" style="width:100%;height:auto;border:1px solid #eee;border-radius:12px;background:#fff"><text x="20" y="28" font-family="system-ui,Arial" font-size="15.5" font-weight="700" fill="#1d1d1f">لوحة فحص ذاتي للاتصال (أخضر=طبيعي / أحمر=مشكلة)</text><rect x="20" y="42" width="680" height="226" rx="14" fill="#f8fafc" stroke="#e2e8f0"/><text x="38" y="66" font-family="system-ui,Arial" font-size="12.5" font-weight="700" fill="#475569">بند الفحص</text><text x="300" y="66" font-family="system-ui,Arial" font-size="12" fill="#94a3b8">الحالة الراهنة</text><text x="610" y="66" font-family="system-ui,Arial" font-size="12" fill="#94a3b8">الحكم</text><line x1="38" y1="74" x2="682" y2="74" stroke="#e2e8f0" stroke-width="1"/><text x="38" y="98" font-family="system-ui,Arial" font-size="13" fill="#1d1d1f">الحساب متطابق على الطرفين</text><text x="300" y="98" font-family="system-ui,Arial" font-size="12.5" fill="#16a34a">نفس حساب SunLogin</text><circle cx="612" cy="94" r="6" fill="#16a34a"/><text x="628" y="98" font-family="system-ui,Arial" font-size="12" fill="#16a34a">طبيعي</text><text x="38" y="128" font-family="system-ui,Arial" font-size="13" fill="#1d1d1f">المضيف متصل</text><text x="300" y="128" font-family="system-ui,Arial" font-size="12.5" fill="#16a34a">متصل · غير نائم</text><circle cx="612" cy="124" r="6" fill="#16a34a"/><text x="628" y="128" font-family="system-ui,Arial" font-size="12" fill="#16a34a">طبيعي</text><text x="38" y="158" font-family="system-ui,Arial" font-size="13" fill="#1d1d1f">جدار الحماية يسمح</text><text x="300" y="158" font-family="system-ui,Arial" font-size="12.5" fill="#ef4444">محظور ببرنامج الحماية</text><circle cx="612" cy="154" r="6" fill="#ef4444"/><text x="628" y="158" font-family="system-ui,Arial" font-size="12" fill="#ef4444">مشكلة</text><text x="38" y="188" font-family="system-ui,Arial" font-size="13" fill="#1d1d1f">وضع الاتصال</text><text x="300" y="188" font-family="system-ui,Arial" font-size="12.5" fill="#ef4444">ترحيل · كمون عالٍ</text><circle cx="612" cy="184" r="6" fill="#ef4444"/><text x="628" y="188" font-family="system-ui,Arial" font-size="12" fill="#ef4444">مشكلة</text><text x="38" y="218" font-family="system-ui,Arial" font-size="13" fill="#1d1d1f">إصدار العميل</text><text x="300" y="218" font-family="system-ui,Arial" font-size="12.5" fill="#16a34a">كلاهما الأحدث</text><circle cx="612" cy="214" r="6" fill="#16a34a"/><text x="628" y="218" font-family="system-ui,Arial" font-size="12" fill="#16a34a">طبيعي</text><text x="38" y="248" font-family="system-ui,Arial" font-size="13" fill="#1d1d1f">كلمة الوصول</text><text x="300" y="248" font-family="system-ui,Arial" font-size="12.5" fill="#16a34a">صحيحة</text><circle cx="612" cy="244" r="6" fill="#16a34a"/><text x="628" y="248" font-family="system-ui,Arial" font-size="12" fill="#16a34a">طبيعي</text><text x="20" y="296" font-family="system-ui,Arial" font-size="11.5" fill="#94a3b8">ملاحظة: أحمر = مشكلة يجب معالجتها؛ متصل لكن "ترحيل" = كمون عالٍ، فعّل UPnP الموجّه لكسب P2P مباشر.</text></svg><figcaption>شكل 2: لوحة فحص ذاتي للاتصال (أخضر = طبيعي / أحمر = مشكلة)</figcaption></figure>
+<figure class="i4png"><picture><source type="image/webp" srcset="/img/board_ar.webp"><img src="/img/board_ar.png" alt="رسم توضيحي للوحة فحص اتصال SunLogin بعناصر خضراء/حمراء" loading="lazy" width="1120" height="746" style="width:100%;height:auto;border-radius:12px;border:1px solid #eee"></picture><figcaption>شكل: لا يتصل → "إنشاء القناة"، تأخّر → هل مرّ عبر "الترحيل"—فعّل UPnP لكسب P2P مباشر</figcaption></figure>
+<h2>جدول الأعراض الكامل (افحص L1 أولًا · السبب الجذري L2)</h2>
+<table id="tbl"></table>
+<section class="i4data">
+<h2>بيانات اتصال / تأخّر SunLogin (تقدير 2026)</h2>
+<p>فيما يلي <strong>تقدير 2026</strong> يجمع مساعدة SunLogin الرسمية وخبرة مجتمع الوصول عن بُعد العام (ليست أرقامًا رسمية للمورّد ولا قياسات مباشرة، للمرجعية فقط):</p>
+<table>
+<tr><th>البُعد</th><th>التقدير</th></tr>
+<tr><td>توزيع أسباب فشل الاتصال (تقدير)</td><td>جدار الحماية / الحماية <strong>≈50%</strong> &gt; المضيف غير متصل / نائم <strong>≈20%</strong> &gt; حساب / كلمة <strong>≈15%</strong> &gt; إصدار / بروتوكول <strong>≈10%</strong></td></tr>
+<tr><td>توزيع أسباب التأخّر (قياس المجتمع)</td><td>ترحيل <strong>35%</strong> &gt; جودة عالية جدًا 25% &gt; أداء المضيف 20% &gt; شبكة سيئة 15% &gt; حد الإطارات 5%</td></tr>
+<tr><td>كمون P2P مباشر مقابل ترحيل الخادم</td><td>P2P نحو <strong>20–50 مللي ثانية</strong>، ترحيل نحو <strong>80–200 مللي ثانية</strong></td></tr>
+<tr><td>سقف الإطارات (مجاني / مدفوع / ألعاب)</td><td><strong>30 / 60 / 144</strong> إطار/ث (يتطلب 144 وجود GPU + شاشة 144 هرتز)</td></tr>
+<tr><td>فائدة تفعيل UPnP لأجل P2P</td><td>يرتفع معدل الاختراق بوضوح؛ قد يذهب الكمون المقاس من نحو 120 إلى نحو 35 مللي ثانية</td></tr>
+<tr><td>مستويات القابلية للاستخدام حسب الكمون</td><td>&lt;30 مللي ثانية شبه محلي · 80–150 تقطّع واضح · &gt;150 نقر فقط تقريبًا</td></tr>
+</table>
+<p><small>أساس التقدير: خط أساس المصادر + استقراء زمني (جمع مساعدة SunLogin الرسمية وبيانات مجتمع الوصول عن بُعد العام)؛ يتغيّر حسب الإصدار وبيئة الشبكة؛ المعتمد أحدث معلومات SunLogin الرسمية.</small></p>
+</section>
+<h2>تقييم سريع للحالات الواقعية</h2>
+<ul class="scenes"><li>حاسوب المكتب لا يتصل إطلاقًا لكن نقطة اتصال الهاتف تتصل فورًا: غالبًا إدارة سلوك الإنترنت / DPI لشبكة الشركة تحظر حركة الوصول عن بُعد. اطلب من تقنية المعلومات السماح في القائمة البيضاء، أو استخدم نقطة الهاتف مؤقتًا على المضيف.</li><li>يتصل لكن الفأرة تترك أثرًا والكمون يتجاوز 100 مللي ثانية: رؤية "Relay" أسفل اليسار هي الجذر—سجّل الدخول إلى الموجّه وفعّل UPnP لكسب P2P؛ قد يهبط الكمون المقاس من نحو 120 إلى نحو 35 مللي ثانية.</li><li>كلمة الوصول خاطئة مرارًا: كلمة الوصول ليست كلمة حساب الدخول؛ أعد ضبطها في "الإعدادات" بالمضيف ثم أعد الاتصال.</li><li>الجهاز يبدو متصلًا لكن الاتصال ينتهي بالمهلة: غالبًا رمز الدخول منتهٍ / المضيف نائم وانقطعت شبكته؛ أعد تسجيل الدخول في المضيف، أو فعّل "Wake" والوصول دون إشراف مسبقًا.</li><li>سحب النوافذ يتقطّع بوضوح لكن الكمون ليس عاليًا: سقف الإطارات في النسخة المجانية 30 إطار/ث؛ بالدفع حتى 60، ونسخة الألعاب حتى 144 (تتطلب شاشة متوافقة).</li><li>شاشة سوداء، يُرى فقط دون تشغيل: غالبًا لم تُمنح الأذونات (يتطلب macOS تحديد "تسجيل الشاشة / إمكانية الوصول")، أو امتلأ CPU / RAM المضيف فلا يلحق الترميز.</li></ul><div class="related"><h2>ذات صلة</h2><ul><li><a href="https://sunlogim.com/">تنزيل SunLogin للتحكم عن بُعد الرسمي</a></li><li><a href="https://sunlogim.com/lianjie/">دليل فحص اتصال SunLogin</a></li><li><a href="https://sunlogni.com/">تنزيل SunLogin عن بُعد (موقع شقيق)</a></li></ul></div></main>
+<footer>خطوات الفحص وأوضاع سطح المكتب / معاملات معدل الإطارات مُلخّصة من مساعدة SunLogin الرسمية (sunlogin.oray.com)؛ P2P / الترحيل، اجتياز NAT، نطاقات منافذ شبكة المؤسسة وقراءة أكواد الأخطاء مُجمّعة من خبرة مجتمع الوصول عن بُعد العام (غير رسمي). للمرجعية فقط؛ المعتمد هو أحدث معلومات SunLogin الرسمية. (غير رسمي·توطين LLM)<br>مشروع مفتوح المصدر · MIT License</footer>
+</div>
+<script src="/ar/codes.js"></script><script src="/app.js"></script>
+</body></html>
