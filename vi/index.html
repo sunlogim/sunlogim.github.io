@@ -1,0 +1,151 @@
+<!DOCTYPE html><html lang="vi"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Chẩn đoán kết nối / giật lag điều khiển từ xa SunLogin - sửa lỗi không kết nối, màn hình đen, độ trễ cao</title>
+<meta name="description" content="Điều khiển từ xa SunLogin không kết nối được, màn hình đen hoặc giật lag độ trễ cao? Tra triệu chứng (thiết bị offline, kết nối timeout, sai mật khẩu truy cập, firewall chặn, mạng công ty, thấy nhưng không điều khiển được, chế độ relay, 30fps bản miễn phí) để xem kiểm tra chính thức L1 cùng nguyên nhân gốc tầng mạng L2 (P2P vs relay, NAT traversal, dải cổng, mức khung hình), rồi đối chiếu tình huống thực tế để kết nối lại nhanh.">
+<link rel="canonical" href="https://sunlogim.github.io/vi/">
+<link rel="alternate" hreflang="zh-Hans" href="https://sunlogim.github.io/">
+<link rel="alternate" hreflang="en" href="https://sunlogim.github.io/en/">
+<link rel="alternate" hreflang="ja" href="https://sunlogim.github.io/ja/">
+<link rel="alternate" hreflang="zh-Hant" href="https://sunlogim.github.io/zh-tw/">
+<link rel="alternate" hreflang="ko" href="https://sunlogim.github.io/ko/">
+<link rel="alternate" hreflang="id" href="https://sunlogim.github.io/id/">
+<link rel="alternate" hreflang="vi" href="https://sunlogim.github.io/vi/">
+<link rel="alternate" hreflang="th" href="https://sunlogim.github.io/th/">
+<link rel="alternate" hreflang="es" href="https://sunlogim.github.io/es/">
+<link rel="alternate" hreflang="pt-BR" href="https://sunlogim.github.io/pt-br/">
+<link rel="alternate" hreflang="de" href="https://sunlogim.github.io/de/">
+<link rel="alternate" hreflang="fr" href="https://sunlogim.github.io/fr/">
+<link rel="alternate" hreflang="ru" href="https://sunlogim.github.io/ru/">
+<link rel="alternate" hreflang="it" href="https://sunlogim.github.io/it/">
+<link rel="alternate" hreflang="pl" href="https://sunlogim.github.io/pl/">
+<link rel="alternate" hreflang="nl" href="https://sunlogim.github.io/nl/">
+<link rel="alternate" hreflang="tr" href="https://sunlogim.github.io/tr/">
+<link rel="alternate" hreflang="ar" href="https://sunlogim.github.io/ar/">
+<link rel="alternate" hreflang="hi" href="https://sunlogim.github.io/hi/">
+<link rel="alternate" hreflang="ms" href="https://sunlogim.github.io/ms/">
+<link rel="alternate" hreflang="fa" href="https://sunlogim.github.io/fa/">
+<link rel="alternate" hreflang="bn" href="https://sunlogim.github.io/bn/">
+<link rel="alternate" hreflang="ta" href="https://sunlogim.github.io/ta/">
+<link rel="alternate" hreflang="te" href="https://sunlogim.github.io/te/">
+<link rel="alternate" hreflang="fil" href="https://sunlogim.github.io/fil/">
+<link rel="alternate" hreflang="ur" href="https://sunlogim.github.io/ur/">
+<link rel="alternate" hreflang="lo" href="https://sunlogim.github.io/lo/">
+<link rel="alternate" hreflang="km" href="https://sunlogim.github.io/km/">
+<link rel="alternate" hreflang="my" href="https://sunlogim.github.io/my/">
+<link rel="alternate" hreflang="x-default" href="https://sunlogim.github.io/">
+<link rel="stylesheet" href="/style.css">
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "WebApplication",
+   "name": "Chẩn đoán kết nối / giật lag SunLogin",
+   "url": "https://sunlogim.github.io/vi/",
+   "applicationCategory": "UtilitiesApplication",
+   "operatingSystem": "Web browser",
+   "inLanguage": "vi",
+   "description": "Điều khiển từ xa SunLogin không kết nối được, màn hình đen hoặc giật lag độ trễ cao? Tra triệu chứng (thiết bị offline, kết nối timeout, sai mật khẩu truy cập, firewall chặn, mạng công ty, thấy nhưng không điều khiển được, chế độ relay, 30fps bản miễn phí) để xem kiểm tra chính thức L1 cùng nguyên nhân gốc tầng mạng L2 (P2P vs relay, NAT traversal, dải cổng, mức khung hình), rồi đối chiếu tình huống thực tế để kết nối lại nhanh.",
+   "isAccessibleForFree": true,
+   "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+   }
+  },
+  {
+   "@type": "FAQPage",
+   "inLanguage": "vi",
+   "url": "https://sunlogim.github.io/vi/",
+   "mainEntity": [
+    {
+     "@type": "Question",
+     "name": "SunLogin từ xa \"Thiết bị offline\" phải làm sao?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Xác nhận PC máy bị điều khiển đang bật, online, không ngủ, client SunLogin đang chạy và \"đã đăng nhập\"; mạng không ổn thì khởi động lại router hoặc đổi mạng Offline = máy bị điều khiển hoàn toàn chưa online, đừng kiểm tra mạng trước: sau khi ngủ card mạng thường mất kết nối, laptop gập nắp mất WiFi, chế độ tiết kiệm pin Android giết nền; Windows kiểm tra services.msc xem dịch vụ \"SunLogin\" có chạy không Máy không người trực dài hạn: bật \"tự khởi động + tự đăng nhập + truy cập không người trực\", Android thêm SunLogin vào whitelist tiết kiệm pin"
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "SunLogin từ xa \"Kết nối timeout\" phải làm sao?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Tắt firewall / diệt virus hai đầu trước rồi thử; thoát đăng nhập lại hai đầu; cập nhật mới nhất; đổi môi trường mạng (hotspot điện thoại) 90% \"kết nối thất bại\" kẹt ở giai đoạn 2 \"thiết lập kênh\": 15=P2P không xuyên và relay cũng thất bại (mạng quá kém), 3=tầng mạng bị chặn; đổi hotspot mà được thì cơ bản là vấn đề mạng / firewall Định vị 3 giai đoạn: xác thực tài khoản → thiết lập kênh → truyền hình ảnh; timeout hầu như đều ở \"thiết lập kênh\""
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "SunLogin từ xa \"Sai mật khẩu truy cập\" phải làm sao?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Xác nhận nhập \"mật khẩu truy cập\" chứ không phải mật khẩu đăng nhập tài khoản SunLogin; đặt lại mật khẩu truy cập ở máy bị điều khiển rồi kết nối Mật khẩu truy cập là mật khẩu điều khiển riêng do máy bị điều khiển đặt, thường bị đổi hoặc nhầm với mật khẩu đăng nhập; sau khi đổi máy điều khiển dùng mật khẩu mới Mật khẩu truy cập ≠ mật khẩu đăng nhập: xem / đặt lại trong \"Cài đặt → Bảo mật\" máy bị điều khiển"
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "SunLogin từ xa \"Firewall chặn\" phải làm sao?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Thêm SunLogin vào trust firewall / SW bảo mật: Windows Defender Firewall \"cho phép ứng dụng\" tick SunloginClient; thêm trust ở diệt virus bên thứ ba Whitelist phải thêm cả thư mục cài đặt (vd C:\\Program Files (x86)\\Oray\\SunLogin\\), đừng chỉ thêm exe chính—SunLogin gọi nhiều thành phần khi chạy Kiểm chứng nhanh: tắt hẳn SW bảo mật (không chỉ tắt bảo vệ thời gian thực) rồi kết nối, được thì 100% nó chặn"
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "SunLogin từ xa \"Mạng công ty không được\" phải làm sao?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Nhờ IT công ty cho phép whitelist SunLogin; hoặc máy bị điều khiển tạm dùng hotspot điện thoại để bypass; thử SunLogin bản SOS (cách kết nối khác) Mạng doanh nghiệp thường có thiết bị quản lý hành vi internet, SunLogin đi TCP 443 (cùng cổng với HTTPS) bị DPI nhận diện và chặn; kinh nghiệm cộng đồng: cho phép TCP 51020–51030 + UDP 50000–50010 ở router doanh nghiệp, hoặc đổi chế độ kết nối từ \"tốc độ cao\" sang \"tương thích\" (80/443 phổ biến hơn) Đánh giá có phải mạng công ty: đổi cả hai sang hotspot điện thoại, được thì 100% mạng công ty chặn"
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "SunLogin từ xa \"Màn hình đen\" phải làm sao?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Cấp quyền cho SunLogin ở máy bị điều khiển: macOS \"Cài đặt hệ thống → Quyền riêng tư & Bảo mật\" tick ghi màn hình / trợ năng / truy cập toàn ổ đĩa; Windows thử đổi chế độ desktop / kết nối lại Màn hình đen thường do thiếu quyền chụp hoặc chuyển GPU rời, bảo vệ màn hình khóa; laptop GPU rời có thể đặt SunLogin dùng iGPU để chụp trong chính sách nguồn Từ macOS Ventura đường dẫn quyền chuyển sang \"Cài đặt hệ thống\", tìm \"ghi màn hình\" trong ô tìm kiếm là nhanh nhất"
+     }
+    }
+   ]
+  }
+ ]
+}
+</script>
+</head>
+<body><div class="wrap"><main>
+<nav class="lang">Ngôn ngữ: <a href="/">简体中文</a> · <a href="/en/">English</a> · <a href="/ja/">日本語</a> · <a href="/zh-tw/">繁體中文</a> · <a href="/ko/">한국어</a> · <a href="/id/">Bahasa Indonesia</a> · <strong>Tiếng Việt</strong> · <a href="/th/">ไทย</a> · <a href="/es/">Español</a> · <a href="/pt-br/">Português (BR)</a> · <a href="/de/">Deutsch</a> · <a href="/fr/">Français</a> · <a href="/ru/">Русский</a> · <a href="/it/">Italiano</a> · <a href="/pl/">Polski</a> · <a href="/nl/">Nederlands</a> · <a href="/tr/">Türkçe</a> · <a href="/ar/">العربية</a> · <a href="/hi/">हिन्दी</a> · <a href="/ms/">Bahasa Melayu</a> · <a href="/fa/">فارسی</a> · <a href="/bn/">বাংলা</a> · <a href="/ta/">தமிழ்</a> · <a href="/te/">తెలుగు</a> · <a href="/fil/">Filipino</a> · <a href="/ur/">اردو</a> · <a href="/lo/">ພາສາລາວ</a> · <a href="/km/">ភាសាខ្មែរ</a> · <a href="/my/">မြန်မာ</a></nav>
+<h1>Chẩn đoán kết nối / giật lag điều khiển từ xa SunLogin</h1>
+<figure class="i4png"><picture><source type="image/webp" srcset="/img/cover_vi.webp"><img src="/img/cover_vi.png" alt="Minh họa công cụ chẩn đoán kết nối và giật lag điều khiển từ xa SunLogin" fetchpriority="high" width="1120" height="746" style="width:100%;height:auto;border-radius:12px;border:1px solid #eee"></picture><figcaption>Hình: Chẩn đoán kết nối / giật lag SunLogin (kiểm tra chính thức L1 + nguyên nhân tầng mạng L2)</figcaption></figure>
+<p>Hai vấn đề đau đầu nhất của điều khiển từ xa SunLogin là <strong>không kết nối được</strong> và <strong>giật lag</strong>. Tra <strong>triệu chứng</strong> của bạn (vd <code>thiết bị offline</code>, <code>kết nối timeout</code>, <code>sai mật khẩu truy cập</code>, <code>firewall chặn</code>, <code>thấy mà không điều khiển được</code>, <code>độ trễ cao</code>, <code>30fps miễn phí</code>): xem trước <strong>kiểm tra chính thức L1</strong>, rồi <strong>nguyên nhân gốc tầng mạng L2</strong> (P2P trực tiếp vs relay máy chủ, NAT traversal, dải cổng), cuối cùng đối chiếu tình huống thực tế. Cần bản desktop? Xem <a href="https://sunlogim.com/">tải SunLogin chính thức</a>.</p>
+<input id="q" placeholder="Nhập triệu chứng, vd không kết nối / màn hình đen / lag / offline" autocomplete="off">
+<button id="go">Tra cứu</button>
+<div id="out"></div>
+<h2>Bước 1: chạy kiểm tra chính thức (L1 - làm 4 bước này trước)</h2>
+<p>Danh sách kiểm tra lỗi kết nối chính thức của SunLogin chỉ 4 bước, đều trong ứng dụng: ① <strong>Liên kết tài khoản & thiết bị</strong>—máy điều khiển và máy bị điều khiển đăng nhập cùng một tài khoản SunLogin; ② <strong>Trạng thái thiết bị & mạng</strong>—máy bị điều khiển đang bật, online, không ngủ (dùng "Wake" cho máy đang ngủ, bật trước); ③ <strong>Firewall & quyền</strong>—thêm SunLogin vào danh sách tin cậy firewall, bật "Cho phép điều khiển từ xa" và "Truy cập không người trực", đặt mật khẩu truy cập đúng; ④ <strong>Phiên bản & khởi động lại</strong>—cập nhật cả hai đầu lên mới nhất, khởi động lại client, xóa cache. Hướng dẫn đầy đủ hơn: <a href="https://sunlogim.com/lianjie/">hướng dẫn kiểm tra kết nối SunLogin</a>.</p>
+<div class="cat"><div class="catbox"><b>Mạng / Traversal</b><span class="cs">timeout · firewall chặn · mạng công ty · relay / P2P</span><div>Thiết lập kênh thất bại hoặc độ trễ cao do relay. Kiểm tra trust firewall + đổi mạng trước; sâu hơn xem P2P có xuyên không, DPI mạng doanh nghiệp và loại NAT.</div></div><div class="catbox"><b>Tài khoản / Quyền</b><span class="cs">thiết bị offline · sai mật khẩu truy cập · khác tài khoản · wake lỗi</span><div>Máy bị điều khiển online + cùng tài khoản hai đầu là tiền đề. Mật khẩu truy cập ≠ mật khẩu đăng nhập; token hết hạn cần đăng nhập lại; ngủ thì dùng "Wake".</div></div><div class="catbox"><b>Hình ảnh / Hiệu năng</b><span class="cs">màn hình đen · thấy không điều khiển · lag · mờ · 30fps miễn phí</span><div>Vấn đề trải nghiệm sau khi kết nối. Quyền (ghi màn hình / trợ năng), chế độ desktop, mức khung hình và hiệu năng máy bị điều khiển là then chốt.</div></div><div class="catbox"><b>Phiên bản / Giao thức</b><span class="cs">phiên bản giao thức không khớp · bất thường sau cập nhật</span><div>Chênh lệch phiên bản lớn dễ không tương thích (mã lỗi 30); cập nhật cả hai lên mới nhất, khởi động lại xóa cache.</div></div></div><figure><svg viewBox="0 0 720 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Sơ đồ luồng chẩn đoán kết nối và giật lag SunLogin" style="width:100%;height:auto;border:1px solid #eee;border-radius:12px;background:#fff"><text x="20" y="28" font-family="system-ui,Arial" font-size="15.5" font-weight="700" fill="#1d1d1f">Luồng chẩn đoán kết nối / lag SunLogin (phân loại theo hiện tượng)</text><rect x="20" y="46" width="150" height="46" rx="10" fill="#111"/><text x="95" y="74" text-anchor="middle" font-family="system-ui,Arial" font-size="13" fill="#fff">Bắt đầu kết nối từ xa</text><path d="M170 69 H206" stroke="#999" stroke-width="2" fill="none" marker-end="url(#a)"/><rect x="206" y="46" width="172" height="46" rx="10" fill="#fff5e6" stroke="#ffe0b0"/><text x="292" y="74" text-anchor="middle" font-family="system-ui,Arial" font-size="13" fill="#b45309">Kết nối được?</text><rect x="440" y="20" width="262" height="56" rx="10" fill="#ecfdf5" stroke="#bbf7e0"/><text x="455" y="42" font-family="system-ui,Arial" font-size="12.5" fill="#047857">Kết nối được nhưng lag → xem hiệu năng:</text><text x="455" y="62" font-family="system-ui,Arial" font-size="11.5" fill="#065f46">relay? chất lượng quá cao? giới hạn khung? hiệu năng máy bị ĐK</text><rect x="440" y="86" width="262" height="56" rx="10" fill="#fef2f2" stroke="#fecaca"/><text x="455" y="108" font-family="system-ui,Arial" font-size="12.5" fill="#b91c1c">Không kết nối → xem loại lỗi:</text><text x="455" y="128" font-family="system-ui,Arial" font-size="11.5" fill="#991b1b">offline? firewall? tài khoản / mật khẩu? phiên bản</text><path d="M378 60 H410 V48 H440" stroke="#10b981" stroke-width="2" fill="none" marker-end="url(#a)"/><path d="M378 78 H410 V114 H440" stroke="#ef4444" stroke-width="2" fill="none" marker-end="url(#a)"/><text x="20" y="178" font-family="system-ui,Arial" font-size="13" font-weight="700" fill="#1d1d1f">Bốn loại sự cố (xem L1 / L2 từng mục)</text><g font-family="system-ui,Arial" font-size="12"><rect x="20" y="190" width="162" height="92" rx="10" fill="#fff5e6" stroke="#ffe0b0"/><text x="32" y="212" font-weight="700" fill="#b45309">① Mạng / Traversal</text><text x="32" y="234" fill="#555" font-size="11">relay / P2P · firewall · mạng công ty</text><rect x="194" y="190" width="162" height="92" rx="10" fill="#eef4ff" stroke="#cfe0ff"/><text x="206" y="212" font-weight="700" fill="#1d4ed8">② Tài khoản / Quyền</text><text x="206" y="234" fill="#555" font-size="11">offline · mật khẩu truy cập · wake</text><rect x="368" y="190" width="162" height="92" rx="10" fill="#ecfdf5" stroke="#bbf7e0"/><text x="380" y="212" font-weight="700" fill="#047857">③ Hình ảnh / Hiệu năng</text><text x="380" y="234" fill="#555" font-size="11">màn hình đen · lag · chất lượng · 30fps</text><rect x="542" y="190" width="160" height="92" rx="10" fill="#fef2f2" stroke="#fecaca"/><text x="554" y="212" font-weight="700" fill="#b91c1c">④ Phiên bản / Giao thức</text><text x="554" y="234" fill="#555" font-size="11">phiên bản không khớp · bất thường cập nhật</text></g><defs><marker id="a" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0 0 L6 3 L0 6 z" fill="#999"/></marker></defs></svg><figcaption>Hình 1: luồng kết nối / lag SunLogin—trước hết có kết nối được không, rồi phân loại nguyên nhân</figcaption></figure>
+<h2>Bước 2: vẫn lag / vẫn không kết nối → nguyên nhân gốc tầng mạng (L2)</h2>
+<p>Cốt lõi: <strong>không-kết-nối thường kẹt ở "thiết lập kênh", còn lag thường nghĩa là đã đi qua relay</strong>. SunLogin trước tiên thử <strong>P2P traversal</strong> nối hai đầu (độ trễ thấp nhất 20–50ms); nếu không được mới chuyển sang <strong>relay máy chủ nhà cung cấp</strong> (80–200ms)—client hiện "P2P" hoặc "Relay" ở góc dưới trái. Hình dưới là bảng tự kiểm tra kết nối; nguyên nhân sâu hơn: NAT đối xứng / UPnP router, DPI mạng doanh nghiệp và dải cổng, cùng mức khung hình bị giới hạn bởi tần số quét màn hình.</p>
+<figure><svg viewBox="0 0 720 320" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Minh họa bảng tự kiểm tra kết nối SunLogin" style="width:100%;height:auto;border:1px solid #eee;border-radius:12px;background:#fff"><text x="20" y="28" font-family="system-ui,Arial" font-size="15.5" font-weight="700" fill="#1d1d1f">Bảng tự kiểm tra kết nối (xanh=bình thường / đỏ=vấn đề)</text><rect x="20" y="42" width="680" height="226" rx="14" fill="#f8fafc" stroke="#e2e8f0"/><text x="38" y="66" font-family="system-ui,Arial" font-size="12.5" font-weight="700" fill="#475569">Mục kiểm tra</text><text x="300" y="66" font-family="system-ui,Arial" font-size="12" fill="#94a3b8">Trạng thái hiện tại</text><text x="610" y="66" font-family="system-ui,Arial" font-size="12" fill="#94a3b8">Kết luận</text><line x1="38" y1="74" x2="682" y2="74" stroke="#e2e8f0" stroke-width="1"/><text x="38" y="98" font-family="system-ui,Arial" font-size="13" fill="#1d1d1f">Tài khoản hai đầu khớp</text><text x="300" y="98" font-family="system-ui,Arial" font-size="12.5" fill="#16a34a">Cùng tài khoản SunLogin</text><circle cx="612" cy="94" r="6" fill="#16a34a"/><text x="628" y="98" font-family="system-ui,Arial" font-size="12" fill="#16a34a">Bình thường</text><text x="38" y="128" font-family="system-ui,Arial" font-size="13" fill="#1d1d1f">Máy bị ĐK online</text><text x="300" y="128" font-family="system-ui,Arial" font-size="12.5" fill="#16a34a">Online · không ngủ</text><circle cx="612" cy="124" r="6" fill="#16a34a"/><text x="628" y="128" font-family="system-ui,Arial" font-size="12" fill="#16a34a">Bình thường</text><text x="38" y="158" font-family="system-ui,Arial" font-size="13" fill="#1d1d1f">Firewall cho qua</text><text x="300" y="158" font-family="system-ui,Arial" font-size="12.5" fill="#ef4444">Bị SW bảo mật chặn</text><circle cx="612" cy="154" r="6" fill="#ef4444"/><text x="628" y="158" font-family="system-ui,Arial" font-size="12" fill="#ef4444">Vấn đề</text><text x="38" y="188" font-family="system-ui,Arial" font-size="13" fill="#1d1d1f">Chế độ kết nối</text><text x="300" y="188" font-family="system-ui,Arial" font-size="12.5" fill="#ef4444">Relay · độ trễ cao</text><circle cx="612" cy="184" r="6" fill="#ef4444"/><text x="628" y="188" font-family="system-ui,Arial" font-size="12" fill="#ef4444">Vấn đề</text><text x="38" y="218" font-family="system-ui,Arial" font-size="13" fill="#1d1d1f">Phiên bản client</text><text x="300" y="218" font-family="system-ui,Arial" font-size="12.5" fill="#16a34a">Cả hai mới nhất</text><circle cx="612" cy="214" r="6" fill="#16a34a"/><text x="628" y="218" font-family="system-ui,Arial" font-size="12" fill="#16a34a">Bình thường</text><text x="38" y="248" font-family="system-ui,Arial" font-size="13" fill="#1d1d1f">Mật khẩu truy cập</text><text x="300" y="248" font-family="system-ui,Arial" font-size="12.5" fill="#16a34a">Đúng</text><circle cx="612" cy="244" r="6" fill="#16a34a"/><text x="628" y="248" font-family="system-ui,Arial" font-size="12" fill="#16a34a">Bình thường</text><text x="20" y="296" font-family="system-ui,Arial" font-size="11.5" fill="#94a3b8">Lưu ý: đỏ = vấn đề cần xử lý; kết nối được nhưng "relay" = độ trễ cao, bật UPnP router để giành P2P trực tiếp.</text></svg><figcaption>Hình 2: bảng tự kiểm tra kết nối (xanh = bình thường / đỏ = vấn đề)</figcaption></figure>
+<figure class="i4png"><picture><source type="image/webp" srcset="/img/board_vi.webp"><img src="/img/board_vi.png" alt="Minh họa bảng tự kiểm tra kết nối SunLogin mục xanh/đỏ" loading="lazy" width="1120" height="746" style="width:100%;height:auto;border-radius:12px;border:1px solid #eee"></picture><figcaption>Hình: không kết nối xem "thiết lập kênh", lag xem có đi "relay"—bật UPnP để giành P2P trực tiếp</figcaption></figure>
+<h2>Bảng triệu chứng đầy đủ (kiểm tra L1 trước · nguyên nhân gốc L2)</h2>
+<table id="tbl"></table>
+<section class="i4data">
+<h2>Dữ liệu kết nối / giật lag SunLogin (ước tính 2026)</h2>
+<p>Sau đây là <strong>ước tính 2026</strong> tổng hợp trợ giúp chính thức SunLogin và kinh nghiệm cộng đồng điều khiển từ xa công khai (không phải số liệu chính thức của nhà cung cấp, không phải đo tay đầu tiên, chỉ tham khảo):</p>
+<table>
+<tr><th>Chiều</th><th>Ước tính</th></tr>
+<tr><td>Phân bố nguyên nhân kết nối thất bại (ước tính)</td><td>firewall / SW bảo mật <strong>≈50%</strong> &gt; máy bị ĐK offline / ngủ <strong>≈20%</strong> &gt; tài khoản / mật khẩu <strong>≈15%</strong> &gt; phiên bản / giao thức <strong>≈10%</strong></td></tr>
+<tr><td>Phân bố nguyên nhân lag (đo cộng đồng)</td><td>relay <strong>35%</strong> &gt; chất lượng quá cao 25% &gt; hiệu năng máy bị ĐK 20% &gt; mạng kém 15% &gt; giới hạn khung 5%</td></tr>
+<tr><td>Độ trễ P2P trực tiếp vs relay máy chủ</td><td>P2P khoảng <strong>20–50ms</strong>, relay khoảng <strong>80–200ms</strong></td></tr>
+<tr><td>Giới hạn khung (miễn phí / trả phí / game)</td><td><strong>30 / 60 / 144</strong> fps (144 cần GPU + màn hình hỗ trợ 144Hz)</td></tr>
+<tr><td>Lợi ích bật UPnP để giành P2P</td><td>tỷ lệ xuyên tăng đáng kể, độ trễ đo được có thể từ ~120ms xuống ~35ms</td></tr>
+<tr><td>Mức độ khả dụng theo độ trễ</td><td>&lt;30ms gần như cục bộ · 80–150ms giật rõ · &gt;150ms hầu như chỉ bấm</td></tr>
+</table>
+<p><small>Cơ sở ước tính: baseline nguồn + ngoại suy thời gian (tổng hợp trợ giúp chính thức SunLogin và dữ liệu cộng đồng điều khiển từ xa công khai), thay đổi theo phiên bản và môi trường mạng; lấy hướng dẫn chính thức mới nhất của SunLogin làm chuẩn.</small></p>
+</section>
+<h2>Phán đoán nhanh tình huống thực tế</h2>
+<ul class="scenes"><li>PC công ty mãi không kết nối được nhưng hotspot điện thoại kết nối ngay: thường là quản lý hành vi internet / DPI mạng công ty chặn lưu lượng điều khiển từ xa. Nhờ IT cho phép whitelist, hoặc máy bị điều khiển tạm dùng hotspot điện thoại.</li><li>Kết nối được nhưng chuột bóng mờ, độ trễ trên 100ms: hiện "Relay" ở góc dưới trái là gốc—đăng nhập router bật UPnP giành P2P, độ trễ đo được có thể từ ~120ms xuống ~35ms.</li><li>Mật khẩu truy cập báo sai liên tục: mật khẩu truy cập không phải mật khẩu tài khoản đăng nhập, đặt lại trong "Cài đặt" của máy bị điều khiển rồi kết nối lại.</li><li>Thiết bị hiện online nhưng kết nối timeout: thường token đăng nhập hết hạn / máy bị điều khiển ngủ và mất mạng, đăng nhập lại ở máy bị điều khiển, hoặc bật "Wake" và truy cập không người trực sớm.</li><li>Kéo cửa sổ rõ ràng giật nhưng độ trễ không cao: giới hạn khung hình bản miễn phí là 30fps, nâng cấp trả phí lên 60fps, bản game tối đa 144fps (cần màn hình hỗ trợ).</li><li>Màn hình đen, chỉ thấy không thao tác được: thường chưa cấp quyền (macOS cần tick "ghi màn hình / trợ năng"), hoặc CPU / RAM máy bị điều khiển đầy khiến mã hóa không theo kịp.</li></ul><div class="related"><h2>Liên quan</h2><ul><li><a href="https://sunlogim.com/">Tải SunLogin điều khiển từ xa chính thức</a></li><li><a href="https://sunlogim.com/lianjie/">Hướng dẫn kiểm tra kết nối SunLogin</a></li><li><a href="https://sunlogni.com/">Tải SunLogin điều khiển từ xa (trang chị em)</a></li></ul></div></main>
+<footer>Các bước kiểm tra cùng chế độ desktop / tham số khung hình được tổng hợp từ trợ giúp chính thức SunLogin (sunlogin.oray.com); P2P / relay, NAT traversal, dải cổng mạng doanh nghiệp và cách đọc mã lỗi tổng hợp từ kinh nghiệm cộng đồng điều khiển từ xa công khai (không chính thức). Chỉ tham khảo, lấy hướng dẫn chính thức mới nhất của SunLogin làm chuẩn. (không chính thức·bản địa hóa LLM)<br>Dự án mã nguồn mở · MIT License</footer>
+</div>
+<script src="/vi/codes.js"></script><script src="/app.js"></script>
+</body></html>
