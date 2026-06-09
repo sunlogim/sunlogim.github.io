@@ -1,0 +1,151 @@
+<!DOCTYPE html><html lang="ms"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Diagnosis sambungan / lag SunLogin jarak jauh - baiki gagal sambung, skrin hitam, kependaman tinggi</title>
+<meta name="description" content="Kawalan jauh SunLogin tidak menyambung, skrin hitam atau lag dengan kependaman tinggi? Cari gejala (peranti luar talian, tamat masa, kata laluan akses salah, sekatan tembok api, rangkaian syarikat, nampak tapi tak boleh kawal, mod geganti, 30fps versi percuma) untuk semakan rasmi L1 serta punca akar lapisan rangkaian L2 (P2P lwn geganti, lintasan NAT, julat port, tahap kadar bingkai), dan padankan dengan kes sebenar untuk menyambung semula dengan pantas.">
+<link rel="canonical" href="https://sunlogim.github.io/ms/">
+<link rel="alternate" hreflang="zh-Hans" href="https://sunlogim.github.io/">
+<link rel="alternate" hreflang="en" href="https://sunlogim.github.io/en/">
+<link rel="alternate" hreflang="ja" href="https://sunlogim.github.io/ja/">
+<link rel="alternate" hreflang="zh-Hant" href="https://sunlogim.github.io/zh-tw/">
+<link rel="alternate" hreflang="ko" href="https://sunlogim.github.io/ko/">
+<link rel="alternate" hreflang="id" href="https://sunlogim.github.io/id/">
+<link rel="alternate" hreflang="vi" href="https://sunlogim.github.io/vi/">
+<link rel="alternate" hreflang="th" href="https://sunlogim.github.io/th/">
+<link rel="alternate" hreflang="es" href="https://sunlogim.github.io/es/">
+<link rel="alternate" hreflang="pt-BR" href="https://sunlogim.github.io/pt-br/">
+<link rel="alternate" hreflang="de" href="https://sunlogim.github.io/de/">
+<link rel="alternate" hreflang="fr" href="https://sunlogim.github.io/fr/">
+<link rel="alternate" hreflang="ru" href="https://sunlogim.github.io/ru/">
+<link rel="alternate" hreflang="it" href="https://sunlogim.github.io/it/">
+<link rel="alternate" hreflang="pl" href="https://sunlogim.github.io/pl/">
+<link rel="alternate" hreflang="nl" href="https://sunlogim.github.io/nl/">
+<link rel="alternate" hreflang="tr" href="https://sunlogim.github.io/tr/">
+<link rel="alternate" hreflang="ar" href="https://sunlogim.github.io/ar/">
+<link rel="alternate" hreflang="hi" href="https://sunlogim.github.io/hi/">
+<link rel="alternate" hreflang="ms" href="https://sunlogim.github.io/ms/">
+<link rel="alternate" hreflang="fa" href="https://sunlogim.github.io/fa/">
+<link rel="alternate" hreflang="bn" href="https://sunlogim.github.io/bn/">
+<link rel="alternate" hreflang="ta" href="https://sunlogim.github.io/ta/">
+<link rel="alternate" hreflang="te" href="https://sunlogim.github.io/te/">
+<link rel="alternate" hreflang="fil" href="https://sunlogim.github.io/fil/">
+<link rel="alternate" hreflang="ur" href="https://sunlogim.github.io/ur/">
+<link rel="alternate" hreflang="lo" href="https://sunlogim.github.io/lo/">
+<link rel="alternate" hreflang="km" href="https://sunlogim.github.io/km/">
+<link rel="alternate" hreflang="my" href="https://sunlogim.github.io/my/">
+<link rel="alternate" hreflang="x-default" href="https://sunlogim.github.io/">
+<link rel="stylesheet" href="/style.css">
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "WebApplication",
+   "name": "Diagnosis sambungan / lag SunLogin",
+   "url": "https://sunlogim.github.io/ms/",
+   "applicationCategory": "UtilitiesApplication",
+   "operatingSystem": "Web browser",
+   "inLanguage": "ms",
+   "description": "Kawalan jauh SunLogin tidak menyambung, skrin hitam atau lag dengan kependaman tinggi? Cari gejala (peranti luar talian, tamat masa, kata laluan akses salah, sekatan tembok api, rangkaian syarikat, nampak tapi tak boleh kawal, mod geganti, 30fps versi percuma) untuk semakan rasmi L1 serta punca akar lapisan rangkaian L2 (P2P lwn geganti, lintasan NAT, julat port, tahap kadar bingkai), dan padankan dengan kes sebenar untuk menyambung semula dengan pantas.",
+   "isAccessibleForFree": true,
+   "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+   }
+  },
+  {
+   "@type": "FAQPage",
+   "inLanguage": "ms",
+   "url": "https://sunlogim.github.io/ms/",
+   "mainEntity": [
+    {
+     "@type": "Question",
+     "name": "SunLogin jauh \"Peranti luar talian\" macam mana?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Sahkan PC hos dihidupkan, dalam talian, tak tidur, klien SunLogin berjalan dan \"telah log masuk\"; jika rangkaian tak stabil mula semula penghala atau tukar rangkaian Luar talian = hos memang tak dalam talian, jangan lihat rangkaian dahulu: selepas tidur kad rangkaian selalu putus, tutup penutup laptop putus WiFi, mod jimat kuasa Android bunuh latar; di Windows semak services.msc sama ada perkhidmatan \"SunLogin\" berjalan Hos tanpa pengawasan jangka panjang: hidupkan \"mula automatik + log masuk automatik + akses tanpa pengawasan\", di Android tambah SunLogin ke senarai putih jimat kuasa"
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "SunLogin jauh \"Tamat masa sambungan\" macam mana?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Matikan tembok api / antivirus kedua-dua belah dahulu dan cuba; log keluar masuk semula kedua-dua; kemas kini ke terkini; tukar persekitaran rangkaian (hotspot telefon) 90% \"gagal sambung\" tersangkut di fasa 2 \"bina saluran\": 15=P2P tak tembus dan geganti pun gagal (rangkaian terlalu teruk), 3=lapisan rangkaian disekat; jika dengan hotspot boleh sambung, pada dasarnya masalah rangkaian / tembok api Kenal pasti 3 fasa: sahkan akaun → bina saluran → hantar imej; tamat masa hampir selalu di \"bina saluran\""
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "SunLogin jauh \"Kata laluan akses salah\" macam mana?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Sahkan yang dimasukkan ialah \"kata laluan akses\" bukan kata laluan log masuk akaun SunLogin; tetap semula kata laluan akses di hos lalu sambung Kata laluan akses ialah kata laluan jauh berasingan yang ditetapkan hos; selalu ditukar atau dikelirukan dengan kata laluan log masuk; selepas tukar pengawal guna yang baharu Kata laluan akses ≠ kata laluan log masuk: lihat / tetap semula dalam \"Tetapan → Keselamatan\" hos"
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "SunLogin jauh \"Sekatan tembok api\" macam mana?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Tambah SunLogin ke kepercayaan tembok api / keselamatan: dalam Tembok Api Windows Defender \"benarkan apl\" tanda SunloginClient; tambah kepercayaan dalam antivirus pihak ketiga Senarai putih perlu seluruh folder pemasangan (cth. C:\\Program Files (x86)\\Oray\\SunLogin\\), bukan hanya exe utama—SunLogin memanggil beberapa komponen semasa berjalan Sahkan pantas: tutup terus keselamatan (bukan hanya perlindungan masa nyata) dan sambung; jika boleh 100% ia menyekat"
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "SunLogin jauh \"Rangkaian syarikat tak sambung\" macam mana?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Minta IT syarikat benarkan senarai putih SunLogin; atau hos guna hotspot telefon sementara untuk pintas; cuba SunLogin versi SOS (cara sambung berbeza) Rangkaian perusahaan selalu ada peranti pengurusan tingkah laku internet; SunLogin lalu TCP 443 (port sama dengan HTTPS) dikenali dan disekat DPI; pengalaman komuniti: benarkan TCP 51020–51030 + UDP 50000–50010 di penghala perusahaan, atau tukar mod sambungan dari \"laju tinggi\" ke \"serasi\" (80/443, lebih umum) Untuk tahu sama ada rangkaian syarikat: tukar kedua-dua ke hotspot telefon; jika boleh 100% sekatan rangkaian syarikat"
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "SunLogin jauh \"Skrin hitam\" macam mana?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Beri kebenaran SunLogin di hos: macOS \"Tetapan Sistem → Privasi & Keselamatan\" tanda rakam skrin / kebolehcapaian / akses cakera penuh; Windows cuba tukar mod desktop / sambung semula Skrin hitam biasanya kekurangan kebenaran tangkap atau peralihan GPU khusus, perlindungan skrin kunci; laptop GPU khusus boleh suruh SunLogin tangkap guna iGPU dalam dasar kuasa Sejak macOS Ventura laluan kebenaran beralih ke \"Tetapan Sistem\"; cari \"rakam skrin\" dalam kotak cari paling pantas"
+     }
+    }
+   ]
+  }
+ ]
+}
+</script>
+</head>
+<body><div class="wrap"><main>
+<nav class="lang">Bahasa: <a href="/">简体中文</a> · <a href="/en/">English</a> · <a href="/ja/">日本語</a> · <a href="/zh-tw/">繁體中文</a> · <a href="/ko/">한국어</a> · <a href="/id/">Bahasa Indonesia</a> · <a href="/vi/">Tiếng Việt</a> · <a href="/th/">ไทย</a> · <a href="/es/">Español</a> · <a href="/pt-br/">Português (BR)</a> · <a href="/de/">Deutsch</a> · <a href="/fr/">Français</a> · <a href="/ru/">Русский</a> · <a href="/it/">Italiano</a> · <a href="/pl/">Polski</a> · <a href="/nl/">Nederlands</a> · <a href="/tr/">Türkçe</a> · <a href="/ar/">العربية</a> · <a href="/hi/">हिन्दी</a> · <strong>Bahasa Melayu</strong> · <a href="/fa/">فارسی</a> · <a href="/bn/">বাংলা</a> · <a href="/ta/">தமிழ்</a> · <a href="/te/">తెలుగు</a> · <a href="/fil/">Filipino</a> · <a href="/ur/">اردو</a> · <a href="/lo/">ພາສາລາວ</a> · <a href="/km/">ភាសាខ្មែរ</a> · <a href="/my/">မြန်မာ</a></nav>
+<h1>Diagnosis sambungan / lag SunLogin jarak jauh</h1>
+<figure class="i4png"><picture><source type="image/webp" srcset="/img/cover_ms.webp"><img src="/img/cover_ms.png" alt="Ilustrasi alat diagnosis sambungan dan lag SunLogin jarak jauh" fetchpriority="high" width="1120" height="746" style="width:100%;height:auto;border-radius:12px;border:1px solid #eee"></picture><figcaption>Rajah: Diagnosis sambungan / lag SunLogin (semakan rasmi L1 + punca lapisan rangkaian L2)</figcaption></figure>
+<p>Dua masalah sebenar kawalan jauh SunLogin ialah <strong>tak boleh sambung</strong> dan <strong>lag</strong>. Cari <strong>gejala</strong> anda (cth. <code>peranti luar talian</code>, <code>tamat masa</code>, <code>kata laluan akses salah</code>, <code>sekatan tembok api</code>, <code>nampak tapi tak boleh kawal</code>, <code>kependaman tinggi</code>, <code>30fps percuma</code>): mula dengan <strong>semakan rasmi L1</strong>, kemudian <strong>punca akar lapisan rangkaian L2</strong> (P2P terus lwn geganti pelayan, lintasan NAT, julat port), akhir sekali kes sebenar. Perlu klien desktop? Lihat <a href="https://sunlogim.com/">muat turun rasmi SunLogin</a>.</p>
+<input id="q" placeholder="Masukkan gejala, cth. gagal sambung / skrin hitam / lag / luar talian" autocomplete="off">
+<button id="go">Cari</button>
+<div id="out"></div>
+<h2>Langkah 1: jalankan semakan rasmi (L1 - buat 4 ini dahulu)</h2>
+<p>Senarai semak gagal-sambung rasmi SunLogin hanya 4 langkah, semua dalam apl: ① <strong>Pengikatan akaun & peranti</strong>—pengawal dan hos log masuk ke akaun SunLogin yang sama; ② <strong>Status peranti & rangkaian</strong>—hos dihidupkan, dalam talian dan tidak tidur (guna "Wake" untuk hos tidur, aktifkan dahulu); ③ <strong>Tembok api & kebenaran</strong>—tambah SunLogin ke senarai dipercayai tembok api, hidupkan "Benarkan kawalan jauh" dan "Akses tanpa pengawasan", tetapkan kata laluan akses dengan betul; ④ <strong>Versi & mula semula</strong>—kemas kini kedua-dua belah ke versi terkini, mula semula klien, kosongkan cache. Panduan lebih lengkap: <a href="https://sunlogim.com/lianjie/">panduan semakan sambungan SunLogin</a>.</p>
+<div class="cat"><div class="catbox"><b>Rangkaian / Lintasan</b><span class="cs">tamat masa · sekatan tembok api · rangkaian syarikat · geganti / P2P</span><div>Gagal bina saluran atau kependaman tinggi kerana geganti. Semak kepercayaan tembok api + tukar rangkaian dahulu; lebih dalam, sama ada P2P menembusi, DPI perusahaan dan jenis NAT.</div></div><div class="catbox"><b>Akaun / Kebenaran</b><span class="cs">peranti luar talian · kata laluan akses salah · akaun berbeza · wake gagal</span><div>Hos dalam talian + akaun sama kedua-dua belah adalah syarat. Kata laluan akses ≠ kata laluan log masuk; token luput perlu log masuk semula; tidur diselesai dengan "Wake".</div></div><div class="catbox"><b>Imej / Prestasi</b><span class="cs">skrin hitam · nampak tak boleh kawal · lag · kabur · 30fps percuma</span><div>Masalah pengalaman selepas sambung. Kebenaran (rakam skrin / kebolehcapaian), mod desktop, tahap kadar bingkai dan prestasi hos adalah kunci.</div></div><div class="catbox"><b>Versi / Protokol</b><span class="cs">versi protokol tak sepadan · anomali selepas kemas kini</span><div>Beza versi besar mudah tak serasi (kod 30); kemas kini kedua-dua ke terkini, mula semula dan kosongkan cache.</div></div></div><figure><svg viewBox="0 0 720 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Carta alir diagnosis sambungan dan lag SunLogin" style="width:100%;height:auto;border:1px solid #eee;border-radius:12px;background:#fff"><text x="20" y="28" font-family="system-ui,Arial" font-size="15.5" font-weight="700" fill="#1d1d1f">Aliran diagnosis sambungan / lag SunLogin (ikut gejala)</text><rect x="20" y="46" width="150" height="46" rx="10" fill="#111"/><text x="95" y="74" text-anchor="middle" font-family="system-ui,Arial" font-size="13" fill="#fff">Mulakan sambungan jauh</text><path d="M170 69 H206" stroke="#999" stroke-width="2" fill="none" marker-end="url(#a)"/><rect x="206" y="46" width="172" height="46" rx="10" fill="#fff5e6" stroke="#ffe0b0"/><text x="292" y="74" text-anchor="middle" font-family="system-ui,Arial" font-size="13" fill="#b45309">Boleh sambung?</text><rect x="440" y="20" width="262" height="56" rx="10" fill="#ecfdf5" stroke="#bbf7e0"/><text x="455" y="42" font-family="system-ui,Arial" font-size="12.5" fill="#047857">Sambung tapi lag → lihat prestasi:</text><text x="455" y="62" font-family="system-ui,Arial" font-size="11.5" fill="#065f46">geganti? kualiti terlalu tinggi? had fps? prestasi hos</text><rect x="440" y="86" width="262" height="56" rx="10" fill="#fef2f2" stroke="#fecaca"/><text x="455" y="108" font-family="system-ui,Arial" font-size="12.5" fill="#b91c1c">Tak sambung → lihat jenis ralat:</text><text x="455" y="128" font-family="system-ui,Arial" font-size="11.5" fill="#991b1b">luar talian? tembok api? akaun / kata laluan? versi</text><path d="M378 60 H410 V48 H440" stroke="#10b981" stroke-width="2" fill="none" marker-end="url(#a)"/><path d="M378 78 H410 V114 H440" stroke="#ef4444" stroke-width="2" fill="none" marker-end="url(#a)"/><text x="20" y="178" font-family="system-ui,Arial" font-size="13" font-weight="700" fill="#1d1d1f">Empat jenis kerosakan (lihat L1 / L2 setiap item)</text><g font-family="system-ui,Arial" font-size="12"><rect x="20" y="190" width="162" height="92" rx="10" fill="#fff5e6" stroke="#ffe0b0"/><text x="32" y="212" font-weight="700" fill="#b45309">① Rangkaian / Lintasan</text><text x="32" y="234" fill="#555" font-size="11">geganti / P2P · tembok api · rangkaian syarikat</text><rect x="194" y="190" width="162" height="92" rx="10" fill="#eef4ff" stroke="#cfe0ff"/><text x="206" y="212" font-weight="700" fill="#1d4ed8">② Akaun / Kebenaran</text><text x="206" y="234" fill="#555" font-size="11">luar talian · kata laluan akses · wake</text><rect x="368" y="190" width="162" height="92" rx="10" fill="#ecfdf5" stroke="#bbf7e0"/><text x="380" y="212" font-weight="700" fill="#047857">③ Imej / Prestasi</text><text x="380" y="234" fill="#555" font-size="11">skrin hitam · lag · kualiti · 30fps</text><rect x="542" y="190" width="160" height="92" rx="10" fill="#fef2f2" stroke="#fecaca"/><text x="554" y="212" font-weight="700" fill="#b91c1c">④ Versi / Protokol</text><text x="554" y="234" fill="#555" font-size="11">versi tak sepadan · anomali kemas kini</text></g><defs><marker id="a" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0 0 L6 3 L0 6 z" fill="#999"/></marker></defs></svg><figcaption>Raj 1: aliran sambungan / lag SunLogin—mula-mula boleh sambung atau tidak, kemudian kelaskan punca</figcaption></figure>
+<h2>Langkah 2: masih lag / masih tak sambung → punca akar lapisan rangkaian (L2)</h2>
+<p>Idea utama: <strong>tak-sambung biasanya tersangkut di "membina saluran", manakala lag biasanya bermaksud ia melalui geganti</strong>. SunLogin mula dengan <strong>lintasan P2P</strong> untuk menghubungkan kedua-dua belah (kependaman terendah 20–50ms); hanya jika gagal ia beralih ke <strong>geganti pelayan vendor</strong> (80–200ms) — klien memaparkan "P2P" atau "Relay" di kiri bawah. Rajah ialah panel semak-diri sambungan; punca lebih dalam: NAT simetri / UPnP penghala, DPI rangkaian perusahaan dan julat port, serta kadar bingkai dihadkan oleh kadar segar semula monitor.</p>
+<figure><svg viewBox="0 0 720 320" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Ilustrasi panel semak-diri sambungan SunLogin" style="width:100%;height:auto;border:1px solid #eee;border-radius:12px;background:#fff"><text x="20" y="28" font-family="system-ui,Arial" font-size="15.5" font-weight="700" fill="#1d1d1f">Panel semak-diri sambungan (hijau=normal / merah=masalah)</text><rect x="20" y="42" width="680" height="226" rx="14" fill="#f8fafc" stroke="#e2e8f0"/><text x="38" y="66" font-family="system-ui,Arial" font-size="12.5" font-weight="700" fill="#475569">Item semak</text><text x="300" y="66" font-family="system-ui,Arial" font-size="12" fill="#94a3b8">Status semasa</text><text x="610" y="66" font-family="system-ui,Arial" font-size="12" fill="#94a3b8">Keputusan</text><line x1="38" y1="74" x2="682" y2="74" stroke="#e2e8f0" stroke-width="1"/><text x="38" y="98" font-family="system-ui,Arial" font-size="13" fill="#1d1d1f">Akaun sama kedua-dua belah</text><text x="300" y="98" font-family="system-ui,Arial" font-size="12.5" fill="#16a34a">Akaun SunLogin sama</text><circle cx="612" cy="94" r="6" fill="#16a34a"/><text x="628" y="98" font-family="system-ui,Arial" font-size="12" fill="#16a34a">Normal</text><text x="38" y="128" font-family="system-ui,Arial" font-size="13" fill="#1d1d1f">Hos dalam talian</text><text x="300" y="128" font-family="system-ui,Arial" font-size="12.5" fill="#16a34a">Dalam talian · tak tidur</text><circle cx="612" cy="124" r="6" fill="#16a34a"/><text x="628" y="128" font-family="system-ui,Arial" font-size="12" fill="#16a34a">Normal</text><text x="38" y="158" font-family="system-ui,Arial" font-size="13" fill="#1d1d1f">Tembok api benarkan</text><text x="300" y="158" font-family="system-ui,Arial" font-size="12.5" fill="#ef4444">Disekat perisian keselamatan</text><circle cx="612" cy="154" r="6" fill="#ef4444"/><text x="628" y="158" font-family="system-ui,Arial" font-size="12" fill="#ef4444">Masalah</text><text x="38" y="188" font-family="system-ui,Arial" font-size="13" fill="#1d1d1f">Mod sambungan</text><text x="300" y="188" font-family="system-ui,Arial" font-size="12.5" fill="#ef4444">Geganti · kependaman tinggi</text><circle cx="612" cy="184" r="6" fill="#ef4444"/><text x="628" y="188" font-family="system-ui,Arial" font-size="12" fill="#ef4444">Masalah</text><text x="38" y="218" font-family="system-ui,Arial" font-size="13" fill="#1d1d1f">Versi klien</text><text x="300" y="218" font-family="system-ui,Arial" font-size="12.5" fill="#16a34a">Kedua-dua terkini</text><circle cx="612" cy="214" r="6" fill="#16a34a"/><text x="628" y="218" font-family="system-ui,Arial" font-size="12" fill="#16a34a">Normal</text><text x="38" y="248" font-family="system-ui,Arial" font-size="13" fill="#1d1d1f">Kata laluan akses</text><text x="300" y="248" font-family="system-ui,Arial" font-size="12.5" fill="#16a34a">Betul</text><circle cx="612" cy="244" r="6" fill="#16a34a"/><text x="628" y="248" font-family="system-ui,Arial" font-size="12" fill="#16a34a">Normal</text><text x="20" y="296" font-family="system-ui,Arial" font-size="11.5" fill="#94a3b8">Nota: merah = masalah perlu tangani; sambung tapi "geganti" = kependaman tinggi, hidupkan UPnP penghala untuk P2P terus.</text></svg><figcaption>Raj 2: panel semak-diri sambungan (hijau = normal / merah = masalah)</figcaption></figure>
+<figure class="i4png"><picture><source type="image/webp" srcset="/img/board_ms.webp"><img src="/img/board_ms.png" alt="Ilustrasi panel semak-diri sambungan SunLogin item hijau/merah" loading="lazy" width="1120" height="746" style="width:100%;height:auto;border-radius:12px;border:1px solid #eee"></picture><figcaption>Rajah: tak sambung lihat "bina saluran", lag lihat sama ada melalui "geganti"—hidupkan UPnP untuk P2P terus</figcaption></figure>
+<h2>Jadual gejala penuh (semak L1 dahulu · punca akar L2)</h2>
+<table id="tbl"></table>
+<section class="i4data">
+<h2>Data sambungan / lag SunLogin (anggaran 2026)</h2>
+<p>Berikut <strong>anggaran 2026</strong> yang mensintesis bantuan rasmi SunLogin dan pengalaman komuniti akses jauh awam (bukan angka rasmi vendor, bukan ukuran tangan pertama, untuk rujukan sahaja):</p>
+<table>
+<tr><th>Dimensi</th><th>Anggaran</th></tr>
+<tr><td>Taburan punca gagal sambung (anggaran)</td><td>tembok api / keselamatan <strong>≈50%</strong> &gt; hos luar talian / tidur <strong>≈20%</strong> &gt; akaun / kata laluan <strong>≈15%</strong> &gt; versi / protokol <strong>≈10%</strong></td></tr>
+<tr><td>Taburan punca lag (ujian komuniti)</td><td>geganti <strong>35%</strong> &gt; kualiti terlalu tinggi 25% &gt; prestasi hos 20% &gt; rangkaian teruk 15% &gt; had bingkai 5%</td></tr>
+<tr><td>Kependaman P2P terus vs geganti pelayan</td><td>P2P sekitar <strong>20–50ms</strong>, geganti sekitar <strong>80–200ms</strong></td></tr>
+<tr><td>Had bingkai (percuma / berbayar / permainan)</td><td><strong>30 / 60 / 144</strong> fps (144 perlu GPU + monitor sokong 144Hz)</td></tr>
+<tr><td>Manfaat hidupkan UPnP demi P2P</td><td>kadar tembus naik ketara; kependaman terukur boleh dari ~120ms ke ~35ms</td></tr>
+<tr><td>Tahap kebolehgunaan ikut kependaman</td><td>&lt;30ms hampir setempat · 80–150ms jelas tersekat · &gt;150ms hampir hanya klik</td></tr>
+</table>
+<p><small>Asas anggaran: garis dasar sumber + ekstrapolasi masa (sintesis bantuan rasmi SunLogin dan data komuniti akses jauh awam); berubah ikut versi dan persekitaran rangkaian; maklumat rasmi SunLogin terkini terpakai.</small></p>
+</section>
+<h2>Penilaian pantas kes sebenar</h2>
+<ul class="scenes"><li>PC pejabat langsung tak sambung tapi hotspot telefon sambung serta-merta: biasanya pengurusan tingkah laku internet / DPI rangkaian syarikat menyekat trafik jauh. Minta IT benarkan senarai putih, atau guna hotspot telefon sementara di hos.</li><li>Sambung tapi tetikus tinggalkan jejak dan kependaman lebih 100ms: nampak "Relay" di kiri bawah ialah puncanya—log masuk penghala dan hidupkan UPnP untuk P2P; kependaman terukur boleh turun dari ~120ms ke ~35ms.</li><li>Kata laluan akses gagal berulang: kata laluan akses bukan kata laluan akaun log masuk; tetap semula dalam "Tetapan" hos dan sambung semula.</li><li>Peranti nampak dalam talian tapi sambungan tamat masa: selalunya token log masuk luput / hos tidur dan rangkaian putus; log masuk semula di hos, atau hidupkan "Wake" dan akses tanpa pengawasan awal.</li><li>Seret tetingkap jelas tersekat tapi kependaman tak tinggi: had bingkai versi percuma 30fps; naik taraf berbayar hingga 60fps, versi permainan hingga 144fps (perlu monitor serasi).</li><li>Skrin hitam, hanya nampak tak boleh operasi: biasanya kebenaran belum diberi (macOS perlu tanda "rakam skrin / kebolehcapaian"), atau CPU / RAM hos penuh hingga pengekodan tak sempat.</li></ul><div class="related"><h2>Berkaitan</h2><ul><li><a href="https://sunlogim.com/">Muat turun rasmi SunLogin jauh</a></li><li><a href="https://sunlogim.com/lianjie/">Panduan semakan sambungan SunLogin</a></li><li><a href="https://sunlogni.com/">Muat turun SunLogin jauh (laman pasangan)</a></li></ul></div></main>
+<footer>Langkah semakan serta mod desktop / parameter kadar bingkai diringkaskan daripada bantuan rasmi SunLogin (sunlogin.oray.com); P2P / geganti, lintasan NAT, julat port rangkaian perusahaan dan cara membaca kod ralat disintesis daripada pengalaman komuniti akses jauh awam (tidak rasmi). Untuk rujukan sahaja; maklumat rasmi SunLogin terkini terpakai. (tidak rasmi·penyetempatan LLM)<br>Projek sumber terbuka · MIT License</footer>
+</div>
+<script src="/ms/codes.js"></script><script src="/app.js"></script>
+</body></html>
