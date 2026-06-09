@@ -1,0 +1,151 @@
+<!DOCTYPE html><html lang="hi"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>SunLogin रिमोट कनेक्शन / लैग डायग्नोसिस - कनेक्शन विफल, ब्लैक स्क्रीन, हाई लेटेंसी ठीक करें</title>
+<meta name="description" content="SunLogin रिमोट कंट्रोल कनेक्ट नहीं हो रहा, ब्लैक स्क्रीन या हाई लेटेंसी के साथ लैग? कोई लक्षण खोजें (डिवाइस ऑफ़लाइन, टाइमआउट, ग़लत एक्सेस पासवर्ड, फ़ायरवॉल ब्लॉक, ऑफ़िस नेटवर्क, दिखता है पर कंट्रोल नहीं, रिले मोड, फ़्री में 30fps) और आधिकारिक L1 जाँच तथा L2 नेटवर्क-लेयर मूल कारण (P2P बनाम रिले, NAT ट्रैवर्सल, पोर्ट रेंज, फ़्रेम-रेट स्तर) देखें, फिर तेज़ी से दोबारा कनेक्ट होने के लिए वास्तविक मामलों से मिलाएँ।">
+<link rel="canonical" href="https://sunlogim.github.io/hi/">
+<link rel="alternate" hreflang="zh-Hans" href="https://sunlogim.github.io/">
+<link rel="alternate" hreflang="en" href="https://sunlogim.github.io/en/">
+<link rel="alternate" hreflang="ja" href="https://sunlogim.github.io/ja/">
+<link rel="alternate" hreflang="zh-Hant" href="https://sunlogim.github.io/zh-tw/">
+<link rel="alternate" hreflang="ko" href="https://sunlogim.github.io/ko/">
+<link rel="alternate" hreflang="id" href="https://sunlogim.github.io/id/">
+<link rel="alternate" hreflang="vi" href="https://sunlogim.github.io/vi/">
+<link rel="alternate" hreflang="th" href="https://sunlogim.github.io/th/">
+<link rel="alternate" hreflang="es" href="https://sunlogim.github.io/es/">
+<link rel="alternate" hreflang="pt-BR" href="https://sunlogim.github.io/pt-br/">
+<link rel="alternate" hreflang="de" href="https://sunlogim.github.io/de/">
+<link rel="alternate" hreflang="fr" href="https://sunlogim.github.io/fr/">
+<link rel="alternate" hreflang="ru" href="https://sunlogim.github.io/ru/">
+<link rel="alternate" hreflang="it" href="https://sunlogim.github.io/it/">
+<link rel="alternate" hreflang="pl" href="https://sunlogim.github.io/pl/">
+<link rel="alternate" hreflang="nl" href="https://sunlogim.github.io/nl/">
+<link rel="alternate" hreflang="tr" href="https://sunlogim.github.io/tr/">
+<link rel="alternate" hreflang="ar" href="https://sunlogim.github.io/ar/">
+<link rel="alternate" hreflang="hi" href="https://sunlogim.github.io/hi/">
+<link rel="alternate" hreflang="ms" href="https://sunlogim.github.io/ms/">
+<link rel="alternate" hreflang="fa" href="https://sunlogim.github.io/fa/">
+<link rel="alternate" hreflang="bn" href="https://sunlogim.github.io/bn/">
+<link rel="alternate" hreflang="ta" href="https://sunlogim.github.io/ta/">
+<link rel="alternate" hreflang="te" href="https://sunlogim.github.io/te/">
+<link rel="alternate" hreflang="fil" href="https://sunlogim.github.io/fil/">
+<link rel="alternate" hreflang="ur" href="https://sunlogim.github.io/ur/">
+<link rel="alternate" hreflang="lo" href="https://sunlogim.github.io/lo/">
+<link rel="alternate" hreflang="km" href="https://sunlogim.github.io/km/">
+<link rel="alternate" hreflang="my" href="https://sunlogim.github.io/my/">
+<link rel="alternate" hreflang="x-default" href="https://sunlogim.github.io/">
+<link rel="stylesheet" href="/style.css">
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "WebApplication",
+   "name": "SunLogin रिमोट कनेक्शन / लैग डायग्नोसिस",
+   "url": "https://sunlogim.github.io/hi/",
+   "applicationCategory": "UtilitiesApplication",
+   "operatingSystem": "Web browser",
+   "inLanguage": "hi",
+   "description": "SunLogin रिमोट कंट्रोल कनेक्ट नहीं हो रहा, ब्लैक स्क्रीन या हाई लेटेंसी के साथ लैग? कोई लक्षण खोजें (डिवाइस ऑफ़लाइन, टाइमआउट, ग़लत एक्सेस पासवर्ड, फ़ायरवॉल ब्लॉक, ऑफ़िस नेटवर्क, दिखता है पर कंट्रोल नहीं, रिले मोड, फ़्री में 30fps) और आधिकारिक L1 जाँच तथा L2 नेटवर्क-लेयर मूल कारण (P2P बनाम रिले, NAT ट्रैवर्सल, पोर्ट रेंज, फ़्रेम-रेट स्तर) देखें, फिर तेज़ी से दोबारा कनेक्ट होने के लिए वास्तविक मामलों से मिलाएँ।",
+   "isAccessibleForFree": true,
+   "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+   }
+  },
+  {
+   "@type": "FAQPage",
+   "inLanguage": "hi",
+   "url": "https://sunlogim.github.io/hi/",
+   "mainEntity": [
+    {
+     "@type": "Question",
+     "name": "SunLogin रिमोट \"डिवाइस ऑफ़लाइन\" क्या करें?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "पुष्टि करें कि होस्ट PC चालू, ऑनलाइन, सोया नहीं, SunLogin क्लाइंट चल रहा और \"लॉगिन\" दिखा रहा; नेटवर्क अस्थिर हो तो राउटर रीस्टार्ट करें या नेटवर्क बदलें ऑफ़लाइन = होस्ट ऑनलाइन ही नहीं, पहले नेटवर्क न देखें: सोने के बाद नेटवर्क कार्ड अक्सर कटता है, लैपटॉप ढक्कन बंद करने से WiFi कटता है, Android पावर सेविंग बैकग्राउंड मारता है; Windows में services.msc में \"SunLogin\" सेवा चल रही या नहीं जाँचें दीर्घकालिक बिना निगरानी होस्ट: \"ऑटो-स्टार्ट + ऑटो-लॉगिन + बिना निगरानी पहुँच\" चालू करें, Android में SunLogin को पावर-सेविंग व्हाइटलिस्ट में जोड़ें"
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "SunLogin रिमोट \"कनेक्शन टाइमआउट\" क्या करें?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "पहले दोनों ओर फ़ायरवॉल / एंटीवायरस बंद कर आज़माएँ; दोनों पर लॉगआउट-लॉगिन करें; नवीनतम में अपडेट करें; नेटवर्क परिवेश बदलें (फ़ोन हॉटस्पॉट) 90% \"कनेक्शन विफल\" चरण 2 \"चैनल बनाना\" पर अटकता है: 15=P2P पार नहीं और रिले भी विफल (नेटवर्क बहुत ख़राब), 3=नेटवर्क लेयर ब्लॉक; हॉटस्पॉट से कनेक्ट हो तो मूलतः नेटवर्क / फ़ायरवॉल समस्या 3 चरणों में पहचानें: खाता सत्यापन → चैनल बनाना → इमेज ट्रांसमिशन; टाइमआउट लगभग हमेशा \"चैनल बनाने\" पर"
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "SunLogin रिमोट \"ग़लत एक्सेस पासवर्ड\" क्या करें?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "पुष्टि करें कि आप \"एक्सेस पासवर्ड\" डाल रहे, SunLogin खाते का लॉगिन पासवर्ड नहीं; होस्ट पर एक्सेस पासवर्ड रीसेट कर कनेक्ट करें एक्सेस पासवर्ड होस्ट का अलग से सेट रिमोट पासवर्ड है; अक्सर बदला या लॉगिन पासवर्ड से भ्रमित; बदलने के बाद कंट्रोलर नया इस्तेमाल करे एक्सेस पासवर्ड ≠ लॉगिन पासवर्ड: होस्ट के \"सेटिंग्स → सुरक्षा\" में देखें / रीसेट करें"
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "SunLogin रिमोट \"फ़ायरवॉल ब्लॉक\" क्या करें?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "SunLogin को फ़ायरवॉल / सुरक्षा ट्रस्ट में जोड़ें: Windows Defender Firewall \"ऐप को अनुमति\" में SunloginClient टिक करें; थर्ड-पार्टी एंटीवायरस में ट्रस्ट जोड़ें व्हाइटलिस्ट में पूरा इंस्टॉलेशन फ़ोल्डर जोड़ें (जैसे C:\\Program Files (x86)\\Oray\\SunLogin\\), केवल मुख्य exe नहीं—SunLogin चलते समय कई कॉम्पोनेंट कॉल करता है त्वरित सत्यापन: सुरक्षा पूरी बंद करें (केवल रियल-टाइम सुरक्षा नहीं) और कनेक्ट करें; कनेक्ट हो तो 100% वही ब्लॉक कर रही"
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "SunLogin रिमोट \"ऑफ़िस नेटवर्क कनेक्ट नहीं\" क्या करें?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "कंपनी IT से SunLogin व्हाइटलिस्ट की अनुमति माँगें; या बाईपास को होस्ट पर अस्थायी फ़ोन हॉटस्पॉट; SunLogin SOS संस्करण आज़माएँ (भिन्न कनेक्शन तरीक़ा) एंटरप्राइज़ नेटवर्क में अक्सर इंटरनेट बिहेवियर मैनेजमेंट डिवाइस होते हैं; TCP 443 (HTTPS के समान पोर्ट) से जाता SunLogin DPI से पहचाना और ब्लॉक होता है; समुदाय अनुभव: एंटरप्राइज़ राउटर में TCP 51020–51030 + UDP 50000–50010 अनुमत करें, या कनेक्शन मोड \"हाई-स्पीड\" से \"कम्पैटिबल\" (80/443, अधिक सामान्य) करें ऑफ़िस नेटवर्क है या नहीं जानने को: दोनों को फ़ोन हॉटस्पॉट पर बदलें; कनेक्ट हो तो 100% ऑफ़िस नेटवर्क ब्लॉक"
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "SunLogin रिमोट \"ब्लैक स्क्रीन\" क्या करें?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "होस्ट पर SunLogin को अनुमति दें: macOS \"सिस्टम सेटिंग्स → गोपनीयता और सुरक्षा\" में स्क्रीन रिकॉर्डिंग / एक्सेसिबिलिटी / पूर्ण डिस्क एक्सेस टिक करें; Windows में डेस्कटॉप मोड बदलें / दोबारा कनेक्ट करें ब्लैक स्क्रीन आम तौर पर कैप्चर अनुमति की कमी या डिस्क्रीट GPU स्विच, लॉक स्क्रीन सुरक्षा; डिस्क्रीट GPU लैपटॉप में पावर पॉलिसी में SunLogin को iGPU से कैप्चर करा सकते हैं macOS Ventura से अनुमति पथ \"सिस्टम सेटिंग्स\" में चला गया; सर्च बॉक्स में \"स्क्रीन रिकॉर्डिंग\" खोजना सबसे तेज़"
+     }
+    }
+   ]
+  }
+ ]
+}
+</script>
+</head>
+<body><div class="wrap"><main>
+<nav class="lang">भाषा: <a href="/">简体中文</a> · <a href="/en/">English</a> · <a href="/ja/">日本語</a> · <a href="/zh-tw/">繁體中文</a> · <a href="/ko/">한국어</a> · <a href="/id/">Bahasa Indonesia</a> · <a href="/vi/">Tiếng Việt</a> · <a href="/th/">ไทย</a> · <a href="/es/">Español</a> · <a href="/pt-br/">Português (BR)</a> · <a href="/de/">Deutsch</a> · <a href="/fr/">Français</a> · <a href="/ru/">Русский</a> · <a href="/it/">Italiano</a> · <a href="/pl/">Polski</a> · <a href="/nl/">Nederlands</a> · <a href="/tr/">Türkçe</a> · <a href="/ar/">العربية</a> · <strong>हिन्दी</strong> · <a href="/ms/">Bahasa Melayu</a> · <a href="/fa/">فارسی</a> · <a href="/bn/">বাংলা</a> · <a href="/ta/">தமிழ்</a> · <a href="/te/">తెలుగు</a> · <a href="/fil/">Filipino</a> · <a href="/ur/">اردو</a> · <a href="/lo/">ພາສາລາວ</a> · <a href="/km/">ភាសាខ្មែរ</a> · <a href="/my/">မြန်မာ</a></nav>
+<h1>SunLogin रिमोट कनेक्शन / लैग डायग्नोसिस</h1>
+<figure class="i4png"><picture><source type="image/webp" srcset="/img/cover_hi.webp"><img src="/img/cover_hi.png" alt="SunLogin रिमोट कनेक्शन और लैग डायग्नोसिस टूल का चित्रण" fetchpriority="high" width="1120" height="746" style="width:100%;height:auto;border-radius:12px;border:1px solid #eee"></picture><figcaption>चित्र: SunLogin रिमोट कनेक्शन / लैग डायग्नोसिस (आधिकारिक L1 जाँच + L2 नेटवर्क-लेयर कारण)</figcaption></figure>
+<p>SunLogin रिमोट कंट्रोल की दो असली सिरदर्दी हैं <strong>कनेक्ट न होना</strong> और <strong>लैग</strong>। अपना <strong>लक्षण</strong> खोजें (जैसे <code>डिवाइस ऑफ़लाइन</code>, <code>टाइमआउट</code>, <code>ग़लत एक्सेस पासवर्ड</code>, <code>फ़ायरवॉल ब्लॉक</code>, <code>दिखता पर कंट्रोल नहीं</code>, <code>हाई लेटेंसी</code>, <code>फ़्री 30fps</code>): पहले <strong>आधिकारिक L1 जाँच</strong>, फिर <strong>L2 नेटवर्क-लेयर मूल कारण</strong> (P2P सीधा बनाम सर्वर रिले, NAT ट्रैवर्सल, पोर्ट रेंज), अंत में वास्तविक मामले। डेस्कटॉप क्लाइंट चाहिए? <a href="https://sunlogim.com/">SunLogin आधिकारिक डाउनलोड</a> देखें।</p>
+<input id="q" placeholder="लक्षण डालें, जैसे कनेक्शन विफल / ब्लैक स्क्रीन / लैग / ऑफ़लाइन" autocomplete="off">
+<button id="go">खोजें</button>
+<div id="out"></div>
+<h2>चरण 1: आधिकारिक जाँच करें (L1 - पहले ये 4 करें)</h2>
+<p>कनेक्शन विफलता पर SunLogin की आधिकारिक चेकलिस्ट केवल 4 चरण की है, सभी ऐप में: ① <strong>खाता व डिवाइस बाइंडिंग</strong>—कंट्रोलर और होस्ट एक ही SunLogin खाते में लॉगिन करें; ② <strong>डिवाइस स्थिति व नेटवर्क</strong>—होस्ट चालू, ऑनलाइन और सोया हुआ न हो (सोए होस्ट के लिए "Wake" इस्तेमाल करें, पहले सक्षम करें); ③ <strong>फ़ायरवॉल व अनुमतियाँ</strong>—SunLogin को फ़ायरवॉल ट्रस्ट सूची में जोड़ें, "रिमोट कंट्रोल की अनुमति" और "बिना निगरानी पहुँच" चालू करें, एक्सेस पासवर्ड सही सेट करें; ④ <strong>संस्करण व रीस्टार्ट</strong>—दोनों ओर नवीनतम संस्करण में अपडेट करें, क्लाइंट रीस्टार्ट करें, कैश साफ़ करें। अधिक पूरी गाइड: <a href="https://sunlogim.com/lianjie/">SunLogin कनेक्शन जाँच गाइड</a>।</p>
+<div class="cat"><div class="catbox"><b>नेटवर्क / ट्रैवर्सल</b><span class="cs">टाइमआउट · फ़ायरवॉल ब्लॉक · ऑफ़िस नेटवर्क · रिले / P2P</span><div>चैनल बनाना विफल या रिले से हाई लेटेंसी। पहले फ़ायरवॉल ट्रस्ट जाँचें + नेटवर्क बदलें; गहराई में P2P पार होता है या नहीं, एंटरप्राइज़ DPI और NAT प्रकार।</div></div><div class="catbox"><b>खाता / अनुमतियाँ</b><span class="cs">डिवाइस ऑफ़लाइन · ग़लत एक्सेस पासवर्ड · भिन्न खाता · wake विफल</span><div>होस्ट ऑनलाइन + दोनों ओर एक ही खाता शर्त है। एक्सेस पासवर्ड ≠ लॉगिन पासवर्ड; टोकन एक्सपायर पर दोबारा लॉगिन; सोना "Wake" से हल।</div></div><div class="catbox"><b>इमेज / प्रदर्शन</b><span class="cs">ब्लैक स्क्रीन · दिखता पर कंट्रोल नहीं · लैग · धुंधला · फ़्री 30fps</span><div>कनेक्ट होने के बाद अनुभव समस्याएँ। अनुमतियाँ (स्क्रीन रिकॉर्डिंग / एक्सेसिबिलिटी), डेस्कटॉप मोड, फ़्रेम-रेट स्तर और होस्ट प्रदर्शन कुंजी हैं।</div></div><div class="catbox"><b>संस्करण / प्रोटोकॉल</b><span class="cs">प्रोटोकॉल संस्करण मेल नहीं · अपडेट के बाद असामान्यता</span><div>बड़ा संस्करण अंतर आसानी से असंगति देता है (कोड 30); दोनों को नवीनतम में अपडेट करें, रीस्टार्ट करें और कैश साफ़ करें।</div></div></div><figure><svg viewBox="0 0 720 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="SunLogin कनेक्शन और लैग डायग्नोसिस फ़्लोचार्ट" style="width:100%;height:auto;border:1px solid #eee;border-radius:12px;background:#fff"><text x="20" y="28" font-family="system-ui,Arial" font-size="15.5" font-weight="700" fill="#1d1d1f">SunLogin कनेक्शन / लैग डायग्नोसिस प्रवाह (लक्षण अनुसार)</text><rect x="20" y="46" width="150" height="46" rx="10" fill="#111"/><text x="95" y="74" text-anchor="middle" font-family="system-ui,Arial" font-size="13" fill="#fff">रिमोट कनेक्शन शुरू करें</text><path d="M170 69 H206" stroke="#999" stroke-width="2" fill="none" marker-end="url(#a)"/><rect x="206" y="46" width="172" height="46" rx="10" fill="#fff5e6" stroke="#ffe0b0"/><text x="292" y="74" text-anchor="middle" font-family="system-ui,Arial" font-size="13" fill="#b45309">कनेक्ट होता है?</text><rect x="440" y="20" width="262" height="56" rx="10" fill="#ecfdf5" stroke="#bbf7e0"/><text x="455" y="42" font-family="system-ui,Arial" font-size="12.5" fill="#047857">कनेक्ट पर लैग → प्रदर्शन देखें:</text><text x="455" y="62" font-family="system-ui,Arial" font-size="11.5" fill="#065f46">रिले? गुणवत्ता बहुत ऊँची? fps सीमा? होस्ट प्रदर्शन</text><rect x="440" y="86" width="262" height="56" rx="10" fill="#fef2f2" stroke="#fecaca"/><text x="455" y="108" font-family="system-ui,Arial" font-size="12.5" fill="#b91c1c">कनेक्ट नहीं → एरर प्रकार देखें:</text><text x="455" y="128" font-family="system-ui,Arial" font-size="11.5" fill="#991b1b">ऑफ़लाइन? फ़ायरवॉल? खाता / पासवर्ड? संस्करण</text><path d="M378 60 H410 V48 H440" stroke="#10b981" stroke-width="2" fill="none" marker-end="url(#a)"/><path d="M378 78 H410 V114 H440" stroke="#ef4444" stroke-width="2" fill="none" marker-end="url(#a)"/><text x="20" y="178" font-family="system-ui,Arial" font-size="13" font-weight="700" fill="#1d1d1f">चार प्रकार की ख़राबी (हर आइटम के L1 / L2 देखें)</text><g font-family="system-ui,Arial" font-size="12"><rect x="20" y="190" width="162" height="92" rx="10" fill="#fff5e6" stroke="#ffe0b0"/><text x="32" y="212" font-weight="700" fill="#b45309">① नेटवर्क / ट्रैवर्सल</text><text x="32" y="234" fill="#555" font-size="11">रिले / P2P · फ़ायरवॉल · ऑफ़िस नेटवर्क</text><rect x="194" y="190" width="162" height="92" rx="10" fill="#eef4ff" stroke="#cfe0ff"/><text x="206" y="212" font-weight="700" fill="#1d4ed8">② खाता / अनुमतियाँ</text><text x="206" y="234" fill="#555" font-size="11">ऑफ़लाइन · एक्सेस पासवर्ड · wake</text><rect x="368" y="190" width="162" height="92" rx="10" fill="#ecfdf5" stroke="#bbf7e0"/><text x="380" y="212" font-weight="700" fill="#047857">③ इमेज / प्रदर्शन</text><text x="380" y="234" fill="#555" font-size="11">ब्लैक स्क्रीन · लैग · गुणवत्ता · 30fps</text><rect x="542" y="190" width="160" height="92" rx="10" fill="#fef2f2" stroke="#fecaca"/><text x="554" y="212" font-weight="700" fill="#b91c1c">④ संस्करण / प्रोटोकॉल</text><text x="554" y="234" fill="#555" font-size="11">संस्करण मेल नहीं · अपडेट असामान्यता</text></g><defs><marker id="a" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0 0 L6 3 L0 6 z" fill="#999"/></marker></defs></svg><figcaption>चित्र 1: SunLogin कनेक्शन / लैग प्रवाह—पहले कनेक्ट होता है या नहीं, फिर कारण वर्गीकृत करें</figcaption></figure>
+<h2>चरण 2: अब भी लैग / अब भी कनेक्ट नहीं → L2 नेटवर्क-लेयर मूल कारण</h2>
+<p>मुख्य विचार: <strong>कनेक्ट-न-होना अक्सर "चैनल बनाने" पर अटकता है, जबकि लैग का अर्थ अक्सर रिले से गुज़रना है</strong>। SunLogin पहले दोनों ओर जोड़ने के लिए <strong>P2P ट्रैवर्सल</strong> आज़माता है (न्यूनतम लेटेंसी 20–50ms); विफल होने पर ही <strong>विक्रेता के सर्वर रिले</strong> (80–200ms) पर जाता है — क्लाइंट नीचे बाएँ "P2P" या "Relay" दिखाता है। चित्र एक कनेक्शन स्व-जाँच पैनल है; गहरे कारण: सिमेट्रिक NAT / राउटर UPnP, एंटरप्राइज़ DPI और पोर्ट रेंज, और मॉनिटर रिफ़्रेश रेट से सीमित फ़्रेम रेट।</p>
+<figure><svg viewBox="0 0 720 320" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="SunLogin कनेक्शन स्व-जाँच पैनल का चित्रण" style="width:100%;height:auto;border:1px solid #eee;border-radius:12px;background:#fff"><text x="20" y="28" font-family="system-ui,Arial" font-size="15.5" font-weight="700" fill="#1d1d1f">कनेक्शन स्व-जाँच पैनल (हरा=सामान्य / लाल=समस्या)</text><rect x="20" y="42" width="680" height="226" rx="14" fill="#f8fafc" stroke="#e2e8f0"/><text x="38" y="66" font-family="system-ui,Arial" font-size="12.5" font-weight="700" fill="#475569">जाँच आइटम</text><text x="300" y="66" font-family="system-ui,Arial" font-size="12" fill="#94a3b8">वर्तमान स्थिति</text><text x="610" y="66" font-family="system-ui,Arial" font-size="12" fill="#94a3b8">निर्णय</text><line x1="38" y1="74" x2="682" y2="74" stroke="#e2e8f0" stroke-width="1"/><text x="38" y="98" font-family="system-ui,Arial" font-size="13" fill="#1d1d1f">दोनों ओर खाता समान</text><text x="300" y="98" font-family="system-ui,Arial" font-size="12.5" fill="#16a34a">एक ही SunLogin खाता</text><circle cx="612" cy="94" r="6" fill="#16a34a"/><text x="628" y="98" font-family="system-ui,Arial" font-size="12" fill="#16a34a">सामान्य</text><text x="38" y="128" font-family="system-ui,Arial" font-size="13" fill="#1d1d1f">होस्ट ऑनलाइन</text><text x="300" y="128" font-family="system-ui,Arial" font-size="12.5" fill="#16a34a">ऑनलाइन · सोया नहीं</text><circle cx="612" cy="124" r="6" fill="#16a34a"/><text x="628" y="128" font-family="system-ui,Arial" font-size="12" fill="#16a34a">सामान्य</text><text x="38" y="158" font-family="system-ui,Arial" font-size="13" fill="#1d1d1f">फ़ायरवॉल पारित</text><text x="300" y="158" font-family="system-ui,Arial" font-size="12.5" fill="#ef4444">सुरक्षा द्वारा ब्लॉक</text><circle cx="612" cy="154" r="6" fill="#ef4444"/><text x="628" y="158" font-family="system-ui,Arial" font-size="12" fill="#ef4444">समस्या</text><text x="38" y="188" font-family="system-ui,Arial" font-size="13" fill="#1d1d1f">कनेक्शन मोड</text><text x="300" y="188" font-family="system-ui,Arial" font-size="12.5" fill="#ef4444">रिले · हाई लेटेंसी</text><circle cx="612" cy="184" r="6" fill="#ef4444"/><text x="628" y="188" font-family="system-ui,Arial" font-size="12" fill="#ef4444">समस्या</text><text x="38" y="218" font-family="system-ui,Arial" font-size="13" fill="#1d1d1f">क्लाइंट संस्करण</text><text x="300" y="218" font-family="system-ui,Arial" font-size="12.5" fill="#16a34a">दोनों नवीनतम</text><circle cx="612" cy="214" r="6" fill="#16a34a"/><text x="628" y="218" font-family="system-ui,Arial" font-size="12" fill="#16a34a">सामान्य</text><text x="38" y="248" font-family="system-ui,Arial" font-size="13" fill="#1d1d1f">एक्सेस पासवर्ड</text><text x="300" y="248" font-family="system-ui,Arial" font-size="12.5" fill="#16a34a">सही</text><circle cx="612" cy="244" r="6" fill="#16a34a"/><text x="628" y="248" font-family="system-ui,Arial" font-size="12" fill="#16a34a">सामान्य</text><text x="20" y="296" font-family="system-ui,Arial" font-size="11.5" fill="#94a3b8">नोट: लाल = हल करने योग्य समस्या; कनेक्ट पर "रिले" = हाई लेटेंसी, P2P सीधा पाने को राउटर UPnP चालू करें।</text></svg><figcaption>चित्र 2: कनेक्शन स्व-जाँच पैनल (हरा = सामान्य / लाल = समस्या)</figcaption></figure>
+<figure class="i4png"><picture><source type="image/webp" srcset="/img/board_hi.webp"><img src="/img/board_hi.png" alt="SunLogin कनेक्शन स्व-जाँच पैनल हरे/लाल आइटम का चित्रण" loading="lazy" width="1120" height="746" style="width:100%;height:auto;border-radius:12px;border:1px solid #eee"></picture><figcaption>चित्र: कनेक्ट न हो तो "चैनल बनाना" देखें, लैग हो तो "रिले" से गुज़रा या नहीं—P2P सीधा पाने को UPnP चालू करें</figcaption></figure>
+<h2>पूरी लक्षण तालिका (पहले L1 जाँच · L2 मूल कारण)</h2>
+<table id="tbl"></table>
+<section class="i4data">
+<h2>SunLogin कनेक्शन / लैग डेटा (2026 अनुमान)</h2>
+<p>नीचे एक <strong>2026 अनुमान</strong> है जो SunLogin की आधिकारिक सहायता और सार्वजनिक रिमोट-एक्सेस समुदाय के अनुभव को संश्लेषित करता है (विक्रेता के आधिकारिक आँकड़े नहीं, प्रत्यक्ष माप नहीं, केवल संदर्भ हेतु):</p>
+<table>
+<tr><th>आयाम</th><th>अनुमान</th></tr>
+<tr><td>कनेक्शन विफलता कारण वितरण (अनुमान)</td><td>फ़ायरवॉल / सुरक्षा <strong>≈50%</strong> &gt; होस्ट ऑफ़लाइन / सोया <strong>≈20%</strong> &gt; खाता / पासवर्ड <strong>≈15%</strong> &gt; संस्करण / प्रोटोकॉल <strong>≈10%</strong></td></tr>
+<tr><td>लैग कारण वितरण (समुदाय माप)</td><td>रिले <strong>35%</strong> &gt; गुणवत्ता बहुत ऊँची 25% &gt; होस्ट प्रदर्शन 20% &gt; नेटवर्क ख़राब 15% &gt; फ़्रेम सीमा 5%</td></tr>
+<tr><td>P2P सीधा बनाम सर्वर रिले लेटेंसी</td><td>P2P लगभग <strong>20–50ms</strong>, रिले लगभग <strong>80–200ms</strong></td></tr>
+<tr><td>फ़्रेम सीमा (फ़्री / पेड / गेमिंग)</td><td><strong>30 / 60 / 144</strong> fps (144 को GPU + 144Hz मॉनिटर चाहिए)</td></tr>
+<tr><td>P2P हेतु UPnP चालू करने का लाभ</td><td>पार दर काफ़ी बढ़ती; मापी लेटेंसी ~120ms से ~35ms तक जा सकती</td></tr>
+<tr><td>लेटेंसी अनुसार उपयोगिता स्तर</td><td>&lt;30ms लगभग लोकल · 80–150ms साफ़ अटकाव · &gt;150ms लगभग केवल क्लिक</td></tr>
+</table>
+<p><small>अनुमान आधार: स्रोत बेसलाइन + समय एक्सट्रापोलेशन (SunLogin आधिकारिक सहायता और सार्वजनिक रिमोट-एक्सेस समुदाय डेटा का संश्लेषण); संस्करण और नेटवर्क परिवेश अनुसार बदलता; नवीनतम आधिकारिक SunLogin जानकारी मान्य।</small></p>
+</section>
+<h2>वास्तविक मामलों का त्वरित आकलन</h2>
+<ul class="scenes"><li>ऑफ़िस PC बिलकुल कनेक्ट नहीं होता पर फ़ोन हॉटस्पॉट तुरंत कनेक्ट करता है: अक्सर ऑफ़िस नेटवर्क का इंटरनेट बिहेवियर मैनेजमेंट / DPI रिमोट ट्रैफ़िक ब्लॉक करता है। IT से व्हाइटलिस्ट की अनुमति माँगें, या होस्ट पर अस्थायी रूप से फ़ोन हॉटस्पॉट इस्तेमाल करें।</li><li>कनेक्ट होता है पर माउस निशान छोड़ता है और लेटेंसी 100ms से ऊपर: नीचे बाएँ "Relay" दिखना ही जड़ है—राउटर में लॉगिन कर UPnP चालू करें ताकि P2P मिले; मापी लेटेंसी ~120ms से ~35ms तक गिर सकती है।</li><li>एक्सेस पासवर्ड बार-बार ग़लत: एक्सेस पासवर्ड लॉगिन खाते का पासवर्ड नहीं है; होस्ट के "सेटिंग्स" में रीसेट कर दोबारा कनेक्ट करें।</li><li>डिवाइस ऑनलाइन दिखता है पर कनेक्शन टाइमआउट: अक्सर लॉगिन टोकन एक्सपायर / होस्ट सोया और नेटवर्क कटा; होस्ट पर दोबारा लॉगिन करें, या पहले से "Wake" और बिना निगरानी पहुँच चालू करें।</li><li>विंडो खींचने पर साफ़ अटकाव पर लेटेंसी ऊँची नहीं: फ़्री संस्करण की फ़्रेम सीमा 30fps; पेड में 60fps तक और गेमिंग संस्करण में अधिकतम 144fps (संगत मॉनिटर चाहिए)।</li><li>ब्लैक स्क्रीन, केवल दिखता है पर काम नहीं: आम तौर पर अनुमति नहीं दी (macOS में "स्क्रीन रिकॉर्डिंग / एक्सेसिबिलिटी" टिक करना ज़रूरी), या होस्ट का CPU / RAM भरा जिससे एन्कोडिंग पीछे रह जाती है।</li></ul><div class="related"><h2>संबंधित</h2><ul><li><a href="https://sunlogim.com/">SunLogin रिमोट आधिकारिक डाउनलोड</a></li><li><a href="https://sunlogim.com/lianjie/">SunLogin कनेक्शन जाँच गाइड</a></li><li><a href="https://sunlogni.com/">SunLogin रिमोट डाउनलोड (सहयोगी साइट)</a></li></ul></div></main>
+<footer>जाँच चरण तथा डेस्कटॉप मोड / फ़्रेम-रेट पैरामीटर SunLogin की आधिकारिक सहायता (sunlogin.oray.com) से संक्षेपित; P2P / रिले, NAT ट्रैवर्सल, एंटरप्राइज़ पोर्ट रेंज और एरर कोड पढ़ना सार्वजनिक रिमोट-एक्सेस समुदाय के अनुभव से संश्लेषित (ग़ैर-आधिकारिक)। केवल संदर्भ हेतु; नवीनतम आधिकारिक SunLogin जानकारी मान्य है। (ग़ैर-आधिकारिक·LLM स्थानीयकरण)<br>ओपन-सोर्स प्रोजेक्ट · MIT License</footer>
+</div>
+<script src="/hi/codes.js"></script><script src="/app.js"></script>
+</body></html>
