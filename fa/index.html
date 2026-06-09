@@ -1,0 +1,151 @@
+<!DOCTYPE html><html lang="fa" dir="rtl"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>تشخیص اتصال / تأخیر SunLogin از راه دور - رفع خطای اتصال، صفحه سیاه، تأخیر بالا</title>
+<meta name="description" content="کنترل از راه دور SunLogin وصل نمی‌شود، صفحه سیاه یا با تأخیر بالا کند است؟ یک علامت را جست‌وجو کنید (دستگاه آفلاین، اتمام مهلت، رمز دسترسی اشتباه، مسدودسازی فایروال، شبکه شرکت، دیده می‌شود ولی کنترل نمی‌شود، حالت رله، ۳۰ فریم در ثانیه نسخه رایگان) تا بررسی‌های رسمی L1 و علت ریشه‌ای لایه شبکه L2 (P2P در برابر رله، عبور NAT، بازه پورت‌ها، سطوح نرخ فریم) را ببینید، سپس برای اتصال سریع دوباره با موارد واقعی مقایسه کنید.">
+<link rel="canonical" href="https://sunlogim.github.io/fa/">
+<link rel="alternate" hreflang="zh-Hans" href="https://sunlogim.github.io/">
+<link rel="alternate" hreflang="en" href="https://sunlogim.github.io/en/">
+<link rel="alternate" hreflang="ja" href="https://sunlogim.github.io/ja/">
+<link rel="alternate" hreflang="zh-Hant" href="https://sunlogim.github.io/zh-tw/">
+<link rel="alternate" hreflang="ko" href="https://sunlogim.github.io/ko/">
+<link rel="alternate" hreflang="id" href="https://sunlogim.github.io/id/">
+<link rel="alternate" hreflang="vi" href="https://sunlogim.github.io/vi/">
+<link rel="alternate" hreflang="th" href="https://sunlogim.github.io/th/">
+<link rel="alternate" hreflang="es" href="https://sunlogim.github.io/es/">
+<link rel="alternate" hreflang="pt-BR" href="https://sunlogim.github.io/pt-br/">
+<link rel="alternate" hreflang="de" href="https://sunlogim.github.io/de/">
+<link rel="alternate" hreflang="fr" href="https://sunlogim.github.io/fr/">
+<link rel="alternate" hreflang="ru" href="https://sunlogim.github.io/ru/">
+<link rel="alternate" hreflang="it" href="https://sunlogim.github.io/it/">
+<link rel="alternate" hreflang="pl" href="https://sunlogim.github.io/pl/">
+<link rel="alternate" hreflang="nl" href="https://sunlogim.github.io/nl/">
+<link rel="alternate" hreflang="tr" href="https://sunlogim.github.io/tr/">
+<link rel="alternate" hreflang="ar" href="https://sunlogim.github.io/ar/">
+<link rel="alternate" hreflang="hi" href="https://sunlogim.github.io/hi/">
+<link rel="alternate" hreflang="ms" href="https://sunlogim.github.io/ms/">
+<link rel="alternate" hreflang="fa" href="https://sunlogim.github.io/fa/">
+<link rel="alternate" hreflang="bn" href="https://sunlogim.github.io/bn/">
+<link rel="alternate" hreflang="ta" href="https://sunlogim.github.io/ta/">
+<link rel="alternate" hreflang="te" href="https://sunlogim.github.io/te/">
+<link rel="alternate" hreflang="fil" href="https://sunlogim.github.io/fil/">
+<link rel="alternate" hreflang="ur" href="https://sunlogim.github.io/ur/">
+<link rel="alternate" hreflang="lo" href="https://sunlogim.github.io/lo/">
+<link rel="alternate" hreflang="km" href="https://sunlogim.github.io/km/">
+<link rel="alternate" hreflang="my" href="https://sunlogim.github.io/my/">
+<link rel="alternate" hreflang="x-default" href="https://sunlogim.github.io/">
+<link rel="stylesheet" href="/style.css">
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "WebApplication",
+   "name": "تشخیص اتصال / تأخیر SunLogin",
+   "url": "https://sunlogim.github.io/fa/",
+   "applicationCategory": "UtilitiesApplication",
+   "operatingSystem": "Web browser",
+   "inLanguage": "fa",
+   "description": "کنترل از راه دور SunLogin وصل نمی‌شود، صفحه سیاه یا با تأخیر بالا کند است؟ یک علامت را جست‌وجو کنید (دستگاه آفلاین، اتمام مهلت، رمز دسترسی اشتباه، مسدودسازی فایروال، شبکه شرکت، دیده می‌شود ولی کنترل نمی‌شود، حالت رله، ۳۰ فریم در ثانیه نسخه رایگان) تا بررسی‌های رسمی L1 و علت ریشه‌ای لایه شبکه L2 (P2P در برابر رله، عبور NAT، بازه پورت‌ها، سطوح نرخ فریم) را ببینید، سپس برای اتصال سریع دوباره با موارد واقعی مقایسه کنید.",
+   "isAccessibleForFree": true,
+   "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+   }
+  },
+  {
+   "@type": "FAQPage",
+   "inLanguage": "fa",
+   "url": "https://sunlogim.github.io/fa/",
+   "mainEntity": [
+    {
+     "@type": "Question",
+     "name": "SunLogin از راه دور «دستگاه آفلاین» چه کنم؟",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "مطمئن شوید رایانه میزبان روشن، آنلاین، در خواب نیست، کلاینت SunLogin در حال اجرا و «وارد شده» نشان می‌دهد؛ اگر شبکه ناپایدار است روتر را راه‌اندازی مجدد یا شبکه را عوض کنید آفلاین = میزبان اصلاً آنلاین نیست، ابتدا به شبکه نگاه نکنید: پس از خواب کارت شبکه اغلب قطع می‌شود، بستن درب لپ‌تاپ WiFi را قطع می‌کند، حالت ذخیره انرژی اندروید پس‌زمینه را می‌کشد؛ در ویندوز در services.msc بررسی کنید سرویس «SunLogin» اجرا می‌شود میزبان بدون نظارت بلندمدت: «شروع خودکار + ورود خودکار + دسترسی بدون نظارت» را روشن کنید، در اندروید SunLogin را به فهرست سفید ذخیره انرژی بیفزایید"
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "SunLogin از راه دور «اتمام مهلت اتصال» چه کنم؟",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "ابتدا فایروال / آنتی‌ویروس دو سو را خاموش و امتحان کنید؛ در هر دو خروج-ورود کنید؛ به آخرین به‌روزرسانی کنید؛ محیط شبکه را عوض کنید (هات‌اسپات تلفن) ۹۰٪ «خطاهای اتصال» در مرحله ۲ «برقراری کانال» گیر می‌کنند: ۱۵=P2P عبور نمی‌کند و رله هم شکست می‌خورد (شبکه خیلی بد)، ۳=لایه شبکه مسدود؛ اگر با هات‌اسپات وصل شود اساساً مشکل شبکه / فایروال است در ۳ مرحله مکان‌یابی کنید: تأیید حساب → برقراری کانال → انتقال تصویر؛ اتمام مهلت تقریباً همیشه در «برقراری کانال»"
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "SunLogin از راه دور «رمز دسترسی اشتباه» چه کنم؟",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "مطمئن شوید آنچه وارد می‌کنید «رمز دسترسی» است نه رمز ورود حساب SunLogin؛ در میزبان رمز دسترسی را بازنشانی و وصل شوید رمز دسترسی رمز از راه دور جداگانه‌ای است که میزبان تنظیم می‌کند؛ اغلب تغییر کرده یا با رمز ورود اشتباه گرفته می‌شود؛ پس از تغییر کنترل‌کننده از جدید استفاده می‌کند رمز دسترسی ≠ رمز ورود: در «تنظیمات → امنیت» میزبان ببینید / بازنشانی کنید"
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "SunLogin از راه دور «مسدودسازی فایروال» چه کنم؟",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "SunLogin را به اعتماد فایروال / امنیت بیفزایید: در فایروال Windows Defender «اجازه برنامه» SunloginClient را تیک بزنید؛ در آنتی‌ویروس شخص ثالث اعتماد بیفزایید فهرست سفید باید کل پوشه نصب را شامل شود (مثلاً C:\\Program Files (x86)\\Oray\\SunLogin\\) نه فقط exe اصلی—SunLogin هنگام اجرا چند مؤلفه را فرامی‌خواند تأیید سریع: امنیت را کاملاً ببندید (نه فقط حفاظت بی‌درنگ) و وصل شوید؛ اگر وصل شد ۱۰۰٪ همان مسدود می‌کرد"
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "SunLogin از راه دور «شبکه شرکت وصل نمی‌شود» چه کنم؟",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "از IT شرکت بخواهید فهرست سفید SunLogin را اجازه دهد؛ یا برای دور زدن روی میزبان موقتاً هات‌اسپات تلفن؛ SunLogin نسخه SOS را امتحان کنید (روش اتصال متفاوت) شبکه‌های سازمانی اغلب دستگاه‌های مدیریت رفتار اینترنت دارند؛ SunLogin از طریق TCP 443 (همان پورت HTTPS) با DPI شناسایی و مسدود می‌شود؛ تجربه جامعه: در روتر سازمانی TCP 51020–51030 + UDP 50000–50010 را اجازه دهید، یا حالت اتصال را از «پرسرعت» به «سازگار» (80/443، عمومی‌تر) تغییر دهید برای دانستن اینکه شبکه شرکت است: هر دو را به هات‌اسپات تلفن عوض کنید؛ اگر وصل شد ۱۰۰٪ مسدودسازی شبکه شرکت است"
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "SunLogin از راه دور «صفحه سیاه» چه کنم؟",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "در میزبان به SunLogin مجوز دهید: macOS «تنظیمات سیستم → حریم خصوصی و امنیت» ضبط صفحه / دسترس‌پذیری / دسترسی کامل دیسک را تیک بزنید؛ ویندوز تعویض حالت دسکتاپ / اتصال مجدد را امتحان کنید صفحه سیاه معمولاً نبود مجوز ضبط یا تعویض به GPU مجزا، حفاظت صفحه قفل؛ در لپ‌تاپ‌های GPU مجزا می‌توان در سیاست انرژی SunLogin را با iGPU وادار به ضبط کرد از macOS Ventura مسیر مجوزها به «تنظیمات سیستم» منتقل شده؛ جست‌وجوی «ضبط صفحه» در کادر جست‌وجو سریع‌ترین است"
+     }
+    }
+   ]
+  }
+ ]
+}
+</script>
+</head>
+<body><div class="wrap"><main>
+<nav class="lang">زبان: <a href="/">简体中文</a> · <a href="/en/">English</a> · <a href="/ja/">日本語</a> · <a href="/zh-tw/">繁體中文</a> · <a href="/ko/">한국어</a> · <a href="/id/">Bahasa Indonesia</a> · <a href="/vi/">Tiếng Việt</a> · <a href="/th/">ไทย</a> · <a href="/es/">Español</a> · <a href="/pt-br/">Português (BR)</a> · <a href="/de/">Deutsch</a> · <a href="/fr/">Français</a> · <a href="/ru/">Русский</a> · <a href="/it/">Italiano</a> · <a href="/pl/">Polski</a> · <a href="/nl/">Nederlands</a> · <a href="/tr/">Türkçe</a> · <a href="/ar/">العربية</a> · <a href="/hi/">हिन्दी</a> · <a href="/ms/">Bahasa Melayu</a> · <strong>فارسی</strong> · <a href="/bn/">বাংলা</a> · <a href="/ta/">தமிழ்</a> · <a href="/te/">తెలుగు</a> · <a href="/fil/">Filipino</a> · <a href="/ur/">اردو</a> · <a href="/lo/">ພາສາລາວ</a> · <a href="/km/">ភាសាខ្មែរ</a> · <a href="/my/">မြန်မာ</a></nav>
+<h1>تشخیص اتصال / تأخیر SunLogin از راه دور</h1>
+<figure class="i4png"><picture><source type="image/webp" srcset="/img/cover_fa.webp"><img src="/img/cover_fa.png" alt="تصویر ابزار تشخیص اتصال و تأخیر SunLogin از راه دور" fetchpriority="high" width="1120" height="746" style="width:100%;height:auto;border-radius:12px;border:1px solid #eee"></picture><figcaption>شکل: تشخیص اتصال / تأخیر SunLogin (بررسی‌های رسمی L1 + علت لایه شبکه L2)</figcaption></figure>
+<p>دو دردسر واقعی کنترل از راه دور SunLogin <strong>وصل‌نشدن</strong> و <strong>تأخیر</strong> است. <strong>علامت</strong> خود را جست‌وجو کنید (مثلاً <code>دستگاه آفلاین</code>، <code>اتمام مهلت</code>، <code>رمز دسترسی اشتباه</code>، <code>مسدودسازی فایروال</code>، <code>دیده می‌شود کنترل نمی‌شود</code>، <code>تأخیر بالا</code>، <code>۳۰ فریم رایگان</code>): ابتدا <strong>بررسی‌های رسمی L1</strong>، سپس <strong>علت ریشه‌ای لایه شبکه L2</strong> (P2P مستقیم در برابر رله سرور، عبور NAT، بازه پورت‌ها)، در آخر موارد واقعی. کلاینت دسکتاپ می‌خواهید؟ <a href="https://sunlogim.com/">دانلود رسمی SunLogin</a> را ببینید.</p>
+<input id="q" placeholder="یک علامت وارد کنید، مثلاً خطای اتصال / صفحه سیاه / تأخیر / آفلاین" autocomplete="off">
+<button id="go">جست‌وجو</button>
+<div id="out"></div>
+<h2>گام ۱: بررسی‌های رسمی را انجام دهید (L1 - ابتدا این ۴ مورد)</h2>
+<p>فهرست رسمی SunLogin هنگام خطای اتصال تنها ۴ گام است، همه در برنامه: ① <strong>پیوند حساب و دستگاه</strong>—کنترل‌کننده و میزبان با یک حساب SunLogin وارد می‌شوند؛ ② <strong>وضعیت دستگاه و شبکه</strong>—میزبان روشن، آنلاین و در خواب نیست (برای میزبان خواب از «Wake» استفاده کنید، از قبل فعال کنید)؛ ③ <strong>فایروال و مجوزها</strong>—SunLogin را به فهرست اعتماد فایروال بیفزایید، «اجازه کنترل از راه دور» و «دسترسی بدون نظارت» را روشن کنید، رمز دسترسی را درست تنظیم کنید؛ ④ <strong>نسخه و راه‌اندازی مجدد</strong>—هر دو سو را به آخرین نسخه به‌روزرسانی کنید، کلاینت را راه‌اندازی مجدد کنید، کش را پاک کنید. راهنمای کامل‌تر: <a href="https://sunlogim.com/lianjie/">راهنمای بررسی اتصال SunLogin</a>.</p>
+<div class="cat"><div class="catbox"><b>شبکه / عبور</b><span class="cs">اتمام مهلت · مسدودسازی فایروال · شبکه شرکت · رله / P2P</span><div>شکست برقراری کانال یا تأخیر بالا به‌خاطر رله. ابتدا اعتماد فایروال را بررسی + شبکه را عوض کنید؛ عمیق‌تر، آیا P2P عبور می‌کند، DPI سازمانی و نوع NAT.</div></div><div class="catbox"><b>حساب / مجوزها</b><span class="cs">دستگاه آفلاین · رمز دسترسی اشتباه · حساب متفاوت · شکست wake</span><div>میزبان آنلاین + یک حساب در دو سو شرط است. رمز دسترسی ≠ رمز ورود؛ توکن منقضی نیاز به ورود مجدد دارد؛ خواب با «Wake» حل می‌شود.</div></div><div class="catbox"><b>تصویر / عملکرد</b><span class="cs">صفحه سیاه · دیده می‌شود کنترل نمی‌شود · تأخیر · تار · ۳۰ فریم رایگان</span><div>مشکلات تجربه پس از اتصال. مجوزها (ضبط صفحه / دسترس‌پذیری)، حالت دسکتاپ، سطح نرخ فریم و عملکرد میزبان کلیدی‌اند.</div></div><div class="catbox"><b>نسخه / پروتکل</b><span class="cs">نسخه پروتکل ناسازگار · ناهنجاری پس از به‌روزرسانی</span><div>اختلاف نسخه بزرگ به‌راحتی ناسازگاری می‌دهد (کد ۳۰)؛ هر دو را به آخرین به‌روزرسانی، راه‌اندازی مجدد و کش را پاک کنید.</div></div></div><figure><svg viewBox="0 0 720 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="نمودار جریان تشخیص اتصال و تأخیر SunLogin" style="width:100%;height:auto;border:1px solid #eee;border-radius:12px;background:#fff"><text x="20" y="28" font-family="system-ui,Arial" font-size="15.5" font-weight="700" fill="#1d1d1f">جریان تشخیص اتصال / تأخیر SunLogin (بر اساس علامت)</text><rect x="20" y="46" width="150" height="46" rx="10" fill="#111"/><text x="95" y="74" text-anchor="middle" font-family="system-ui,Arial" font-size="13" fill="#fff">شروع اتصال از راه دور</text><path d="M170 69 H206" stroke="#999" stroke-width="2" fill="none" marker-end="url(#a)"/><rect x="206" y="46" width="172" height="46" rx="10" fill="#fff5e6" stroke="#ffe0b0"/><text x="292" y="74" text-anchor="middle" font-family="system-ui,Arial" font-size="13" fill="#b45309">وصل می‌شود؟</text><rect x="440" y="20" width="262" height="56" rx="10" fill="#ecfdf5" stroke="#bbf7e0"/><text x="455" y="42" font-family="system-ui,Arial" font-size="12.5" fill="#047857">وصل ولی تأخیر → عملکرد را ببینید:</text><text x="455" y="62" font-family="system-ui,Arial" font-size="11.5" fill="#065f46">رله؟ کیفیت خیلی بالا؟ حد فریم؟ عملکرد میزبان</text><rect x="440" y="86" width="262" height="56" rx="10" fill="#fef2f2" stroke="#fecaca"/><text x="455" y="108" font-family="system-ui,Arial" font-size="12.5" fill="#b91c1c">وصل نمی‌شود → نوع خطا را ببینید:</text><text x="455" y="128" font-family="system-ui,Arial" font-size="11.5" fill="#991b1b">آفلاین؟ فایروال؟ حساب / رمز؟ نسخه</text><path d="M378 60 H410 V48 H440" stroke="#10b981" stroke-width="2" fill="none" marker-end="url(#a)"/><path d="M378 78 H410 V114 H440" stroke="#ef4444" stroke-width="2" fill="none" marker-end="url(#a)"/><text x="20" y="178" font-family="system-ui,Arial" font-size="13" font-weight="700" fill="#1d1d1f">چهار نوع خرابی (L1 / L2 هر مورد را ببینید)</text><g font-family="system-ui,Arial" font-size="12"><rect x="20" y="190" width="162" height="92" rx="10" fill="#fff5e6" stroke="#ffe0b0"/><text x="32" y="212" font-weight="700" fill="#b45309">① شبکه / عبور</text><text x="32" y="234" fill="#555" font-size="11">رله / P2P · فایروال · شبکه شرکت</text><rect x="194" y="190" width="162" height="92" rx="10" fill="#eef4ff" stroke="#cfe0ff"/><text x="206" y="212" font-weight="700" fill="#1d4ed8">② حساب / مجوزها</text><text x="206" y="234" fill="#555" font-size="11">آفلاین · رمز دسترسی · wake</text><rect x="368" y="190" width="162" height="92" rx="10" fill="#ecfdf5" stroke="#bbf7e0"/><text x="380" y="212" font-weight="700" fill="#047857">③ تصویر / عملکرد</text><text x="380" y="234" fill="#555" font-size="11">صفحه سیاه · تأخیر · کیفیت · ۳۰ فریم</text><rect x="542" y="190" width="160" height="92" rx="10" fill="#fef2f2" stroke="#fecaca"/><text x="554" y="212" font-weight="700" fill="#b91c1c">④ نسخه / پروتکل</text><text x="554" y="234" fill="#555" font-size="11">نسخه ناسازگار · ناهنجاری به‌روزرسانی</text></g><defs><marker id="a" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0 0 L6 3 L0 6 z" fill="#999"/></marker></defs></svg><figcaption>شکل ۱: جریان اتصال / تأخیر SunLogin—ابتدا وصل می‌شود یا نه، سپس علت را دسته‌بندی کنید</figcaption></figure>
+<h2>گام ۲: هنوز تأخیر دارد / هنوز وصل نمی‌شود → علت ریشه‌ای لایه شبکه (L2)</h2>
+<p>ایده اصلی: <strong>وصل‌نشدن معمولاً در «برقراری کانال» گیر می‌کند، در حالی که تأخیر معمولاً یعنی از رله عبور کرده است</strong>. SunLogin ابتدا <strong>عبور P2P</strong> را برای پیوند دو سو امتحان می‌کند (کمترین تأخیر ۲۰–۵۰ms)؛ تنها در صورت شکست به <strong>رله سرور فروشنده</strong> (۸۰–۲۰۰ms) می‌رود — کلاینت در پایین‌چپ «P2P» یا «Relay» را نشان می‌دهد. نمودار یک پنل خودبررسی اتصال است؛ علت‌های عمیق‌تر: NAT متقارن / UPnP روتر، DPI شبکه سازمانی و بازه پورت‌ها، و نرخ فریم محدودشده با نرخ تازه‌سازی نمایشگر.</p>
+<figure><svg viewBox="0 0 720 320" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="تصویر پنل خودبررسی اتصال SunLogin" style="width:100%;height:auto;border:1px solid #eee;border-radius:12px;background:#fff"><text x="20" y="28" font-family="system-ui,Arial" font-size="15.5" font-weight="700" fill="#1d1d1f">پنل خودبررسی اتصال (سبز=عادی / قرمز=مشکل)</text><rect x="20" y="42" width="680" height="226" rx="14" fill="#f8fafc" stroke="#e2e8f0"/><text x="38" y="66" font-family="system-ui,Arial" font-size="12.5" font-weight="700" fill="#475569">مورد بررسی</text><text x="300" y="66" font-family="system-ui,Arial" font-size="12" fill="#94a3b8">وضعیت کنونی</text><text x="610" y="66" font-family="system-ui,Arial" font-size="12" fill="#94a3b8">حکم</text><line x1="38" y1="74" x2="682" y2="74" stroke="#e2e8f0" stroke-width="1"/><text x="38" y="98" font-family="system-ui,Arial" font-size="13" fill="#1d1d1f">حساب در دو سو یکسان</text><text x="300" y="98" font-family="system-ui,Arial" font-size="12.5" fill="#16a34a">حساب SunLogin یکسان</text><circle cx="612" cy="94" r="6" fill="#16a34a"/><text x="628" y="98" font-family="system-ui,Arial" font-size="12" fill="#16a34a">عادی</text><text x="38" y="128" font-family="system-ui,Arial" font-size="13" fill="#1d1d1f">میزبان آنلاین</text><text x="300" y="128" font-family="system-ui,Arial" font-size="12.5" fill="#16a34a">آنلاین · در خواب نیست</text><circle cx="612" cy="124" r="6" fill="#16a34a"/><text x="628" y="128" font-family="system-ui,Arial" font-size="12" fill="#16a34a">عادی</text><text x="38" y="158" font-family="system-ui,Arial" font-size="13" fill="#1d1d1f">فایروال اجازه می‌دهد</text><text x="300" y="158" font-family="system-ui,Arial" font-size="12.5" fill="#ef4444">مسدودشده با امنیت</text><circle cx="612" cy="154" r="6" fill="#ef4444"/><text x="628" y="158" font-family="system-ui,Arial" font-size="12" fill="#ef4444">مشکل</text><text x="38" y="188" font-family="system-ui,Arial" font-size="13" fill="#1d1d1f">حالت اتصال</text><text x="300" y="188" font-family="system-ui,Arial" font-size="12.5" fill="#ef4444">رله · تأخیر بالا</text><circle cx="612" cy="184" r="6" fill="#ef4444"/><text x="628" y="188" font-family="system-ui,Arial" font-size="12" fill="#ef4444">مشکل</text><text x="38" y="218" font-family="system-ui,Arial" font-size="13" fill="#1d1d1f">نسخه کلاینت</text><text x="300" y="218" font-family="system-ui,Arial" font-size="12.5" fill="#16a34a">هر دو آخرین</text><circle cx="612" cy="214" r="6" fill="#16a34a"/><text x="628" y="218" font-family="system-ui,Arial" font-size="12" fill="#16a34a">عادی</text><text x="38" y="248" font-family="system-ui,Arial" font-size="13" fill="#1d1d1f">رمز دسترسی</text><text x="300" y="248" font-family="system-ui,Arial" font-size="12.5" fill="#16a34a">درست</text><circle cx="612" cy="244" r="6" fill="#16a34a"/><text x="628" y="248" font-family="system-ui,Arial" font-size="12" fill="#16a34a">عادی</text><text x="20" y="296" font-family="system-ui,Arial" font-size="11.5" fill="#94a3b8">نکته: قرمز = مشکل قابل‌حل؛ وصل ولی «رله» = تأخیر بالا، UPnP روتر را برای P2P مستقیم روشن کنید.</text></svg><figcaption>شکل ۲: پنل خودبررسی اتصال (سبز = عادی / قرمز = مشکل)</figcaption></figure>
+<figure class="i4png"><picture><source type="image/webp" srcset="/img/board_fa.webp"><img src="/img/board_fa.png" alt="تصویر پنل خودبررسی اتصال SunLogin با موارد سبز/قرمز" loading="lazy" width="1120" height="746" style="width:100%;height:auto;border-radius:12px;border:1px solid #eee"></picture><figcaption>شکل: وصل نمی‌شود → «برقراری کانال»، تأخیر → آیا از «رله» عبور کرده—UPnP را برای P2P مستقیم روشن کنید</figcaption></figure>
+<h2>جدول کامل علائم (ابتدا L1 بررسی · علت ریشه‌ای L2)</h2>
+<table id="tbl"></table>
+<section class="i4data">
+<h2>داده اتصال / تأخیر SunLogin (برآورد 2026)</h2>
+<p>در ادامه یک <strong>برآورد 2026</strong> که راهنمای رسمی SunLogin و تجربه جامعه دسترسی از راه دور عمومی را ترکیب می‌کند (نه ارقام رسمی فروشنده و نه اندازه‌گیری دست‌اول، فقط برای مرجع):</p>
+<table>
+<tr><th>بُعد</th><th>برآورد</th></tr>
+<tr><td>توزیع علل خطای اتصال (برآورد)</td><td>فایروال / امنیت <strong>≈۵۰٪</strong> &gt; میزبان آفلاین / در خواب <strong>≈۲۰٪</strong> &gt; حساب / رمز <strong>≈۱۵٪</strong> &gt; نسخه / پروتکل <strong>≈۱۰٪</strong></td></tr>
+<tr><td>توزیع علل تأخیر (اندازه‌گیری جامعه)</td><td>رله <strong>۳۵٪</strong> &gt; کیفیت خیلی بالا ۲۵٪ &gt; عملکرد میزبان ۲۰٪ &gt; شبکه بد ۱۵٪ &gt; حد فریم ۵٪</td></tr>
+<tr><td>تأخیر P2P مستقیم در برابر رله سرور</td><td>P2P حدود <strong>۲۰–۵۰ms</strong>، رله حدود <strong>۸۰–۲۰۰ms</strong></td></tr>
+<tr><td>سقف فریم (رایگان / پولی / بازی)</td><td><strong>۳۰ / ۶۰ / ۱۴۴</strong> فریم (۱۴۴ به GPU + نمایشگر ۱۴۴ هرتز نیاز دارد)</td></tr>
+<tr><td>سود روشن‌کردن UPnP برای P2P</td><td>نرخ نفوذ به‌طور چشمگیر بالا می‌رود؛ تأخیر اندازه‌گیری‌شده می‌تواند از ~۱۲۰ms به ~۳۵ms برسد</td></tr>
+<tr><td>سطوح کاربردپذیری بر اساس تأخیر</td><td>&lt;۳۰ms تقریباً محلی · ۸۰–۱۵۰ms به‌وضوح پرشی · &gt;۱۵۰ms تقریباً فقط کلیک</td></tr>
+</table>
+<p><small>مبنای برآورد: خط پایه منابع + برون‌یابی زمانی (ترکیب راهنمای رسمی SunLogin و داده جامعه دسترسی از راه دور عمومی)؛ با نسخه و محیط شبکه تغییر می‌کند؛ آخرین اطلاعات رسمی SunLogin معتبر است.</small></p>
+</section>
+<h2>ارزیابی سریع موارد واقعی</h2>
+<ul class="scenes"><li>رایانه اداره اصلاً وصل نمی‌شود ولی هات‌اسپات تلفن فوری وصل می‌کند: معمولاً مدیریت رفتار اینترنت / DPI شبکه شرکت ترافیک از راه دور را مسدود می‌کند. از IT بخواهید فهرست سفید را اجازه دهد، یا روی میزبان موقتاً هات‌اسپات تلفن استفاده کنید.</li><li>وصل می‌شود ولی موس رد می‌گذارد و تأخیر از ۱۰۰ms می‌گذرد: دیدن «Relay» در پایین‌چپ ریشه است—به روتر وارد شوید و UPnP را روشن کنید تا P2P بگیرید؛ تأخیر اندازه‌گیری‌شده می‌تواند از ~۱۲۰ms به ~۳۵ms برسد.</li><li>رمز دسترسی پیاپی اشتباه: رمز دسترسی رمز حساب ورود نیست؛ در «تنظیمات» میزبان بازنشانی و دوباره وصل شوید.</li><li>دستگاه آنلاین نشان می‌دهد ولی اتصال به مهلت می‌رسد: اغلب توکن ورود منقضی / میزبان خواب و شبکه قطع؛ در میزبان دوباره وارد شوید، یا از قبل «Wake» و دسترسی بدون نظارت را روشن کنید.</li><li>کشیدن پنجره به‌وضوح می‌پرد ولی تأخیر بالا نیست: سقف فریم نسخه رایگان ۳۰ فریم است؛ با پرداخت تا ۶۰ و نسخه بازی تا ۱۴۴ (نمایشگر سازگار لازم است).</li><li>صفحه سیاه، فقط دیده می‌شود ولی کار نمی‌کند: معمولاً مجوزها داده نشده (macOS نیاز به تیک «ضبط صفحه / دسترس‌پذیری» دارد)، یا CPU / RAM میزبان پر است و کدگذاری عقب می‌ماند.</li></ul><div class="related"><h2>مرتبط</h2><ul><li><a href="https://sunlogim.com/">دانلود رسمی SunLogin از راه دور</a></li><li><a href="https://sunlogim.com/lianjie/">راهنمای بررسی اتصال SunLogin</a></li><li><a href="https://sunlogni.com/">دانلود SunLogin از راه دور (سایت خواهر)</a></li></ul></div></main>
+<footer>گام‌های بررسی و حالت‌های دسکتاپ / پارامترهای نرخ فریم از راهنمای رسمی SunLogin (sunlogin.oray.com) خلاصه شده؛ P2P / رله، عبور NAT، بازه پورت‌های شبکه سازمانی و خواندن کدهای خطا از تجربه جامعه دسترسی از راه دور عمومی ترکیب شده (غیررسمی). فقط برای مرجع؛ آخرین اطلاعات رسمی SunLogin معتبر است. (غیررسمی·بومی‌سازی LLM)<br>پروژه متن‌باز · MIT License</footer>
+</div>
+<script src="/fa/codes.js"></script><script src="/app.js"></script>
+</body></html>
