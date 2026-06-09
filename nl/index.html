@@ -1,0 +1,151 @@
+<!DOCTYPE html><html lang="nl"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>SunLogin verbindings- / lag-diagnose op afstand - verbindingsfout, zwart scherm, hoge latentie oplossen</title>
+<meta name="description" content="Maakt SunLogin-afstandsbediening geen verbinding, zwart scherm of lag met hoge latentie? Zoek een symptoom (apparaat offline, time-out, fout toegangswachtwoord, firewall-blokkade, bedrijfsnetwerk, zichtbaar maar niet bestuurbaar, relay-modus, 30 fps gratis versie) voor de officiële L1-controles plus de L2-netwerklaag-grondoorzaak (P2P vs relay, NAT-traversal, poortbereiken, framerate-niveaus), en vergelijk met echte gevallen om snel opnieuw te verbinden.">
+<link rel="canonical" href="https://sunlogim.github.io/nl/">
+<link rel="alternate" hreflang="zh-Hans" href="https://sunlogim.github.io/">
+<link rel="alternate" hreflang="en" href="https://sunlogim.github.io/en/">
+<link rel="alternate" hreflang="ja" href="https://sunlogim.github.io/ja/">
+<link rel="alternate" hreflang="zh-Hant" href="https://sunlogim.github.io/zh-tw/">
+<link rel="alternate" hreflang="ko" href="https://sunlogim.github.io/ko/">
+<link rel="alternate" hreflang="id" href="https://sunlogim.github.io/id/">
+<link rel="alternate" hreflang="vi" href="https://sunlogim.github.io/vi/">
+<link rel="alternate" hreflang="th" href="https://sunlogim.github.io/th/">
+<link rel="alternate" hreflang="es" href="https://sunlogim.github.io/es/">
+<link rel="alternate" hreflang="pt-BR" href="https://sunlogim.github.io/pt-br/">
+<link rel="alternate" hreflang="de" href="https://sunlogim.github.io/de/">
+<link rel="alternate" hreflang="fr" href="https://sunlogim.github.io/fr/">
+<link rel="alternate" hreflang="ru" href="https://sunlogim.github.io/ru/">
+<link rel="alternate" hreflang="it" href="https://sunlogim.github.io/it/">
+<link rel="alternate" hreflang="pl" href="https://sunlogim.github.io/pl/">
+<link rel="alternate" hreflang="nl" href="https://sunlogim.github.io/nl/">
+<link rel="alternate" hreflang="tr" href="https://sunlogim.github.io/tr/">
+<link rel="alternate" hreflang="ar" href="https://sunlogim.github.io/ar/">
+<link rel="alternate" hreflang="hi" href="https://sunlogim.github.io/hi/">
+<link rel="alternate" hreflang="ms" href="https://sunlogim.github.io/ms/">
+<link rel="alternate" hreflang="fa" href="https://sunlogim.github.io/fa/">
+<link rel="alternate" hreflang="bn" href="https://sunlogim.github.io/bn/">
+<link rel="alternate" hreflang="ta" href="https://sunlogim.github.io/ta/">
+<link rel="alternate" hreflang="te" href="https://sunlogim.github.io/te/">
+<link rel="alternate" hreflang="fil" href="https://sunlogim.github.io/fil/">
+<link rel="alternate" hreflang="ur" href="https://sunlogim.github.io/ur/">
+<link rel="alternate" hreflang="lo" href="https://sunlogim.github.io/lo/">
+<link rel="alternate" hreflang="km" href="https://sunlogim.github.io/km/">
+<link rel="alternate" hreflang="my" href="https://sunlogim.github.io/my/">
+<link rel="alternate" hreflang="x-default" href="https://sunlogim.github.io/">
+<link rel="stylesheet" href="/style.css">
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "WebApplication",
+   "name": "SunLogin verbindings- / lag-diagnose",
+   "url": "https://sunlogim.github.io/nl/",
+   "applicationCategory": "UtilitiesApplication",
+   "operatingSystem": "Web browser",
+   "inLanguage": "nl",
+   "description": "Maakt SunLogin-afstandsbediening geen verbinding, zwart scherm of lag met hoge latentie? Zoek een symptoom (apparaat offline, time-out, fout toegangswachtwoord, firewall-blokkade, bedrijfsnetwerk, zichtbaar maar niet bestuurbaar, relay-modus, 30 fps gratis versie) voor de officiële L1-controles plus de L2-netwerklaag-grondoorzaak (P2P vs relay, NAT-traversal, poortbereiken, framerate-niveaus), en vergelijk met echte gevallen om snel opnieuw te verbinden.",
+   "isAccessibleForFree": true,
+   "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+   }
+  },
+  {
+   "@type": "FAQPage",
+   "inLanguage": "nl",
+   "url": "https://sunlogim.github.io/nl/",
+   "mainEntity": [
+    {
+     "@type": "Question",
+     "name": "SunLogin op afstand \"Apparaat offline\": wat te doen?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Bevestig dat de host-pc aan, online en niet in slaapstand is, de SunLogin-client draait en \"aangemeld\" toont; bij instabiel netwerk de router herstarten of van netwerk wisselen Offline = de host is gewoon niet online, kijk niet eerst naar het netwerk: na slaapstand verbreekt de netwerkkaart vaak, de laptopklep dichtdoen verbreekt de wifi, de energiebesparingsmodus van Android doodt de achtergrond; in Windows in services.msc controleren of de dienst \"SunLogin\" draait Langdurig onbeheerde host: \"automatisch opstarten + automatisch aanmelden + onbeheerde toegang\" inschakelen, in Android SunLogin aan de energiebesparings-whitelist toevoegen"
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "SunLogin op afstand \"Time-out bij verbinden\": wat te doen?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Schakel eerst firewall / antivirus aan beide kanten uit en probeer; meld beide opnieuw aan; werk bij naar de nieuwste; wissel van netwerkomgeving (telefoon-hotspot) 90% van de \"verbindingsfouten\" hangt vast in fase 2 \"kanaal opzetten\": 15=P2P komt niet door en relay mislukt ook (netwerk te slecht), 3=de netwerklaag is geblokkeerd; verbindt het via hotspot, dan is het in principe een netwerk- / firewallprobleem Lokaliseer in 3 fasen: account verifiëren → kanaal opzetten → beeld overdragen; de time-out zit bijna altijd bij \"kanaal opzetten\""
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "SunLogin op afstand \"Fout toegangswachtwoord\": wat te doen?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Bevestig dat je het \"toegangswachtwoord\" invoert en niet het inlogwachtwoord van het SunLogin-account; reset het toegangswachtwoord op de host en verbind opnieuw Het toegangswachtwoord is het aparte wachtwoord op afstand dat de host instelt; vaak gewijzigd of verward met het inlogwachtwoord; na wijziging gebruikt de besturende het nieuwe Toegangswachtwoord ≠ inlogwachtwoord: bekijk / reset in \"Instellingen → Beveiliging\" van de host"
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "SunLogin op afstand \"Firewall-blokkade\": wat te doen?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Voeg SunLogin toe aan het vertrouwen van firewall / beveiliging: in de Windows Defender Firewall \"app toestaan\" SunloginClient aanvinken; voeg vertrouwen toe in de antivirus van derden De whitelist moet de hele installatiemap omvatten (bv. C:\\Program Files (x86)\\Oray\\SunLogin\\), niet alleen de hoofd-exe—SunLogin roept bij het draaien meerdere componenten aan Snelle verificatie: sluit de beveiliging volledig (niet alleen de realtimebescherming) en verbind; verbindt het, dan blokkeerde zij voor 100%"
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "SunLogin op afstand \"Bedrijfsnetwerk verbindt niet\": wat te doen?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Vraag de bedrijfs-IT om de whitelist van SunLogin toe te laten; of gebruik tijdelijk de telefoon-hotspot op de host om te omzeilen; probeer SunLogin SOS-versie (andere verbindingswijze) Bedrijfsnetwerken hebben vaak apparatuur voor internetgedragsbeheer; SunLogin via TCP 443 (zelfde poort als HTTPS) wordt door DPI herkend en geblokkeerd; community-ervaring: sta TCP 51020–51030 + UDP 50000–50010 toe op de bedrijfsrouter, of wissel de verbindingsmodus van \"hoge snelheid\" naar \"compatibel\" (80/443, algemener) Om te weten of het het bedrijfsnetwerk is: zet beide op de telefoon-hotspot; verbindt het, dan is het voor 100% de blokkade van het bedrijfsnetwerk"
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "SunLogin op afstand \"Zwart scherm\": wat te doen?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Geef SunLogin rechten op de host: macOS \"Systeeminstellingen → Privacy en beveiliging\" schermopname / toegankelijkheid / volledige schijftoegang aanvinken; Windows probeer van desktopmodus te wisselen / opnieuw te verbinden Zwart scherm is meestal ontbrekend opnamerecht of overschakeling naar de dedicated GPU, vergrendelschermbescherming; op laptops met dedicated GPU kun je SunLogin via de iGPU laten opnemen in het energiebeleid Sinds macOS Ventura is het rechtenpad verplaatst naar \"Systeeminstellingen\"; \"schermopname\" in de zoekbalk zoeken is het snelst"
+     }
+    }
+   ]
+  }
+ ]
+}
+</script>
+</head>
+<body><div class="wrap"><main>
+<nav class="lang">Taal: <a href="/">简体中文</a> · <a href="/en/">English</a> · <a href="/ja/">日本語</a> · <a href="/zh-tw/">繁體中文</a> · <a href="/ko/">한국어</a> · <a href="/id/">Bahasa Indonesia</a> · <a href="/vi/">Tiếng Việt</a> · <a href="/th/">ไทย</a> · <a href="/es/">Español</a> · <a href="/pt-br/">Português (BR)</a> · <a href="/de/">Deutsch</a> · <a href="/fr/">Français</a> · <a href="/ru/">Русский</a> · <a href="/it/">Italiano</a> · <a href="/pl/">Polski</a> · <strong>Nederlands</strong> · <a href="/tr/">Türkçe</a> · <a href="/ar/">العربية</a> · <a href="/hi/">हिन्दी</a> · <a href="/ms/">Bahasa Melayu</a> · <a href="/fa/">فارسی</a> · <a href="/bn/">বাংলা</a> · <a href="/ta/">தமிழ்</a> · <a href="/te/">తెలుగు</a> · <a href="/fil/">Filipino</a> · <a href="/ur/">اردو</a> · <a href="/lo/">ພາສາລາວ</a> · <a href="/km/">ភាសាខ្មែរ</a> · <a href="/my/">မြန်မာ</a></nav>
+<h1>SunLogin verbindings- / lag-diagnose op afstand</h1>
+<figure class="i4png"><picture><source type="image/webp" srcset="/img/cover_nl.webp"><img src="/img/cover_nl.png" alt="Illustratie van het SunLogin verbindings- en lag-diagnosetool op afstand" fetchpriority="high" width="1120" height="746" style="width:100%;height:auto;border-radius:12px;border:1px solid #eee"></picture><figcaption>Afbeelding: SunLogin verbindings- / lag-diagnose (officiële L1-controles + L2-netwerklaag-oorzaak)</figcaption></figure>
+<p>De twee echte hoofdpijnen van SunLogin-afstandsbediening zijn <strong>geen verbinding</strong> en <strong>lag</strong>. Zoek je <strong>symptoom</strong> (bv. <code>apparaat offline</code>, <code>time-out</code>, <code>fout toegangswachtwoord</code>, <code>firewall-blokkade</code>, <code>zichtbaar maar niet bestuurbaar</code>, <code>hoge latentie</code>, <code>30 fps gratis</code>): eerst de <strong>officiële L1-controles</strong>, dan de <strong>L2-netwerklaag-grondoorzaak</strong> (P2P direct vs server-relay, NAT-traversal, poortbereiken), tot slot echte gevallen. Desktopclient nodig? Zie de <a href="https://sunlogim.com/">officiële SunLogin-download</a>.</p>
+<input id="q" placeholder="Voer een symptoom in, bv. verbindingsfout / zwart scherm / lag / offline" autocomplete="off">
+<button id="go">Opzoeken</button>
+<div id="out"></div>
+<h2>Stap 1: doorloop de officiële controles (L1 - doe deze 4 eerst)</h2>
+<p>SunLogins officiële checklist bij verbindingsfouten telt maar 4 stappen, allemaal in de app: ① <strong>Account- & apparaatkoppeling</strong>—besturende en host melden zich aan met hetzelfde SunLogin-account; ② <strong>Apparaatstatus & netwerk</strong>—de host staat aan, is online en niet in slaapstand (gebruik "Wake" voor een slapende host, vooraf inschakelen); ③ <strong>Firewall & rechten</strong>—voeg SunLogin toe aan de vertrouwenslijst van de firewall, schakel "Afstandsbediening toestaan" en "Onbeheerde toegang" in, stel het toegangswachtwoord correct in; ④ <strong>Versie & herstart</strong>—werk beide kanten bij naar de nieuwste versie, herstart de client, wis de cache. Uitgebreidere gids: <a href="https://sunlogim.com/lianjie/">SunLogin verbindingscontrole-gids</a>.</p>
+<div class="cat"><div class="catbox"><b>Netwerk / Traversal</b><span class="cs">time-out · firewall-blokkade · bedrijfsnetwerk · relay / P2P</span><div>Kanaalopzet mislukt of hoge latentie door relay. Controleer eerst firewall-vertrouwen + wissel van netwerk; dieper: of P2P doorkomt, bedrijfs-DPI en NAT-type.</div></div><div class="catbox"><b>Account / Rechten</b><span class="cs">apparaat offline · fout toegangswachtwoord · ander account · wake mislukt</span><div>Host online + hetzelfde account aan beide kanten is de voorwaarde. Toegangswachtwoord ≠ inlogwachtwoord; verlopen token vereist opnieuw inloggen; slaapstand los je op met "Wake".</div></div><div class="catbox"><b>Beeld / Prestaties</b><span class="cs">zwart scherm · zichtbaar niet bestuurbaar · lag · wazig · 30 fps gratis</span><div>Ervaringsproblemen na het verbinden. Rechten (schermopname / toegankelijkheid), desktopmodus, framerate-niveau en hostprestaties zijn de sleutel.</div></div><div class="catbox"><b>Versie / Protocol</b><span class="cs">protocolversie komt niet overeen · afwijking na update</span><div>Een groot versieverschil veroorzaakt makkelijk incompatibiliteit (code 30); werk beide bij naar de nieuwste, herstart en wis de cache.</div></div></div><figure><svg viewBox="0 0 720 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Stroomdiagram van SunLogin verbindings- en lag-diagnose" style="width:100%;height:auto;border:1px solid #eee;border-radius:12px;background:#fff"><text x="20" y="28" font-family="system-ui,Arial" font-size="15.5" font-weight="700" fill="#1d1d1f">SunLogin verbindings- / lag-diagnosestroom (per symptoom)</text><rect x="20" y="46" width="150" height="46" rx="10" fill="#111"/><text x="95" y="74" text-anchor="middle" font-family="system-ui,Arial" font-size="13" fill="#fff">Verbinding op afstand starten</text><path d="M170 69 H206" stroke="#999" stroke-width="2" fill="none" marker-end="url(#a)"/><rect x="206" y="46" width="172" height="46" rx="10" fill="#fff5e6" stroke="#ffe0b0"/><text x="292" y="74" text-anchor="middle" font-family="system-ui,Arial" font-size="13" fill="#b45309">Verbindt het?</text><rect x="440" y="20" width="262" height="56" rx="10" fill="#ecfdf5" stroke="#bbf7e0"/><text x="455" y="42" font-family="system-ui,Arial" font-size="12.5" fill="#047857">Verbonden maar lag → bekijk prestaties:</text><text x="455" y="62" font-family="system-ui,Arial" font-size="11.5" fill="#065f46">relay? kwaliteit te hoog? fps-limiet? hostprestaties</text><rect x="440" y="86" width="262" height="56" rx="10" fill="#fef2f2" stroke="#fecaca"/><text x="455" y="108" font-family="system-ui,Arial" font-size="12.5" fill="#b91c1c">Geen verbinding → bekijk fouttype:</text><text x="455" y="128" font-family="system-ui,Arial" font-size="11.5" fill="#991b1b">offline? firewall? account / wachtwoord? versie</text><path d="M378 60 H410 V48 H440" stroke="#10b981" stroke-width="2" fill="none" marker-end="url(#a)"/><path d="M378 78 H410 V114 H440" stroke="#ef4444" stroke-width="2" fill="none" marker-end="url(#a)"/><text x="20" y="178" font-family="system-ui,Arial" font-size="13" font-weight="700" fill="#1d1d1f">Vier soorten storingen (bekijk L1 / L2 per item)</text><g font-family="system-ui,Arial" font-size="12"><rect x="20" y="190" width="162" height="92" rx="10" fill="#fff5e6" stroke="#ffe0b0"/><text x="32" y="212" font-weight="700" fill="#b45309">① Netwerk / Traversal</text><text x="32" y="234" fill="#555" font-size="11">relay / P2P · firewall · bedrijfsnetwerk</text><rect x="194" y="190" width="162" height="92" rx="10" fill="#eef4ff" stroke="#cfe0ff"/><text x="206" y="212" font-weight="700" fill="#1d4ed8">② Account / Rechten</text><text x="206" y="234" fill="#555" font-size="11">offline · toegangswachtwoord · wake</text><rect x="368" y="190" width="162" height="92" rx="10" fill="#ecfdf5" stroke="#bbf7e0"/><text x="380" y="212" font-weight="700" fill="#047857">③ Beeld / Prestaties</text><text x="380" y="234" fill="#555" font-size="11">zwart scherm · lag · kwaliteit · 30 fps</text><rect x="542" y="190" width="160" height="92" rx="10" fill="#fef2f2" stroke="#fecaca"/><text x="554" y="212" font-weight="700" fill="#b91c1c">④ Versie / Protocol</text><text x="554" y="234" fill="#555" font-size="11">versie komt niet overeen · update-afwijking</text></g><defs><marker id="a" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0 0 L6 3 L0 6 z" fill="#999"/></marker></defs></svg><figcaption>Afb 1: SunLogin verbindings- / lag-stroom—eerst of het verbindt, dan de oorzaak indelen</figcaption></figure>
+<h2>Stap 2: nog steeds lag / nog steeds geen verbinding → L2-netwerklaag-grondoorzaak</h2>
+<p>Kerngedachte: <strong>geen-verbinding hangt meestal vast bij "het kanaal opzetten", terwijl lag meestal betekent dat het via relay liep</strong>. SunLogin probeert eerst <strong>P2P-traversal</strong> om beide kanten te verbinden (laagste latentie 20–50 ms); pas als dat mislukt valt het terug op het <strong>server-relay van de leverancier</strong> (80–200 ms) — de client toont "P2P" of "Relay" linksonder. Het diagram is een verbindings-zelfcontrolepaneel; diepere oorzaken: symmetrische NAT / router-UPnP, bedrijfsnetwerk-DPI en poortbereiken, en de framerate begrensd door de verversingssnelheid van de monitor.</p>
+<figure><svg viewBox="0 0 720 320" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Illustratie van het SunLogin verbindings-zelfcontrolepaneel" style="width:100%;height:auto;border:1px solid #eee;border-radius:12px;background:#fff"><text x="20" y="28" font-family="system-ui,Arial" font-size="15.5" font-weight="700" fill="#1d1d1f">Verbindings-zelfcontrolepaneel (groen=ok / rood=probleem)</text><rect x="20" y="42" width="680" height="226" rx="14" fill="#f8fafc" stroke="#e2e8f0"/><text x="38" y="66" font-family="system-ui,Arial" font-size="12.5" font-weight="700" fill="#475569">Controlepunt</text><text x="300" y="66" font-family="system-ui,Arial" font-size="12" fill="#94a3b8">Huidige status</text><text x="610" y="66" font-family="system-ui,Arial" font-size="12" fill="#94a3b8">Oordeel</text><line x1="38" y1="74" x2="682" y2="74" stroke="#e2e8f0" stroke-width="1"/><text x="38" y="98" font-family="system-ui,Arial" font-size="13" fill="#1d1d1f">Account gelijk aan beide kanten</text><text x="300" y="98" font-family="system-ui,Arial" font-size="12.5" fill="#16a34a">Zelfde SunLogin-account</text><circle cx="612" cy="94" r="6" fill="#16a34a"/><text x="628" y="98" font-family="system-ui,Arial" font-size="12" fill="#16a34a">OK</text><text x="38" y="128" font-family="system-ui,Arial" font-size="13" fill="#1d1d1f">Host online</text><text x="300" y="128" font-family="system-ui,Arial" font-size="12.5" fill="#16a34a">Online · niet in slaapstand</text><circle cx="612" cy="124" r="6" fill="#16a34a"/><text x="628" y="128" font-family="system-ui,Arial" font-size="12" fill="#16a34a">OK</text><text x="38" y="158" font-family="system-ui,Arial" font-size="13" fill="#1d1d1f">Firewall laat door</text><text x="300" y="158" font-family="system-ui,Arial" font-size="12.5" fill="#ef4444">Geblokkeerd door beveiliging</text><circle cx="612" cy="154" r="6" fill="#ef4444"/><text x="628" y="158" font-family="system-ui,Arial" font-size="12" fill="#ef4444">Probleem</text><text x="38" y="188" font-family="system-ui,Arial" font-size="13" fill="#1d1d1f">Verbindingsmodus</text><text x="300" y="188" font-family="system-ui,Arial" font-size="12.5" fill="#ef4444">Relay · hoge latentie</text><circle cx="612" cy="184" r="6" fill="#ef4444"/><text x="628" y="188" font-family="system-ui,Arial" font-size="12" fill="#ef4444">Probleem</text><text x="38" y="218" font-family="system-ui,Arial" font-size="13" fill="#1d1d1f">Clientversie</text><text x="300" y="218" font-family="system-ui,Arial" font-size="12.5" fill="#16a34a">Beide nieuwste</text><circle cx="612" cy="214" r="6" fill="#16a34a"/><text x="628" y="218" font-family="system-ui,Arial" font-size="12" fill="#16a34a">OK</text><text x="38" y="248" font-family="system-ui,Arial" font-size="13" fill="#1d1d1f">Toegangswachtwoord</text><text x="300" y="248" font-family="system-ui,Arial" font-size="12.5" fill="#16a34a">Correct</text><circle cx="612" cy="244" r="6" fill="#16a34a"/><text x="628" y="248" font-family="system-ui,Arial" font-size="12" fill="#16a34a">OK</text><text x="20" y="296" font-family="system-ui,Arial" font-size="11.5" fill="#94a3b8">Let op: rood = op te lossen probleem; verbonden maar "relay" = hoge latentie, schakel router-UPnP in voor P2P direct.</text></svg><figcaption>Afb 2: verbindings-zelfcontrolepaneel (groen = ok / rood = probleem)</figcaption></figure>
+<figure class="i4png"><picture><source type="image/webp" srcset="/img/board_nl.webp"><img src="/img/board_nl.png" alt="Illustratie van het SunLogin verbindings-zelfcontrolepaneel met groene/rode items" loading="lazy" width="1120" height="746" style="width:100%;height:auto;border-radius:12px;border:1px solid #eee"></picture><figcaption>Afbeelding: geen verbinding → "kanaal opzetten", lag → of het via "relay" liep—schakel UPnP in voor P2P direct</figcaption></figure>
+<h2>Volledige symptomentabel (eerst L1 controleren · L2-grondoorzaak)</h2>
+<table id="tbl"></table>
+<section class="i4data">
+<h2>SunLogin verbindings- / lag-gegevens (schatting 2026)</h2>
+<p>Hieronder een <strong>schatting voor 2026</strong> die de officiële SunLogin-hulp en de ervaring van de openbare community voor toegang op afstand samenvat (geen officiële cijfers van de leverancier en geen metingen uit de eerste hand, alleen ter referentie):</p>
+<table>
+<tr><th>Dimensie</th><th>Schatting</th></tr>
+<tr><td>Verdeling van oorzaken van verbindingsfouten (schatting)</td><td>firewall / beveiliging <strong>≈50%</strong> &gt; host offline / in slaapstand <strong>≈20%</strong> &gt; account / wachtwoord <strong>≈15%</strong> &gt; versie / protocol <strong>≈10%</strong></td></tr>
+<tr><td>Verdeling van lag-oorzaken (community-meting)</td><td>relay <strong>35%</strong> &gt; kwaliteit te hoog 25% &gt; hostprestaties 20% &gt; netwerk slecht 15% &gt; fps-limiet 5%</td></tr>
+<tr><td>Latentie P2P direct vs server-relay</td><td>P2P ongeveer <strong>20–50 ms</strong>, relay ongeveer <strong>80–200 ms</strong></td></tr>
+<tr><td>Frameplafond (gratis / betaald / gaming)</td><td><strong>30 / 60 / 144</strong> fps (144 vereist GPU + monitor van 144 Hz)</td></tr>
+<tr><td>Voordeel van UPnP inschakelen voor P2P</td><td>de doorslagkans stijgt sterk; de gemeten latentie kan van ~120 ms naar ~35 ms gaan</td></tr>
+<tr><td>Bruikbaarheidsniveaus per latentie</td><td>&lt;30 ms bijna lokaal · 80–150 ms duidelijk haperend · &gt;150 ms bijna alleen klikken</td></tr>
+</table>
+<p><small>Schattingsbasis: bronbasislijn + temporele extrapolatie (synthese van de officiële SunLogin-hulp en gegevens van de openbare community voor toegang op afstand); varieert per versie en netwerkomgeving; de meest recente officiële SunLogin-informatie is leidend.</small></p>
+</section>
+<h2>Snelle inschatting van echte gevallen</h2>
+<ul class="scenes"><li>De kantoor-pc verbindt absoluut niet maar de telefoon-hotspot verbindt meteen: meestal blokkeert het internetgedragsbeheer / DPI van het bedrijfsnetwerk het verkeer op afstand. Vraag IT om whitelist-toelating, of gebruik tijdelijk de telefoon-hotspot op de host.</li><li>Verbindt maar de muis laat een spoor na en de latentie gaat boven 100 ms: "Relay" linksonder is de oorzaak—log in op de router en schakel UPnP in voor P2P; de gemeten latentie kan van ~120 ms naar ~35 ms zakken.</li><li>Het toegangswachtwoord faalt steeds: het toegangswachtwoord is niet dat van het inlogaccount; reset het in "Instellingen" van de host en verbind opnieuw.</li><li>Het apparaat lijkt online maar de verbinding loopt af: vaak verlopen inlogtoken / host in slaapstand en zonder netwerk; log opnieuw in op de host, of schakel "Wake" en onbeheerde toegang vooraf in.</li><li>Vensters slepen hapert duidelijk maar de latentie is niet hoog: het frameplafond van de gratis versie is 30 fps; betaald tot 60 fps en de gaming-versie tot 144 fps (vereist geschikte monitor).</li><li>Zwart scherm, alleen zichtbaar zonder te kunnen bedienen: meestal ontbreken rechten (macOS vereist "schermopname / toegankelijkheid" aanvinken), of CPU / RAM van de host zit aan de limiet en de codering komt niet bij.</li></ul><div class="related"><h2>Gerelateerd</h2><ul><li><a href="https://sunlogim.com/">Officiële SunLogin-download op afstand</a></li><li><a href="https://sunlogim.com/lianjie/">SunLogin verbindingscontrole-gids</a></li><li><a href="https://sunlogni.com/">SunLogin op afstand downloaden (zustersite)</a></li></ul></div></main>
+<footer>Controlestappen plus desktopmodi / framerate-parameters zijn samengevat uit de officiële SunLogin-hulp (sunlogin.oray.com); P2P / relay, NAT-traversal, poortbereiken in het bedrijfsnetwerk en het lezen van foutcodes zijn gesynthetiseerd uit de ervaring van de openbare community voor toegang op afstand (niet-officieel). Alleen ter referentie; de meest recente officiële SunLogin-informatie is leidend. (niet-officieel·LLM-lokalisatie)<br>Opensourceproject · MIT License</footer>
+</div>
+<script src="/nl/codes.js"></script><script src="/app.js"></script>
+</body></html>
