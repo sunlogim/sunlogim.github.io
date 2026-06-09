@@ -1,0 +1,151 @@
+<!DOCTYPE html><html lang="pl"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Diagnostyka połączenia / lagów SunLogin zdalnego - napraw błąd połączenia, czarny ekran, wysokie opóźnienie</title>
+<meta name="description" content="Zdalne sterowanie SunLogin nie łączy się, czarny ekran albo lagi z wysokim pingiem? Wyszukaj objaw (urządzenie offline, przekroczono limit czasu, błędne hasło dostępu, blokada zapory, sieć firmowa, widać ale nie da się sterować, tryb relay, 30 fps w wersji darmowej), aby zobaczyć oficjalne sprawdzenia L1 oraz przyczynę źródłową warstwy sieci L2 (P2P kontra relay, NAT traversal, zakresy portów, poziomy klatek), i porównaj z realnymi przypadkami, by szybko wznowić połączenie.">
+<link rel="canonical" href="https://sunlogim.github.io/pl/">
+<link rel="alternate" hreflang="zh-Hans" href="https://sunlogim.github.io/">
+<link rel="alternate" hreflang="en" href="https://sunlogim.github.io/en/">
+<link rel="alternate" hreflang="ja" href="https://sunlogim.github.io/ja/">
+<link rel="alternate" hreflang="zh-Hant" href="https://sunlogim.github.io/zh-tw/">
+<link rel="alternate" hreflang="ko" href="https://sunlogim.github.io/ko/">
+<link rel="alternate" hreflang="id" href="https://sunlogim.github.io/id/">
+<link rel="alternate" hreflang="vi" href="https://sunlogim.github.io/vi/">
+<link rel="alternate" hreflang="th" href="https://sunlogim.github.io/th/">
+<link rel="alternate" hreflang="es" href="https://sunlogim.github.io/es/">
+<link rel="alternate" hreflang="pt-BR" href="https://sunlogim.github.io/pt-br/">
+<link rel="alternate" hreflang="de" href="https://sunlogim.github.io/de/">
+<link rel="alternate" hreflang="fr" href="https://sunlogim.github.io/fr/">
+<link rel="alternate" hreflang="ru" href="https://sunlogim.github.io/ru/">
+<link rel="alternate" hreflang="it" href="https://sunlogim.github.io/it/">
+<link rel="alternate" hreflang="pl" href="https://sunlogim.github.io/pl/">
+<link rel="alternate" hreflang="nl" href="https://sunlogim.github.io/nl/">
+<link rel="alternate" hreflang="tr" href="https://sunlogim.github.io/tr/">
+<link rel="alternate" hreflang="ar" href="https://sunlogim.github.io/ar/">
+<link rel="alternate" hreflang="hi" href="https://sunlogim.github.io/hi/">
+<link rel="alternate" hreflang="ms" href="https://sunlogim.github.io/ms/">
+<link rel="alternate" hreflang="fa" href="https://sunlogim.github.io/fa/">
+<link rel="alternate" hreflang="bn" href="https://sunlogim.github.io/bn/">
+<link rel="alternate" hreflang="ta" href="https://sunlogim.github.io/ta/">
+<link rel="alternate" hreflang="te" href="https://sunlogim.github.io/te/">
+<link rel="alternate" hreflang="fil" href="https://sunlogim.github.io/fil/">
+<link rel="alternate" hreflang="ur" href="https://sunlogim.github.io/ur/">
+<link rel="alternate" hreflang="lo" href="https://sunlogim.github.io/lo/">
+<link rel="alternate" hreflang="km" href="https://sunlogim.github.io/km/">
+<link rel="alternate" hreflang="my" href="https://sunlogim.github.io/my/">
+<link rel="alternate" hreflang="x-default" href="https://sunlogim.github.io/">
+<link rel="stylesheet" href="/style.css">
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "WebApplication",
+   "name": "Diagnostyka połączenia / lagów SunLogin",
+   "url": "https://sunlogim.github.io/pl/",
+   "applicationCategory": "UtilitiesApplication",
+   "operatingSystem": "Web browser",
+   "inLanguage": "pl",
+   "description": "Zdalne sterowanie SunLogin nie łączy się, czarny ekran albo lagi z wysokim pingiem? Wyszukaj objaw (urządzenie offline, przekroczono limit czasu, błędne hasło dostępu, blokada zapory, sieć firmowa, widać ale nie da się sterować, tryb relay, 30 fps w wersji darmowej), aby zobaczyć oficjalne sprawdzenia L1 oraz przyczynę źródłową warstwy sieci L2 (P2P kontra relay, NAT traversal, zakresy portów, poziomy klatek), i porównaj z realnymi przypadkami, by szybko wznowić połączenie.",
+   "isAccessibleForFree": true,
+   "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+   }
+  },
+  {
+   "@type": "FAQPage",
+   "inLanguage": "pl",
+   "url": "https://sunlogim.github.io/pl/",
+   "mainEntity": [
+    {
+     "@type": "Question",
+     "name": "SunLogin zdalnie „Urządzenie offline” — co robić?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Upewnij się, że PC-host jest włączony, online, nie śpi, klient SunLogin działa i jest „zalogowany”; przy niestabilnej sieci zrestartuj router lub zmień sieć Offline = host po prostu nie jest online, nie patrz najpierw na sieć: po uśpieniu karta sieciowa często się rozłącza, zamknięcie pokrywy laptopa zrywa WiFi, tryb oszczędzania Androida zabija tło; w Windows sprawdź w services.msc, czy usługa „SunLogin” działa Host bez nadzoru długoterminowo: włącz „autostart + automatyczne logowanie + dostęp bez nadzoru”, w Androidzie dodaj SunLogin do białej listy oszczędzania energii"
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "SunLogin zdalnie „Przekroczono limit czasu” — co robić?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Najpierw wyłącz zaporę / antywirus po obu stronach i spróbuj; wyloguj i zaloguj ponownie na obu; zaktualizuj do najnowszej; zmień środowisko sieci (hotspot telefonu) 90% „błędów połączenia” blokuje się na fazie 2 „ustanowienie kanału”: 15=P2P nie przechodzi i relay też zawodzi (sieć za słaba), 3=warstwa sieci jest zablokowana; jeśli przez hotspot się łączy, to w zasadzie problem sieci / zapory Lokalizuj w 3 fazach: weryfikacja konta → ustanowienie kanału → transmisja obrazu; limit czasu prawie zawsze na „ustanowieniu kanału”"
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "SunLogin zdalnie „Błędne hasło dostępu” — co robić?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Upewnij się, że wpisujesz „hasło dostępu”, a nie hasło logowania do konta SunLogin; zresetuj hasło dostępu na hoście i połącz się ponownie Hasło dostępu to osobne zdalne hasło, które ustawia host; często zmienione lub mylone z hasłem logowania; po zmianie sterujący używa nowego Hasło dostępu ≠ hasło logowania: zobacz / zresetuj w „Ustawienia → Bezpieczeństwo” hosta"
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "SunLogin zdalnie „Blokada zapory” — co robić?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Dodaj SunLogin do zaufania zapory / ochrony: w Zaporze Windows Defender „zezwól aplikacji” zaznacz SunloginClient; dodaj zaufanie w antywirusie innej firmy Biała lista musi obejmować cały folder instalacji (np. C:\\Program Files (x86)\\Oray\\SunLogin\\), nie tylko główny exe—SunLogin wywołuje przy działaniu kilka komponentów Szybka weryfikacja: zamknij całkowicie ochronę (nie tylko ochronę w czasie rzeczywistym) i połącz; jeśli się łączy, to w 100% ona blokowała"
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "SunLogin zdalnie „Sieć firmowa nie łączy” — co robić?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Poproś firmowe IT o dopuszczenie białej listy SunLogin; albo użyj tymczasowo hotspotu telefonu na hoście, by ominąć; spróbuj SunLogin wersji SOS (inny sposób połączenia) Sieci firmowe często mają urządzenia zarządzania zachowaniem internetowym; SunLogin przez TCP 443 (ten sam port co HTTPS) jest rozpoznawany i blokowany przez DPI; doświadczenie społeczności: dopuść TCP 51020–51030 + UDP 50000–50010 na routerze firmowym, albo zmień tryb połączenia z „szybkiego” na „zgodny” (80/443, bardziej uniwersalny) Aby sprawdzić, czy to sieć firmowa: przełącz obie na hotspot telefonu; jeśli się łączy, to w 100% blokada sieci firmowej"
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "SunLogin zdalnie „Czarny ekran” — co robić?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Nadaj SunLogin uprawnienia na hoście: macOS „Ustawienia systemowe → Prywatność i bezpieczeństwo” zaznacz nagrywanie ekranu / dostępność / pełny dostęp do dysku; Windows spróbuj zmienić tryb pulpitu / połączyć ponownie Czarny ekran to zwykle brak uprawnienia do przechwytywania lub przełączenie na dedykowany GPU, ochrona ekranu blokady; na laptopach z dedykowanym GPU można w polityce zasilania kazać SunLogin przechwytywać przez iGPU Od macOS Ventura ścieżka uprawnień przeniosła się do „Ustawień systemowych”; wpisanie „nagrywanie ekranu” w wyszukiwarce jest najszybsze"
+     }
+    }
+   ]
+  }
+ ]
+}
+</script>
+</head>
+<body><div class="wrap"><main>
+<nav class="lang">Język: <a href="/">简体中文</a> · <a href="/en/">English</a> · <a href="/ja/">日本語</a> · <a href="/zh-tw/">繁體中文</a> · <a href="/ko/">한국어</a> · <a href="/id/">Bahasa Indonesia</a> · <a href="/vi/">Tiếng Việt</a> · <a href="/th/">ไทย</a> · <a href="/es/">Español</a> · <a href="/pt-br/">Português (BR)</a> · <a href="/de/">Deutsch</a> · <a href="/fr/">Français</a> · <a href="/ru/">Русский</a> · <a href="/it/">Italiano</a> · <strong>Polski</strong> · <a href="/nl/">Nederlands</a> · <a href="/tr/">Türkçe</a> · <a href="/ar/">العربية</a> · <a href="/hi/">हिन्दी</a> · <a href="/ms/">Bahasa Melayu</a> · <a href="/fa/">فارسی</a> · <a href="/bn/">বাংলা</a> · <a href="/ta/">தமிழ்</a> · <a href="/te/">తెలుగు</a> · <a href="/fil/">Filipino</a> · <a href="/ur/">اردو</a> · <a href="/lo/">ພາສາລາວ</a> · <a href="/km/">ភាសាខ្មែរ</a> · <a href="/my/">မြန်မာ</a></nav>
+<h1>Diagnostyka połączenia / lagów SunLogin zdalnego</h1>
+<figure class="i4png"><picture><source type="image/webp" srcset="/img/cover_pl.webp"><img src="/img/cover_pl.png" alt="Ilustracja narzędzia diagnostyki połączenia i lagów SunLogin zdalnego" fetchpriority="high" width="1120" height="746" style="width:100%;height:auto;border-radius:12px;border:1px solid #eee"></picture><figcaption>Rys.: Diagnostyka połączenia / lagów SunLogin (oficjalne sprawdzenia L1 + przyczyna warstwy sieci L2)</figcaption></figure>
+<p>Dwa prawdziwe bóle głowy zdalnego sterowania SunLogin to <strong>brak połączenia</strong> i <strong>lagi</strong>. Wyszukaj swój <strong>objaw</strong> (np. <code>urządzenie offline</code>, <code>przekroczono limit czasu</code>, <code>błędne hasło dostępu</code>, <code>blokada zapory</code>, <code>widać ale nie da się sterować</code>, <code>wysokie opóźnienie</code>, <code>30 fps za darmo</code>): najpierw <strong>oficjalne sprawdzenia L1</strong>, potem <strong>przyczyna źródłowa warstwy sieci L2</strong> (P2P bezpośrednio kontra relay serwera, NAT traversal, zakresy portów), na końcu realne przypadki. Potrzebujesz klienta desktopowego? Zobacz <a href="https://sunlogim.com/">oficjalne pobieranie SunLogin</a>.</p>
+<input id="q" placeholder="Wpisz objaw, np. błąd połączenia / czarny ekran / lag / offline" autocomplete="off">
+<button id="go">Szukaj</button>
+<div id="out"></div>
+<h2>Krok 1: przejdź oficjalne sprawdzenia (L1 - zrób najpierw te 4)</h2>
+<p>Oficjalna lista SunLogin przy błędzie połączenia to tylko 4 kroki, wszystkie w aplikacji: ① <strong>Powiązanie konta i urządzenia</strong>—sterujący i host logują się na to samo konto SunLogin; ② <strong>Stan urządzenia i sieć</strong>—host jest włączony, online i nie śpi (użyj „Wake” dla śpiącego hosta, włącz wcześniej); ③ <strong>Zapora i uprawnienia</strong>—dodaj SunLogin do zaufanych zapory, włącz „Zezwól na zdalne sterowanie” i „Dostęp bez nadzoru”, ustaw poprawnie hasło dostępu; ④ <strong>Wersja i restart</strong>—zaktualizuj obie strony do najnowszej wersji, zrestartuj klienta, wyczyść pamięć podręczną. Pełniejszy przewodnik: <a href="https://sunlogim.com/lianjie/">przewodnik sprawdzania połączenia SunLogin</a>.</p>
+<div class="cat"><div class="catbox"><b>Sieć / Traversal</b><span class="cs">limit czasu · blokada zapory · sieć firmowa · relay / P2P</span><div>Niepowodzenie ustanowienia kanału lub wysokie opóźnienie przez relay. Najpierw sprawdź zaufanie zapory + zmień sieć; głębiej — czy P2P przechodzi, firmowy DPI i typ NAT.</div></div><div class="catbox"><b>Konto / Uprawnienia</b><span class="cs">urządzenie offline · błędne hasło dostępu · inne konto · błąd wake</span><div>Host online + to samo konto po obu stronach to warunek. Hasło dostępu ≠ hasło logowania; wygasły token wymaga ponownego logowania; uśpienie rozwiązuje „Wake”.</div></div><div class="catbox"><b>Obraz / Wydajność</b><span class="cs">czarny ekran · widać bez sterowania · lag · rozmyte · 30 fps za darmo</span><div>Problemy z doświadczeniem po połączeniu. Uprawnienia (nagrywanie ekranu / dostępność), tryb pulpitu, poziom klatek i wydajność hosta są kluczowe.</div></div><div class="catbox"><b>Wersja / Protokół</b><span class="cs">wersja protokołu się nie zgadza · anomalia po aktualizacji</span><div>Duża różnica wersji łatwo daje niezgodność (kod 30); zaktualizuj obie do najnowszej, zrestartuj i wyczyść pamięć podręczną.</div></div></div><figure><svg viewBox="0 0 720 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Schemat blokowy diagnostyki połączenia i lagów SunLogin" style="width:100%;height:auto;border:1px solid #eee;border-radius:12px;background:#fff"><text x="20" y="28" font-family="system-ui,Arial" font-size="15.5" font-weight="700" fill="#1d1d1f">Przebieg diagnostyki połączenia / lagów SunLogin (wg objawu)</text><rect x="20" y="46" width="150" height="46" rx="10" fill="#111"/><text x="95" y="74" text-anchor="middle" font-family="system-ui,Arial" font-size="13" fill="#fff">Rozpocznij połączenie zdalne</text><path d="M170 69 H206" stroke="#999" stroke-width="2" fill="none" marker-end="url(#a)"/><rect x="206" y="46" width="172" height="46" rx="10" fill="#fff5e6" stroke="#ffe0b0"/><text x="292" y="74" text-anchor="middle" font-family="system-ui,Arial" font-size="13" fill="#b45309">Łączy się?</text><rect x="440" y="20" width="262" height="56" rx="10" fill="#ecfdf5" stroke="#bbf7e0"/><text x="455" y="42" font-family="system-ui,Arial" font-size="12.5" fill="#047857">Łączy się ale lag → sprawdź wydajność:</text><text x="455" y="62" font-family="system-ui,Arial" font-size="11.5" fill="#065f46">relay? za wysoka jakość? limit fps? wydajność hosta</text><rect x="440" y="86" width="262" height="56" rx="10" fill="#fef2f2" stroke="#fecaca"/><text x="455" y="108" font-family="system-ui,Arial" font-size="12.5" fill="#b91c1c">Brak połączenia → sprawdź typ błędu:</text><text x="455" y="128" font-family="system-ui,Arial" font-size="11.5" fill="#991b1b">offline? zapora? konto / hasło? wersja</text><path d="M378 60 H410 V48 H440" stroke="#10b981" stroke-width="2" fill="none" marker-end="url(#a)"/><path d="M378 78 H410 V114 H440" stroke="#ef4444" stroke-width="2" fill="none" marker-end="url(#a)"/><text x="20" y="178" font-family="system-ui,Arial" font-size="13" font-weight="700" fill="#1d1d1f">Cztery typy awarii (sprawdź L1 / L2 na pozycję)</text><g font-family="system-ui,Arial" font-size="12"><rect x="20" y="190" width="162" height="92" rx="10" fill="#fff5e6" stroke="#ffe0b0"/><text x="32" y="212" font-weight="700" fill="#b45309">① Sieć / Traversal</text><text x="32" y="234" fill="#555" font-size="11">relay / P2P · zapora · sieć firmowa</text><rect x="194" y="190" width="162" height="92" rx="10" fill="#eef4ff" stroke="#cfe0ff"/><text x="206" y="212" font-weight="700" fill="#1d4ed8">② Konto / Uprawnienia</text><text x="206" y="234" fill="#555" font-size="11">offline · hasło dostępu · wake</text><rect x="368" y="190" width="162" height="92" rx="10" fill="#ecfdf5" stroke="#bbf7e0"/><text x="380" y="212" font-weight="700" fill="#047857">③ Obraz / Wydajność</text><text x="380" y="234" fill="#555" font-size="11">czarny ekran · lag · jakość · 30 fps</text><rect x="542" y="190" width="160" height="92" rx="10" fill="#fef2f2" stroke="#fecaca"/><text x="554" y="212" font-weight="700" fill="#b91c1c">④ Wersja / Protokół</text><text x="554" y="234" fill="#555" font-size="11">wersja się nie zgadza · anomalia aktualizacji</text></g><defs><marker id="a" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0 0 L6 3 L0 6 z" fill="#999"/></marker></defs></svg><figcaption>Rys 1: przebieg połączenia / lagów SunLogin—najpierw czy się łączy, potem klasyfikuj przyczynę</figcaption></figure>
+<h2>Krok 2: nadal lagi / nadal brak połączenia → przyczyna źródłowa warstwy sieci (L2)</h2>
+<p>Kluczowa myśl: <strong>brak-połączenia zwykle blokuje się na „ustanowieniu kanału”, a lagi zwykle znaczą, że poszło przez relay</strong>. SunLogin najpierw próbuje <strong>NAT traversal P2P</strong>, by połączyć obie strony (najniższe opóźnienie 20–50 ms); dopiero gdy się nie uda, przechodzi na <strong>relay serwera dostawcy</strong> (80–200 ms) — klient pokazuje „P2P” lub „Relay” w lewym dolnym rogu. Schemat to panel samokontroli połączenia; głębsze przyczyny: symetryczny NAT / UPnP routera, DPI sieci firmowej i zakresy portów oraz liczba klatek ograniczona częstotliwością odświeżania monitora.</p>
+<figure><svg viewBox="0 0 720 320" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Ilustracja panelu samokontroli połączenia SunLogin" style="width:100%;height:auto;border:1px solid #eee;border-radius:12px;background:#fff"><text x="20" y="28" font-family="system-ui,Arial" font-size="15.5" font-weight="700" fill="#1d1d1f">Panel samokontroli połączenia (zielony=ok / czerwony=problem)</text><rect x="20" y="42" width="680" height="226" rx="14" fill="#f8fafc" stroke="#e2e8f0"/><text x="38" y="66" font-family="system-ui,Arial" font-size="12.5" font-weight="700" fill="#475569">Pozycja</text><text x="300" y="66" font-family="system-ui,Arial" font-size="12" fill="#94a3b8">Stan obecny</text><text x="610" y="66" font-family="system-ui,Arial" font-size="12" fill="#94a3b8">Werdykt</text><line x1="38" y1="74" x2="682" y2="74" stroke="#e2e8f0" stroke-width="1"/><text x="38" y="98" font-family="system-ui,Arial" font-size="13" fill="#1d1d1f">Konto takie samo po obu stronach</text><text x="300" y="98" font-family="system-ui,Arial" font-size="12.5" fill="#16a34a">To samo konto SunLogin</text><circle cx="612" cy="94" r="6" fill="#16a34a"/><text x="628" y="98" font-family="system-ui,Arial" font-size="12" fill="#16a34a">OK</text><text x="38" y="128" font-family="system-ui,Arial" font-size="13" fill="#1d1d1f">Host online</text><text x="300" y="128" font-family="system-ui,Arial" font-size="12.5" fill="#16a34a">Online · nie śpi</text><circle cx="612" cy="124" r="6" fill="#16a34a"/><text x="628" y="128" font-family="system-ui,Arial" font-size="12" fill="#16a34a">OK</text><text x="38" y="158" font-family="system-ui,Arial" font-size="13" fill="#1d1d1f">Zapora przepuszcza</text><text x="300" y="158" font-family="system-ui,Arial" font-size="12.5" fill="#ef4444">Zablokowany przez ochronę</text><circle cx="612" cy="154" r="6" fill="#ef4444"/><text x="628" y="158" font-family="system-ui,Arial" font-size="12" fill="#ef4444">Problem</text><text x="38" y="188" font-family="system-ui,Arial" font-size="13" fill="#1d1d1f">Tryb połączenia</text><text x="300" y="188" font-family="system-ui,Arial" font-size="12.5" fill="#ef4444">Relay · wysokie opóźnienie</text><circle cx="612" cy="184" r="6" fill="#ef4444"/><text x="628" y="188" font-family="system-ui,Arial" font-size="12" fill="#ef4444">Problem</text><text x="38" y="218" font-family="system-ui,Arial" font-size="13" fill="#1d1d1f">Wersja klienta</text><text x="300" y="218" font-family="system-ui,Arial" font-size="12.5" fill="#16a34a">Obie najnowsze</text><circle cx="612" cy="214" r="6" fill="#16a34a"/><text x="628" y="218" font-family="system-ui,Arial" font-size="12" fill="#16a34a">OK</text><text x="38" y="248" font-family="system-ui,Arial" font-size="13" fill="#1d1d1f">Hasło dostępu</text><text x="300" y="248" font-family="system-ui,Arial" font-size="12.5" fill="#16a34a">Poprawne</text><circle cx="612" cy="244" r="6" fill="#16a34a"/><text x="628" y="248" font-family="system-ui,Arial" font-size="12" fill="#16a34a">OK</text><text x="20" y="296" font-family="system-ui,Arial" font-size="11.5" fill="#94a3b8">Uwaga: czerwony = problem do rozwiązania; łączy się ale „relay” = wysokie opóźnienie, włącz UPnP routera dla P2P bezpośrednio.</text></svg><figcaption>Rys 2: panel samokontroli połączenia (zielony = ok / czerwony = problem)</figcaption></figure>
+<figure class="i4png"><picture><source type="image/webp" srcset="/img/board_pl.webp"><img src="/img/board_pl.png" alt="Ilustracja panelu samokontroli połączenia SunLogin z elementami zielony/czerwony" loading="lazy" width="1120" height="746" style="width:100%;height:auto;border-radius:12px;border:1px solid #eee"></picture><figcaption>Rys.: brak połączenia → „ustanowienie kanału”, lag → czy poszło przez „relay”—włącz UPnP, by zdobyć P2P bezpośrednio</figcaption></figure>
+<h2>Pełna tabela objawów (najpierw sprawdzenie L1 · przyczyna źródłowa L2)</h2>
+<table id="tbl"></table>
+<section class="i4data">
+<h2>Dane połączenia / lagów SunLogin (szacunek 2026)</h2>
+<p>Poniżej <strong>szacunek na 2026</strong> syntetyzujący oficjalną pomoc SunLogin i doświadczenie publicznej społeczności zdalnego dostępu (to nie oficjalne liczby dostawcy ani pomiary z pierwszej ręki, tylko poglądowo):</p>
+<table>
+<tr><th>Wymiar</th><th>Szacunek</th></tr>
+<tr><td>Rozkład przyczyn błędu połączenia (szacunek)</td><td>zapora / ochrona <strong>≈50%</strong> &gt; host offline / uśpiony <strong>≈20%</strong> &gt; konto / hasło <strong>≈15%</strong> &gt; wersja / protokół <strong>≈10%</strong></td></tr>
+<tr><td>Rozkład przyczyn lagów (pomiary społeczności)</td><td>relay <strong>35%</strong> &gt; za wysoka jakość 25% &gt; wydajność hosta 20% &gt; słaba sieć 15% &gt; limit fps 5%</td></tr>
+<tr><td>Opóźnienie P2P bezpośrednio vs relay serwera</td><td>P2P około <strong>20–50 ms</strong>, relay około <strong>80–200 ms</strong></td></tr>
+<tr><td>Limit klatek (darmowo / płatnie / gaming)</td><td><strong>30 / 60 / 144</strong> fps (144 wymaga GPU + monitora 144 Hz)</td></tr>
+<tr><td>Korzyść z włączenia UPnP dla P2P</td><td>skuteczność przebicia mocno rośnie; mierzone opóźnienie może iść z ~120 ms do ~35 ms</td></tr>
+<tr><td>Poziomy użyteczności wg opóźnienia</td><td>&lt;30 ms prawie lokalnie · 80–150 ms wyraźnie się tnie · &gt;150 ms prawie tylko kliknięcia</td></tr>
+</table>
+<p><small>Podstawa szacunku: linia bazowa źródeł + ekstrapolacja czasowa (synteza oficjalnej pomocy SunLogin i danych publicznej społeczności zdalnego dostępu); zmienia się zależnie od wersji i środowiska sieci; obowiązuje najnowsza oficjalna informacja SunLogin.</small></p>
+</section>
+<h2>Szybka ocena realnych przypadków</h2>
+<ul class="scenes"><li>Firmowy PC w ogóle się nie łączy, ale hotspot telefonu łączy od razu: zwykle to zarządzanie zachowaniem internetowym / DPI sieci firmowej blokuje ruch zdalny. Poproś IT o dopuszczenie w białej liście, albo użyj tymczasowo hotspotu telefonu na hoście.</li><li>Łączy się, ale mysz zostawia smugę, a ping przekracza 100 ms: „Relay” w lewym dolnym rogu to przyczyna—zaloguj się do routera i włącz UPnP, by zdobyć P2P; mierzone opóźnienie może spaść z ~120 ms do ~35 ms.</li><li>Hasło dostępu wciąż błędne: hasło dostępu to nie hasło konta logowania; zresetuj je w „Ustawieniach” hosta i połącz się ponownie.</li><li>Urządzenie pokazuje online, ale połączenie przekracza limit czasu: często wygasły token logowania / host uśpiony i bez sieci; zaloguj się ponownie na hoście, albo włącz „Wake” i dostęp bez nadzoru z wyprzedzeniem.</li><li>Przeciąganie okien wyraźnie się tnie, ale ping nie jest wysoki: limit klatek wersji darmowej to 30 fps; płatnie do 60 fps, a wersja gamingowa do 144 fps (wymaga zgodnego monitora).</li><li>Czarny ekran, tylko widać bez możliwości działania: zwykle brak uprawnień (macOS wymaga zaznaczenia „nagrywanie ekranu / dostępność”), albo CPU / RAM hosta na granicy i kodowanie nie nadąża.</li></ul><div class="related"><h2>Powiązane</h2><ul><li><a href="https://sunlogim.com/">Oficjalne pobieranie SunLogin zdalnego</a></li><li><a href="https://sunlogim.com/lianjie/">Przewodnik sprawdzania połączenia SunLogin</a></li><li><a href="https://sunlogni.com/">Pobierz SunLogin zdalny (siostrzana strona)</a></li></ul></div></main>
+<footer>Kroki sprawdzania oraz tryby pulpitu / parametry klatek podsumowano z oficjalnej pomocy SunLogin (sunlogin.oray.com); P2P / relay, NAT traversal, zakresy portów w sieci firmowej i odczyt kodów błędów zsyntetyzowano z doświadczenia publicznej społeczności zdalnego dostępu (nieoficjalne). Tylko poglądowo; obowiązuje najnowsza oficjalna informacja SunLogin. (nieoficjalne·lokalizacja LLM)<br>Projekt open source · MIT License</footer>
+</div>
+<script src="/pl/codes.js"></script><script src="/app.js"></script>
+</body></html>
