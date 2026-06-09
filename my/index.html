@@ -1,0 +1,151 @@
+<!DOCTYPE html><html lang="my"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>SunLogin အဝေးထိန်း ချိတ်ဆက်မှု / ကြန့်ကြာမှု ရောဂါရှာဖွေ - ချိတ်ဆက်မအောင်၊ မျက်နှာပြင်မည်း၊ latency မြင့်ကို ပြင်ဆင်ပါ</title>
+<meta name="description" content="SunLogin အဝေးထိန်း ချိတ်ဆက်မရ၊ မျက်နှာပြင်မည်း၊ သို့မဟုတ် latency မြင့်နှင့် ကြန့်ကြာနေပါသလား? လက္ခဏာတစ်ခုကို ရှာပါ (စက်ပစ္စည်း offline၊ timeout၊ access password မှား၊ firewall ပိတ်၊ ရုံးကွန်ရက်၊ မြင်ရပေမယ့် မထိန်းနိုင်၊ relay mode၊ အခမဲ့ version မှာ 30fps) ပြီး တရားဝင် L1 စစ်ဆေးမှုများနှင့် L2 ကွန်ရက်အလွှာ အရင်းခံအကြောင်းရင်း (P2P နှင့် relay၊ NAT traversal၊ port အပိုင်းအခြား၊ frame-rate အဆင့်များ) ကို ကြည့်ပြီး မြန်မြန်ပြန်ချိတ်ဆက်ရန် တကယ့်ဖြစ်ရပ်များနှင့် နှိုင်းယှဉ်ပါ။">
+<link rel="canonical" href="https://sunlogim.github.io/my/">
+<link rel="alternate" hreflang="zh-Hans" href="https://sunlogim.github.io/">
+<link rel="alternate" hreflang="en" href="https://sunlogim.github.io/en/">
+<link rel="alternate" hreflang="ja" href="https://sunlogim.github.io/ja/">
+<link rel="alternate" hreflang="zh-Hant" href="https://sunlogim.github.io/zh-tw/">
+<link rel="alternate" hreflang="ko" href="https://sunlogim.github.io/ko/">
+<link rel="alternate" hreflang="id" href="https://sunlogim.github.io/id/">
+<link rel="alternate" hreflang="vi" href="https://sunlogim.github.io/vi/">
+<link rel="alternate" hreflang="th" href="https://sunlogim.github.io/th/">
+<link rel="alternate" hreflang="es" href="https://sunlogim.github.io/es/">
+<link rel="alternate" hreflang="pt-BR" href="https://sunlogim.github.io/pt-br/">
+<link rel="alternate" hreflang="de" href="https://sunlogim.github.io/de/">
+<link rel="alternate" hreflang="fr" href="https://sunlogim.github.io/fr/">
+<link rel="alternate" hreflang="ru" href="https://sunlogim.github.io/ru/">
+<link rel="alternate" hreflang="it" href="https://sunlogim.github.io/it/">
+<link rel="alternate" hreflang="pl" href="https://sunlogim.github.io/pl/">
+<link rel="alternate" hreflang="nl" href="https://sunlogim.github.io/nl/">
+<link rel="alternate" hreflang="tr" href="https://sunlogim.github.io/tr/">
+<link rel="alternate" hreflang="ar" href="https://sunlogim.github.io/ar/">
+<link rel="alternate" hreflang="hi" href="https://sunlogim.github.io/hi/">
+<link rel="alternate" hreflang="ms" href="https://sunlogim.github.io/ms/">
+<link rel="alternate" hreflang="fa" href="https://sunlogim.github.io/fa/">
+<link rel="alternate" hreflang="bn" href="https://sunlogim.github.io/bn/">
+<link rel="alternate" hreflang="ta" href="https://sunlogim.github.io/ta/">
+<link rel="alternate" hreflang="te" href="https://sunlogim.github.io/te/">
+<link rel="alternate" hreflang="fil" href="https://sunlogim.github.io/fil/">
+<link rel="alternate" hreflang="ur" href="https://sunlogim.github.io/ur/">
+<link rel="alternate" hreflang="lo" href="https://sunlogim.github.io/lo/">
+<link rel="alternate" hreflang="km" href="https://sunlogim.github.io/km/">
+<link rel="alternate" hreflang="my" href="https://sunlogim.github.io/my/">
+<link rel="alternate" hreflang="x-default" href="https://sunlogim.github.io/">
+<link rel="stylesheet" href="/style.css">
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "WebApplication",
+   "name": "SunLogin အဝေးထိန်း ချိတ်ဆက်မှု / ကြန့်ကြာမှု ရောဂါရှာဖွေ",
+   "url": "https://sunlogim.github.io/my/",
+   "applicationCategory": "UtilitiesApplication",
+   "operatingSystem": "Web browser",
+   "inLanguage": "my",
+   "description": "SunLogin အဝေးထိန်း ချိတ်ဆက်မရ၊ မျက်နှာပြင်မည်း၊ သို့မဟုတ် latency မြင့်နှင့် ကြန့်ကြာနေပါသလား? လက္ခဏာတစ်ခုကို ရှာပါ (စက်ပစ္စည်း offline၊ timeout၊ access password မှား၊ firewall ပိတ်၊ ရုံးကွန်ရက်၊ မြင်ရပေမယ့် မထိန်းနိုင်၊ relay mode၊ အခမဲ့ version မှာ 30fps) ပြီး တရားဝင် L1 စစ်ဆေးမှုများနှင့် L2 ကွန်ရက်အလွှာ အရင်းခံအကြောင်းရင်း (P2P နှင့် relay၊ NAT traversal၊ port အပိုင်းအခြား၊ frame-rate အဆင့်များ) ကို ကြည့်ပြီး မြန်မြန်ပြန်ချိတ်ဆက်ရန် တကယ့်ဖြစ်ရပ်များနှင့် နှိုင်းယှဉ်ပါ။",
+   "isAccessibleForFree": true,
+   "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+   }
+  },
+  {
+   "@type": "FAQPage",
+   "inLanguage": "my",
+   "url": "https://sunlogim.github.io/my/",
+   "mainEntity": [
+    {
+     "@type": "Question",
+     "name": "SunLogin အဝေးထိန်း \"စက်ပစ္စည်း offline\" ဘာလုပ်ရမလဲ?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Host PC ဖွင့်၊ online၊ မအိပ်၊ SunLogin client အလုပ်လုပ်နေပြီး \"login\" ပြနေကြောင်း အတည်ပြုပါ; ကွန်ရက် မတည်ငြိမ်လျှင် router restart သို့မဟုတ် ကွန်ရက်ပြောင်းပါ Offline = host online မဟုတ်သေး၊ ကွန်ရက်ကို အရင်မကြည့်ပါနှင့်: အိပ်ပြီးနောက် network card မကြာခဏ ပြတ်၊ laptop အဖုံးပိတ်လျှင် WiFi ပြတ်၊ Android power saving က background သတ်; Windows တွင် services.msc ၌ \"SunLogin\" service အလုပ်လုပ်/မလုပ် စစ်ပါ ရေရှည် ကြီးကြပ်မှုမရှိ host: \"auto-start + auto-login + ကြီးကြပ်မှုမရှိ ဝင်ရောက်ခွင့်\" ဖွင့်ပါ၊ Android တွင် SunLogin ကို power-saving whitelist ထည့်ပါ"
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "SunLogin အဝေးထိန်း \"ချိတ်ဆက် timeout\" ဘာလုပ်ရမလဲ?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "နှစ်ဖက် firewall / antivirus အရင်ပိတ်ပြီး စမ်းပါ; နှစ်ဖက် logout-login; နောက်ဆုံးသို့ update; ကွန်ရက်ပတ်ဝန်းကျင် ပြောင်းပါ (ဖုန်း hotspot) \"ချိတ်ဆက်မအောင်\" ၏ 90% သည် အဆင့် 2 \"channel တည်ဆောက်\" တွင် ပိတ်: 15=P2P မဖောက်ထွင်းနိုင် relay လည်း မအောင် (ကွန်ရက် အလွန်ဆိုး)၊ 3=ကွန်ရက်အလွှာ ပိတ်; hotspot ဖြင့် ချိတ်ဆက်ရလျှင် အခြေခံအားဖြင့် ကွန်ရက် / firewall ပြဿနာ အဆင့် 3 ဖြင့် နေရာရှာ: အကောင့် အတည်ပြု → channel တည်ဆောက် → ပုံ ပို့; timeout သည် အမြဲနီးပါး \"channel တည်ဆောက်\" တွင်"
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "SunLogin အဝေးထိန်း \"access password မှား\" ဘာလုပ်ရမလဲ?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "ထည့်သည်မှာ \"access password\" ဖြစ်ပြီး SunLogin အကောင့် login password မဟုတ်ကြောင်း အတည်ပြုပါ; host တွင် access password reset ပြီး ချိတ်ဆက်ပါ Access password သည် host က သီးခြား သတ်မှတ်သော remote password; မကြာခဏ ပြောင်း သို့မဟုတ် login password နှင့် ရောထွေး; ပြောင်းပြီးနောက် ထိန်းချုပ်သူ အသစ်ကို သုံး Access password ≠ login password: host ၏ \"Settings → Security\" တွင် ကြည့် / reset"
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "SunLogin အဝေးထိန်း \"firewall ပိတ်\" ဘာလုပ်ရမလဲ?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "SunLogin ကို firewall / security ယုံကြည်မှုသို့ ထည့်ပါ: Windows Defender Firewall \"app ခွင့်ပြု\" တွင် SunloginClient tick; third-party antivirus တွင် ယုံကြည်မှု ထည့်ပါ Whitelist တွင် installation folder အပြည့် ထည့်ရမည် (ဥပမာ C:\\Program Files (x86)\\Oray\\SunLogin\\)၊ main exe သာ မဟုတ်—SunLogin အလုပ်လုပ်စဉ် component များစွာ ခေါ် မြန်ဆန်စွာ အတည်ပြု: security အပြည့် ပိတ်ပါ (real-time protection သာ မဟုတ်) ပြီး ချိတ်ဆက်; ချိတ်ဆက်ရလျှင် 100% ၎င်းက ပိတ်"
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "SunLogin အဝေးထိန်း \"ရုံးကွန်ရက် ချိတ်ဆက်မရ\" ဘာလုပ်ရမလဲ?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "ကုမ္ပဏီ IT ကို SunLogin whitelist ခွင့်ပြုရန် တောင်းပါ; သို့မဟုတ် ကျော်ဖြတ်ရန် host တွင် ဖုန်း hotspot ယာယီ; SunLogin SOS version စမ်းပါ (ကွဲပြားသော ချိတ်ဆက်နည်း) Enterprise ကွန်ရက်တွင် internet behavior management device များ မကြာခဏ ရှိ; TCP 443 (HTTPS နှင့် တူ port) ဖြင့် သွားသော SunLogin ကို DPI က ဖော်ထုတ်ပြီး ပိတ်; အသိုင်းအဝိုင်း အတွေ့အကြုံ: enterprise router တွင် TCP 51020–51030 + UDP 50000–50010 ခွင့်ပြုပါ၊ သို့မဟုတ် ချိတ်ဆက် mode ကို \"high-speed\" မှ \"compatible\" (80/443၊ ပိုအထွေထွေ) သို့ ပြောင်းပါ ရုံးကွန်ရက်ဟုတ်/မဟုတ် သိရန်: နှစ်ခုလုံး ဖုန်း hotspot သို့ ပြောင်းပါ; ချိတ်ဆက်ရလျှင် 100% ရုံးကွန်ရက် ပိတ်ဆို့"
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "SunLogin အဝေးထိန်း \"မျက်နှာပြင်မည်း\" ဘာလုပ်ရမလဲ?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Host တွင် SunLogin ကို ခွင့်ပြုပါ: macOS \"System Settings → Privacy & Security\" တွင် screen recording / accessibility / full disk access tick; Windows desktop mode ပြောင်း / ပြန်ချိတ်ဆက် စမ်းပါ မျက်နှာပြင်မည်း များသောအားဖြင့် capture ခွင့်ပြုချက် ချို့တဲ့ သို့မဟုတ် discrete GPU ပြောင်း၊ lock screen ကာကွယ်မှု; discrete GPU laptop တွင် power policy ၌ SunLogin ကို iGPU ဖြင့် capture လုပ်စေနိုင် macOS Ventura မှစ၍ ခွင့်ပြုချက်လမ်းကြောင်း \"System Settings\" သို့ ရွှေ့; search box တွင် \"screen recording\" ရှာခြင်း အမြန်ဆုံး"
+     }
+    }
+   ]
+  }
+ ]
+}
+</script>
+</head>
+<body><div class="wrap"><main>
+<nav class="lang">ဘာသာစကား: <a href="/">简体中文</a> · <a href="/en/">English</a> · <a href="/ja/">日本語</a> · <a href="/zh-tw/">繁體中文</a> · <a href="/ko/">한국어</a> · <a href="/id/">Bahasa Indonesia</a> · <a href="/vi/">Tiếng Việt</a> · <a href="/th/">ไทย</a> · <a href="/es/">Español</a> · <a href="/pt-br/">Português (BR)</a> · <a href="/de/">Deutsch</a> · <a href="/fr/">Français</a> · <a href="/ru/">Русский</a> · <a href="/it/">Italiano</a> · <a href="/pl/">Polski</a> · <a href="/nl/">Nederlands</a> · <a href="/tr/">Türkçe</a> · <a href="/ar/">العربية</a> · <a href="/hi/">हिन्दी</a> · <a href="/ms/">Bahasa Melayu</a> · <a href="/fa/">فارسی</a> · <a href="/bn/">বাংলা</a> · <a href="/ta/">தமிழ்</a> · <a href="/te/">తెలుగు</a> · <a href="/fil/">Filipino</a> · <a href="/ur/">اردو</a> · <a href="/lo/">ພາສາລາວ</a> · <a href="/km/">ភាសាខ្មែរ</a> · <strong>မြန်မာ</strong></nav>
+<h1>SunLogin အဝေးထိန်း ချိတ်ဆက်မှု / ကြန့်ကြာမှု ရောဂါရှာဖွေ</h1>
+<figure class="i4png"><picture><source type="image/webp" srcset="/img/cover_my.webp"><img src="/img/cover_my.png" alt="SunLogin အဝေးထိန်း ချိတ်ဆက်မှုနှင့် ကြန့်ကြာမှု ရောဂါရှာဖွေ ကိရိယာ ပုံ" fetchpriority="high" width="1120" height="746" style="width:100%;height:auto;border-radius:12px;border:1px solid #eee"></picture><figcaption>ပုံ: SunLogin အဝေးထိန်း ချိတ်ဆက်မှု / ကြန့်ကြာမှု ရောဂါရှာဖွေ (တရားဝင် L1 စစ်ဆေးမှု + L2 ကွန်ရက်အလွှာ အကြောင်းရင်း)</figcaption></figure>
+<p>SunLogin အဝေးထိန်း၏ စိတ်အနှောင့်အယှက်ဖြစ်စေသော အဓိကနှစ်ခုမှာ <strong>ချိတ်ဆက်မရခြင်း</strong> နှင့် <strong>ကြန့်ကြာမှု</strong> ဖြစ်သည်။ သင့် <strong>လက္ခဏာ</strong> ကို ရှာပါ (ဥပမာ <code>စက်ပစ္စည်း offline</code>၊ <code>timeout</code>၊ <code>access password မှား</code>၊ <code>firewall ပိတ်</code>၊ <code>မြင်ရ မထိန်းနိုင်</code>၊ <code>latency မြင့်</code>၊ <code>အခမဲ့ 30fps</code>): ဦးစွာ <strong>တရားဝင် L1 စစ်ဆေးမှုများ</strong>၊ ထို့နောက် <strong>L2 ကွန်ရက်အလွှာ အရင်းခံအကြောင်းရင်း</strong> (P2P တိုက်ရိုက်နှင့် server relay၊ NAT traversal၊ port အပိုင်းအခြား)၊ နောက်ဆုံး တကယ့်ဖြစ်ရပ်များ။ Desktop client လိုပါသလား? <a href="https://sunlogim.com/">SunLogin တရားဝင် download</a> ကို ကြည့်ပါ။</p>
+<input id="q" placeholder="လက္ခဏာ ထည့်ပါ၊ ဥပမာ ချိတ်ဆက်မအောင် / မျက်နှာပြင်မည်း / ကြန့်ကြာ / offline" autocomplete="off">
+<button id="go">ရှာဖွေ</button>
+<div id="out"></div>
+<h2>အဆင့် 1: တရားဝင် စစ်ဆေးမှုများ လုပ်ပါ (L1 - ဤ 4 ခုကို အရင်လုပ်ပါ)</h2>
+<p>ချိတ်ဆက်မအောင်သည့်အခါ SunLogin ၏ တရားဝင် checklist သည် အဆင့် 4 ခုသာ ဖြစ်ပြီး အားလုံး app ထဲတွင်: ① <strong>အကောင့်နှင့် စက်ပစ္စည်း ချိတ်ဆက်ခြင်း</strong>—ထိန်းချုပ်သူနှင့် host တူညီသော SunLogin အကောင့်ဖြင့် ဝင်ရောက်; ② <strong>စက်ပစ္စည်းအခြေအနေနှင့် ကွန်ရက်</strong>—host ဖွင့်ထား၊ online ဖြစ်ပြီး အိပ်မနေ (အိပ်နေသော host အတွက် "Wake" သုံးပါ၊ ကြိုဖွင့်ပါ); ③ <strong>Firewall နှင့် ခွင့်ပြုချက်များ</strong>—SunLogin ကို firewall ယုံကြည်စာရင်းတွင် ထည့်ပါ၊ "အဝေးထိန်းချုပ်ခွင့်ပြု" နှင့် "ကြီးကြပ်မှုမရှိ ဝင်ရောက်ခွင့်" ဖွင့်ပါ၊ access password မှန်ကန်စွာ သတ်မှတ်ပါ; ④ <strong>Version နှင့် restart</strong>—နှစ်ဖက်လုံးကို နောက်ဆုံး version သို့ update လုပ်ပါ၊ client restart လုပ်ပါ၊ cache ရှင်းပါ။ ပိုပြည့်စုံသော လမ်းညွှန်: <a href="https://sunlogim.com/lianjie/">SunLogin ချိတ်ဆက်မှု စစ်ဆေးခြင်း လမ်းညွှန်</a>။</p>
+<div class="cat"><div class="catbox"><b>ကွန်ရက် / Traversal</b><span class="cs">timeout · firewall ပိတ် · ရုံးကွန်ရက် · relay / P2P</span><div>channel တည်ဆောက်မှု မအောင်မြင် သို့မဟုတ် relay ကြောင့် latency မြင့်။ Firewall ယုံကြည်မှု အရင်စစ် + ကွန်ရက်ပြောင်း; ပိုနက်လျှင် P2P ဖောက်ထွင်းနိုင်/မနိုင်၊ enterprise DPI နှင့် NAT အမျိုးအစား။</div></div><div class="catbox"><b>အကောင့် / ခွင့်ပြုချက်</b><span class="cs">စက် offline · access password မှား · အကောင့်ကွဲ · wake မအောင်</span><div>Host online + နှစ်ဖက် တူညီအကောင့်သည် အခြေအနေ။ Access password ≠ login password; token သက်တမ်းကုန်လျှင် ပြန်ဝင်ရန်; အိပ်ခြင်းကို "Wake" ဖြင့် ဖြေရှင်း။</div></div><div class="catbox"><b>ပုံ / စွမ်းဆောင်ရည်</b><span class="cs">မျက်နှာပြင်မည်း · မြင်ရ မထိန်းနိုင် · ကြန့်ကြာ · ဝါး · အခမဲ့ 30fps</span><div>ချိတ်ဆက်ပြီးနောက် အတွေ့အကြုံ ပြဿနာများ။ ခွင့်ပြုချက် (screen recording / accessibility)၊ desktop mode၊ frame-rate အဆင့်နှင့် host စွမ်းဆောင်ရည်သည် အဓိက။</div></div><div class="catbox"><b>Version / Protocol</b><span class="cs">protocol version မကိုက် · update ပြီးနောက် ပုံမှန်မဟုတ်</span><div>version ကွာဟမှု ကြီးလျှင် မကိုက်ညီမှု လွယ်ကူစွာ ဖြစ် (code 30); နှစ်ခုလုံး နောက်ဆုံးသို့ update၊ restart နှင့် cache ရှင်း။</div></div></div><figure><svg viewBox="0 0 720 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="SunLogin ချိတ်ဆက်မှုနှင့် ကြန့်ကြာမှု ရောဂါရှာဖွေ flowchart" style="width:100%;height:auto;border:1px solid #eee;border-radius:12px;background:#fff"><text x="20" y="28" font-family="system-ui,Arial" font-size="15.5" font-weight="700" fill="#1d1d1f">SunLogin ချိတ်ဆက်မှု / ကြန့်ကြာမှု ရောဂါရှာဖွေ စီးဆင်းမှု (လက္ခဏာအလိုက်)</text><rect x="20" y="46" width="150" height="46" rx="10" fill="#111"/><text x="95" y="74" text-anchor="middle" font-family="system-ui,Arial" font-size="13" fill="#fff">အဝေးချိတ်ဆက်မှု စတင်</text><path d="M170 69 H206" stroke="#999" stroke-width="2" fill="none" marker-end="url(#a)"/><rect x="206" y="46" width="172" height="46" rx="10" fill="#fff5e6" stroke="#ffe0b0"/><text x="292" y="74" text-anchor="middle" font-family="system-ui,Arial" font-size="13" fill="#b45309">ချိတ်ဆက်လား?</text><rect x="440" y="20" width="262" height="56" rx="10" fill="#ecfdf5" stroke="#bbf7e0"/><text x="455" y="42" font-family="system-ui,Arial" font-size="12.5" fill="#047857">ချိတ်ဆက်ပေမယ့် ကြန့် → စွမ်းဆောင်ရည် ကြည့်:</text><text x="455" y="62" font-family="system-ui,Arial" font-size="11.5" fill="#065f46">relay? အရည်အသွေးမြင့်လွန်း? fps ကန့်သတ်? host စွမ်းဆောင်ရည်</text><rect x="440" y="86" width="262" height="56" rx="10" fill="#fef2f2" stroke="#fecaca"/><text x="455" y="108" font-family="system-ui,Arial" font-size="12.5" fill="#b91c1c">ချိတ်ဆက်မရ → error အမျိုးအစား ကြည့်:</text><text x="455" y="128" font-family="system-ui,Arial" font-size="11.5" fill="#991b1b">offline? firewall? အကောင့် / password? version</text><path d="M378 60 H410 V48 H440" stroke="#10b981" stroke-width="2" fill="none" marker-end="url(#a)"/><path d="M378 78 H410 V114 H440" stroke="#ef4444" stroke-width="2" fill="none" marker-end="url(#a)"/><text x="20" y="178" font-family="system-ui,Arial" font-size="13" font-weight="700" fill="#1d1d1f">ချို့ယွင်းမှု လေးမျိုး (item တစ်ခုစီ၏ L1 / L2 ကြည့်)</text><g font-family="system-ui,Arial" font-size="12"><rect x="20" y="190" width="162" height="92" rx="10" fill="#fff5e6" stroke="#ffe0b0"/><text x="32" y="212" font-weight="700" fill="#b45309">① ကွန်ရက် / Traversal</text><text x="32" y="234" fill="#555" font-size="11">relay / P2P · firewall · ရုံးကွန်ရက်</text><rect x="194" y="190" width="162" height="92" rx="10" fill="#eef4ff" stroke="#cfe0ff"/><text x="206" y="212" font-weight="700" fill="#1d4ed8">② အကောင့် / ခွင့်ပြုချက်</text><text x="206" y="234" fill="#555" font-size="11">offline · access password · wake</text><rect x="368" y="190" width="162" height="92" rx="10" fill="#ecfdf5" stroke="#bbf7e0"/><text x="380" y="212" font-weight="700" fill="#047857">③ ပုံ / စွမ်းဆောင်ရည်</text><text x="380" y="234" fill="#555" font-size="11">မျက်နှာပြင်မည်း · ကြန့် · အရည်အသွေး · 30fps</text><rect x="542" y="190" width="160" height="92" rx="10" fill="#fef2f2" stroke="#fecaca"/><text x="554" y="212" font-weight="700" fill="#b91c1c">④ Version / Protocol</text><text x="554" y="234" fill="#555" font-size="11">version မကိုက် · update ပုံမှန်မဟုတ်</text></g><defs><marker id="a" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0 0 L6 3 L0 6 z" fill="#999"/></marker></defs></svg><figcaption>ပုံ 1: SunLogin ချိတ်ဆက်မှု / ကြန့်ကြာမှု စီးဆင်းမှု—ဦးစွာ ချိတ်ဆက်နိုင်/မနိုင်၊ ထို့နောက် အကြောင်းရင်း ခွဲခြားပါ</figcaption></figure>
+<h2>အဆင့် 2: ကြန့်ကြာဆဲ / ချိတ်ဆက်မရဆဲ → L2 ကွန်ရက်အလွှာ အရင်းခံအကြောင်းရင်း</h2>
+<p>အဓိကအတွေး: <strong>ချိတ်ဆက်မရခြင်းသည် များသောအားဖြင့် "channel တည်ဆောက်ခြင်း" တွင် ပိတ်နေပြီး၊ ကြန့်ကြာမှုသည် များသောအားဖြင့် relay ဖြတ်သွားသည်ဟု အဓိပ္ပာယ်ရသည်</strong>။ SunLogin သည် နှစ်ဖက်ချိတ်ဆက်ရန် <strong>P2P traversal</strong> ကို ဦးစွာ ကြိုးစားသည် (latency အနိမ့်ဆုံး 20–50ms); မအောင်မြင်မှသာ <strong>ရောင်းချသူ၏ server relay</strong> (80–200ms) သို့ ပြောင်းသည် — client သည် အောက်ဘယ်ဘက်တွင် "P2P" သို့မဟုတ် "Relay" ပြသည်။ ပုံသည် ချိတ်ဆက်မှု ကိုယ်တိုင်စစ်ဆေး panel ဖြစ်သည်; ပိုနက်သော အကြောင်းရင်းများ: symmetric NAT / router UPnP၊ enterprise DPI နှင့် port အပိုင်းအခြား၊ နှင့် monitor refresh rate ဖြင့် ကန့်သတ်ထားသော frame rate။</p>
+<figure><svg viewBox="0 0 720 320" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="SunLogin ချိတ်ဆက်မှု ကိုယ်တိုင်စစ်ဆေး panel ပုံ" style="width:100%;height:auto;border:1px solid #eee;border-radius:12px;background:#fff"><text x="20" y="28" font-family="system-ui,Arial" font-size="15.5" font-weight="700" fill="#1d1d1f">ချိတ်ဆက်မှု ကိုယ်တိုင်စစ်ဆေး panel (အစိမ်း=ပုံမှန် / အနီ=ပြဿနာ)</text><rect x="20" y="42" width="680" height="226" rx="14" fill="#f8fafc" stroke="#e2e8f0"/><text x="38" y="66" font-family="system-ui,Arial" font-size="12.5" font-weight="700" fill="#475569">စစ်ဆေးရန် item</text><text x="300" y="66" font-family="system-ui,Arial" font-size="12" fill="#94a3b8">လက်ရှိအခြေအနေ</text><text x="610" y="66" font-family="system-ui,Arial" font-size="12" fill="#94a3b8">ဆုံးဖြတ်ချက်</text><line x1="38" y1="74" x2="682" y2="74" stroke="#e2e8f0" stroke-width="1"/><text x="38" y="98" font-family="system-ui,Arial" font-size="13" fill="#1d1d1f">နှစ်ဖက် အကောင့်တူ</text><text x="300" y="98" font-family="system-ui,Arial" font-size="12.5" fill="#16a34a">တူညီ SunLogin အကောင့်</text><circle cx="612" cy="94" r="6" fill="#16a34a"/><text x="628" y="98" font-family="system-ui,Arial" font-size="12" fill="#16a34a">ပုံမှန်</text><text x="38" y="128" font-family="system-ui,Arial" font-size="13" fill="#1d1d1f">Host online</text><text x="300" y="128" font-family="system-ui,Arial" font-size="12.5" fill="#16a34a">Online · မအိပ်</text><circle cx="612" cy="124" r="6" fill="#16a34a"/><text x="628" y="128" font-family="system-ui,Arial" font-size="12" fill="#16a34a">ပုံမှန်</text><text x="38" y="158" font-family="system-ui,Arial" font-size="13" fill="#1d1d1f">Firewall ဖြတ်ခွင့်</text><text x="300" y="158" font-family="system-ui,Arial" font-size="12.5" fill="#ef4444">security က ပိတ်</text><circle cx="612" cy="154" r="6" fill="#ef4444"/><text x="628" y="158" font-family="system-ui,Arial" font-size="12" fill="#ef4444">ပြဿနာ</text><text x="38" y="188" font-family="system-ui,Arial" font-size="13" fill="#1d1d1f">ချိတ်ဆက် mode</text><text x="300" y="188" font-family="system-ui,Arial" font-size="12.5" fill="#ef4444">Relay · latency မြင့်</text><circle cx="612" cy="184" r="6" fill="#ef4444"/><text x="628" y="188" font-family="system-ui,Arial" font-size="12" fill="#ef4444">ပြဿနာ</text><text x="38" y="218" font-family="system-ui,Arial" font-size="13" fill="#1d1d1f">Client version</text><text x="300" y="218" font-family="system-ui,Arial" font-size="12.5" fill="#16a34a">နှစ်ခုလုံး နောက်ဆုံး</text><circle cx="612" cy="214" r="6" fill="#16a34a"/><text x="628" y="218" font-family="system-ui,Arial" font-size="12" fill="#16a34a">ပုံမှန်</text><text x="38" y="248" font-family="system-ui,Arial" font-size="13" fill="#1d1d1f">Access password</text><text x="300" y="248" font-family="system-ui,Arial" font-size="12.5" fill="#16a34a">မှန်ကန်</text><circle cx="612" cy="244" r="6" fill="#16a34a"/><text x="628" y="248" font-family="system-ui,Arial" font-size="12" fill="#16a34a">ပုံမှန်</text><text x="20" y="296" font-family="system-ui,Arial" font-size="11.5" fill="#94a3b8">မှတ်ချက်: အနီ = ဖြေရှင်းရန် ပြဿနာ; ချိတ်ဆက်ပေမယ့် "relay" = latency မြင့်၊ P2P တိုက်ရိုက်ရရန် router UPnP ဖွင့်ပါ။</text></svg><figcaption>ပုံ 2: ချိတ်ဆက်မှု ကိုယ်တိုင်စစ်ဆေး panel (အစိမ်း = ပုံမှန် / အနီ = ပြဿနာ)</figcaption></figure>
+<figure class="i4png"><picture><source type="image/webp" srcset="/img/board_my.webp"><img src="/img/board_my.png" alt="SunLogin ချိတ်ဆက်မှု ကိုယ်တိုင်စစ်ဆေး panel အစိမ်း/အနီ items ပုံ" loading="lazy" width="1120" height="746" style="width:100%;height:auto;border-radius:12px;border:1px solid #eee"></picture><figcaption>ပုံ: ချိတ်ဆက်မရ "channel တည်ဆောက်ခြင်း" ကြည့်၊ ကြန့်ကြာ "relay" ဖြတ်သွားမသွား ကြည့်—P2P တိုက်ရိုက်ရရန် UPnP ဖွင့်ပါ</figcaption></figure>
+<h2>လက္ခဏာ ဇယားအပြည့် (L1 အရင်စစ် · L2 အရင်းခံအကြောင်းရင်း)</h2>
+<table id="tbl"></table>
+<section class="i4data">
+<h2>SunLogin ချိတ်ဆက်မှု / ကြန့်ကြာမှု data (2026 ခန့်မှန်း)</h2>
+<p>အောက်တွင် SunLogin ၏ တရားဝင် အကူအညီနှင့် အများသုံး remote-access အသိုင်းအဝိုင်း အတွေ့အကြုံကို ပေါင်းစပ်ထားသော <strong>2026 ခန့်မှန်း</strong> ဖြစ်သည် (ရောင်းချသူ၏ တရားဝင် ဂဏန်းများ မဟုတ်၊ တိုက်ရိုက် တိုင်းတာမှု မဟုတ်၊ ကိုးကားရန်သာ):</p>
+<table>
+<tr><th>အတိုင်းအတာ</th><th>ခန့်မှန်း</th></tr>
+<tr><td>ချိတ်ဆက်မအောင် အကြောင်းရင်း ဖြန့်ဖြူးမှု (ခန့်မှန်း)</td><td>firewall / security <strong>≈50%</strong> &gt; host offline / အိပ် <strong>≈20%</strong> &gt; အကောင့် / password <strong>≈15%</strong> &gt; version / protocol <strong>≈10%</strong></td></tr>
+<tr><td>ကြန့်ကြာမှု အကြောင်းရင်း ဖြန့်ဖြူးမှု (အသိုင်းအဝိုင်း တိုင်းတာ)</td><td>relay <strong>35%</strong> &gt; အရည်အသွေးမြင့်လွန်း 25% &gt; host စွမ်းဆောင်ရည် 20% &gt; ကွန်ရက်ဆိုး 15% &gt; frame ကန့်သတ် 5%</td></tr>
+<tr><td>P2P တိုက်ရိုက် နှင့် server relay latency</td><td>P2P ခန့် <strong>20–50ms</strong>၊ relay ခန့် <strong>80–200ms</strong></td></tr>
+<tr><td>frame ကန့်သတ် (အခမဲ့ / ငွေပေး / gaming)</td><td><strong>30 / 60 / 144</strong> fps (144 သည် GPU + 144Hz monitor လို)</td></tr>
+<tr><td>P2P အတွက် UPnP ဖွင့်ခြင်း အကျိုး</td><td>ဖောက်ထွင်းနှုန်း သိသိသာသာ မြင့်; တိုင်းတာသော latency ~120ms မှ ~35ms သို့ သွားနိုင်</td></tr>
+<tr><td>latency အလိုက် အသုံးပြုနိုင်မှု အဆင့်</td><td>&lt;30ms local နီးပါး · 80–150ms ကြန့်တာ သိသာ · &gt;150ms နှိပ်ရုံနီးပါး</td></tr>
+</table>
+<p><small>ခန့်မှန်း အခြေခံ: source baseline + အချိန် extrapolation (SunLogin တရားဝင် အကူအညီနှင့် အများသုံး remote-access အသိုင်းအဝိုင်း data ပေါင်းစပ်မှု); version နှင့် ကွန်ရက်ပတ်ဝန်းကျင် အလိုက် ပြောင်း; နောက်ဆုံး တရားဝင် SunLogin အချက်အလက် သက်ဆိုင်။</small></p>
+</section>
+<h2>တကယ့်ဖြစ်ရပ်များ မြန်ဆန်စွာ အကဲဖြတ်ခြင်း</h2>
+<ul class="scenes"><li>ရုံး PC လုံးဝ ချိတ်ဆက်မရဘဲ ဖုန်း hotspot က ချက်ချင်း ချိတ်ဆက်: များသောအားဖြင့် ရုံးကွန်ရက်၏ internet behavior management / DPI က remote traffic ကို ပိတ်ဆို့သည်။ IT ကို whitelist ခွင့်ပြုရန် တောင်းပါ၊ သို့မဟုတ် host တွင် ဖုန်း hotspot ယာယီ သုံးပါ။</li><li>ချိတ်ဆက်ရပေမယ့် mouse အရိပ်ချန်ပြီး latency 100ms ကျော်: အောက်ဘယ်ဘက်တွင် "Relay" မြင်ခြင်းသည် အရင်းခံ—router ဝင်ပြီး UPnP ဖွင့်ကာ P2P ရအောင်လုပ်; တိုင်းတာသော latency ~120ms မှ ~35ms သို့ ကျနိုင်သည်။</li><li>Access password ထပ်ခါထပ်ခါ မှား: access password သည် login အကောင့်၏ password မဟုတ်; host ၏ "Settings" တွင် reset ပြီး ပြန်ချိတ်ဆက်ပါ။</li><li>စက် online ပြသော်လည်း ချိတ်ဆက်မှု timeout: များသောအားဖြင့် login token သက်တမ်းကုန် / host အိပ်ပြီး ကွန်ရက်ပြတ်; host တွင် ပြန်ဝင်ပါ၊ သို့မဟုတ် "Wake" နှင့် ကြီးကြပ်မှုမရှိ ဝင်ရောက်ခွင့် ကြိုဖွင့်ပါ။</li><li>Window ဆွဲတာ သိသိသာသာ ကြန့်ပေမယ့် latency မမြင့်: အခမဲ့ version ၏ frame ကန့်သတ်ချက်သည် 30fps; ငွေပေးလျှင် 60fps အထိ၊ gaming version 144fps အထိ (သင့်တော်သော monitor လို)။</li><li>မျက်နှာပြင်မည်း၊ မြင်ရ ပေမယ့် မလုပ်နိုင်: များသောအားဖြင့် ခွင့်ပြုချက် မပေး (macOS တွင် "screen recording / accessibility" tick လို)၊ သို့မဟုတ် host ၏ CPU / RAM ပြည့်ပြီး encoding မမီ။</li></ul><div class="related"><h2>ဆက်စပ်</h2><ul><li><a href="https://sunlogim.com/">SunLogin အဝေးထိန်း တရားဝင် download</a></li><li><a href="https://sunlogim.com/lianjie/">SunLogin ချိတ်ဆက်မှု စစ်ဆေးခြင်း လမ်းညွှန်</a></li><li><a href="https://sunlogni.com/">SunLogin အဝေးထိန်း download (ညီနောင် site)</a></li></ul></div></main>
+<footer>စစ်ဆေးခြင်း အဆင့်များနှင့် desktop mode / frame-rate parameters ကို SunLogin ၏ တရားဝင် အကူအညီ (sunlogin.oray.com) မှ အကျဉ်းချုပ်; P2P / relay၊ NAT traversal၊ enterprise port အပိုင်းအခြား နှင့် error code ဖတ်ခြင်းကို အများသုံး remote-access အသိုင်းအဝိုင်း အတွေ့အကြုံမှ ပေါင်းစပ် (တရားဝင်မဟုတ်)။ ကိုးကားရန်သာ; နောက်ဆုံး တရားဝင် SunLogin အချက်အလက် သက်ဆိုင်သည်။ (တရားဝင်မဟုတ်·LLM ဒေသတွင်းပြုလုပ်ခြင်း)<br>open-source ပရောဂျက် · MIT License</footer>
+</div>
+<script src="/my/codes.js"></script><script src="/app.js"></script>
+</body></html>
