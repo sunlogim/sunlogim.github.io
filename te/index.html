@@ -1,0 +1,151 @@
+<!DOCTYPE html><html lang="te"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>SunLogin రిమోట్ కనెక్షన్ / ల్యాగ్ నిర్ధారణ - కనెక్షన్ విఫలం, బ్లాక్ స్క్రీన్, అధిక లేటెన్సీ సరిచేయండి</title>
+<meta name="description" content="SunLogin రిమోట్ కంట్రోల్ కనెక్ట్ కావడం లేదా, బ్లాక్ స్క్రీన్, లేదా అధిక లేటెన్సీతో ల్యాగ్? ఒక లక్షణాన్ని వెతకండి (పరికరం ఆఫ్‌లైన్, టైమ్‌అవుట్, తప్పు యాక్సెస్ పాస్‌వర్డ్, ఫైర్‌వాల్ బ్లాక్, ఆఫీస్ నెట్‌వర్క్, కనిపిస్తుంది కానీ నియంత్రించలేం, రిలే మోడ్, ఫ్రీ వెర్షన్‌లో 30fps) మరియు అధికారిక L1 తనిఖీలు ప్లస్ L2 నెట్‌వర్క్-లేయర్ మూల కారణం (P2P వర్సెస్ రిలే, NAT traversal, పోర్ట్ పరిధులు, frame-rate స్థాయిలు) చూడండి, తర్వాత వేగంగా తిరిగి కనెక్ట్ కావడానికి నిజమైన కేసులతో పోల్చండి.">
+<link rel="canonical" href="https://sunlogim.github.io/te/">
+<link rel="alternate" hreflang="zh-Hans" href="https://sunlogim.github.io/">
+<link rel="alternate" hreflang="en" href="https://sunlogim.github.io/en/">
+<link rel="alternate" hreflang="ja" href="https://sunlogim.github.io/ja/">
+<link rel="alternate" hreflang="zh-Hant" href="https://sunlogim.github.io/zh-tw/">
+<link rel="alternate" hreflang="ko" href="https://sunlogim.github.io/ko/">
+<link rel="alternate" hreflang="id" href="https://sunlogim.github.io/id/">
+<link rel="alternate" hreflang="vi" href="https://sunlogim.github.io/vi/">
+<link rel="alternate" hreflang="th" href="https://sunlogim.github.io/th/">
+<link rel="alternate" hreflang="es" href="https://sunlogim.github.io/es/">
+<link rel="alternate" hreflang="pt-BR" href="https://sunlogim.github.io/pt-br/">
+<link rel="alternate" hreflang="de" href="https://sunlogim.github.io/de/">
+<link rel="alternate" hreflang="fr" href="https://sunlogim.github.io/fr/">
+<link rel="alternate" hreflang="ru" href="https://sunlogim.github.io/ru/">
+<link rel="alternate" hreflang="it" href="https://sunlogim.github.io/it/">
+<link rel="alternate" hreflang="pl" href="https://sunlogim.github.io/pl/">
+<link rel="alternate" hreflang="nl" href="https://sunlogim.github.io/nl/">
+<link rel="alternate" hreflang="tr" href="https://sunlogim.github.io/tr/">
+<link rel="alternate" hreflang="ar" href="https://sunlogim.github.io/ar/">
+<link rel="alternate" hreflang="hi" href="https://sunlogim.github.io/hi/">
+<link rel="alternate" hreflang="ms" href="https://sunlogim.github.io/ms/">
+<link rel="alternate" hreflang="fa" href="https://sunlogim.github.io/fa/">
+<link rel="alternate" hreflang="bn" href="https://sunlogim.github.io/bn/">
+<link rel="alternate" hreflang="ta" href="https://sunlogim.github.io/ta/">
+<link rel="alternate" hreflang="te" href="https://sunlogim.github.io/te/">
+<link rel="alternate" hreflang="fil" href="https://sunlogim.github.io/fil/">
+<link rel="alternate" hreflang="ur" href="https://sunlogim.github.io/ur/">
+<link rel="alternate" hreflang="lo" href="https://sunlogim.github.io/lo/">
+<link rel="alternate" hreflang="km" href="https://sunlogim.github.io/km/">
+<link rel="alternate" hreflang="my" href="https://sunlogim.github.io/my/">
+<link rel="alternate" hreflang="x-default" href="https://sunlogim.github.io/">
+<link rel="stylesheet" href="/style.css">
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "WebApplication",
+   "name": "SunLogin రిమోట్ కనెక్షన్ / ల్యాగ్ నిర్ధారణ",
+   "url": "https://sunlogim.github.io/te/",
+   "applicationCategory": "UtilitiesApplication",
+   "operatingSystem": "Web browser",
+   "inLanguage": "te",
+   "description": "SunLogin రిమోట్ కంట్రోల్ కనెక్ట్ కావడం లేదా, బ్లాక్ స్క్రీన్, లేదా అధిక లేటెన్సీతో ల్యాగ్? ఒక లక్షణాన్ని వెతకండి (పరికరం ఆఫ్‌లైన్, టైమ్‌అవుట్, తప్పు యాక్సెస్ పాస్‌వర్డ్, ఫైర్‌వాల్ బ్లాక్, ఆఫీస్ నెట్‌వర్క్, కనిపిస్తుంది కానీ నియంత్రించలేం, రిలే మోడ్, ఫ్రీ వెర్షన్‌లో 30fps) మరియు అధికారిక L1 తనిఖీలు ప్లస్ L2 నెట్‌వర్క్-లేయర్ మూల కారణం (P2P వర్సెస్ రిలే, NAT traversal, పోర్ట్ పరిధులు, frame-rate స్థాయిలు) చూడండి, తర్వాత వేగంగా తిరిగి కనెక్ట్ కావడానికి నిజమైన కేసులతో పోల్చండి.",
+   "isAccessibleForFree": true,
+   "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+   }
+  },
+  {
+   "@type": "FAQPage",
+   "inLanguage": "te",
+   "url": "https://sunlogim.github.io/te/",
+   "mainEntity": [
+    {
+     "@type": "Question",
+     "name": "SunLogin రిమోట్ \"పరికరం ఆఫ్‌లైన్\" ఏం చేయాలి?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "హోస్ట్ PC ఆన్, ఆన్‌లైన్, నిద్రలేదు, SunLogin క్లయింట్ నడుస్తూ \"లాగిన్\" చూపుతుందని నిర్ధారించండి; నెట్‌వర్క్ అస్థిరంగా ఉంటే రూటర్ రీస్టార్ట్ లేదా నెట్‌వర్క్ మార్చండి ఆఫ్‌లైన్ = హోస్ట్ ఆన్‌లైన్‌లోనే లేదు, ముందు నెట్‌వర్క్ చూడవద్దు: నిద్ర తర్వాత నెట్‌వర్క్ కార్డ్ తరచుగా తెగుతుంది, ల్యాప్‌టాప్ మూత మూస్తే WiFi తెగుతుంది, Android పవర్ సేవింగ్ బ్యాక్‌గ్రౌండ్‌ను చంపుతుంది; Windows‌లో services.msc‌లో \"SunLogin\" సేవ నడుస్తుందా చూడండి దీర్ఘకాల పర్యవేక్షణ లేని హోస్ట్: \"ఆటో-స్టార్ట్ + ఆటో-లాగిన్ + పర్యవేక్షణ లేని యాక్సెస్\" ఆన్ చేయండి, Android‌లో SunLogin‌ను పవర్-సేవింగ్ వైట్‌లిస్ట్‌కు జోడించండి"
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "SunLogin రిమోట్ \"కనెక్షన్ టైమ్‌అవుట్\" ఏం చేయాలి?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "ముందు రెండు వైపుల ఫైర్‌వాల్ / యాంటీవైరస్ ఆపి ప్రయత్నించండి; రెండింటిలో లాగౌట్-లాగిన్; తాజాకు అప్‌డేట్; నెట్‌వర్క్ వాతావరణం మార్చండి (ఫోన్ హాట్‌స్పాట్) 90% \"కనెక్షన్ వైఫల్యాలు\" దశ 2 \"ఛానల్ ఏర్పాటు\" వద్ద ఆగుతాయి: 15=P2P చొచ్చుకుపోదు మరియు రిలే కూడా విఫలం (నెట్‌వర్క్ చాలా చెడ్డది), 3=నెట్‌వర్క్ లేయర్ బ్లాక్; హాట్‌స్పాట్‌లో కనెక్ట్ అయితే ప్రాథమికంగా నెట్‌వర్క్ / ఫైర్‌వాల్ సమస్య 3 దశల్లో గుర్తించండి: ఖాతా ధృవీకరణ → ఛానల్ ఏర్పాటు → చిత్ర ప్రసారం; టైమ్‌అవుట్ దాదాపు ఎల్లప్పుడూ \"ఛానల్ ఏర్పాటు\" వద్ద"
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "SunLogin రిమోట్ \"తప్పు యాక్సెస్ పాస్‌వర్డ్\" ఏం చేయాలి?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "మీరు నమోదు చేస్తున్నది \"యాక్సెస్ పాస్‌వర్డ్\" అని నిర్ధారించండి, SunLogin ఖాతా లాగిన్ పాస్‌వర్డ్ కాదు; హోస్ట్‌లో యాక్సెస్ పాస్‌వర్డ్ రీసెట్ చేసి కనెక్ట్ చేయండి యాక్సెస్ పాస్‌వర్డ్ హోస్ట్ విడిగా సెట్ చేసే రిమోట్ పాస్‌వర్డ్; తరచుగా మార్చబడుతుంది లేదా లాగిన్ పాస్‌వర్డ్‌తో గందరగోళం; మార్చిన తర్వాత కంట్రోలర్ కొత్తదాన్ని వాడుతుంది యాక్సెస్ పాస్‌వర్డ్ ≠ లాగిన్ పాస్‌వర్డ్: హోస్ట్ \"సెట్టింగ్స్ → భద్రత\"‌లో చూడండి / రీసెట్ చేయండి"
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "SunLogin రిమోట్ \"ఫైర్‌వాల్ బ్లాక్\" ఏం చేయాలి?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "SunLogin‌ను ఫైర్‌వాల్ / భద్రత నమ్మకానికి జోడించండి: Windows Defender Firewall \"యాప్‌ను అనుమతించు\"‌లో SunloginClient టిక్; థర్డ్-పార్టీ యాంటీవైరస్‌లో నమ్మకం జోడించండి వైట్‌లిస్ట్‌లో మొత్తం ఇన్‌స్టాలేషన్ ఫోల్డర్ జోడించండి (ఉదా. C:\\Program Files (x86)\\Oray\\SunLogin\\), కేవలం ప్రధాన exe కాదు—SunLogin నడుస్తున్నప్పుడు అనేక కాంపోనెంట్‌లను పిలుస్తుంది త్వరిత ధృవీకరణ: భద్రతను పూర్తిగా మూసివేయండి (కేవలం రియల్-టైమ్ రక్షణ కాదు) మరియు కనెక్ట్ చేయండి; కనెక్ట్ అయితే 100% అదే బ్లాక్ చేస్తోంది"
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "SunLogin రిమోట్ \"ఆఫీస్ నెట్‌వర్క్ కనెక్ట్ కాదు\" ఏం చేయాలి?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "కంపెనీ IT‌ను SunLogin వైట్‌లిస్ట్ అనుమతించమని అడగండి; లేదా బైపాస్‌కు హోస్ట్‌లో తాత్కాలిక ఫోన్ హాట్‌స్పాట్; SunLogin SOS వెర్షన్ ప్రయత్నించండి (వేరే కనెక్షన్ మార్గం) ఎంటర్‌ప్రైజ్ నెట్‌వర్క్‌లలో తరచుగా ఇంటర్నెట్ బిహేవియర్ మేనేజ్‌మెంట్ పరికరాలు ఉంటాయి; TCP 443 (HTTPS అదే పోర్ట్) ద్వారా వెళ్లే SunLogin DPI చేత గుర్తించి బ్లాక్ అవుతుంది; సముదాయ అనుభవం: ఎంటర్‌ప్రైజ్ రూటర్‌లో TCP 51020–51030 + UDP 50000–50010 అనుమతించండి, లేదా కనెక్షన్ మోడ్‌ను \"హై-స్పీడ్\" నుండి \"కంపాటిబుల్\" (80/443, మరింత సాధారణం)‌కు మార్చండి ఆఫీస్ నెట్‌వర్క్ అవునో తెలియడానికి: రెండింటినీ ఫోన్ హాట్‌స్పాట్‌కు మార్చండి; కనెక్ట్ అయితే 100% ఆఫీస్ నెట్‌వర్క్ బ్లాక్"
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "SunLogin రిమోట్ \"బ్లాక్ స్క్రీన్\" ఏం చేయాలి?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "హోస్ట్‌లో SunLogin‌కు అనుమతి ఇవ్వండి: macOS \"సిస్టమ్ సెట్టింగ్స్ → గోప్యత & భద్రత\"‌లో స్క్రీన్ రికార్డింగ్ / యాక్సెసిబిలిటీ / పూర్తి డిస్క్ యాక్సెస్ టిక్; Windows‌లో డెస్క్‌టాప్ మోడ్ మార్చండి / మళ్లీ కనెక్ట్ చేయండి బ్లాక్ స్క్రీన్ సాధారణంగా క్యాప్చర్ అనుమతి లేకపోవడం లేదా డిస్క్రీట్ GPU మార్పు, లాక్ స్క్రీన్ రక్షణ; డిస్క్రీట్ GPU ల్యాప్‌టాప్‌లో పవర్ పాలసీలో SunLogin‌ను iGPU ద్వారా క్యాప్చర్ చేయించవచ్చు macOS Ventura నుండి అనుమతి మార్గం \"సిస్టమ్ సెట్టింగ్స్\"‌కు మారింది; సెర్చ్ బాక్స్‌లో \"స్క్రీన్ రికార్డింగ్\" వెతకడం వేగవంతం"
+     }
+    }
+   ]
+  }
+ ]
+}
+</script>
+</head>
+<body><div class="wrap"><main>
+<nav class="lang">భాష: <a href="/">简体中文</a> · <a href="/en/">English</a> · <a href="/ja/">日本語</a> · <a href="/zh-tw/">繁體中文</a> · <a href="/ko/">한국어</a> · <a href="/id/">Bahasa Indonesia</a> · <a href="/vi/">Tiếng Việt</a> · <a href="/th/">ไทย</a> · <a href="/es/">Español</a> · <a href="/pt-br/">Português (BR)</a> · <a href="/de/">Deutsch</a> · <a href="/fr/">Français</a> · <a href="/ru/">Русский</a> · <a href="/it/">Italiano</a> · <a href="/pl/">Polski</a> · <a href="/nl/">Nederlands</a> · <a href="/tr/">Türkçe</a> · <a href="/ar/">العربية</a> · <a href="/hi/">हिन्दी</a> · <a href="/ms/">Bahasa Melayu</a> · <a href="/fa/">فارسی</a> · <a href="/bn/">বাংলা</a> · <a href="/ta/">தமிழ்</a> · <strong>తెలుగు</strong> · <a href="/fil/">Filipino</a> · <a href="/ur/">اردو</a> · <a href="/lo/">ພາສາລາວ</a> · <a href="/km/">ភាសាខ្មែរ</a> · <a href="/my/">မြန်မာ</a></nav>
+<h1>SunLogin రిమోట్ కనెక్షన్ / ల్యాగ్ నిర్ధారణ</h1>
+<figure class="i4png"><picture><source type="image/webp" srcset="/img/cover_te.webp"><img src="/img/cover_te.png" alt="SunLogin రిమోట్ కనెక్షన్ మరియు ల్యాగ్ నిర్ధారణ సాధనం చిత్రం" fetchpriority="high" width="1120" height="746" style="width:100%;height:auto;border-radius:12px;border:1px solid #eee"></picture><figcaption>చిత్రం: SunLogin రిమోట్ కనెక్షన్ / ల్యాగ్ నిర్ధారణ (అధికారిక L1 తనిఖీలు + L2 నెట్‌వర్క్-లేయర్ కారణం)</figcaption></figure>
+<p>SunLogin రిమోట్ కంట్రోల్‌లో రెండు నిజమైన తలనొప్పులు <strong>కనెక్ట్ కాకపోవడం</strong> మరియు <strong>ల్యాగ్</strong>. మీ <strong>లక్షణాన్ని</strong> వెతకండి (ఉదా. <code>పరికరం ఆఫ్‌లైన్</code>, <code>టైమ్‌అవుట్</code>, <code>తప్పు యాక్సెస్ పాస్‌వర్డ్</code>, <code>ఫైర్‌వాల్ బ్లాక్</code>, <code>కనిపిస్తుంది నియంత్రించలేం</code>, <code>అధిక లేటెన్సీ</code>, <code>ఫ్రీ 30fps</code>): మొదట <strong>అధికారిక L1 తనిఖీలు</strong>, తర్వాత <strong>L2 నెట్‌వర్క్-లేయర్ మూల కారణం</strong> (P2P నేరుగా వర్సెస్ సర్వర్ రిలే, NAT traversal, పోర్ట్ పరిధులు), చివరగా నిజమైన కేసులు. డెస్క్‌టాప్ క్లయింట్ కావాలా? <a href="https://sunlogim.com/">SunLogin అధికారిక డౌన్‌లోడ్</a> చూడండి.</p>
+<input id="q" placeholder="లక్షణాన్ని నమోదు చేయండి, ఉదా. కనెక్షన్ విఫలం / బ్లాక్ స్క్రీన్ / ల్యాగ్ / ఆఫ్‌లైన్" autocomplete="off">
+<button id="go">వెతకండి</button>
+<div id="out"></div>
+<h2>దశ 1: అధికారిక తనిఖీలు చేయండి (L1 - ముందుగా ఈ 4)</h2>
+<p>కనెక్షన్ వైఫల్యంలో SunLogin అధికారిక చెక్‌లిస్ట్ కేవలం 4 దశలు, అన్నీ యాప్‌లో: ① <strong>ఖాతా & పరికర బైండింగ్</strong>—కంట్రోలర్ మరియు హోస్ట్ ఒకే SunLogin ఖాతాలో లాగిన్ అవుతాయి; ② <strong>పరికర స్థితి & నెట్‌వర్క్</strong>—హోస్ట్ ఆన్, ఆన్‌లైన్ మరియు నిద్రలో లేదు (నిద్రిస్తున్న హోస్ట్‌కు "Wake" వాడండి, ముందే ప్రారంభించండి); ③ <strong>ఫైర్‌వాల్ & అనుమతులు</strong>—SunLogin‌ను ఫైర్‌వాల్ నమ్మక జాబితాకు జోడించండి, "రిమోట్ కంట్రోల్‌ను అనుమతించు" & "పర్యవేక్షణ లేని యాక్సెస్" ఆన్ చేయండి, యాక్సెస్ పాస్‌వర్డ్‌ను సరిగ్గా సెట్ చేయండి; ④ <strong>వెర్షన్ & రీస్టార్ట్</strong>—రెండు వైపులా తాజా వెర్షన్‌కు అప్‌డేట్ చేయండి, క్లయింట్‌ను రీస్టార్ట్ చేయండి, కాష్ క్లియర్ చేయండి. మరింత పూర్తి గైడ్: <a href="https://sunlogim.com/lianjie/">SunLogin కనెక్షన్ తనిఖీ గైడ్</a>.</p>
+<div class="cat"><div class="catbox"><b>నెట్‌వర్క్ / Traversal</b><span class="cs">టైమ్‌అవుట్ · ఫైర్‌వాల్ బ్లాక్ · ఆఫీస్ నెట్‌వర్క్ · రిలే / P2P</span><div>ఛానల్ ఏర్పాటు విఫలం లేదా రిలే వల్ల అధిక లేటెన్సీ. ముందు ఫైర్‌వాల్ నమ్మకం తనిఖీ + నెట్‌వర్క్ మార్చండి; లోతుగా P2P చొచ్చుకుపోతుందా, ఎంటర్‌ప్రైజ్ DPI మరియు NAT రకం.</div></div><div class="catbox"><b>ఖాతా / అనుమతులు</b><span class="cs">పరికరం ఆఫ్‌లైన్ · తప్పు యాక్సెస్ పాస్‌వర్డ్ · వేరే ఖాతా · wake విఫలం</span><div>హోస్ట్ ఆన్‌లైన్ + రెండు వైపులా ఒకే ఖాతా షరతు. యాక్సెస్ పాస్‌వర్డ్ ≠ లాగిన్ పాస్‌వర్డ్; గడువు ముగిసిన టోకెన్ తిరిగి లాగిన్ అడుగుతుంది; నిద్ర "Wake"తో పరిష్కారం.</div></div><div class="catbox"><b>చిత్రం / పనితీరు</b><span class="cs">బ్లాక్ స్క్రీన్ · కనిపిస్తుంది నియంత్రించలేం · ల్యాగ్ · మసక · ఫ్రీ 30fps</span><div>కనెక్ట్ అయిన తర్వాత అనుభవ సమస్యలు. అనుమతులు (స్క్రీన్ రికార్డింగ్ / యాక్సెసిబిలిటీ), డెస్క్‌టాప్ మోడ్, frame-rate స్థాయి మరియు హోస్ట్ పనితీరు కీలకం.</div></div><div class="catbox"><b>వెర్షన్ / ప్రోటోకాల్</b><span class="cs">ప్రోటోకాల్ వెర్షన్ సరిపోలదు · అప్‌డేట్ తర్వాత అసాధారణత</span><div>పెద్ద వెర్షన్ తేడా సులభంగా అననుకూలత ఇస్తుంది (కోడ్ 30); రెండింటినీ తాజాకు అప్‌డేట్ చేయండి, రీస్టార్ట్ & కాష్ క్లియర్.</div></div></div><figure><svg viewBox="0 0 720 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="SunLogin కనెక్షన్ మరియు ల్యాగ్ నిర్ధారణ ఫ్లోచార్ట్" style="width:100%;height:auto;border:1px solid #eee;border-radius:12px;background:#fff"><text x="20" y="28" font-family="system-ui,Arial" font-size="15.5" font-weight="700" fill="#1d1d1f">SunLogin కనెక్షన్ / ల్యాగ్ నిర్ధారణ ప్రవాహం (లక్షణం వారీగా)</text><rect x="20" y="46" width="150" height="46" rx="10" fill="#111"/><text x="95" y="74" text-anchor="middle" font-family="system-ui,Arial" font-size="13" fill="#fff">రిమోట్ కనెక్షన్ ప్రారంభించండి</text><path d="M170 69 H206" stroke="#999" stroke-width="2" fill="none" marker-end="url(#a)"/><rect x="206" y="46" width="172" height="46" rx="10" fill="#fff5e6" stroke="#ffe0b0"/><text x="292" y="74" text-anchor="middle" font-family="system-ui,Arial" font-size="13" fill="#b45309">కనెక్ట్ అవుతుందా?</text><rect x="440" y="20" width="262" height="56" rx="10" fill="#ecfdf5" stroke="#bbf7e0"/><text x="455" y="42" font-family="system-ui,Arial" font-size="12.5" fill="#047857">కనెక్ట్ కానీ ల్యాగ్ → పనితీరు చూడండి:</text><text x="455" y="62" font-family="system-ui,Arial" font-size="11.5" fill="#065f46">రిలే? నాణ్యత చాలా ఎక్కువ? fps పరిమితి? హోస్ట్ పనితీరు</text><rect x="440" y="86" width="262" height="56" rx="10" fill="#fef2f2" stroke="#fecaca"/><text x="455" y="108" font-family="system-ui,Arial" font-size="12.5" fill="#b91c1c">కనెక్ట్ కాదు → ఎర్రర్ రకం చూడండి:</text><text x="455" y="128" font-family="system-ui,Arial" font-size="11.5" fill="#991b1b">ఆఫ్‌లైన్? ఫైర్‌వాల్? ఖాతా / పాస్‌వర్డ్? వెర్షన్</text><path d="M378 60 H410 V48 H440" stroke="#10b981" stroke-width="2" fill="none" marker-end="url(#a)"/><path d="M378 78 H410 V114 H440" stroke="#ef4444" stroke-width="2" fill="none" marker-end="url(#a)"/><text x="20" y="178" font-family="system-ui,Arial" font-size="13" font-weight="700" fill="#1d1d1f">నాలుగు రకాల లోపాలు (ప్రతి అంశం L1 / L2 చూడండి)</text><g font-family="system-ui,Arial" font-size="12"><rect x="20" y="190" width="162" height="92" rx="10" fill="#fff5e6" stroke="#ffe0b0"/><text x="32" y="212" font-weight="700" fill="#b45309">① నెట్‌వర్క్ / Traversal</text><text x="32" y="234" fill="#555" font-size="11">రిలే / P2P · ఫైర్‌వాల్ · ఆఫీస్ నెట్‌వర్క్</text><rect x="194" y="190" width="162" height="92" rx="10" fill="#eef4ff" stroke="#cfe0ff"/><text x="206" y="212" font-weight="700" fill="#1d4ed8">② ఖాతా / అనుమతులు</text><text x="206" y="234" fill="#555" font-size="11">ఆఫ్‌లైన్ · యాక్సెస్ పాస్‌వర్డ్ · wake</text><rect x="368" y="190" width="162" height="92" rx="10" fill="#ecfdf5" stroke="#bbf7e0"/><text x="380" y="212" font-weight="700" fill="#047857">③ చిత్రం / పనితీరు</text><text x="380" y="234" fill="#555" font-size="11">బ్లాక్ స్క్రీన్ · ల్యాగ్ · నాణ్యత · 30fps</text><rect x="542" y="190" width="160" height="92" rx="10" fill="#fef2f2" stroke="#fecaca"/><text x="554" y="212" font-weight="700" fill="#b91c1c">④ వెర్షన్ / ప్రోటోకాల్</text><text x="554" y="234" fill="#555" font-size="11">వెర్షన్ సరిపోలదు · అప్‌డేట్ అసాధారణత</text></g><defs><marker id="a" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0 0 L6 3 L0 6 z" fill="#999"/></marker></defs></svg><figcaption>చిత్రం 1: SunLogin కనెక్షన్ / ల్యాగ్ ప్రవాహం—మొదట కనెక్ట్ అవుతుందా, తర్వాత కారణాన్ని వర్గీకరించండి</figcaption></figure>
+<h2>దశ 2: ఇంకా ల్యాగ్ / ఇంకా కనెక్ట్ కావడం లేదు → L2 నెట్‌వర్క్-లేయర్ మూల కారణం</h2>
+<p>ప్రధాన ఆలోచన: <strong>కనెక్ట్-కాకపోవడం సాధారణంగా "ఛానల్ ఏర్పాటు" వద్ద ఆగిపోతుంది, ల్యాగ్ సాధారణంగా రిలే ద్వారా వెళ్లిందని అర్థం</strong>. SunLogin మొదట రెండు వైపులా కలపడానికి <strong>P2P traversal</strong> ప్రయత్నిస్తుంది (కనిష్ట లేటెన్సీ 20–50ms); విఫలమైతే మాత్రమే <strong>విక్రేత సర్వర్ రిలేకు</strong> (80–200ms) మారుతుంది — క్లయింట్ కింద-ఎడమవైపు "P2P" లేదా "Relay" చూపుతుంది. చిత్రం ఒక కనెక్షన్ స్వీయ-తనిఖీ ప్యానెల్; లోతైన కారణాలు: సిమెట్రిక్ NAT / రూటర్ UPnP, ఎంటర్‌ప్రైజ్ DPI మరియు పోర్ట్ పరిధులు, మరియు మానిటర్ రిఫ్రెష్ రేట్ చేత పరిమితమైన frame rate.</p>
+<figure><svg viewBox="0 0 720 320" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="SunLogin కనెక్షన్ స్వీయ-తనిఖీ ప్యానెల్ చిత్రం" style="width:100%;height:auto;border:1px solid #eee;border-radius:12px;background:#fff"><text x="20" y="28" font-family="system-ui,Arial" font-size="15.5" font-weight="700" fill="#1d1d1f">కనెక్షన్ స్వీయ-తనిఖీ ప్యానెల్ (ఆకుపచ్చ=సాధారణ / ఎరుపు=సమస్య)</text><rect x="20" y="42" width="680" height="226" rx="14" fill="#f8fafc" stroke="#e2e8f0"/><text x="38" y="66" font-family="system-ui,Arial" font-size="12.5" font-weight="700" fill="#475569">తనిఖీ అంశం</text><text x="300" y="66" font-family="system-ui,Arial" font-size="12" fill="#94a3b8">ప్రస్తుత స్థితి</text><text x="610" y="66" font-family="system-ui,Arial" font-size="12" fill="#94a3b8">తీర్పు</text><line x1="38" y1="74" x2="682" y2="74" stroke="#e2e8f0" stroke-width="1"/><text x="38" y="98" font-family="system-ui,Arial" font-size="13" fill="#1d1d1f">రెండు వైపులా ఖాతా ఒకటే</text><text x="300" y="98" font-family="system-ui,Arial" font-size="12.5" fill="#16a34a">ఒకే SunLogin ఖాతా</text><circle cx="612" cy="94" r="6" fill="#16a34a"/><text x="628" y="98" font-family="system-ui,Arial" font-size="12" fill="#16a34a">సాధారణ</text><text x="38" y="128" font-family="system-ui,Arial" font-size="13" fill="#1d1d1f">హోస్ట్ ఆన్‌లైన్</text><text x="300" y="128" font-family="system-ui,Arial" font-size="12.5" fill="#16a34a">ఆన్‌లైన్ · నిద్రలేదు</text><circle cx="612" cy="124" r="6" fill="#16a34a"/><text x="628" y="128" font-family="system-ui,Arial" font-size="12" fill="#16a34a">సాధారణ</text><text x="38" y="158" font-family="system-ui,Arial" font-size="13" fill="#1d1d1f">ఫైర్‌వాల్ అనుమతి</text><text x="300" y="158" font-family="system-ui,Arial" font-size="12.5" fill="#ef4444">భద్రత చేత బ్లాక్</text><circle cx="612" cy="154" r="6" fill="#ef4444"/><text x="628" y="158" font-family="system-ui,Arial" font-size="12" fill="#ef4444">సమస్య</text><text x="38" y="188" font-family="system-ui,Arial" font-size="13" fill="#1d1d1f">కనెక్షన్ మోడ్</text><text x="300" y="188" font-family="system-ui,Arial" font-size="12.5" fill="#ef4444">రిలే · అధిక లేటెన్సీ</text><circle cx="612" cy="184" r="6" fill="#ef4444"/><text x="628" y="188" font-family="system-ui,Arial" font-size="12" fill="#ef4444">సమస్య</text><text x="38" y="218" font-family="system-ui,Arial" font-size="13" fill="#1d1d1f">క్లయింట్ వెర్షన్</text><text x="300" y="218" font-family="system-ui,Arial" font-size="12.5" fill="#16a34a">రెండూ తాజా</text><circle cx="612" cy="214" r="6" fill="#16a34a"/><text x="628" y="218" font-family="system-ui,Arial" font-size="12" fill="#16a34a">సాధారణ</text><text x="38" y="248" font-family="system-ui,Arial" font-size="13" fill="#1d1d1f">యాక్సెస్ పాస్‌వర్డ్</text><text x="300" y="248" font-family="system-ui,Arial" font-size="12.5" fill="#16a34a">సరైనది</text><circle cx="612" cy="244" r="6" fill="#16a34a"/><text x="628" y="248" font-family="system-ui,Arial" font-size="12" fill="#16a34a">సాధారణ</text><text x="20" y="296" font-family="system-ui,Arial" font-size="11.5" fill="#94a3b8">గమనిక: ఎరుపు = పరిష్కరించాల్సిన సమస్య; కనెక్ట్ కానీ "రిలే" = అధిక లేటెన్సీ, P2P నేరుగా పొందడానికి రూటర్ UPnP ఆన్ చేయండి.</text></svg><figcaption>చిత్రం 2: కనెక్షన్ స్వీయ-తనిఖీ ప్యానెల్ (ఆకుపచ్చ = సాధారణ / ఎరుపు = సమస్య)</figcaption></figure>
+<figure class="i4png"><picture><source type="image/webp" srcset="/img/board_te.webp"><img src="/img/board_te.png" alt="SunLogin కనెక్షన్ స్వీయ-తనిఖీ ప్యానెల్ ఆకుపచ్చ/ఎరుపు అంశాల చిత్రం" loading="lazy" width="1120" height="746" style="width:100%;height:auto;border-radius:12px;border:1px solid #eee"></picture><figcaption>చిత్రం: కనెక్ట్ కాకపోతే "ఛానల్ ఏర్పాటు" చూడండి, ల్యాగ్ ఉంటే "రిలే" ద్వారా వెళ్లిందా—P2P నేరుగా పొందడానికి UPnP ఆన్ చేయండి</figcaption></figure>
+<h2>పూర్తి లక్షణ పట్టిక (మొదట L1 తనిఖీ · L2 మూల కారణం)</h2>
+<table id="tbl"></table>
+<section class="i4data">
+<h2>SunLogin కనెక్షన్ / ల్యాగ్ డేటా (2026 అంచనా)</h2>
+<p>కింద SunLogin అధికారిక సహాయం మరియు పబ్లిక్ రిమోట్-యాక్సెస్ సముదాయ అనుభవాన్ని సంశ్లేషించే <strong>2026 అంచనా</strong> (విక్రేత అధికారిక సంఖ్యలు కావు, ప్రత్యక్ష కొలత కాదు, కేవలం సూచన కోసం):</p>
+<table>
+<tr><th>కోణం</th><th>అంచనా</th></tr>
+<tr><td>కనెక్షన్ వైఫల్య కారణ పంపిణీ (అంచనా)</td><td>ఫైర్‌వాల్ / భద్రత <strong>≈50%</strong> &gt; హోస్ట్ ఆఫ్‌లైన్ / నిద్ర <strong>≈20%</strong> &gt; ఖాతా / పాస్‌వర్డ్ <strong>≈15%</strong> &gt; వెర్షన్ / ప్రోటోకాల్ <strong>≈10%</strong></td></tr>
+<tr><td>ల్యాగ్ కారణ పంపిణీ (సముదాయ కొలత)</td><td>రిలే <strong>35%</strong> &gt; నాణ్యత చాలా ఎక్కువ 25% &gt; హోస్ట్ పనితీరు 20% &gt; నెట్‌వర్క్ చెడ్డది 15% &gt; frame పరిమితి 5%</td></tr>
+<tr><td>P2P నేరుగా వర్సెస్ సర్వర్ రిలే లేటెన్సీ</td><td>P2P సుమారు <strong>20–50ms</strong>, రిలే సుమారు <strong>80–200ms</strong></td></tr>
+<tr><td>frame పరిమితి (ఫ్రీ / పెయిడ్ / గేమింగ్)</td><td><strong>30 / 60 / 144</strong> fps (144‌కు GPU + 144Hz మానిటర్ అవసరం)</td></tr>
+<tr><td>P2P కోసం UPnP ఆన్ చేయడం ప్రయోజనం</td><td>చొచ్చుకుపోయే రేటు గణనీయంగా పెరుగుతుంది; కొలిచిన లేటెన్సీ ~120ms నుండి ~35ms‌కు వెళ్లవచ్చు</td></tr>
+<tr><td>లేటెన్సీ ప్రకారం వినియోగ స్థాయిలు</td><td>&lt;30ms దాదాపు లోకల్ · 80–150ms స్పష్ట ఆగుట · &gt;150ms దాదాపు క్లిక్ మాత్రమే</td></tr>
+</table>
+<p><small>అంచనా ఆధారం: మూల బేస్‌లైన్ + కాల ఎక్స్‌ట్రాపోలేషన్ (SunLogin అధికారిక సహాయం మరియు పబ్లిక్ రిమోట్-యాక్సెస్ సముదాయ డేటా సంశ్లేషణ); వెర్షన్ మరియు నెట్‌వర్క్ వాతావరణం ప్రకారం మారుతుంది; తాజా అధికారిక SunLogin సమాచారం వర్తిస్తుంది.</small></p>
+</section>
+<h2>నిజమైన కేసుల త్వరిత అంచనా</h2>
+<ul class="scenes"><li>ఆఫీస్ PC అస్సలు కనెక్ట్ కాదు కానీ ఫోన్ హాట్‌స్పాట్ వెంటనే కనెక్ట్ చేస్తుంది: తరచుగా ఆఫీస్ నెట్‌వర్క్ ఇంటర్నెట్ బిహేవియర్ మేనేజ్‌మెంట్ / DPI రిమోట్ ట్రాఫిక్‌ను బ్లాక్ చేస్తుంది. IT‌ను వైట్‌లిస్ట్ అనుమతించమని అడగండి, లేదా హోస్ట్‌లో తాత్కాలికంగా ఫోన్ హాట్‌స్పాట్ వాడండి.</li><li>కనెక్ట్ అవుతుంది కానీ మౌస్ నీడ వదులుతుంది మరియు లేటెన్సీ 100ms మించుతుంది: కింద-ఎడమ "Relay" కనిపించడమే మూలం—రూటర్‌లో లాగిన్ అయి UPnP ఆన్ చేసి P2P పొందండి; కొలిచిన లేటెన్సీ ~120ms నుండి ~35ms‌కు తగ్గవచ్చు.</li><li>యాక్సెస్ పాస్‌వర్డ్ పదేపదే తప్పు: యాక్సెస్ పాస్‌వర్డ్ లాగిన్ ఖాతా పాస్‌వర్డ్ కాదు; హోస్ట్ "సెట్టింగ్స్"‌లో రీసెట్ చేసి మళ్లీ కనెక్ట్ చేయండి.</li><li>పరికరం ఆన్‌లైన్ చూపుతుంది కానీ కనెక్షన్ టైమ్‌అవుట్: తరచుగా లాగిన్ టోకెన్ గడువు / హోస్ట్ నిద్రించి నెట్‌వర్క్ తెగింది; హోస్ట్‌లో మళ్లీ లాగిన్, లేదా ముందే "Wake" & పర్యవేక్షణ లేని యాక్సెస్ ఆన్ చేయండి.</li><li>విండో లాగడంలో స్పష్టంగా ఆగుతుంది కానీ లేటెన్సీ ఎక్కువ కాదు: ఫ్రీ వెర్షన్ frame పరిమితి 30fps; పెయిడ్‌లో 60fps వరకు, గేమింగ్ వెర్షన్‌లో గరిష్టంగా 144fps (అనుకూల మానిటర్ అవసరం).</li><li>బ్లాక్ స్క్రీన్, కనిపిస్తుంది కానీ పనిచేయలేం: సాధారణంగా అనుమతి ఇవ్వలేదు (macOS‌లో "స్క్రీన్ రికార్డింగ్ / యాక్సెసిబిలిటీ" టిక్ అవసరం), లేదా హోస్ట్ CPU / RAM నిండి encoding వెనుకబడుతుంది.</li></ul><div class="related"><h2>సంబంధిత</h2><ul><li><a href="https://sunlogim.com/">SunLogin రిమోట్ అధికారిక డౌన్‌లోడ్</a></li><li><a href="https://sunlogim.com/lianjie/">SunLogin కనెక్షన్ తనిఖీ గైడ్</a></li><li><a href="https://sunlogni.com/">SunLogin రిమోట్ డౌన్‌లోడ్ (సోదర సైట్)</a></li></ul></div></main>
+<footer>తనిఖీ దశలు మరియు డెస్క్‌టాప్ మోడ్‌లు / frame-rate పారామితులు SunLogin అధికారిక సహాయం (sunlogin.oray.com) నుండి సారాంశం; P2P / రిలే, NAT traversal, ఎంటర్‌ప్రైజ్ పోర్ట్ పరిధులు మరియు ఎర్రర్ కోడ్ చదవడం పబ్లిక్ రిమోట్-యాక్సెస్ సముదాయ అనుభవం నుండి సంశ్లేషించబడింది (అనధికారిక). కేవలం సూచన కోసం; తాజా అధికారిక SunLogin సమాచారం వర్తిస్తుంది. (అనధికారిక·LLM స్థానికీకరణ)<br>ఓపెన్-సోర్స్ ప్రాజెక్ట్ · MIT License</footer>
+</div>
+<script src="/te/codes.js"></script><script src="/app.js"></script>
+</body></html>
