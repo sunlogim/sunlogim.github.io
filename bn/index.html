@@ -1,0 +1,151 @@
+<!DOCTYPE html><html lang="bn"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>SunLogin রিমোট কানেকশন / ল্যাগ ডায়াগনোসিস - কানেকশন ব্যর্থ, ব্ল্যাক স্ক্রিন, উচ্চ লেটেন্সি ঠিক করুন</title>
+<meta name="description" content="SunLogin রিমোট কন্ট্রোল কানেক্ট হচ্ছে না, ব্ল্যাক স্ক্রিন বা উচ্চ লেটেন্সিতে ল্যাগ? একটি উপসর্গ খুঁজুন (ডিভাইস অফলাইন, টাইমআউট, ভুল অ্যাক্সেস পাসওয়ার্ড, ফায়ারওয়াল ব্লক, অফিস নেটওয়ার্ক, দেখা যায় কিন্তু নিয়ন্ত্রণ নয়, রিলে মোড, ফ্রি সংস্করণে 30fps) এবং অফিসিয়াল L1 চেক ও L2 নেটওয়ার্ক-লেয়ার মূল কারণ (P2P বনাম রিলে, NAT ট্রাভার্সাল, পোর্ট রেঞ্জ, ফ্রেম-রেট স্তর) দেখুন, তারপর দ্রুত পুনঃসংযোগের জন্য বাস্তব ঘটনার সাথে মেলান।">
+<link rel="canonical" href="https://sunlogim.github.io/bn/">
+<link rel="alternate" hreflang="zh-Hans" href="https://sunlogim.github.io/">
+<link rel="alternate" hreflang="en" href="https://sunlogim.github.io/en/">
+<link rel="alternate" hreflang="ja" href="https://sunlogim.github.io/ja/">
+<link rel="alternate" hreflang="zh-Hant" href="https://sunlogim.github.io/zh-tw/">
+<link rel="alternate" hreflang="ko" href="https://sunlogim.github.io/ko/">
+<link rel="alternate" hreflang="id" href="https://sunlogim.github.io/id/">
+<link rel="alternate" hreflang="vi" href="https://sunlogim.github.io/vi/">
+<link rel="alternate" hreflang="th" href="https://sunlogim.github.io/th/">
+<link rel="alternate" hreflang="es" href="https://sunlogim.github.io/es/">
+<link rel="alternate" hreflang="pt-BR" href="https://sunlogim.github.io/pt-br/">
+<link rel="alternate" hreflang="de" href="https://sunlogim.github.io/de/">
+<link rel="alternate" hreflang="fr" href="https://sunlogim.github.io/fr/">
+<link rel="alternate" hreflang="ru" href="https://sunlogim.github.io/ru/">
+<link rel="alternate" hreflang="it" href="https://sunlogim.github.io/it/">
+<link rel="alternate" hreflang="pl" href="https://sunlogim.github.io/pl/">
+<link rel="alternate" hreflang="nl" href="https://sunlogim.github.io/nl/">
+<link rel="alternate" hreflang="tr" href="https://sunlogim.github.io/tr/">
+<link rel="alternate" hreflang="ar" href="https://sunlogim.github.io/ar/">
+<link rel="alternate" hreflang="hi" href="https://sunlogim.github.io/hi/">
+<link rel="alternate" hreflang="ms" href="https://sunlogim.github.io/ms/">
+<link rel="alternate" hreflang="fa" href="https://sunlogim.github.io/fa/">
+<link rel="alternate" hreflang="bn" href="https://sunlogim.github.io/bn/">
+<link rel="alternate" hreflang="ta" href="https://sunlogim.github.io/ta/">
+<link rel="alternate" hreflang="te" href="https://sunlogim.github.io/te/">
+<link rel="alternate" hreflang="fil" href="https://sunlogim.github.io/fil/">
+<link rel="alternate" hreflang="ur" href="https://sunlogim.github.io/ur/">
+<link rel="alternate" hreflang="lo" href="https://sunlogim.github.io/lo/">
+<link rel="alternate" hreflang="km" href="https://sunlogim.github.io/km/">
+<link rel="alternate" hreflang="my" href="https://sunlogim.github.io/my/">
+<link rel="alternate" hreflang="x-default" href="https://sunlogim.github.io/">
+<link rel="stylesheet" href="/style.css">
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "WebApplication",
+   "name": "SunLogin রিমোট কানেকশন / ল্যাগ ডায়াগনোসিস",
+   "url": "https://sunlogim.github.io/bn/",
+   "applicationCategory": "UtilitiesApplication",
+   "operatingSystem": "Web browser",
+   "inLanguage": "bn",
+   "description": "SunLogin রিমোট কন্ট্রোল কানেক্ট হচ্ছে না, ব্ল্যাক স্ক্রিন বা উচ্চ লেটেন্সিতে ল্যাগ? একটি উপসর্গ খুঁজুন (ডিভাইস অফলাইন, টাইমআউট, ভুল অ্যাক্সেস পাসওয়ার্ড, ফায়ারওয়াল ব্লক, অফিস নেটওয়ার্ক, দেখা যায় কিন্তু নিয়ন্ত্রণ নয়, রিলে মোড, ফ্রি সংস্করণে 30fps) এবং অফিসিয়াল L1 চেক ও L2 নেটওয়ার্ক-লেয়ার মূল কারণ (P2P বনাম রিলে, NAT ট্রাভার্সাল, পোর্ট রেঞ্জ, ফ্রেম-রেট স্তর) দেখুন, তারপর দ্রুত পুনঃসংযোগের জন্য বাস্তব ঘটনার সাথে মেলান।",
+   "isAccessibleForFree": true,
+   "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+   }
+  },
+  {
+   "@type": "FAQPage",
+   "inLanguage": "bn",
+   "url": "https://sunlogim.github.io/bn/",
+   "mainEntity": [
+    {
+     "@type": "Question",
+     "name": "SunLogin রিমোট \"ডিভাইস অফলাইন\" কী করবেন?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "নিশ্চিত করুন হোস্ট PC চালু, অনলাইন, ঘুমন্ত নয়, SunLogin ক্লায়েন্ট চলছে এবং \"লগইন\" দেখাচ্ছে; নেটওয়ার্ক অস্থির হলে রাউটার রিস্টার্ট করুন বা নেটওয়ার্ক বদলান অফলাইন = হোস্ট অনলাইনই নয়, আগে নেটওয়ার্ক দেখবেন না: ঘুমের পরে নেটওয়ার্ক কার্ড প্রায়ই বিচ্ছিন্ন হয়, ল্যাপটপ ঢাকনা বন্ধে WiFi কাটে, Android পাওয়ার সেভিং ব্যাকগ্রাউন্ড মারে; Windows-এ services.msc-তে \"SunLogin\" সার্ভিস চলছে কিনা দেখুন দীর্ঘমেয়াদি নজরদারিহীন হোস্ট: \"অটো-স্টার্ট + অটো-লগইন + নজরদারিহীন অ্যাক্সেস\" চালু করুন, Android-এ SunLogin পাওয়ার-সেভিং হোয়াইটলিস্টে যোগ করুন"
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "SunLogin রিমোট \"কানেকশন টাইমআউট\" কী করবেন?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "আগে দুই দিকের ফায়ারওয়াল / অ্যান্টিভাইরাস বন্ধ করে চেষ্টা করুন; দুটিতে লগআউট-লগইন করুন; সর্বশেষে আপডেট করুন; নেটওয়ার্ক পরিবেশ বদলান (ফোন হটস্পট) 90% \"কানেকশন ব্যর্থ\" ধাপ 2 \"চ্যানেল তৈরিতে\" আটকায়: 15=P2P পার হয় না এবং রিলেও ব্যর্থ (নেটওয়ার্ক খুব খারাপ), 3=নেটওয়ার্ক লেয়ার ব্লক; হটস্পটে কানেক্ট হলে মূলত নেটওয়ার্ক / ফায়ারওয়াল সমস্যা 3 ধাপে শনাক্ত করুন: অ্যাকাউন্ট যাচাই → চ্যানেল তৈরি → ছবি প্রেরণ; টাইমআউট প্রায় সবসময় \"চ্যানেল তৈরিতে\""
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "SunLogin রিমোট \"ভুল অ্যাক্সেস পাসওয়ার্ড\" কী করবেন?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "নিশ্চিত করুন আপনি \"অ্যাক্সেস পাসওয়ার্ড\" দিচ্ছেন, SunLogin অ্যাকাউন্টের লগইন পাসওয়ার্ড নয়; হোস্টে অ্যাক্সেস পাসওয়ার্ড রিসেট করে কানেক্ট করুন অ্যাক্সেস পাসওয়ার্ড হোস্টের আলাদাভাবে সেট করা রিমোট পাসওয়ার্ড; প্রায়ই বদলানো বা লগইন পাসওয়ার্ডের সাথে বিভ্রান্ত; বদলের পরে কন্ট্রোলার নতুনটি ব্যবহার করে অ্যাক্সেস পাসওয়ার্ড ≠ লগইন পাসওয়ার্ড: হোস্টের \"সেটিংস → নিরাপত্তা\"-তে দেখুন / রিসেট করুন"
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "SunLogin রিমোট \"ফায়ারওয়াল ব্লক\" কী করবেন?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "SunLogin ফায়ারওয়াল / নিরাপত্তা ট্রাস্টে যোগ করুন: Windows Defender Firewall \"অ্যাপ অনুমতি\"-তে SunloginClient টিক করুন; থার্ড-পার্টি অ্যান্টিভাইরাসে ট্রাস্ট যোগ করুন হোয়াইটলিস্টে পুরো ইনস্টলেশন ফোল্ডার যোগ করুন (যেমন C:\\Program Files (x86)\\Oray\\SunLogin\\), কেবল মূল exe নয়—SunLogin চলার সময় একাধিক কম্পোনেন্ট কল করে দ্রুত যাচাই: নিরাপত্তা পুরো বন্ধ করুন (কেবল রিয়েল-টাইম সুরক্ষা নয়) এবং কানেক্ট করুন; কানেক্ট হলে 100% ওটাই ব্লক করছিল"
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "SunLogin রিমোট \"অফিস নেটওয়ার্ক কানেক্ট নয়\" কী করবেন?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "কোম্পানি IT-কে SunLogin হোয়াইটলিস্ট অনুমতি দিতে বলুন; বা বাইপাসে হোস্টে সাময়িক ফোন হটস্পট; SunLogin SOS সংস্করণ চেষ্টা করুন (ভিন্ন কানেকশন উপায়) এন্টারপ্রাইজ নেটওয়ার্কে প্রায়ই ইন্টারনেট বিহেভিয়র ম্যানেজমেন্ট ডিভাইস থাকে; TCP 443 (HTTPS-এর একই পোর্ট) দিয়ে যাওয়া SunLogin DPI দ্বারা শনাক্ত ও ব্লক হয়; সম্প্রদায় অভিজ্ঞতা: এন্টারপ্রাইজ রাউটারে TCP 51020–51030 + UDP 50000–50010 অনুমোদন করুন, বা কানেকশন মোড \"হাই-স্পিড\" থেকে \"কম্প্যাটিবল\" (80/443, বেশি সাধারণ) করুন অফিস নেটওয়ার্ক কিনা জানতে: দুটিই ফোন হটস্পটে বদলান; কানেক্ট হলে 100% অফিস নেটওয়ার্ক ব্লক"
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "SunLogin রিমোট \"ব্ল্যাক স্ক্রিন\" কী করবেন?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "হোস্টে SunLogin-কে অনুমতি দিন: macOS \"সিস্টেম সেটিংস → গোপনীয়তা ও নিরাপত্তা\"-তে স্ক্রিন রেকর্ডিং / অ্যাক্সেসিবিলিটি / সম্পূর্ণ ডিস্ক অ্যাক্সেস টিক করুন; Windows-এ ডেস্কটপ মোড বদলান / পুনরায় কানেক্ট করুন ব্ল্যাক স্ক্রিন সাধারণত ক্যাপচার অনুমতির অভাব বা ডিসক্রিট GPU সুইচ, লক স্ক্রিন সুরক্ষা; ডিসক্রিট GPU ল্যাপটপে পাওয়ার পলিসিতে SunLogin-কে iGPU দিয়ে ক্যাপচার করানো যায় macOS Ventura থেকে অনুমতি পথ \"সিস্টেম সেটিংস\"-এ গেছে; সার্চ বক্সে \"স্ক্রিন রেকর্ডিং\" খোঁজা দ্রুততম"
+     }
+    }
+   ]
+  }
+ ]
+}
+</script>
+</head>
+<body><div class="wrap"><main>
+<nav class="lang">ভাষা: <a href="/">简体中文</a> · <a href="/en/">English</a> · <a href="/ja/">日本語</a> · <a href="/zh-tw/">繁體中文</a> · <a href="/ko/">한국어</a> · <a href="/id/">Bahasa Indonesia</a> · <a href="/vi/">Tiếng Việt</a> · <a href="/th/">ไทย</a> · <a href="/es/">Español</a> · <a href="/pt-br/">Português (BR)</a> · <a href="/de/">Deutsch</a> · <a href="/fr/">Français</a> · <a href="/ru/">Русский</a> · <a href="/it/">Italiano</a> · <a href="/pl/">Polski</a> · <a href="/nl/">Nederlands</a> · <a href="/tr/">Türkçe</a> · <a href="/ar/">العربية</a> · <a href="/hi/">हिन्दी</a> · <a href="/ms/">Bahasa Melayu</a> · <a href="/fa/">فارسی</a> · <strong>বাংলা</strong> · <a href="/ta/">தமிழ்</a> · <a href="/te/">తెలుగు</a> · <a href="/fil/">Filipino</a> · <a href="/ur/">اردو</a> · <a href="/lo/">ພາສາລາວ</a> · <a href="/km/">ភាសាខ្មែរ</a> · <a href="/my/">မြန်မာ</a></nav>
+<h1>SunLogin রিমোট কানেকশন / ল্যাগ ডায়াগনোসিস</h1>
+<figure class="i4png"><picture><source type="image/webp" srcset="/img/cover_bn.webp"><img src="/img/cover_bn.png" alt="SunLogin রিমোট কানেকশন ও ল্যাগ ডায়াগনোসিস টুলের চিত্র" fetchpriority="high" width="1120" height="746" style="width:100%;height:auto;border-radius:12px;border:1px solid #eee"></picture><figcaption>চিত্র: SunLogin রিমোট কানেকশন / ল্যাগ ডায়াগনোসিস (অফিসিয়াল L1 চেক + L2 নেটওয়ার্ক-লেয়ার কারণ)</figcaption></figure>
+<p>SunLogin রিমোট কন্ট্রোলের দুটি আসল মাথাব্যথা হলো <strong>কানেক্ট না হওয়া</strong> ও <strong>ল্যাগ</strong>। আপনার <strong>উপসর্গ</strong> খুঁজুন (যেমন <code>ডিভাইস অফলাইন</code>, <code>টাইমআউট</code>, <code>ভুল অ্যাক্সেস পাসওয়ার্ড</code>, <code>ফায়ারওয়াল ব্লক</code>, <code>দেখা যায় নিয়ন্ত্রণ নয়</code>, <code>উচ্চ লেটেন্সি</code>, <code>ফ্রি 30fps</code>): প্রথমে <strong>অফিসিয়াল L1 চেক</strong>, তারপর <strong>L2 নেটওয়ার্ক-লেয়ার মূল কারণ</strong> (P2P সরাসরি বনাম সার্ভার রিলে, NAT ট্রাভার্সাল, পোর্ট রেঞ্জ), শেষে বাস্তব ঘটনা। ডেস্কটপ ক্লায়েন্ট দরকার? <a href="https://sunlogim.com/">SunLogin অফিসিয়াল ডাউনলোড</a> দেখুন।</p>
+<input id="q" placeholder="উপসর্গ লিখুন, যেমন কানেকশন ব্যর্থ / ব্ল্যাক স্ক্রিন / ল্যাগ / অফলাইন" autocomplete="off">
+<button id="go">খুঁজুন</button>
+<div id="out"></div>
+<h2>ধাপ 1: অফিসিয়াল চেক চালান (L1 - আগে এই 4টি করুন)</h2>
+<p>কানেকশন ব্যর্থতায় SunLogin-এর অফিসিয়াল চেকলিস্ট মাত্র 4 ধাপ, সবই অ্যাপে: ① <strong>অ্যাকাউন্ট ও ডিভাইস বাইন্ডিং</strong>—কন্ট্রোলার ও হোস্ট একই SunLogin অ্যাকাউন্টে লগইন করে; ② <strong>ডিভাইস অবস্থা ও নেটওয়ার্ক</strong>—হোস্ট চালু, অনলাইন এবং ঘুমন্ত নয় (ঘুমন্ত হোস্টে "Wake" ব্যবহার করুন, আগে সক্ষম করুন); ③ <strong>ফায়ারওয়াল ও অনুমতি</strong>—SunLogin ফায়ারওয়াল ট্রাস্ট তালিকায় যোগ করুন, "রিমোট কন্ট্রোলের অনুমতি" ও "নজরদারিহীন অ্যাক্সেস" চালু করুন, অ্যাক্সেস পাসওয়ার্ড সঠিকভাবে সেট করুন; ④ <strong>সংস্করণ ও রিস্টার্ট</strong>—দুই দিকই সর্বশেষ সংস্করণে আপডেট করুন, ক্লায়েন্ট রিস্টার্ট করুন, ক্যাশ মুছুন। আরও পূর্ণ গাইড: <a href="https://sunlogim.com/lianjie/">SunLogin কানেকশন চেক গাইড</a>।</p>
+<div class="cat"><div class="catbox"><b>নেটওয়ার্ক / ট্রাভার্সাল</b><span class="cs">টাইমআউট · ফায়ারওয়াল ব্লক · অফিস নেটওয়ার্ক · রিলে / P2P</span><div>চ্যানেল তৈরি ব্যর্থ বা রিলের কারণে উচ্চ লেটেন্সি। আগে ফায়ারওয়াল ট্রাস্ট চেক করুন + নেটওয়ার্ক বদলান; গভীরে P2P পার হয় কিনা, এন্টারপ্রাইজ DPI ও NAT ধরন।</div></div><div class="catbox"><b>অ্যাকাউন্ট / অনুমতি</b><span class="cs">ডিভাইস অফলাইন · ভুল অ্যাক্সেস পাসওয়ার্ড · ভিন্ন অ্যাকাউন্ট · wake ব্যর্থ</span><div>হোস্ট অনলাইন + দুই দিকে একই অ্যাকাউন্ট শর্ত। অ্যাক্সেস পাসওয়ার্ড ≠ লগইন পাসওয়ার্ড; টোকেন মেয়াদোত্তীর্ণ হলে পুনঃলগইন; ঘুম "Wake" দিয়ে সমাধান।</div></div><div class="catbox"><b>ছবি / পারফরম্যান্স</b><span class="cs">ব্ল্যাক স্ক্রিন · দেখা যায় নিয়ন্ত্রণ নয় · ল্যাগ · ঝাপসা · ফ্রি 30fps</span><div>কানেক্ট হওয়ার পরের অভিজ্ঞতা সমস্যা। অনুমতি (স্ক্রিন রেকর্ডিং / অ্যাক্সেসিবিলিটি), ডেস্কটপ মোড, ফ্রেম-রেট স্তর ও হোস্ট পারফরম্যান্স মুখ্য।</div></div><div class="catbox"><b>সংস্করণ / প্রোটোকল</b><span class="cs">প্রোটোকল সংস্করণ মেলে না · আপডেটের পরে অস্বাভাবিকতা</span><div>বড় সংস্করণ পার্থক্য সহজেই অসামঞ্জস্য আনে (কোড 30); দুটিই সর্বশেষে আপডেট করুন, রিস্টার্ট করুন ও ক্যাশ মুছুন।</div></div></div><figure><svg viewBox="0 0 720 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="SunLogin কানেকশন ও ল্যাগ ডায়াগনোসিস ফ্লোচার্ট" style="width:100%;height:auto;border:1px solid #eee;border-radius:12px;background:#fff"><text x="20" y="28" font-family="system-ui,Arial" font-size="15.5" font-weight="700" fill="#1d1d1f">SunLogin কানেকশন / ল্যাগ ডায়াগনোসিস প্রবাহ (উপসর্গ অনুযায়ী)</text><rect x="20" y="46" width="150" height="46" rx="10" fill="#111"/><text x="95" y="74" text-anchor="middle" font-family="system-ui,Arial" font-size="13" fill="#fff">রিমোট কানেকশন শুরু করুন</text><path d="M170 69 H206" stroke="#999" stroke-width="2" fill="none" marker-end="url(#a)"/><rect x="206" y="46" width="172" height="46" rx="10" fill="#fff5e6" stroke="#ffe0b0"/><text x="292" y="74" text-anchor="middle" font-family="system-ui,Arial" font-size="13" fill="#b45309">কানেক্ট হয়?</text><rect x="440" y="20" width="262" height="56" rx="10" fill="#ecfdf5" stroke="#bbf7e0"/><text x="455" y="42" font-family="system-ui,Arial" font-size="12.5" fill="#047857">কানেক্ট কিন্তু ল্যাগ → পারফরম্যান্স দেখুন:</text><text x="455" y="62" font-family="system-ui,Arial" font-size="11.5" fill="#065f46">রিলে? মান খুব বেশি? fps সীমা? হোস্ট পারফরম্যান্স</text><rect x="440" y="86" width="262" height="56" rx="10" fill="#fef2f2" stroke="#fecaca"/><text x="455" y="108" font-family="system-ui,Arial" font-size="12.5" fill="#b91c1c">কানেক্ট নয় → এরর ধরন দেখুন:</text><text x="455" y="128" font-family="system-ui,Arial" font-size="11.5" fill="#991b1b">অফলাইন? ফায়ারওয়াল? অ্যাকাউন্ট / পাসওয়ার্ড? সংস্করণ</text><path d="M378 60 H410 V48 H440" stroke="#10b981" stroke-width="2" fill="none" marker-end="url(#a)"/><path d="M378 78 H410 V114 H440" stroke="#ef4444" stroke-width="2" fill="none" marker-end="url(#a)"/><text x="20" y="178" font-family="system-ui,Arial" font-size="13" font-weight="700" fill="#1d1d1f">চার ধরনের ত্রুটি (প্রতিটি আইটেমের L1 / L2 দেখুন)</text><g font-family="system-ui,Arial" font-size="12"><rect x="20" y="190" width="162" height="92" rx="10" fill="#fff5e6" stroke="#ffe0b0"/><text x="32" y="212" font-weight="700" fill="#b45309">① নেটওয়ার্ক / ট্রাভার্সাল</text><text x="32" y="234" fill="#555" font-size="11">রিলে / P2P · ফায়ারওয়াল · অফিস নেটওয়ার্ক</text><rect x="194" y="190" width="162" height="92" rx="10" fill="#eef4ff" stroke="#cfe0ff"/><text x="206" y="212" font-weight="700" fill="#1d4ed8">② অ্যাকাউন্ট / অনুমতি</text><text x="206" y="234" fill="#555" font-size="11">অফলাইন · অ্যাক্সেস পাসওয়ার্ড · wake</text><rect x="368" y="190" width="162" height="92" rx="10" fill="#ecfdf5" stroke="#bbf7e0"/><text x="380" y="212" font-weight="700" fill="#047857">③ ছবি / পারফরম্যান্স</text><text x="380" y="234" fill="#555" font-size="11">ব্ল্যাক স্ক্রিন · ল্যাগ · মান · 30fps</text><rect x="542" y="190" width="160" height="92" rx="10" fill="#fef2f2" stroke="#fecaca"/><text x="554" y="212" font-weight="700" fill="#b91c1c">④ সংস্করণ / প্রোটোকল</text><text x="554" y="234" fill="#555" font-size="11">সংস্করণ মেলে না · আপডেট অস্বাভাবিকতা</text></g><defs><marker id="a" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0 0 L6 3 L0 6 z" fill="#999"/></marker></defs></svg><figcaption>চিত্র 1: SunLogin কানেকশন / ল্যাগ প্রবাহ—আগে কানেক্ট হয় কিনা, তারপর কারণ শ্রেণিবদ্ধ করুন</figcaption></figure>
+<h2>ধাপ 2: এখনও ল্যাগ / এখনও কানেক্ট নয় → L2 নেটওয়ার্ক-লেয়ার মূল কারণ</h2>
+<p>মূল ভাবনা: <strong>কানেক্ট-না-হওয়া সাধারণত "চ্যানেল তৈরিতে" আটকায়, আর ল্যাগ সাধারণত মানে রিলে দিয়ে গেছে</strong>। SunLogin প্রথমে দুই দিক জুড়তে <strong>P2P ট্রাভার্সাল</strong> চেষ্টা করে (সর্বনিম্ন লেটেন্সি 20–50ms); ব্যর্থ হলেই <strong>ভেন্ডরের সার্ভার রিলে</strong>-তে (80–200ms) যায় — ক্লায়েন্ট নিচ-বাঁয়ে "P2P" বা "Relay" দেখায়। চিত্রটি একটি কানেকশন সেলফ-চেক প্যানেল; গভীর কারণ: সিমেট্রিক NAT / রাউটার UPnP, এন্টারপ্রাইজ DPI ও পোর্ট রেঞ্জ, এবং মনিটর রিফ্রেশ রেট দ্বারা সীমিত ফ্রেম রেট।</p>
+<figure><svg viewBox="0 0 720 320" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="SunLogin কানেকশন সেলফ-চেক প্যানেলের চিত্র" style="width:100%;height:auto;border:1px solid #eee;border-radius:12px;background:#fff"><text x="20" y="28" font-family="system-ui,Arial" font-size="15.5" font-weight="700" fill="#1d1d1f">কানেকশন সেলফ-চেক প্যানেল (সবুজ=স্বাভাবিক / লাল=সমস্যা)</text><rect x="20" y="42" width="680" height="226" rx="14" fill="#f8fafc" stroke="#e2e8f0"/><text x="38" y="66" font-family="system-ui,Arial" font-size="12.5" font-weight="700" fill="#475569">চেক আইটেম</text><text x="300" y="66" font-family="system-ui,Arial" font-size="12" fill="#94a3b8">বর্তমান অবস্থা</text><text x="610" y="66" font-family="system-ui,Arial" font-size="12" fill="#94a3b8">রায়</text><line x1="38" y1="74" x2="682" y2="74" stroke="#e2e8f0" stroke-width="1"/><text x="38" y="98" font-family="system-ui,Arial" font-size="13" fill="#1d1d1f">দুই দিকে অ্যাকাউন্ট অভিন্ন</text><text x="300" y="98" font-family="system-ui,Arial" font-size="12.5" fill="#16a34a">একই SunLogin অ্যাকাউন্ট</text><circle cx="612" cy="94" r="6" fill="#16a34a"/><text x="628" y="98" font-family="system-ui,Arial" font-size="12" fill="#16a34a">স্বাভাবিক</text><text x="38" y="128" font-family="system-ui,Arial" font-size="13" fill="#1d1d1f">হোস্ট অনলাইন</text><text x="300" y="128" font-family="system-ui,Arial" font-size="12.5" fill="#16a34a">অনলাইন · ঘুমন্ত নয়</text><circle cx="612" cy="124" r="6" fill="#16a34a"/><text x="628" y="128" font-family="system-ui,Arial" font-size="12" fill="#16a34a">স্বাভাবিক</text><text x="38" y="158" font-family="system-ui,Arial" font-size="13" fill="#1d1d1f">ফায়ারওয়াল পাস</text><text x="300" y="158" font-family="system-ui,Arial" font-size="12.5" fill="#ef4444">নিরাপত্তা দ্বারা ব্লক</text><circle cx="612" cy="154" r="6" fill="#ef4444"/><text x="628" y="158" font-family="system-ui,Arial" font-size="12" fill="#ef4444">সমস্যা</text><text x="38" y="188" font-family="system-ui,Arial" font-size="13" fill="#1d1d1f">কানেকশন মোড</text><text x="300" y="188" font-family="system-ui,Arial" font-size="12.5" fill="#ef4444">রিলে · উচ্চ লেটেন্সি</text><circle cx="612" cy="184" r="6" fill="#ef4444"/><text x="628" y="188" font-family="system-ui,Arial" font-size="12" fill="#ef4444">সমস্যা</text><text x="38" y="218" font-family="system-ui,Arial" font-size="13" fill="#1d1d1f">ক্লায়েন্ট সংস্করণ</text><text x="300" y="218" font-family="system-ui,Arial" font-size="12.5" fill="#16a34a">দুটিই সর্বশেষ</text><circle cx="612" cy="214" r="6" fill="#16a34a"/><text x="628" y="218" font-family="system-ui,Arial" font-size="12" fill="#16a34a">স্বাভাবিক</text><text x="38" y="248" font-family="system-ui,Arial" font-size="13" fill="#1d1d1f">অ্যাক্সেস পাসওয়ার্ড</text><text x="300" y="248" font-family="system-ui,Arial" font-size="12.5" fill="#16a34a">সঠিক</text><circle cx="612" cy="244" r="6" fill="#16a34a"/><text x="628" y="248" font-family="system-ui,Arial" font-size="12" fill="#16a34a">স্বাভাবিক</text><text x="20" y="296" font-family="system-ui,Arial" font-size="11.5" fill="#94a3b8">নোট: লাল = সমাধানযোগ্য সমস্যা; কানেক্ট কিন্তু "রিলে" = উচ্চ লেটেন্সি, P2P সরাসরি পেতে রাউটার UPnP চালু করুন।</text></svg><figcaption>চিত্র 2: কানেকশন সেলফ-চেক প্যানেল (সবুজ = স্বাভাবিক / লাল = সমস্যা)</figcaption></figure>
+<figure class="i4png"><picture><source type="image/webp" srcset="/img/board_bn.webp"><img src="/img/board_bn.png" alt="SunLogin কানেকশন সেলফ-চেক প্যানেল সবুজ/লাল আইটেমের চিত্র" loading="lazy" width="1120" height="746" style="width:100%;height:auto;border-radius:12px;border:1px solid #eee"></picture><figcaption>চিত্র: কানেক্ট না হলে "চ্যানেল তৈরি" দেখুন, ল্যাগ হলে "রিলে" দিয়ে গেছে কিনা—P2P সরাসরি পেতে UPnP চালু করুন</figcaption></figure>
+<h2>সম্পূর্ণ উপসর্গ সারণি (আগে L1 চেক · L2 মূল কারণ)</h2>
+<table id="tbl"></table>
+<section class="i4data">
+<h2>SunLogin কানেকশন / ল্যাগ ডেটা (2026 অনুমান)</h2>
+<p>নিচে একটি <strong>2026 অনুমান</strong> যা SunLogin-এর অফিসিয়াল সহায়তা ও সর্বজনীন রিমোট-অ্যাক্সেস সম্প্রদায়ের অভিজ্ঞতা সংশ্লেষ করে (ভেন্ডরের অফিসিয়াল সংখ্যা নয়, সরাসরি মাপ নয়, কেবল রেফারেন্সের জন্য):</p>
+<table>
+<tr><th>মাত্রা</th><th>অনুমান</th></tr>
+<tr><td>কানেকশন ব্যর্থতার কারণ বণ্টন (অনুমান)</td><td>ফায়ারওয়াল / নিরাপত্তা <strong>≈50%</strong> &gt; হোস্ট অফলাইন / ঘুমন্ত <strong>≈20%</strong> &gt; অ্যাকাউন্ট / পাসওয়ার্ড <strong>≈15%</strong> &gt; সংস্করণ / প্রোটোকল <strong>≈10%</strong></td></tr>
+<tr><td>ল্যাগ কারণ বণ্টন (সম্প্রদায় মাপ)</td><td>রিলে <strong>35%</strong> &gt; মান খুব বেশি 25% &gt; হোস্ট পারফরম্যান্স 20% &gt; নেটওয়ার্ক খারাপ 15% &gt; ফ্রেম সীমা 5%</td></tr>
+<tr><td>P2P সরাসরি বনাম সার্ভার রিলে লেটেন্সি</td><td>P2P প্রায় <strong>20–50ms</strong>, রিলে প্রায় <strong>80–200ms</strong></td></tr>
+<tr><td>ফ্রেম সীমা (ফ্রি / পেইড / গেমিং)</td><td><strong>30 / 60 / 144</strong> fps (144-তে GPU + 144Hz মনিটর দরকার)</td></tr>
+<tr><td>P2P-র জন্য UPnP চালুর সুবিধা</td><td>পার হার স্পষ্ট বাড়ে; মাপা লেটেন্সি ~120ms থেকে ~35ms-এ যেতে পারে</td></tr>
+<tr><td>লেটেন্সি অনুযায়ী ব্যবহারযোগ্যতা স্তর</td><td>&lt;30ms প্রায় লোকাল · 80–150ms স্পষ্ট আটকায় · &gt;150ms প্রায় কেবল ক্লিক</td></tr>
+</table>
+<p><small>অনুমান ভিত্তি: উৎস বেসলাইন + সময় এক্সট্রাপোলেশন (SunLogin অফিসিয়াল সহায়তা ও সর্বজনীন রিমোট-অ্যাক্সেস সম্প্রদায় ডেটার সংশ্লেষ); সংস্করণ ও নেটওয়ার্ক পরিবেশ অনুযায়ী বদলায়; সর্বশেষ অফিসিয়াল SunLogin তথ্য প্রযোজ্য।</small></p>
+</section>
+<h2>বাস্তব ঘটনার দ্রুত মূল্যায়ন</h2>
+<ul class="scenes"><li>অফিস PC একদমই কানেক্ট হয় না কিন্তু ফোন হটস্পট সঙ্গে সঙ্গে কানেক্ট করে: প্রায়ই অফিস নেটওয়ার্কের ইন্টারনেট বিহেভিয়র ম্যানেজমেন্ট / DPI রিমোট ট্রাফিক ব্লক করে। IT-কে হোয়াইটলিস্ট অনুমতি দিতে বলুন, বা হোস্টে সাময়িকভাবে ফোন হটস্পট ব্যবহার করুন।</li><li>কানেক্ট হয় কিন্তু মাউস ছায়া রেখে যায় এবং লেটেন্সি 100ms ছাড়ায়: নিচ-বাঁয়ে "Relay" দেখাই মূল—রাউটারে লগইন করে UPnP চালু করুন যাতে P2P মেলে; মাপা লেটেন্সি ~120ms থেকে ~35ms-এ নামতে পারে।</li><li>অ্যাক্সেস পাসওয়ার্ড বারবার ভুল: অ্যাক্সেস পাসওয়ার্ড লগইন অ্যাকাউন্টের পাসওয়ার্ড নয়; হোস্টের "সেটিংস"-এ রিসেট করে পুনরায় কানেক্ট করুন।</li><li>ডিভাইস অনলাইন দেখায় কিন্তু কানেকশন টাইমআউট: প্রায়ই লগইন টোকেন মেয়াদোত্তীর্ণ / হোস্ট ঘুমন্ত ও নেটওয়ার্ক বিচ্ছিন্ন; হোস্টে পুনঃলগইন করুন, বা আগে থেকে "Wake" ও নজরদারিহীন অ্যাক্সেস চালু করুন।</li><li>উইন্ডো টানায় স্পষ্ট আটকায় কিন্তু লেটেন্সি বেশি নয়: ফ্রি সংস্করণের ফ্রেম সীমা 30fps; পেইডে 60fps পর্যন্ত এবং গেমিং সংস্করণে সর্বোচ্চ 144fps (সমর্থিত মনিটর দরকার)।</li><li>ব্ল্যাক স্ক্রিন, কেবল দেখা যায় কাজ করা যায় না: সাধারণত অনুমতি দেওয়া হয়নি (macOS-এ "স্ক্রিন রেকর্ডিং / অ্যাক্সেসিবিলিটি" টিক করা দরকার), বা হোস্টের CPU / RAM ভরা যাতে এনকোডিং পিছিয়ে পড়ে।</li></ul><div class="related"><h2>সম্পর্কিত</h2><ul><li><a href="https://sunlogim.com/">SunLogin রিমোট অফিসিয়াল ডাউনলোড</a></li><li><a href="https://sunlogim.com/lianjie/">SunLogin কানেকশন চেক গাইড</a></li><li><a href="https://sunlogni.com/">SunLogin রিমোট ডাউনলোড (সহযোগী সাইট)</a></li></ul></div></main>
+<footer>চেক ধাপ এবং ডেস্কটপ মোড / ফ্রেম-রেট প্যারামিটার SunLogin-এর অফিসিয়াল সহায়তা (sunlogin.oray.com) থেকে সংক্ষেপিত; P2P / রিলে, NAT ট্রাভার্সাল, এন্টারপ্রাইজ পোর্ট রেঞ্জ ও এরর কোড পড়া সর্বজনীন রিমোট-অ্যাক্সেস সম্প্রদায়ের অভিজ্ঞতা থেকে সংশ্লেষিত (বেসরকারি)। শুধু রেফারেন্সের জন্য; সর্বশেষ অফিসিয়াল SunLogin তথ্য প্রযোজ্য। (বেসরকারি·LLM স্থানীয়করণ)<br>ওপেন-সোর্স প্রকল্প · MIT License</footer>
+</div>
+<script src="/bn/codes.js"></script><script src="/app.js"></script>
+</body></html>
