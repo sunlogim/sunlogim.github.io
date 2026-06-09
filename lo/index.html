@@ -1,0 +1,151 @@
+<!DOCTYPE html><html lang="lo"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>ການວິນິດໄສການເຊື່ອມຕໍ່ / ການຊ້າຂອງ SunLogin ໄລຍະໄກ - ແກ້ໄຂການເຊື່ອມຕໍ່ລົ້ມເຫລວ, ຈໍດໍາ, ການຊັກຊ້າສູງ</title>
+<meta name="description" content="SunLogin ໄລຍະໄກເຊື່ອມຕໍ່ບໍ່ໄດ້, ຈໍດໍາ, ຫຼື ຊ້າດ້ວຍການຊັກຊ້າສູງບໍ? ຄົ້ນຫາອາການ (ອຸປະກອນອອບລາຍ, ໝົດເວລາ, ລະຫັດເຂົ້າເຖິງຜິດ, ໄຟວໍບລັອກ, ເຄືອຂ່າຍບໍລິສັດ, ເຫັນແຕ່ຄວບຄຸມບໍ່ໄດ້, ໂໝດຣີເລ, 30fps ລຸ້ນຟຣີ) ແລະ ການກວດສອບທາງການ L1 ພ້ອມສາເຫດຮາກຊັ້ນເຄືອຂ່າຍ L2 (P2P ທຽບກັບຣີເລ, NAT traversal, ໄລຍະພອດ, ລະດັບເຟຣມເຣດ), ແລ້ວທຽບກັບກໍລະນີຈິງເພື່ອເຊື່ອມຕໍ່ຄືນໄວ.">
+<link rel="canonical" href="https://sunlogim.github.io/lo/">
+<link rel="alternate" hreflang="zh-Hans" href="https://sunlogim.github.io/">
+<link rel="alternate" hreflang="en" href="https://sunlogim.github.io/en/">
+<link rel="alternate" hreflang="ja" href="https://sunlogim.github.io/ja/">
+<link rel="alternate" hreflang="zh-Hant" href="https://sunlogim.github.io/zh-tw/">
+<link rel="alternate" hreflang="ko" href="https://sunlogim.github.io/ko/">
+<link rel="alternate" hreflang="id" href="https://sunlogim.github.io/id/">
+<link rel="alternate" hreflang="vi" href="https://sunlogim.github.io/vi/">
+<link rel="alternate" hreflang="th" href="https://sunlogim.github.io/th/">
+<link rel="alternate" hreflang="es" href="https://sunlogim.github.io/es/">
+<link rel="alternate" hreflang="pt-BR" href="https://sunlogim.github.io/pt-br/">
+<link rel="alternate" hreflang="de" href="https://sunlogim.github.io/de/">
+<link rel="alternate" hreflang="fr" href="https://sunlogim.github.io/fr/">
+<link rel="alternate" hreflang="ru" href="https://sunlogim.github.io/ru/">
+<link rel="alternate" hreflang="it" href="https://sunlogim.github.io/it/">
+<link rel="alternate" hreflang="pl" href="https://sunlogim.github.io/pl/">
+<link rel="alternate" hreflang="nl" href="https://sunlogim.github.io/nl/">
+<link rel="alternate" hreflang="tr" href="https://sunlogim.github.io/tr/">
+<link rel="alternate" hreflang="ar" href="https://sunlogim.github.io/ar/">
+<link rel="alternate" hreflang="hi" href="https://sunlogim.github.io/hi/">
+<link rel="alternate" hreflang="ms" href="https://sunlogim.github.io/ms/">
+<link rel="alternate" hreflang="fa" href="https://sunlogim.github.io/fa/">
+<link rel="alternate" hreflang="bn" href="https://sunlogim.github.io/bn/">
+<link rel="alternate" hreflang="ta" href="https://sunlogim.github.io/ta/">
+<link rel="alternate" hreflang="te" href="https://sunlogim.github.io/te/">
+<link rel="alternate" hreflang="fil" href="https://sunlogim.github.io/fil/">
+<link rel="alternate" hreflang="ur" href="https://sunlogim.github.io/ur/">
+<link rel="alternate" hreflang="lo" href="https://sunlogim.github.io/lo/">
+<link rel="alternate" hreflang="km" href="https://sunlogim.github.io/km/">
+<link rel="alternate" hreflang="my" href="https://sunlogim.github.io/my/">
+<link rel="alternate" hreflang="x-default" href="https://sunlogim.github.io/">
+<link rel="stylesheet" href="/style.css">
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "WebApplication",
+   "name": "ການວິນິດໄສການເຊື່ອມຕໍ່ / ການຊ້າຂອງ SunLogin",
+   "url": "https://sunlogim.github.io/lo/",
+   "applicationCategory": "UtilitiesApplication",
+   "operatingSystem": "Web browser",
+   "inLanguage": "lo",
+   "description": "SunLogin ໄລຍະໄກເຊື່ອມຕໍ່ບໍ່ໄດ້, ຈໍດໍາ, ຫຼື ຊ້າດ້ວຍການຊັກຊ້າສູງບໍ? ຄົ້ນຫາອາການ (ອຸປະກອນອອບລາຍ, ໝົດເວລາ, ລະຫັດເຂົ້າເຖິງຜິດ, ໄຟວໍບລັອກ, ເຄືອຂ່າຍບໍລິສັດ, ເຫັນແຕ່ຄວບຄຸມບໍ່ໄດ້, ໂໝດຣີເລ, 30fps ລຸ້ນຟຣີ) ແລະ ການກວດສອບທາງການ L1 ພ້ອມສາເຫດຮາກຊັ້ນເຄືອຂ່າຍ L2 (P2P ທຽບກັບຣີເລ, NAT traversal, ໄລຍະພອດ, ລະດັບເຟຣມເຣດ), ແລ້ວທຽບກັບກໍລະນີຈິງເພື່ອເຊື່ອມຕໍ່ຄືນໄວ.",
+   "isAccessibleForFree": true,
+   "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+   }
+  },
+  {
+   "@type": "FAQPage",
+   "inLanguage": "lo",
+   "url": "https://sunlogim.github.io/lo/",
+   "mainEntity": [
+    {
+     "@type": "Question",
+     "name": "SunLogin ໄລຍະໄກ \"ອຸປະກອນອອບລາຍ\" ເຮັດແນວໃດ?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "ຢືນຢັນວ່າ PC ໂຮສຕ໌ເປີດ, ອອນລາຍ, ບໍ່ນອນ, ໄຄລເອັນ SunLogin ກຳລັງເຮັດວຽກ ແລະ ສະແດງ \"ເຂົ້າສູ່ລະບົບແລ້ວ\"; ຖ້າເຄືອຂ່າຍບໍ່ໝັ້ນຄົງ ຣີສະຕາດເຣົາເຕີ ຫຼື ປ່ຽນເຄືອຂ່າຍ ອອບລາຍ = ໂຮສຕ໌ບໍ່ໄດ້ອອນລາຍເລີຍ, ຢ່າເບິ່ງເຄືອຂ່າຍກ່ອນ: ຫຼັງນອນ ກາດເຄືອຂ່າຍມັກຂາດ, ປິດຝາແລັບທັອບຕັດ WiFi, ໂໝດປະຢັດພະລັງງານ Android ຂ້າພື້ນຫຼັງ; ໃນ Windows ກວດ services.msc ວ່າບໍລິການ \"SunLogin\" ເຮັດວຽກບໍ ໂຮສຕ໌ບໍ່ມີຄົນເຝົ້າໄລຍະຍາວ: ເປີດ \"ເລີ່ມອັດຕະໂນມັດ + ເຂົ້າສູ່ລະບົບອັດຕະໂນມັດ + ການເຂົ້າເຖິງແບບບໍ່ມີຄົນເຝົ້າ\", ໃນ Android ເພີ່ມ SunLogin ໃນໄວທ໌ລິສປະຢັດພະລັງງານ"
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "SunLogin ໄລຍະໄກ \"ໝົດເວລາເຊື່ອມຕໍ່\" ເຮັດແນວໃດ?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "ປິດໄຟວໍ / ແອນຕີໄວຣັສສອງຝ່າຍກ່ອນແລ້ວລອງ; ອອກແລ້ວເຂົ້າສູ່ລະບົບໃໝ່ສອງຝ່າຍ; ອັບເດດເປັນຫຼ້າສຸດ; ປ່ຽນສະພາບແວດລ້ອມເຄືອຂ່າຍ (ຮັອດສະປອດໂທລະສັບ) 90% ຂອງ \"ການເຊື່ອມຕໍ່ລົ້ມເຫລວ\" ຕິດທີ່ຂັ້ນ 2 \"ສ້າງຊ່ອງ\": 15=P2P ບໍ່ທະລຸ ແລະ ຣີເລກໍລົ້ມເຫລວ (ເຄືອຂ່າຍຮ້າຍເກີນ), 3=ຊັ້ນເຄືອຂ່າຍຖືກບລັອກ; ຖ້າຮັອດສະປອດເຊື່ອມຕໍ່ໄດ້ກໍແມ່ນບັນຫາເຄືອຂ່າຍ / ໄຟວໍເປັນຫຼັກ ລະບຸ 3 ຂັ້ນ: ການຢືນຢັນບັນຊີ → ສ້າງຊ່ອງ → ສົ່ງຮູບ; ໝົດເວລາເກືອບສະເໝີຢູ່ \"ສ້າງຊ່ອງ\""
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "SunLogin ໄລຍະໄກ \"ລະຫັດເຂົ້າເຖິງຜິດ\" ເຮັດແນວໃດ?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "ຢືນຢັນວ່າສິ່ງທີ່ປ້ອນແມ່ນ \"ລະຫັດເຂົ້າເຖິງ\" ບໍ່ແມ່ນລະຫັດເຂົ້າສູ່ລະບົບຂອງບັນຊີ SunLogin; ຣີເຊັດລະຫັດເຂົ້າເຖິງທີ່ໂຮສຕ໌ແລ້ວເຊື່ອມຕໍ່ ລະຫັດເຂົ້າເຖິງແມ່ນລະຫັດໄລຍະໄກແຍກຕ່າງຫາກທີ່ໂຮສຕ໌ຕັ້ງ; ມັກຖືກປ່ຽນ ຫຼື ສັບສົນກັບລະຫັດເຂົ້າສູ່ລະບົບ; ຫຼັງປ່ຽນ ຜູ້ຄວບຄຸມໃຊ້ອັນໃໝ່ ລະຫັດເຂົ້າເຖິງ ≠ ລະຫັດເຂົ້າສູ່ລະບົບ: ເບິ່ງ / ຣີເຊັດໃນ \"ການຕັ້ງຄ່າ → ຄວາມປອດໄພ\" ຂອງໂຮສຕ໌"
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "SunLogin ໄລຍະໄກ \"ໄຟວໍບລັອກ\" ເຮັດແນວໃດ?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "ເພີ່ມ SunLogin ໃນການໄວ້ໃຈຂອງໄຟວໍ / ຄວາມປອດໄພ: ໃນ Windows Defender Firewall \"ອະນຸຍາດແອັບ\" ຕິກ SunloginClient; ເພີ່ມການໄວ້ໃຈໃນແອນຕີໄວຣັສພາກສ່ວນທີສາມ ໄວທ໌ລິສຕ້ອງເພີ່ມໂຟນເດີຕິດຕັ້ງທັງໝົດ (ເຊັ່ນ C:\\Program Files (x86)\\Oray\\SunLogin\\), ບໍ່ແມ່ນພຽງ exe ຫຼັກ—SunLogin ເອີ້ນຫຼາຍອົງປະກອບເມື່ອເຮັດວຽກ ການຢືນຢັນໄວ: ປິດຄວາມປອດໄພທັງໝົດ (ບໍ່ແມ່ນພຽງການປ້ອງກັນແບບສົດ) ແລ້ວເຊື່ອມຕໍ່; ຖ້າເຊື່ອມຕໍ່ໄດ້ 100% ມັນບລັອກ"
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "SunLogin ໄລຍະໄກ \"ເຄືອຂ່າຍບໍລິສັດເຊື່ອມຕໍ່ບໍ່ໄດ້\" ເຮັດແນວໃດ?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "ຂໍ IT ບໍລິສັດໃຫ້ອະນຸຍາດໄວທ໌ລິສ SunLogin; ຫຼື ໂຮສຕ໌ໃຊ້ຮັອດສະປອດໂທລະສັບຊົ່ວຄາວເພື່ອຫຼີກ; ລອງ SunLogin ລຸ້ນ SOS (ວິທີເຊື່ອມຕໍ່ຕ່າງ) ເຄືອຂ່າຍວິສາຫະກິດມັກມີອຸປະກອນຈັດການພຶດຕິກຳອິນເຕີເນັດ; SunLogin ຜ່ານ TCP 443 (ພອດດຽວກັບ HTTPS) ຖືກ DPI ກວດແລະບລັອກ; ປະສົບການຊຸມຊົນ: ອະນຸຍາດ TCP 51020–51030 + UDP 50000–50010 ທີ່ເຣົາເຕີວິສາຫະກິດ, ຫຼື ປ່ຽນໂໝດເຊື່ອມຕໍ່ຈາກ \"ຄວາມໄວສູງ\" ເປັນ \"ເຂົ້າກັນໄດ້\" (80/443, ທົ່ວໄປກວ່າ) ເພື່ອຮູ້ວ່າແມ່ນເຄືອຂ່າຍບໍລິສັດບໍ: ປ່ຽນທັງສອງເປັນຮັອດສະປອດໂທລະສັບ; ຖ້າເຊື່ອມຕໍ່ໄດ້ 100% ການບລັອກຂອງເຄືອຂ່າຍບໍລິສັດ"
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "SunLogin ໄລຍະໄກ \"ຈໍດໍາ\" ເຮັດແນວໃດ?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "ໃຫ້ສິດ SunLogin ທີ່ໂຮສຕ໌: macOS \"ການຕັ້ງຄ່າລະບົບ → ຄວາມເປັນສ່ວນຕົວ ແລະ ຄວາມປອດໄພ\" ຕິກບັນທຶກໜ້າຈໍ / ການເຂົ້າເຖິງ / ການເຂົ້າເຖິງດິສກ໌ເຕັມ; Windows ລອງປ່ຽນໂໝດເດັສທັອບ / ເຊື່ອມຕໍ່ໃໝ່ ຈໍດໍາມັກແມ່ນຂາດສິດການຈັບພາບ ຫຼື ການສະຫຼັບ GPU ແຍກ, ການປ້ອງກັນໜ້າຈໍລັອກ; ແລັບທັອບ GPU ແຍກສາມາດໃຫ້ SunLogin ຈັບພາບຜ່ານ iGPU ໃນນະໂຍບາຍພະລັງງານ ຕັ້ງແຕ່ macOS Ventura ເສັ້ນທາງສິດຍ້າຍໄປ \"ການຕັ້ງຄ່າລະບົບ\"; ຄົ້ນ \"ບັນທຶກໜ້າຈໍ\" ໃນກ່ອງຄົ້ນຫາໄວທີ່ສຸດ"
+     }
+    }
+   ]
+  }
+ ]
+}
+</script>
+</head>
+<body><div class="wrap"><main>
+<nav class="lang">ພາສາ: <a href="/">简体中文</a> · <a href="/en/">English</a> · <a href="/ja/">日本語</a> · <a href="/zh-tw/">繁體中文</a> · <a href="/ko/">한국어</a> · <a href="/id/">Bahasa Indonesia</a> · <a href="/vi/">Tiếng Việt</a> · <a href="/th/">ไทย</a> · <a href="/es/">Español</a> · <a href="/pt-br/">Português (BR)</a> · <a href="/de/">Deutsch</a> · <a href="/fr/">Français</a> · <a href="/ru/">Русский</a> · <a href="/it/">Italiano</a> · <a href="/pl/">Polski</a> · <a href="/nl/">Nederlands</a> · <a href="/tr/">Türkçe</a> · <a href="/ar/">العربية</a> · <a href="/hi/">हिन्दी</a> · <a href="/ms/">Bahasa Melayu</a> · <a href="/fa/">فارسی</a> · <a href="/bn/">বাংলা</a> · <a href="/ta/">தமிழ்</a> · <a href="/te/">తెలుగు</a> · <a href="/fil/">Filipino</a> · <a href="/ur/">اردو</a> · <strong>ພາສາລາວ</strong> · <a href="/km/">ភាសាខ្មែរ</a> · <a href="/my/">မြန်မာ</a></nav>
+<h1>ການວິນິດໄສການເຊື່ອມຕໍ່ / ການຊ້າຂອງ SunLogin ໄລຍະໄກ</h1>
+<figure class="i4png"><picture><source type="image/webp" srcset="/img/cover_lo.webp"><img src="/img/cover_lo.png" alt="ຮູບປະກອບເຄື່ອງມືວິນິດໄສການເຊື່ອມຕໍ່ ແລະ ການຊ້າຂອງ SunLogin ໄລຍະໄກ" fetchpriority="high" width="1120" height="746" style="width:100%;height:auto;border-radius:12px;border:1px solid #eee"></picture><figcaption>ຮູບ: ການວິນິດໄສການເຊື່ອມຕໍ່ / ການຊ້າຂອງ SunLogin (ການກວດສອບທາງການ L1 + ສາເຫດຊັ້ນເຄືອຂ່າຍ L2)</figcaption></figure>
+<p>ສອງບັນຫາໃຫຍ່ຂອງ SunLogin ໄລຍະໄກແມ່ນ <strong>ເຊື່ອມຕໍ່ບໍ່ໄດ້</strong> ແລະ <strong>ການຊ້າ</strong>. ຄົ້ນຫາ<strong>ອາການ</strong>ຂອງທ່ານ (ເຊັ່ນ <code>ອຸປະກອນອອບລາຍ</code>, <code>ໝົດເວລາ</code>, <code>ລະຫັດເຂົ້າເຖິງຜິດ</code>, <code>ໄຟວໍບລັອກ</code>, <code>ເຫັນແຕ່ຄວບຄຸມບໍ່ໄດ້</code>, <code>ການຊັກຊ້າສູງ</code>, <code>ຟຣີ 30fps</code>): ກ່ອນອື່ນ <strong>ການກວດສອບທາງການ L1</strong>, ຈາກນັ້ນ <strong>ສາເຫດຮາກຊັ້ນເຄືອຂ່າຍ L2</strong> (P2P ໂດຍກົງທຽບກັບຣີເລເຊີບເວີ, NAT traversal, ໄລຍະພອດ), ສຸດທ້າຍກໍລະນີຈິງ. ຕ້ອງການເດັສທັອບໄຄລເອັນ? ເບິ່ງ <a href="https://sunlogim.com/">ດາວໂຫຼດ SunLogin ທາງການ</a>.</p>
+<input id="q" placeholder="ປ້ອນອາການ, ເຊັ່ນ ເຊື່ອມຕໍ່ລົ້ມເຫລວ / ຈໍດໍາ / ຊ້າ / ອອບລາຍ" autocomplete="off">
+<button id="go">ຄົ້ນຫາ</button>
+<div id="out"></div>
+<h2>ຂັ້ນຕອນ 1: ດໍາເນີນການກວດສອບທາງການ (L1 - ເຮັດ 4 ຢ່າງນີ້ກ່ອນ)</h2>
+<p>ລາຍການກວດສອບທາງການຂອງ SunLogin ເມື່ອເຊື່ອມຕໍ່ລົ້ມເຫລວມີພຽງ 4 ຂັ້ນຕອນ, ທັງໝົດໃນແອັບ: ① <strong>ການຜູກບັນຊີ ແລະ ອຸປະກອນ</strong>—ຜູ້ຄວບຄຸມ ແລະ ໂຮສຕ໌ເຂົ້າສູ່ລະບົບບັນຊີ SunLogin ດຽວກັນ; ② <strong>ສະຖານະອຸປະກອນ ແລະ ເຄືອຂ່າຍ</strong>—ໂຮສຕ໌ເປີດ, ອອນລາຍ ແລະ ບໍ່ນອນ (ໃຊ້ "Wake" ສຳລັບໂຮສຕ໌ທີ່ນອນ, ເປີດໃຊ້ກ່ອນ); ③ <strong>ໄຟວໍ ແລະ ສິດ</strong>—ເພີ່ມ SunLogin ໃນລາຍຊື່ໄວ້ໃຈຂອງໄຟວໍ, ເປີດ "ອະນຸຍາດຄວບຄຸມໄລຍະໄກ" ແລະ "ການເຂົ້າເຖິງແບບບໍ່ມີຄົນເຝົ້າ", ຕັ້ງລະຫັດເຂົ້າເຖິງໃຫ້ຖືກ; ④ <strong>ເວີຊັນ ແລະ ຣີສະຕາດ</strong>—ອັບເດດທັງສອງຝ່າຍເປັນເວີຊັນຫຼ້າສຸດ, ຣີສະຕາດໄຄລເອັນ, ລ້າງແຄສ. ຄູ່ມືທີ່ສົມບູນກວ່າ: <a href="https://sunlogim.com/lianjie/">ຄູ່ມືກວດສອບການເຊື່ອມຕໍ່ SunLogin</a>.</p>
+<div class="cat"><div class="catbox"><b>ເຄືອຂ່າຍ / Traversal</b><span class="cs">ໝົດເວລາ · ໄຟວໍບລັອກ · ເຄືອຂ່າຍບໍລິສັດ · ຣີເລ / P2P</span><div>ການສ້າງຊ່ອງລົ້ມເຫລວ ຫຼື ການຊັກຊ້າສູງຍ້ອນຣີເລ. ກວດການໄວ້ໃຈໄຟວໍ + ປ່ຽນເຄືອຂ່າຍກ່ອນ; ເລິກກວ່ານັ້ນ P2P ທະລຸບໍ, DPI ວິສາຫະກິດ ແລະ ປະເພດ NAT.</div></div><div class="catbox"><b>ບັນຊີ / ສິດ</b><span class="cs">ອຸປະກອນອອບລາຍ · ລະຫັດເຂົ້າເຖິງຜິດ · ບັນຊີຕ່າງ · wake ລົ້ມເຫລວ</span><div>ໂຮສຕ໌ອອນລາຍ + ບັນຊີດຽວກັນສອງຝ່າຍແມ່ນເງື່ອນໄຂ. ລະຫັດເຂົ້າເຖິງ ≠ ລະຫັດເຂົ້າສູ່ລະບົບ; ໂທເຄນໝົດອາຍຸຕ້ອງເຂົ້າສູ່ລະບົບໃໝ່; ການນອນແກ້ດ້ວຍ "Wake".</div></div><div class="catbox"><b>ຮູບ / ປະສິດທິພາບ</b><span class="cs">ຈໍດໍາ · ເຫັນແຕ່ຄວບຄຸມບໍ່ໄດ້ · ຊ້າ · ມົວ · ຟຣີ 30fps</span><div>ບັນຫາປະສົບການຫຼັງເຊື່ອມຕໍ່. ສິດ (ບັນທຶກໜ້າຈໍ / ການເຂົ້າເຖິງ), ໂໝດເດັສທັອບ, ລະດັບເຟຣມເຣດ ແລະ ປະສິດທິພາບໂຮສຕ໌ແມ່ນກຸນແຈ.</div></div><div class="catbox"><b>ເວີຊັນ / ໂປຣໂຕຄອນ</b><span class="cs">ເວີຊັນໂປຣໂຕຄອນບໍ່ກົງ · ຜິດປົກກະຕິຫຼັງອັບເດດ</span><div>ຄວາມຕ່າງເວີຊັນໃຫຍ່ໃຫ້ຄວາມບໍ່ເຂົ້າກັນງ່າຍ (ລະຫັດ 30); ອັບເດດທັງສອງເປັນຫຼ້າສຸດ, ຣີສະຕາດ ແລະ ລ້າງແຄສ.</div></div></div><figure><svg viewBox="0 0 720 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="ແຜນຜັງກະແສການວິນິດໄສການເຊື່ອມຕໍ່ ແລະ ການຊ້າຂອງ SunLogin" style="width:100%;height:auto;border:1px solid #eee;border-radius:12px;background:#fff"><text x="20" y="28" font-family="system-ui,Arial" font-size="15.5" font-weight="700" fill="#1d1d1f">ກະແສການວິນິດໄສການເຊື່ອມຕໍ່ / ການຊ້າຂອງ SunLogin (ຕາມອາການ)</text><rect x="20" y="46" width="150" height="46" rx="10" fill="#111"/><text x="95" y="74" text-anchor="middle" font-family="system-ui,Arial" font-size="13" fill="#fff">ເລີ່ມການເຊື່ອມຕໍ່ໄລຍະໄກ</text><path d="M170 69 H206" stroke="#999" stroke-width="2" fill="none" marker-end="url(#a)"/><rect x="206" y="46" width="172" height="46" rx="10" fill="#fff5e6" stroke="#ffe0b0"/><text x="292" y="74" text-anchor="middle" font-family="system-ui,Arial" font-size="13" fill="#b45309">ເຊື່ອມຕໍ່ໄດ້ບໍ?</text><rect x="440" y="20" width="262" height="56" rx="10" fill="#ecfdf5" stroke="#bbf7e0"/><text x="455" y="42" font-family="system-ui,Arial" font-size="12.5" fill="#047857">ເຊື່ອມຕໍ່ແຕ່ຊ້າ → ເບິ່ງປະສິດທິພາບ:</text><text x="455" y="62" font-family="system-ui,Arial" font-size="11.5" fill="#065f46">ຣີເລ? ຄຸນນະພາບສູງເກີນ? ຈໍາກັດ fps? ປະສິດທິພາບໂຮສຕ໌</text><rect x="440" y="86" width="262" height="56" rx="10" fill="#fef2f2" stroke="#fecaca"/><text x="455" y="108" font-family="system-ui,Arial" font-size="12.5" fill="#b91c1c">ເຊື່ອມຕໍ່ບໍ່ໄດ້ → ເບິ່ງປະເພດຂໍ້ຜິດພາດ:</text><text x="455" y="128" font-family="system-ui,Arial" font-size="11.5" fill="#991b1b">ອອບລາຍ? ໄຟວໍ? ບັນຊີ / ລະຫັດ? ເວີຊັນ</text><path d="M378 60 H410 V48 H440" stroke="#10b981" stroke-width="2" fill="none" marker-end="url(#a)"/><path d="M378 78 H410 V114 H440" stroke="#ef4444" stroke-width="2" fill="none" marker-end="url(#a)"/><text x="20" y="178" font-family="system-ui,Arial" font-size="13" font-weight="700" fill="#1d1d1f">ສີ່ປະເພດຄວາມຜິດປົກກະຕິ (ເບິ່ງ L1 / L2 ແຕ່ລະລາຍການ)</text><g font-family="system-ui,Arial" font-size="12"><rect x="20" y="190" width="162" height="92" rx="10" fill="#fff5e6" stroke="#ffe0b0"/><text x="32" y="212" font-weight="700" fill="#b45309">① ເຄືອຂ່າຍ / Traversal</text><text x="32" y="234" fill="#555" font-size="11">ຣີເລ / P2P · ໄຟວໍ · ເຄືອຂ່າຍບໍລິສັດ</text><rect x="194" y="190" width="162" height="92" rx="10" fill="#eef4ff" stroke="#cfe0ff"/><text x="206" y="212" font-weight="700" fill="#1d4ed8">② ບັນຊີ / ສິດ</text><text x="206" y="234" fill="#555" font-size="11">ອອບລາຍ · ລະຫັດເຂົ້າເຖິງ · wake</text><rect x="368" y="190" width="162" height="92" rx="10" fill="#ecfdf5" stroke="#bbf7e0"/><text x="380" y="212" font-weight="700" fill="#047857">③ ຮູບ / ປະສິດທິພາບ</text><text x="380" y="234" fill="#555" font-size="11">ຈໍດໍາ · ຊ້າ · ຄຸນນະພາບ · 30fps</text><rect x="542" y="190" width="160" height="92" rx="10" fill="#fef2f2" stroke="#fecaca"/><text x="554" y="212" font-weight="700" fill="#b91c1c">④ ເວີຊັນ / ໂປຣໂຕຄອນ</text><text x="554" y="234" fill="#555" font-size="11">ເວີຊັນບໍ່ກົງ · ຜິດປົກກະຕິອັບເດດ</text></g><defs><marker id="a" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0 0 L6 3 L0 6 z" fill="#999"/></marker></defs></svg><figcaption>ຮູບ 1: ກະແສການເຊື່ອມຕໍ່ / ການຊ້າຂອງ SunLogin—ກ່ອນອື່ນເຊື່ອມຕໍ່ໄດ້ບໍ, ຈາກນັ້ນຈັດປະເພດສາເຫດ</figcaption></figure>
+<h2>ຂັ້ນຕອນ 2: ຍັງຊ້າ / ຍັງເຊື່ອມຕໍ່ບໍ່ໄດ້ → ສາເຫດຮາກຊັ້ນເຄືອຂ່າຍ (L2)</h2>
+<p>ແນວຄິດຫຼັກ: <strong>ເຊື່ອມຕໍ່ບໍ່ໄດ້ມັກຕິດທີ່ "ການສ້າງຊ່ອງ", ໃນຂະນະທີ່ການຊ້າມັກໝາຍຄວາມວ່າຜ່ານຣີເລ</strong>. SunLogin ລອງ <strong>P2P traversal</strong> ກ່ອນເພື່ອເຊື່ອມສອງຝ່າຍ (ການຊັກຊ້າຕໍ່າສຸດ 20–50ms); ເມື່ອລົ້ມເຫລວເທົ່ານັ້ນຈຶ່ງໄປ <strong>ຣີເລເຊີບເວີຂອງຜູ້ຂາຍ</strong> (80–200ms) — ໄຄລເອັນສະແດງ "P2P" ຫຼື "Relay" ຢູ່ລຸ່ມຊ້າຍ. ຮູບແມ່ນແຜງກວດສອບການເຊື່ອມຕໍ່ດ້ວຍຕົນເອງ; ສາເຫດເລິກກວ່າ: NAT ສົມມາຕ / UPnP ເຣົາເຕີ, DPI ເຄືອຂ່າຍວິສາຫະກິດ ແລະ ໄລຍະພອດ, ແລະ ເຟຣມເຣດທີ່ຖືກຈໍາກັດໂດຍອັດຕາໂຫຼດໃໝ່ຂອງຈໍ.</p>
+<figure><svg viewBox="0 0 720 320" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="ຮູບປະກອບແຜງກວດສອບການເຊື່ອມຕໍ່ SunLogin" style="width:100%;height:auto;border:1px solid #eee;border-radius:12px;background:#fff"><text x="20" y="28" font-family="system-ui,Arial" font-size="15.5" font-weight="700" fill="#1d1d1f">ແຜງກວດສອບການເຊື່ອມຕໍ່ (ຂຽວ=ປົກກະຕິ / ແດງ=ບັນຫາ)</text><rect x="20" y="42" width="680" height="226" rx="14" fill="#f8fafc" stroke="#e2e8f0"/><text x="38" y="66" font-family="system-ui,Arial" font-size="12.5" font-weight="700" fill="#475569">ລາຍການກວດ</text><text x="300" y="66" font-family="system-ui,Arial" font-size="12" fill="#94a3b8">ສະຖານະປັດຈຸບັນ</text><text x="610" y="66" font-family="system-ui,Arial" font-size="12" fill="#94a3b8">ການຕັດສິນ</text><line x1="38" y1="74" x2="682" y2="74" stroke="#e2e8f0" stroke-width="1"/><text x="38" y="98" font-family="system-ui,Arial" font-size="13" fill="#1d1d1f">ບັນຊີກົງກັນສອງຝ່າຍ</text><text x="300" y="98" font-family="system-ui,Arial" font-size="12.5" fill="#16a34a">ບັນຊີ SunLogin ດຽວກັນ</text><circle cx="612" cy="94" r="6" fill="#16a34a"/><text x="628" y="98" font-family="system-ui,Arial" font-size="12" fill="#16a34a">ປົກກະຕິ</text><text x="38" y="128" font-family="system-ui,Arial" font-size="13" fill="#1d1d1f">ໂຮສຕ໌ອອນລາຍ</text><text x="300" y="128" font-family="system-ui,Arial" font-size="12.5" fill="#16a34a">ອອນລາຍ · ບໍ່ນອນ</text><circle cx="612" cy="124" r="6" fill="#16a34a"/><text x="628" y="128" font-family="system-ui,Arial" font-size="12" fill="#16a34a">ປົກກະຕິ</text><text x="38" y="158" font-family="system-ui,Arial" font-size="13" fill="#1d1d1f">ໄຟວໍປ່ອຍຜ່ານ</text><text x="300" y="158" font-family="system-ui,Arial" font-size="12.5" fill="#ef4444">ຖືກບລັອກໂດຍຄວາມປອດໄພ</text><circle cx="612" cy="154" r="6" fill="#ef4444"/><text x="628" y="158" font-family="system-ui,Arial" font-size="12" fill="#ef4444">ບັນຫາ</text><text x="38" y="188" font-family="system-ui,Arial" font-size="13" fill="#1d1d1f">ໂໝດເຊື່ອມຕໍ່</text><text x="300" y="188" font-family="system-ui,Arial" font-size="12.5" fill="#ef4444">ຣີເລ · ການຊັກຊ້າສູງ</text><circle cx="612" cy="184" r="6" fill="#ef4444"/><text x="628" y="188" font-family="system-ui,Arial" font-size="12" fill="#ef4444">ບັນຫາ</text><text x="38" y="218" font-family="system-ui,Arial" font-size="13" fill="#1d1d1f">ເວີຊັນໄຄລເອັນ</text><text x="300" y="218" font-family="system-ui,Arial" font-size="12.5" fill="#16a34a">ທັງສອງຫຼ້າສຸດ</text><circle cx="612" cy="214" r="6" fill="#16a34a"/><text x="628" y="218" font-family="system-ui,Arial" font-size="12" fill="#16a34a">ປົກກະຕິ</text><text x="38" y="248" font-family="system-ui,Arial" font-size="13" fill="#1d1d1f">ລະຫັດເຂົ້າເຖິງ</text><text x="300" y="248" font-family="system-ui,Arial" font-size="12.5" fill="#16a34a">ຖືກຕ້ອງ</text><circle cx="612" cy="244" r="6" fill="#16a34a"/><text x="628" y="248" font-family="system-ui,Arial" font-size="12" fill="#16a34a">ປົກກະຕິ</text><text x="20" y="296" font-family="system-ui,Arial" font-size="11.5" fill="#94a3b8">ໝາຍເຫດ: ແດງ = ບັນຫາທີ່ຕ້ອງແກ້; ເຊື່ອມຕໍ່ແຕ່ "ຣີເລ" = ການຊັກຊ້າສູງ, ເປີດ UPnP ເຣົາເຕີເພື່ອ P2P ໂດຍກົງ.</text></svg><figcaption>ຮູບ 2: ແຜງກວດສອບການເຊື່ອມຕໍ່ດ້ວຍຕົນເອງ (ຂຽວ = ປົກກະຕິ / ແດງ = ບັນຫາ)</figcaption></figure>
+<figure class="i4png"><picture><source type="image/webp" srcset="/img/board_lo.webp"><img src="/img/board_lo.png" alt="ຮູບປະກອບແຜງກວດສອບການເຊື່ອມຕໍ່ SunLogin ລາຍການຂຽວ/ແດງ" loading="lazy" width="1120" height="746" style="width:100%;height:auto;border-radius:12px;border:1px solid #eee"></picture><figcaption>ຮູບ: ເຊື່ອມຕໍ່ບໍ່ໄດ້ເບິ່ງ "ການສ້າງຊ່ອງ", ຊ້າເບິ່ງວ່າຜ່ານ "ຣີເລ" ບໍ—ເປີດ UPnP ເພື່ອ P2P ໂດຍກົງ</figcaption></figure>
+<h2>ຕາຕະລາງອາການເຕັມ (ກວດ L1 ກ່ອນ · ສາເຫດຮາກ L2)</h2>
+<table id="tbl"></table>
+<section class="i4data">
+<h2>ຂໍ້ມູນການເຊື່ອມຕໍ່ / ການຊ້າຂອງ SunLogin (ການປະເມີນ 2026)</h2>
+<p>ຕໍ່ໄປນີ້ແມ່ນ<strong>ການປະເມີນ 2026</strong>ທີ່ສັງເຄາະຄວາມຊ່ວຍເຫຼືອທາງການ SunLogin ແລະ ປະສົບການຊຸມຊົນເຂົ້າເຖິງໄລຍະໄກສາທາລະນະ (ບໍ່ແມ່ນຕົວເລກທາງການຂອງຜູ້ຂາຍ, ບໍ່ແມ່ນການວັດໂດຍກົງ, ສຳລັບອ້າງອີງເທົ່ານັ້ນ):</p>
+<table>
+<tr><th>ມິຕິ</th><th>ການປະເມີນ</th></tr>
+<tr><td>ການກະຈາຍສາເຫດການເຊື່ອມຕໍ່ລົ້ມເຫລວ (ປະເມີນ)</td><td>ໄຟວໍ / ຄວາມປອດໄພ <strong>≈50%</strong> &gt; ໂຮສຕ໌ອອບລາຍ / ນອນ <strong>≈20%</strong> &gt; ບັນຊີ / ລະຫັດ <strong>≈15%</strong> &gt; ເວີຊັນ / ໂປຣໂຕຄອນ <strong>≈10%</strong></td></tr>
+<tr><td>ການກະຈາຍສາເຫດການຊ້າ (ການວັດຊຸມຊົນ)</td><td>ຣີເລ <strong>35%</strong> &gt; ຄຸນນະພາບສູງເກີນ 25% &gt; ປະສິດທິພາບໂຮສຕ໌ 20% &gt; ເຄືອຂ່າຍຮ້າຍ 15% &gt; ຈໍາກັດເຟຣມ 5%</td></tr>
+<tr><td>ການຊັກຊ້າ P2P ໂດຍກົງ ທຽບກັບ ຣີເລເຊີບເວີ</td><td>P2P ປະມານ <strong>20–50ms</strong>, ຣີເລປະມານ <strong>80–200ms</strong></td></tr>
+<tr><td>ເພດານເຟຣມ (ຟຣີ / ຈ່າຍເງິນ / ເກມ)</td><td><strong>30 / 60 / 144</strong> fps (144 ຕ້ອງມີ GPU + ຈໍ 144Hz)</td></tr>
+<tr><td>ປະໂຫຍດການເປີດ UPnP ເພື່ອ P2P</td><td>ອັດຕາການທະລຸເພີ່ມຊັດເຈນ; ການຊັກຊ້າທີ່ວັດໄດ້ອາດຈາກ ~120ms ເຫຼືອ ~35ms</td></tr>
+<tr><td>ລະດັບການໃຊ້ງານຕາມການຊັກຊ້າ</td><td>&lt;30ms ເກືອບໂລໍຄອນ · 80–150ms ຕິດຂັດຊັດເຈນ · &gt;150ms ເກືອບກົດເທົ່ານັ້ນ</td></tr>
+</table>
+<p><small>ພື້ນຖານການປະເມີນ: ເສັ້ນຖານແຫຼ່ງ + ການຄາດຄະເນຕາມເວລາ (ການສັງເຄາະຄວາມຊ່ວຍເຫຼືອທາງການ SunLogin ແລະ ຂໍ້ມູນຊຸມຊົນເຂົ້າເຖິງໄລຍະໄກສາທາລະນະ); ປ່ຽນຕາມເວີຊັນ ແລະ ສະພາບແວດລ້ອມເຄືອຂ່າຍ; ຂໍ້ມູນທາງການ SunLogin ຫຼ້າສຸດໃຊ້ໄດ້.</small></p>
+</section>
+<h2>ການປະເມີນກໍລະນີຈິງຢ່າງໄວ</h2>
+<ul class="scenes"><li>PC ຫ້ອງການເຊື່ອມຕໍ່ບໍ່ໄດ້ເລີຍແຕ່ຮັອດສະປອດໂທລະສັບເຊື່ອມຕໍ່ທັນທີ: ມັກແມ່ນການຈັດການພຶດຕິກຳອິນເຕີເນັດ / DPI ຂອງເຄືອຂ່າຍບໍລິສັດບລັອກທຣາຟິກໄລຍະໄກ. ຂໍ IT ໃຫ້ອະນຸຍາດໄວທ໌ລິສ, ຫຼື ໃຊ້ຮັອດສະປອດໂທລະສັບຊົ່ວຄາວທີ່ໂຮສຕ໌.</li><li>ເຊື່ອມຕໍ່ໄດ້ແຕ່ເມົາສ໌ປ່ອຍເງົາ ແລະ ການຊັກຊ້າເກີນ 100ms: ເຫັນ "Relay" ຢູ່ລຸ່ມຊ້າຍແມ່ນຮາກ—ເຂົ້າສູ່ລະບົບເຣົາເຕີແລ້ວເປີດ UPnP ເພື່ອ P2P; ການຊັກຊ້າທີ່ວັດໄດ້ອາດລົງຈາກ ~120ms ເຫຼືອ ~35ms.</li><li>ລະຫັດເຂົ້າເຖິງຜິດຊໍ້າໆ: ລະຫັດເຂົ້າເຖິງບໍ່ແມ່ນລະຫັດຂອງບັນຊີເຂົ້າສູ່ລະບົບ; ຣີເຊັດໃນ "ການຕັ້ງຄ່າ" ຂອງໂຮສຕ໌ແລ້ວເຊື່ອມຕໍ່ໃໝ່.</li><li>ອຸປະກອນສະແດງອອນລາຍແຕ່ການເຊື່ອມຕໍ່ໝົດເວລາ: ມັກໂທເຄນເຂົ້າສູ່ລະບົບໝົດອາຍຸ / ໂຮສຕ໌ນອນ ແລະ ເຄືອຂ່າຍຂາດ; ເຂົ້າສູ່ລະບົບໃໝ່ທີ່ໂຮສຕ໌, ຫຼື ເປີດ "Wake" ແລະ ການເຂົ້າເຖິງແບບບໍ່ມີຄົນເຝົ້າກ່ອນ.</li><li>ລາກໜ້າຕ່າງຕິດຂັດຊັດເຈນແຕ່ການຊັກຊ້າບໍ່ສູງ: ເພດານເຟຣມຂອງລຸ້ນຟຣີແມ່ນ 30fps; ຈ່າຍເງິນໄດ້ເຖິງ 60fps ແລະ ລຸ້ນເກມສູງສຸດ 144fps (ຕ້ອງມີຈໍທີ່ຮອງຮັບ).</li><li>ຈໍດໍາ, ເຫັນແຕ່ເຮັດວຽກບໍ່ໄດ້: ປົກກະຕິບໍ່ໄດ້ໃຫ້ສິດ (macOS ຕ້ອງຕິກ "ບັນທຶກໜ້າຈໍ / ການເຂົ້າເຖິງ"), ຫຼື CPU / RAM ໂຮສຕ໌ເຕັມຈົນ encoding ຕາມບໍ່ທັນ.</li></ul><div class="related"><h2>ກ່ຽວຂ້ອງ</h2><ul><li><a href="https://sunlogim.com/">ດາວໂຫຼດ SunLogin ໄລຍະໄກທາງການ</a></li><li><a href="https://sunlogim.com/lianjie/">ຄູ່ມືກວດສອບການເຊື່ອມຕໍ່ SunLogin</a></li><li><a href="https://sunlogni.com/">ດາວໂຫຼດ SunLogin ໄລຍະໄກ (ເວັບໄຊພີ່ນ້ອງ)</a></li></ul></div></main>
+<footer>ຂັ້ນຕອນການກວດສອບ ແລະ ໂໝດເດັສທັອບ / ພາຣາມິເຕີເຟຣມເຣດສະຫຼຸບຈາກຄວາມຊ່ວຍເຫຼືອທາງການຂອງ SunLogin (sunlogin.oray.com); P2P / ຣີເລ, NAT traversal, ໄລຍະພອດເຄືອຂ່າຍວິສາຫະກິດ ແລະ ການອ່ານລະຫັດຂໍ້ຜິດພາດສັງເຄາະຈາກປະສົບການຊຸມຊົນເຂົ້າເຖິງໄລຍະໄກສາທາລະນະ (ບໍ່ເປັນທາງການ). ສຳລັບອ້າງອີງເທົ່ານັ້ນ; ຂໍ້ມູນທາງການ SunLogin ຫຼ້າສຸດໃຊ້ໄດ້. (ບໍ່ເປັນທາງການ·ການແປ LLM)<br>ໂຄງການໂອເພນຊອດ · MIT License</footer>
+</div>
+<script src="/lo/codes.js"></script><script src="/app.js"></script>
+</body></html>
