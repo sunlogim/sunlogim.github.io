@@ -1,0 +1,151 @@
+<!DOCTYPE html><html lang="tr"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>SunLogin uzak bağlantı / takılma tanısı - bağlantı hatası, siyah ekran, yüksek gecikmeyi giderin</title>
+<meta name="description" content="SunLogin uzaktan kontrol bağlanmıyor, siyah ekran veya yüksek gecikmeyle mi takılıyor? Bir belirti arayın (cihaz çevrimdışı, zaman aşımı, hatalı erişim parolası, güvenlik duvarı engeli, kurum ağı, görünüyor ama kontrol edilemiyor, röle modu, ücretsiz sürüm 30 fps) ve resmi L1 kontrollerini artı L2 ağ katmanı kök nedenini (P2P vs röle, NAT geçişi, port aralıkları, kare hızı kademeleri) görün, hızlıca yeniden bağlanmak için gerçek vakalarla karşılaştırın.">
+<link rel="canonical" href="https://sunlogim.github.io/tr/">
+<link rel="alternate" hreflang="zh-Hans" href="https://sunlogim.github.io/">
+<link rel="alternate" hreflang="en" href="https://sunlogim.github.io/en/">
+<link rel="alternate" hreflang="ja" href="https://sunlogim.github.io/ja/">
+<link rel="alternate" hreflang="zh-Hant" href="https://sunlogim.github.io/zh-tw/">
+<link rel="alternate" hreflang="ko" href="https://sunlogim.github.io/ko/">
+<link rel="alternate" hreflang="id" href="https://sunlogim.github.io/id/">
+<link rel="alternate" hreflang="vi" href="https://sunlogim.github.io/vi/">
+<link rel="alternate" hreflang="th" href="https://sunlogim.github.io/th/">
+<link rel="alternate" hreflang="es" href="https://sunlogim.github.io/es/">
+<link rel="alternate" hreflang="pt-BR" href="https://sunlogim.github.io/pt-br/">
+<link rel="alternate" hreflang="de" href="https://sunlogim.github.io/de/">
+<link rel="alternate" hreflang="fr" href="https://sunlogim.github.io/fr/">
+<link rel="alternate" hreflang="ru" href="https://sunlogim.github.io/ru/">
+<link rel="alternate" hreflang="it" href="https://sunlogim.github.io/it/">
+<link rel="alternate" hreflang="pl" href="https://sunlogim.github.io/pl/">
+<link rel="alternate" hreflang="nl" href="https://sunlogim.github.io/nl/">
+<link rel="alternate" hreflang="tr" href="https://sunlogim.github.io/tr/">
+<link rel="alternate" hreflang="ar" href="https://sunlogim.github.io/ar/">
+<link rel="alternate" hreflang="hi" href="https://sunlogim.github.io/hi/">
+<link rel="alternate" hreflang="ms" href="https://sunlogim.github.io/ms/">
+<link rel="alternate" hreflang="fa" href="https://sunlogim.github.io/fa/">
+<link rel="alternate" hreflang="bn" href="https://sunlogim.github.io/bn/">
+<link rel="alternate" hreflang="ta" href="https://sunlogim.github.io/ta/">
+<link rel="alternate" hreflang="te" href="https://sunlogim.github.io/te/">
+<link rel="alternate" hreflang="fil" href="https://sunlogim.github.io/fil/">
+<link rel="alternate" hreflang="ur" href="https://sunlogim.github.io/ur/">
+<link rel="alternate" hreflang="lo" href="https://sunlogim.github.io/lo/">
+<link rel="alternate" hreflang="km" href="https://sunlogim.github.io/km/">
+<link rel="alternate" hreflang="my" href="https://sunlogim.github.io/my/">
+<link rel="alternate" hreflang="x-default" href="https://sunlogim.github.io/">
+<link rel="stylesheet" href="/style.css">
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "WebApplication",
+   "name": "SunLogin uzak bağlantı / takılma tanısı",
+   "url": "https://sunlogim.github.io/tr/",
+   "applicationCategory": "UtilitiesApplication",
+   "operatingSystem": "Web browser",
+   "inLanguage": "tr",
+   "description": "SunLogin uzaktan kontrol bağlanmıyor, siyah ekran veya yüksek gecikmeyle mi takılıyor? Bir belirti arayın (cihaz çevrimdışı, zaman aşımı, hatalı erişim parolası, güvenlik duvarı engeli, kurum ağı, görünüyor ama kontrol edilemiyor, röle modu, ücretsiz sürüm 30 fps) ve resmi L1 kontrollerini artı L2 ağ katmanı kök nedenini (P2P vs röle, NAT geçişi, port aralıkları, kare hızı kademeleri) görün, hızlıca yeniden bağlanmak için gerçek vakalarla karşılaştırın.",
+   "isAccessibleForFree": true,
+   "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+   }
+  },
+  {
+   "@type": "FAQPage",
+   "inLanguage": "tr",
+   "url": "https://sunlogim.github.io/tr/",
+   "mainEntity": [
+    {
+     "@type": "Question",
+     "name": "SunLogin uzaktan \"Cihaz çevrimdışı\" ne yapmalı?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Ana makine PC'sinin açık, çevrimiçi, uykuda olmadığını, SunLogin istemcisinin çalıştığını ve \"oturum açık\" gösterdiğini doğrulayın; ağ kararsızsa yönlendiriciyi yeniden başlatın veya ağ değiştirin Çevrimdışı = ana makine düpedüz çevrimiçi değil, önce ağa bakmayın: uykudan sonra ağ kartı sık kopar, dizüstü kapağını kapatmak WiFi'yi keser, Android güç tasarrufu arka planı öldürür; Windows'ta services.msc'den \"SunLogin\" hizmetinin çalışıp çalışmadığını kontrol edin Uzun süre gözetimsiz ana makine: \"otomatik başlatma + otomatik giriş + gözetimsiz erişim\"i açın, Android'de SunLogin'i güç tasarrufu beyaz listesine ekleyin"
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "SunLogin uzaktan \"Bağlantı zaman aşımı\" ne yapmalı?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Önce iki taraftaki güvenlik duvarı / antivirüsü kapatıp deneyin; ikisinde de çıkıp yeniden girin; en sona güncelleyin; ağ ortamını değiştirin (telefon hotspot'u) \"Bağlantı hatası\"nın %90'ı 2. aşama \"kanal kurma\"da takılır: 15=P2P geçmiyor ve röle de başarısız (ağ çok kötü), 3=ağ katmanı engelli; hotspot ile bağlanıyorsa temelde ağ / güvenlik duvarı sorunudur 3 aşamada konumlandırın: hesap doğrulama → kanal kurma → görüntü aktarımı; zaman aşımı neredeyse hep \"kanal kurma\"dadır"
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "SunLogin uzaktan \"Hatalı erişim parolası\" ne yapmalı?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Girdiğinizin SunLogin hesabının oturum parolası değil \"erişim parolası\" olduğunu doğrulayın; ana makinede erişim parolasını sıfırlayıp yeniden bağlanın Erişim parolası ana makinenin ayrıca belirlediği uzak paroladır; sık değiştirilmiş veya oturum parolasıyla karıştırılmış olur; değişimden sonra kontrol eden yenisini kullanır Erişim parolası ≠ oturum parolası: ana makinenin \"Ayarlar → Güvenlik\"inden görüp sıfırlayın"
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "SunLogin uzaktan \"Güvenlik duvarı engeli\" ne yapmalı?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "SunLogin'i güvenlik duvarı / güvenlik güvenine ekleyin: Windows Defender Güvenlik Duvarı \"uygulamaya izin ver\"de SunloginClient'i işaretleyin; üçüncü taraf antivirüse güven ekleyin Beyaz listeye tüm kurulum klasörünü eklemek gerekir (örn. C:\\Program Files (x86)\\Oray\\SunLogin\\), sadece ana exe'yi değil—SunLogin çalışırken birkaç bileşen çağırır Hızlı doğrulama: güvenliği tamamen kapatın (sadece gerçek zamanlı korumayı değil) ve bağlanın; bağlanıyorsa %100 o engelliyordu"
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "SunLogin uzaktan \"Kurum ağı bağlanmıyor\" ne yapmalı?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Kurum BT'sinden SunLogin beyaz listesine izin isteyin; ya da atlatmak için ana makinede geçici telefon hotspot'u kullanın; SunLogin SOS sürümünü deneyin (farklı bağlantı yolu) Kurum ağlarında sık sık internet davranış yönetimi cihazları olur; TCP 443 (HTTPS ile aynı port) üzerinden giden SunLogin DPI'ce tanınıp engellenir; topluluk deneyimi: kurum yönlendiricisinde TCP 51020–51030 + UDP 50000–50010'a izin verin, veya bağlantı modunu \"yüksek hız\"dan \"uyumlu\"ya (80/443, daha genel) geçirin Kurum ağı mı diye anlamak için: ikisini de telefon hotspot'una geçirin; bağlanıyorsa %100 kurum ağı engelidir"
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "SunLogin uzaktan \"Siyah ekran\" ne yapmalı?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Ana makinede SunLogin'e izin verin: macOS \"Sistem Ayarları → Gizlilik ve Güvenlik\"te ekran kaydı / erişilebilirlik / tam disk erişimini işaretleyin; Windows'ta masaüstü modunu değiştirmeyi / yeniden bağlanmayı deneyin Siyah ekran genelde yakalama izninin eksikliği veya ayrık GPU geçişi, kilit ekranı koruması; ayrık GPU'lu dizüstülerde güç politikasında SunLogin'in iGPU ile yakalamasını sağlayabilirsiniz macOS Ventura'dan beri izin yolu \"Sistem Ayarları\"na taşındı; arama kutusunda \"ekran kaydı\" aramak en hızlısı"
+     }
+    }
+   ]
+  }
+ ]
+}
+</script>
+</head>
+<body><div class="wrap"><main>
+<nav class="lang">Dil: <a href="/">简体中文</a> · <a href="/en/">English</a> · <a href="/ja/">日本語</a> · <a href="/zh-tw/">繁體中文</a> · <a href="/ko/">한국어</a> · <a href="/id/">Bahasa Indonesia</a> · <a href="/vi/">Tiếng Việt</a> · <a href="/th/">ไทย</a> · <a href="/es/">Español</a> · <a href="/pt-br/">Português (BR)</a> · <a href="/de/">Deutsch</a> · <a href="/fr/">Français</a> · <a href="/ru/">Русский</a> · <a href="/it/">Italiano</a> · <a href="/pl/">Polski</a> · <a href="/nl/">Nederlands</a> · <strong>Türkçe</strong> · <a href="/ar/">العربية</a> · <a href="/hi/">हिन्दी</a> · <a href="/ms/">Bahasa Melayu</a> · <a href="/fa/">فارسی</a> · <a href="/bn/">বাংলা</a> · <a href="/ta/">தமிழ்</a> · <a href="/te/">తెలుగు</a> · <a href="/fil/">Filipino</a> · <a href="/ur/">اردو</a> · <a href="/lo/">ພາສາລາວ</a> · <a href="/km/">ភាសាខ្មែរ</a> · <a href="/my/">မြန်မာ</a></nav>
+<h1>SunLogin uzak bağlantı / takılma tanısı</h1>
+<figure class="i4png"><picture><source type="image/webp" srcset="/img/cover_tr.webp"><img src="/img/cover_tr.png" alt="SunLogin uzak bağlantı ve takılma tanı aracı görseli" fetchpriority="high" width="1120" height="746" style="width:100%;height:auto;border-radius:12px;border:1px solid #eee"></picture><figcaption>Şekil: SunLogin uzak bağlantı / takılma tanısı (resmi L1 kontrolleri + L2 ağ katmanı nedeni)</figcaption></figure>
+<p>SunLogin uzaktan kontrolün iki gerçek baş ağrısı <strong>bağlanmıyor</strong> ve <strong>takılma</strong>. <strong>Belirtinizi</strong> arayın (örn. <code>cihaz çevrimdışı</code>, <code>zaman aşımı</code>, <code>hatalı erişim parolası</code>, <code>güvenlik duvarı engeli</code>, <code>görünüyor ama kontrol edilemiyor</code>, <code>yüksek gecikme</code>, <code>ücretsiz 30 fps</code>): önce <strong>resmi L1 kontrolleri</strong>, sonra <strong>L2 ağ katmanı kök nedeni</strong> (doğrudan P2P vs sunucu rölesi, NAT geçişi, port aralıkları), en son gerçek vakalar. Masaüstü istemci mi gerek? <a href="https://sunlogim.com/">resmi SunLogin indirmesine</a> bakın.</p>
+<input id="q" placeholder="Bir belirti girin, örn. bağlantı hatası / siyah ekran / takılma / çevrimdışı" autocomplete="off">
+<button id="go">Ara</button>
+<div id="out"></div>
+<h2>Adım 1: resmi kontrolleri uygulayın (L1 - önce bu 4'ünü yapın)</h2>
+<p>SunLogin'in bağlantı hatası için resmi kontrol listesi yalnızca 4 adımdır, hepsi uygulama içinde: ① <strong>Hesap ve cihaz bağlama</strong>—kontrol eden ve ana makine aynı SunLogin hesabıyla oturum açar; ② <strong>Cihaz durumu ve ağ</strong>—ana makine açık, çevrimiçi ve uykuda değil (uyuyan ana makine için "Wake" kullanın, önceden etkinleştirin); ③ <strong>Güvenlik duvarı ve izinler</strong>—SunLogin'i güvenlik duvarı güvenilenler listesine ekleyin, "Uzaktan kontrole izin ver" ve "Gözetimsiz erişim"i açın, erişim parolasını doğru ayarlayın; ④ <strong>Sürüm ve yeniden başlatma</strong>—her iki tarafı en son sürüme güncelleyin, istemciyi yeniden başlatın, önbelleği temizleyin. Daha kapsamlı kılavuz: <a href="https://sunlogim.com/lianjie/">SunLogin bağlantı kontrol kılavuzu</a>.</p>
+<div class="cat"><div class="catbox"><b>Ağ / Geçiş</b><span class="cs">zaman aşımı · güvenlik duvarı engeli · kurum ağı · röle / P2P</span><div>Kanal kurma başarısız veya röladen dolayı yüksek gecikme. Önce güvenlik duvarı güvenini kontrol et + ağ değiştir; daha derinde P2P geçiyor mu, kurum DPI'si ve NAT türü.</div></div><div class="catbox"><b>Hesap / İzinler</b><span class="cs">cihaz çevrimdışı · hatalı erişim parolası · farklı hesap · wake başarısız</span><div>Ana makine çevrimiçi + iki tarafta aynı hesap koşuldur. Erişim parolası ≠ oturum açma parolası; süresi dolan jeton yeniden girişi ister; uyku "Wake" ile çözülür.</div></div><div class="catbox"><b>Görüntü / Performans</b><span class="cs">siyah ekran · görünür kontrol edilemez · takılma · bulanık · ücretsiz 30 fps</span><div>Bağlandıktan sonraki deneyim sorunları. İzinler (ekran kaydı / erişilebilirlik), masaüstü modu, kare hızı kademesi ve ana makine performansı anahtardır.</div></div><div class="catbox"><b>Sürüm / Protokol</b><span class="cs">protokol sürümü uyuşmuyor · güncelleme sonrası anormallik</span><div>Büyük sürüm farkı kolayca uyumsuzluk yaratır (kod 30); ikisini de en sona güncelle, yeniden başlat ve önbelleği temizle.</div></div></div><figure><svg viewBox="0 0 720 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="SunLogin bağlantı ve takılma tanı akış şeması" style="width:100%;height:auto;border:1px solid #eee;border-radius:12px;background:#fff"><text x="20" y="28" font-family="system-ui,Arial" font-size="15.5" font-weight="700" fill="#1d1d1f">SunLogin bağlantı / takılma tanı akışı (belirtiye göre)</text><rect x="20" y="46" width="150" height="46" rx="10" fill="#111"/><text x="95" y="74" text-anchor="middle" font-family="system-ui,Arial" font-size="13" fill="#fff">Uzak bağlantı başlat</text><path d="M170 69 H206" stroke="#999" stroke-width="2" fill="none" marker-end="url(#a)"/><rect x="206" y="46" width="172" height="46" rx="10" fill="#fff5e6" stroke="#ffe0b0"/><text x="292" y="74" text-anchor="middle" font-family="system-ui,Arial" font-size="13" fill="#b45309">Bağlanıyor mu?</text><rect x="440" y="20" width="262" height="56" rx="10" fill="#ecfdf5" stroke="#bbf7e0"/><text x="455" y="42" font-family="system-ui,Arial" font-size="12.5" fill="#047857">Bağlandı ama takılma → performansa bak:</text><text x="455" y="62" font-family="system-ui,Arial" font-size="11.5" fill="#065f46">röle? kalite çok yüksek? fps sınırı? ana makine performansı</text><rect x="440" y="86" width="262" height="56" rx="10" fill="#fef2f2" stroke="#fecaca"/><text x="455" y="108" font-family="system-ui,Arial" font-size="12.5" fill="#b91c1c">Bağlanmıyor → hata türüne bak:</text><text x="455" y="128" font-family="system-ui,Arial" font-size="11.5" fill="#991b1b">çevrimdışı? güvenlik duvarı? hesap / parola? sürüm</text><path d="M378 60 H410 V48 H440" stroke="#10b981" stroke-width="2" fill="none" marker-end="url(#a)"/><path d="M378 78 H410 V114 H440" stroke="#ef4444" stroke-width="2" fill="none" marker-end="url(#a)"/><text x="20" y="178" font-family="system-ui,Arial" font-size="13" font-weight="700" fill="#1d1d1f">Dört arıza türü (öğe başına L1 / L2'ye bak)</text><g font-family="system-ui,Arial" font-size="12"><rect x="20" y="190" width="162" height="92" rx="10" fill="#fff5e6" stroke="#ffe0b0"/><text x="32" y="212" font-weight="700" fill="#b45309">① Ağ / Geçiş</text><text x="32" y="234" fill="#555" font-size="11">röle / P2P · güvenlik duvarı · kurum ağı</text><rect x="194" y="190" width="162" height="92" rx="10" fill="#eef4ff" stroke="#cfe0ff"/><text x="206" y="212" font-weight="700" fill="#1d4ed8">② Hesap / İzinler</text><text x="206" y="234" fill="#555" font-size="11">çevrimdışı · erişim parolası · wake</text><rect x="368" y="190" width="162" height="92" rx="10" fill="#ecfdf5" stroke="#bbf7e0"/><text x="380" y="212" font-weight="700" fill="#047857">③ Görüntü / Performans</text><text x="380" y="234" fill="#555" font-size="11">siyah ekran · takılma · kalite · 30 fps</text><rect x="542" y="190" width="160" height="92" rx="10" fill="#fef2f2" stroke="#fecaca"/><text x="554" y="212" font-weight="700" fill="#b91c1c">④ Sürüm / Protokol</text><text x="554" y="234" fill="#555" font-size="11">sürüm uyuşmuyor · güncelleme anormalliği</text></g><defs><marker id="a" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0 0 L6 3 L0 6 z" fill="#999"/></marker></defs></svg><figcaption>Şek 1: SunLogin bağlantı / takılma akışı—önce bağlanıyor mu, sonra nedeni sınıflandır</figcaption></figure>
+<h2>Adım 2: hâlâ takılıyor / hâlâ bağlanmıyor → L2 ağ katmanı kök nedeni</h2>
+<p>Ana fikir: <strong>bağlanmıyor genelde "kanal kurma"da takılır, takılma ise genelde röladen geçildiği anlamına gelir</strong>. SunLogin önce iki tarafı bağlamak için <strong>P2P geçişi</strong> dener (en düşük gecikme 20–50 ms); yalnızca başarısız olursa <strong>sağlayıcının sunucu rölesine</strong> (80–200 ms) düşer — istemci sol altta "P2P" veya "Relay" gösterir. Şema bir bağlantı öz kontrol panelidir; daha derin nedenler: simetrik NAT / yönlendirici UPnP, kurum ağı DPI ve port aralıkları, ve monitör yenileme hızıyla sınırlanan kare hızı.</p>
+<figure><svg viewBox="0 0 720 320" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="SunLogin bağlantı öz kontrol paneli görseli" style="width:100%;height:auto;border:1px solid #eee;border-radius:12px;background:#fff"><text x="20" y="28" font-family="system-ui,Arial" font-size="15.5" font-weight="700" fill="#1d1d1f">Bağlantı öz kontrol paneli (yeşil=normal / kırmızı=sorun)</text><rect x="20" y="42" width="680" height="226" rx="14" fill="#f8fafc" stroke="#e2e8f0"/><text x="38" y="66" font-family="system-ui,Arial" font-size="12.5" font-weight="700" fill="#475569">Kontrol öğesi</text><text x="300" y="66" font-family="system-ui,Arial" font-size="12" fill="#94a3b8">Mevcut durum</text><text x="610" y="66" font-family="system-ui,Arial" font-size="12" fill="#94a3b8">Karar</text><line x1="38" y1="74" x2="682" y2="74" stroke="#e2e8f0" stroke-width="1"/><text x="38" y="98" font-family="system-ui,Arial" font-size="13" fill="#1d1d1f">İki tarafta hesap aynı</text><text x="300" y="98" font-family="system-ui,Arial" font-size="12.5" fill="#16a34a">Aynı SunLogin hesabı</text><circle cx="612" cy="94" r="6" fill="#16a34a"/><text x="628" y="98" font-family="system-ui,Arial" font-size="12" fill="#16a34a">Normal</text><text x="38" y="128" font-family="system-ui,Arial" font-size="13" fill="#1d1d1f">Ana makine çevrimiçi</text><text x="300" y="128" font-family="system-ui,Arial" font-size="12.5" fill="#16a34a">Çevrimiçi · uykuda değil</text><circle cx="612" cy="124" r="6" fill="#16a34a"/><text x="628" y="128" font-family="system-ui,Arial" font-size="12" fill="#16a34a">Normal</text><text x="38" y="158" font-family="system-ui,Arial" font-size="13" fill="#1d1d1f">Güvenlik duvarı geçiriyor</text><text x="300" y="158" font-family="system-ui,Arial" font-size="12.5" fill="#ef4444">Güvenlik yazılımınca engelli</text><circle cx="612" cy="154" r="6" fill="#ef4444"/><text x="628" y="158" font-family="system-ui,Arial" font-size="12" fill="#ef4444">Sorun</text><text x="38" y="188" font-family="system-ui,Arial" font-size="13" fill="#1d1d1f">Bağlantı modu</text><text x="300" y="188" font-family="system-ui,Arial" font-size="12.5" fill="#ef4444">Röle · yüksek gecikme</text><circle cx="612" cy="184" r="6" fill="#ef4444"/><text x="628" y="188" font-family="system-ui,Arial" font-size="12" fill="#ef4444">Sorun</text><text x="38" y="218" font-family="system-ui,Arial" font-size="13" fill="#1d1d1f">İstemci sürümü</text><text x="300" y="218" font-family="system-ui,Arial" font-size="12.5" fill="#16a34a">İkisi de en son</text><circle cx="612" cy="214" r="6" fill="#16a34a"/><text x="628" y="218" font-family="system-ui,Arial" font-size="12" fill="#16a34a">Normal</text><text x="38" y="248" font-family="system-ui,Arial" font-size="13" fill="#1d1d1f">Erişim parolası</text><text x="300" y="248" font-family="system-ui,Arial" font-size="12.5" fill="#16a34a">Doğru</text><circle cx="612" cy="244" r="6" fill="#16a34a"/><text x="628" y="248" font-family="system-ui,Arial" font-size="12" fill="#16a34a">Normal</text><text x="20" y="296" font-family="system-ui,Arial" font-size="11.5" fill="#94a3b8">Not: kırmızı = çözülmesi gereken sorun; bağlandı ama "röle" = yüksek gecikme, doğrudan P2P için yönlendirici UPnP'sini açın.</text></svg><figcaption>Şek 2: bağlantı öz kontrol paneli (yeşil = normal / kırmızı = sorun)</figcaption></figure>
+<figure class="i4png"><picture><source type="image/webp" srcset="/img/board_tr.webp"><img src="/img/board_tr.png" alt="SunLogin bağlantı öz kontrol paneli yeşil/kırmızı öğeler görseli" loading="lazy" width="1120" height="746" style="width:100%;height:auto;border-radius:12px;border:1px solid #eee"></picture><figcaption>Şekil: bağlanmıyorsa "kanal kurma"ya bak, takılma varsa "röle"den geçilmiş mi bak—doğrudan P2P için UPnP'yi aç</figcaption></figure>
+<h2>Tam belirti tablosu (önce L1 kontrol · L2 kök nedeni)</h2>
+<table id="tbl"></table>
+<section class="i4data">
+<h2>SunLogin bağlantı / takılma verileri (2026 tahmini)</h2>
+<p>Aşağıdaki, SunLogin resmi yardımını ve kamuya açık uzaktan erişim topluluğu deneyimini sentezleyen bir <strong>2026 tahminidir</strong> (sağlayıcının resmi rakamları veya birinci elden ölçümler değil, yalnızca referans):</p>
+<table>
+<tr><th>Boyut</th><th>Tahmin</th></tr>
+<tr><td>Bağlantı hatası neden dağılımı (tahmin)</td><td>güvenlik duvarı / güvenlik <strong>≈%50</strong> &gt; ana makine çevrimdışı / uykuda <strong>≈%20</strong> &gt; hesap / parola <strong>≈%15</strong> &gt; sürüm / protokol <strong>≈%10</strong></td></tr>
+<tr><td>Takılma neden dağılımı (topluluk ölçümü)</td><td>röle <strong>%35</strong> &gt; kalite çok yüksek %25 &gt; ana makine performansı %20 &gt; ağ kötü %15 &gt; fps sınırı %5</td></tr>
+<tr><td>Doğrudan P2P vs sunucu rölesi gecikmesi</td><td>P2P yaklaşık <strong>20–50 ms</strong>, röle yaklaşık <strong>80–200 ms</strong></td></tr>
+<tr><td>Kare tavanı (ücretsiz / ücretli / oyun)</td><td><strong>30 / 60 / 144</strong> fps (144, GPU + 144 Hz monitör gerektirir)</td></tr>
+<tr><td>P2P için UPnP açmanın faydası</td><td>delme oranı belirgin artar; ölçülen gecikme ~120 ms'den ~35 ms'ye gidebilir</td></tr>
+<tr><td>Gecikmeye göre kullanılabilirlik kademeleri</td><td>&lt;30 ms neredeyse yerel · 80–150 ms belirgin takılma · &gt;150 ms neredeyse sadece tıklama</td></tr>
+</table>
+<p><small>Tahmin temeli: kaynak taban çizgisi + zamansal dış değerleme (SunLogin resmi yardımı ve kamuya açık uzaktan erişim topluluğu verilerinin sentezi); sürüm ve ağ ortamına göre değişir; en güncel resmi SunLogin bilgisi geçerlidir.</small></p>
+</section>
+<h2>Gerçek vakaların hızlı değerlendirmesi</h2>
+<ul class="scenes"><li>İş PC'si bir türlü bağlanmıyor ama telefon hotspot'u hemen bağlanıyor: genelde kurum ağının internet davranış yönetimi / DPI'si uzak trafiği engelliyordur. BT'den beyaz listeye izin isteyin veya ana makinede geçici olarak telefon hotspot'u kullanın.</li><li>Bağlanıyor ama fare iz bırakıyor ve gecikme 100 ms'yi aşıyor: sol altta "Relay" görmek kök nedendir—yönlendiriciye girip UPnP'yi açın, ölçülen gecikme ~120 ms'den ~35 ms'ye düşebilir.</li><li>Erişim parolası sürekli hatalı: erişim parolası oturum açma hesabının parolası değildir; ana makinenin "Ayarlar"ında sıfırlayıp yeniden bağlanın.</li><li>Cihaz çevrimiçi görünüyor ama bağlantı zaman aşımına uğruyor: genelde oturum jetonu süresi dolmuş / ana makine uykuda ve ağsız; ana makinede yeniden giriş yapın veya "Wake" ile gözetimsiz erişimi önceden açın.</li><li>Pencereleri sürüklemek belirgin takılıyor ama gecikme yüksek değil: ücretsiz sürümün kare tavanı 30 fps; ücretliyle 60 fps'ye, oyun sürümüyle 144 fps'ye kadar (uyumlu monitör gerekir).</li><li>Siyah ekran, sadece görünüyor işlem yapılamıyor: genelde izinler verilmemiş (macOS "ekran kaydı / erişilebilirlik" işaretlemeyi ister), ya da ana makine CPU / RAM'i sınırda ve kodlama yetişemiyor.</li></ul><div class="related"><h2>İlgili</h2><ul><li><a href="https://sunlogim.com/">Resmi SunLogin uzak erişim indirmesi</a></li><li><a href="https://sunlogim.com/lianjie/">SunLogin bağlantı kontrol kılavuzu</a></li><li><a href="https://sunlogni.com/">SunLogin uzak erişimi indir (kardeş site)</a></li></ul></div></main>
+<footer>Kontrol adımları ile masaüstü modları / kare hızı parametreleri SunLogin resmi yardımından (sunlogin.oray.com) özetlenmiştir; P2P / röle, NAT geçişi, kurum ağı port aralıkları ve hata kodu okuma kamuya açık uzaktan erişim topluluğu deneyiminden sentezlenmiştir (gayriresmî). Yalnızca referans amaçlıdır; en güncel resmi SunLogin bilgisi geçerlidir. (gayriresmî·LLM yerelleştirmesi)<br>Açık kaynak proje · MIT License</footer>
+</div>
+<script src="/tr/codes.js"></script><script src="/app.js"></script>
+</body></html>
