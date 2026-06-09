@@ -1,0 +1,151 @@
+<!DOCTYPE html><html lang="ru"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Диагностика подключения / лагов SunLogin - устранить сбой подключения, чёрный экран, высокий пинг</title>
+<meta name="description" content="Удалённое управление SunLogin не подключается, чёрный экран или лаги с высоким пингом? Найдите симптом (устройство офлайн, тайм-аут, неверный пароль доступа, блокировка фаервола, корпоративная сеть, видно но нельзя управлять, режим релея, 30 fps в бесплатной версии), чтобы увидеть официальные проверки L1 и корневую причину сетевого уровня L2 (P2P против релея, обход NAT, диапазоны портов, уровни кадров), и сверьте с реальными случаями для быстрого восстановления связи.">
+<link rel="canonical" href="https://sunlogim.github.io/ru/">
+<link rel="alternate" hreflang="zh-Hans" href="https://sunlogim.github.io/">
+<link rel="alternate" hreflang="en" href="https://sunlogim.github.io/en/">
+<link rel="alternate" hreflang="ja" href="https://sunlogim.github.io/ja/">
+<link rel="alternate" hreflang="zh-Hant" href="https://sunlogim.github.io/zh-tw/">
+<link rel="alternate" hreflang="ko" href="https://sunlogim.github.io/ko/">
+<link rel="alternate" hreflang="id" href="https://sunlogim.github.io/id/">
+<link rel="alternate" hreflang="vi" href="https://sunlogim.github.io/vi/">
+<link rel="alternate" hreflang="th" href="https://sunlogim.github.io/th/">
+<link rel="alternate" hreflang="es" href="https://sunlogim.github.io/es/">
+<link rel="alternate" hreflang="pt-BR" href="https://sunlogim.github.io/pt-br/">
+<link rel="alternate" hreflang="de" href="https://sunlogim.github.io/de/">
+<link rel="alternate" hreflang="fr" href="https://sunlogim.github.io/fr/">
+<link rel="alternate" hreflang="ru" href="https://sunlogim.github.io/ru/">
+<link rel="alternate" hreflang="it" href="https://sunlogim.github.io/it/">
+<link rel="alternate" hreflang="pl" href="https://sunlogim.github.io/pl/">
+<link rel="alternate" hreflang="nl" href="https://sunlogim.github.io/nl/">
+<link rel="alternate" hreflang="tr" href="https://sunlogim.github.io/tr/">
+<link rel="alternate" hreflang="ar" href="https://sunlogim.github.io/ar/">
+<link rel="alternate" hreflang="hi" href="https://sunlogim.github.io/hi/">
+<link rel="alternate" hreflang="ms" href="https://sunlogim.github.io/ms/">
+<link rel="alternate" hreflang="fa" href="https://sunlogim.github.io/fa/">
+<link rel="alternate" hreflang="bn" href="https://sunlogim.github.io/bn/">
+<link rel="alternate" hreflang="ta" href="https://sunlogim.github.io/ta/">
+<link rel="alternate" hreflang="te" href="https://sunlogim.github.io/te/">
+<link rel="alternate" hreflang="fil" href="https://sunlogim.github.io/fil/">
+<link rel="alternate" hreflang="ur" href="https://sunlogim.github.io/ur/">
+<link rel="alternate" hreflang="lo" href="https://sunlogim.github.io/lo/">
+<link rel="alternate" hreflang="km" href="https://sunlogim.github.io/km/">
+<link rel="alternate" hreflang="my" href="https://sunlogim.github.io/my/">
+<link rel="alternate" hreflang="x-default" href="https://sunlogim.github.io/">
+<link rel="stylesheet" href="/style.css">
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "WebApplication",
+   "name": "Диагностика подключения / лагов SunLogin",
+   "url": "https://sunlogim.github.io/ru/",
+   "applicationCategory": "UtilitiesApplication",
+   "operatingSystem": "Web browser",
+   "inLanguage": "ru",
+   "description": "Удалённое управление SunLogin не подключается, чёрный экран или лаги с высоким пингом? Найдите симптом (устройство офлайн, тайм-аут, неверный пароль доступа, блокировка фаервола, корпоративная сеть, видно но нельзя управлять, режим релея, 30 fps в бесплатной версии), чтобы увидеть официальные проверки L1 и корневую причину сетевого уровня L2 (P2P против релея, обход NAT, диапазоны портов, уровни кадров), и сверьте с реальными случаями для быстрого восстановления связи.",
+   "isAccessibleForFree": true,
+   "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+   }
+  },
+  {
+   "@type": "FAQPage",
+   "inLanguage": "ru",
+   "url": "https://sunlogim.github.io/ru/",
+   "mainEntity": [
+    {
+     "@type": "Question",
+     "name": "SunLogin удалённо «Устройство офлайн»: что делать?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Убедитесь, что ПК-хост включён, в сети, не спит, клиент SunLogin запущен и «выполнен вход»; при нестабильной сети перезапустите роутер или смените сеть Офлайн = хост попросту не в сети, не смотрите сначала на сеть: после сна сетевая карта часто отключается, закрытие крышки ноутбука рвёт WiFi, режим энергосбережения Android убивает фон; в Windows проверьте в services.msc, работает ли служба «SunLogin» Хост без присмотра надолго: включите «автозапуск + автовход + доступ без присмотра», в Android добавьте SunLogin в белый список энергосбережения"
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "SunLogin удалённо «Тайм-аут подключения»: что делать?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Сначала выключите фаервол / антивирус с обеих сторон и попробуйте; перевойдите на обеих; обновите до последней; смените сетевую среду (мобильная точка) 90% «сбоев подключения» застревают на фазе 2 «установление канала»: 15=P2P не проходит и релей тоже не удался (сеть слишком плохая), 3=сетевой уровень заблокирован; если по точке подключается — это в основном проблема сети / фаервола Локализуйте по 3 фазам: проверка аккаунта → установление канала → передача изображения; тайм-аут почти всегда на «установлении канала»"
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "SunLogin удалённо «Неверный пароль доступа»: что делать?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Убедитесь, что вводите «пароль доступа», а не пароль входа в аккаунт SunLogin; сбросьте пароль доступа на хосте и подключитесь снова Пароль доступа — это отдельный удалённый пароль, который задаёт хост; часто его меняли или путают с паролем входа; после смены управляющий использует новый Пароль доступа ≠ пароль входа: смотрите / сбросьте в «Настройки → Безопасность» хоста"
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "SunLogin удалённо «Блокировка фаервола»: что делать?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Добавьте SunLogin в доверие фаервола / защиты: в Брандмауэре Windows Defender «разрешить приложение» отметьте SunloginClient; добавьте доверие в стороннем антивирусе В белый список нужно добавить всю папку установки (напр. C:\\Program Files (x86)\\Oray\\SunLogin\\), а не только основной exe—SunLogin при работе вызывает несколько компонентов Быстрая проверка: полностью закройте защиту (не только защиту в реальном времени) и подключитесь; если подключилось — это на 100% она блокировала"
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "SunLogin удалённо «Корпоративная сеть не подключается»: что делать?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Попросите корп. ИТ разрешить SunLogin в белом списке; или временно используйте мобильную точку на хосте для обхода; попробуйте SunLogin версии SOS (другой способ подключения) В корпоративных сетях часто есть устройства управления интернет-поведением; SunLogin по TCP 443 (тот же порт, что HTTPS) распознаётся и блокируется DPI; опыт сообщества: разрешите TCP 51020–51030 + UDP 50000–50010 на корп. роутере, или смените режим подключения с «высокоскоростного» на «совместимый» (80/443, более универсальный) Чтобы понять, корп. ли сеть: переключите обе на мобильную точку; если подключилось — это на 100% блокировка корп. сети"
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "SunLogin удалённо «Чёрный экран»: что делать?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Выдайте SunLogin разрешения на хосте: macOS «Системные настройки → Конфиденциальность и безопасность» отметьте запись экрана / универсальный доступ / полный доступ к диску; Windows попробуйте сменить режим рабочего стола / переподключиться Чёрный экран обычно из-за отсутствия разрешения на захват или переключения на дискретный GPU, защиты экрана блокировки; на ноутбуках с дискретным GPU можно в политике питания заставить SunLogin захватывать через iGPU С macOS Ventura путь к разрешениям перешёл в «Системные настройки»; искать «запись экрана» в поиске — самый быстрый способ"
+     }
+    }
+   ]
+  }
+ ]
+}
+</script>
+</head>
+<body><div class="wrap"><main>
+<nav class="lang">Язык: <a href="/">简体中文</a> · <a href="/en/">English</a> · <a href="/ja/">日本語</a> · <a href="/zh-tw/">繁體中文</a> · <a href="/ko/">한국어</a> · <a href="/id/">Bahasa Indonesia</a> · <a href="/vi/">Tiếng Việt</a> · <a href="/th/">ไทย</a> · <a href="/es/">Español</a> · <a href="/pt-br/">Português (BR)</a> · <a href="/de/">Deutsch</a> · <a href="/fr/">Français</a> · <strong>Русский</strong> · <a href="/it/">Italiano</a> · <a href="/pl/">Polski</a> · <a href="/nl/">Nederlands</a> · <a href="/tr/">Türkçe</a> · <a href="/ar/">العربية</a> · <a href="/hi/">हिन्दी</a> · <a href="/ms/">Bahasa Melayu</a> · <a href="/fa/">فارسی</a> · <a href="/bn/">বাংলা</a> · <a href="/ta/">தமிழ்</a> · <a href="/te/">తెలుగు</a> · <a href="/fil/">Filipino</a> · <a href="/ur/">اردو</a> · <a href="/lo/">ພາສາລາວ</a> · <a href="/km/">ភាសាខ្មែរ</a> · <a href="/my/">မြန်မာ</a></nav>
+<h1>Диагностика подключения / лагов SunLogin</h1>
+<figure class="i4png"><picture><source type="image/webp" srcset="/img/cover_ru.webp"><img src="/img/cover_ru.png" alt="Иллюстрация инструмента диагностики подключения и лагов SunLogin" fetchpriority="high" width="1120" height="746" style="width:100%;height:auto;border-radius:12px;border:1px solid #eee"></picture><figcaption>Рис.: Диагностика подключения / лагов SunLogin (официальные проверки L1 + причина сетевого уровня L2)</figcaption></figure>
+<p>Две настоящие головные боли удалённого управления SunLogin — <strong>не подключается</strong> и <strong>лаги</strong>. Найдите свой <strong>симптом</strong> (напр. <code>устройство офлайн</code>, <code>тайм-аут</code>, <code>неверный пароль доступа</code>, <code>блокировка фаервола</code>, <code>видно но нельзя управлять</code>, <code>высокий пинг</code>, <code>30 fps бесплатно</code>): сначала <strong>официальные проверки L1</strong>, затем <strong>корневая причина сетевого уровня L2</strong> (P2P напрямую против релея сервера, обход NAT, диапазоны портов), потом реальные случаи. Нужен десктоп-клиент? См. <a href="https://sunlogim.com/">официальную загрузку SunLogin</a>.</p>
+<input id="q" placeholder="Введите симптом, напр. сбой подключения / чёрный экран / лаг / офлайн" autocomplete="off">
+<button id="go">Найти</button>
+<div id="out"></div>
+<h2>Шаг 1: пройдите официальные проверки (L1 - сначала эти 4)</h2>
+<p>Официальный чек-лист SunLogin при сбое подключения — всего 4 шага, все в приложении: ① <strong>Привязка аккаунта и устройства</strong>—управляющий и хост входят в один аккаунт SunLogin; ② <strong>Состояние устройства и сеть</strong>—хост включён, в сети и не спит (для спящего хоста используйте «Wake», включите заранее); ③ <strong>Фаервол и разрешения</strong>—добавьте SunLogin в доверенные фаервола, включите «Разрешить удалённое управление» и «Доступ без присмотра», задайте верный пароль доступа; ④ <strong>Версия и перезапуск</strong>—обновите обе стороны до последней версии, перезапустите клиент, очистите кэш. Более полное руководство: <a href="https://sunlogim.com/lianjie/">руководство по проверке подключения SunLogin</a>.</p>
+<div class="cat"><div class="catbox"><b>Сеть / Обход</b><span class="cs">тайм-аут · блокировка фаервола · корп. сеть · релей / P2P</span><div>Сбой установления канала или высокий пинг из-за релея. Сначала проверьте доверие фаервола + смените сеть; глубже — проходит ли P2P, корпоративный DPI и тип NAT.</div></div><div class="catbox"><b>Аккаунт / Права</b><span class="cs">устройство офлайн · неверный пароль доступа · разные аккаунты · сбой wake</span><div>Хост в сети + один аккаунт на обеих сторонах — это условие. Пароль доступа ≠ пароль входа; истёкший токен требует повторного входа; сон решается «Wake».</div></div><div class="catbox"><b>Изображение / Производительность</b><span class="cs">чёрный экран · видно но нельзя управлять · лаг · размыто · 30 fps бесплатно</span><div>Проблемы опыта после подключения. Разрешения (запись экрана / универсальный доступ), режим рабочего стола, уровень кадров и производительность хоста — ключ.</div></div><div class="catbox"><b>Версия / Протокол</b><span class="cs">версия протокола не совпадает · аномалия после обновления</span><div>Большая разница версий легко даёт несовместимость (код 30); обновите обе до последней, перезапустите и очистите кэш.</div></div></div><figure><svg viewBox="0 0 720 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Блок-схема диагностики подключения и лагов SunLogin" style="width:100%;height:auto;border:1px solid #eee;border-radius:12px;background:#fff"><text x="20" y="28" font-family="system-ui,Arial" font-size="15.5" font-weight="700" fill="#1d1d1f">Ход диагностики подключения / лагов SunLogin (по симптому)</text><rect x="20" y="46" width="150" height="46" rx="10" fill="#111"/><text x="95" y="74" text-anchor="middle" font-family="system-ui,Arial" font-size="13" fill="#fff">Начать удалённое подключение</text><path d="M170 69 H206" stroke="#999" stroke-width="2" fill="none" marker-end="url(#a)"/><rect x="206" y="46" width="172" height="46" rx="10" fill="#fff5e6" stroke="#ffe0b0"/><text x="292" y="74" text-anchor="middle" font-family="system-ui,Arial" font-size="13" fill="#b45309">Подключается?</text><rect x="440" y="20" width="262" height="56" rx="10" fill="#ecfdf5" stroke="#bbf7e0"/><text x="455" y="42" font-family="system-ui,Arial" font-size="12.5" fill="#047857">Подключился но лаг → смотрим производительность:</text><text x="455" y="62" font-family="system-ui,Arial" font-size="11.5" fill="#065f46">релей? качество слишком высокое? лимит fps? производ. хоста</text><rect x="440" y="86" width="262" height="56" rx="10" fill="#fef2f2" stroke="#fecaca"/><text x="455" y="108" font-family="system-ui,Arial" font-size="12.5" fill="#b91c1c">Не подключается → смотрим тип ошибки:</text><text x="455" y="128" font-family="system-ui,Arial" font-size="11.5" fill="#991b1b">офлайн? фаервол? аккаунт / пароль? версия</text><path d="M378 60 H410 V48 H440" stroke="#10b981" stroke-width="2" fill="none" marker-end="url(#a)"/><path d="M378 78 H410 V114 H440" stroke="#ef4444" stroke-width="2" fill="none" marker-end="url(#a)"/><text x="20" y="178" font-family="system-ui,Arial" font-size="13" font-weight="700" fill="#1d1d1f">Четыре типа сбоя (смотрите L1 / L2 по пунктам)</text><g font-family="system-ui,Arial" font-size="12"><rect x="20" y="190" width="162" height="92" rx="10" fill="#fff5e6" stroke="#ffe0b0"/><text x="32" y="212" font-weight="700" fill="#b45309">① Сеть / Обход</text><text x="32" y="234" fill="#555" font-size="11">релей / P2P · фаервол · корп. сеть</text><rect x="194" y="190" width="162" height="92" rx="10" fill="#eef4ff" stroke="#cfe0ff"/><text x="206" y="212" font-weight="700" fill="#1d4ed8">② Аккаунт / Права</text><text x="206" y="234" fill="#555" font-size="11">офлайн · пароль доступа · wake</text><rect x="368" y="190" width="162" height="92" rx="10" fill="#ecfdf5" stroke="#bbf7e0"/><text x="380" y="212" font-weight="700" fill="#047857">③ Изображение / Производ.</text><text x="380" y="234" fill="#555" font-size="11">чёрный экран · лаг · качество · 30 fps</text><rect x="542" y="190" width="160" height="92" rx="10" fill="#fef2f2" stroke="#fecaca"/><text x="554" y="212" font-weight="700" fill="#b91c1c">④ Версия / Протокол</text><text x="554" y="234" fill="#555" font-size="11">версия не совпадает · аномалия обновления</text></g><defs><marker id="a" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0 0 L6 3 L0 6 z" fill="#999"/></marker></defs></svg><figcaption>Рис 1: ход подключения / лагов SunLogin—сначала подключается ли, затем классификация причины</figcaption></figure>
+<h2>Шаг 2: всё ещё лаги / всё ещё не подключается → корневая причина сетевого уровня (L2)</h2>
+<p>Ключевая идея: <strong>не-подключается обычно застревает на «установлении канала», а лаги обычно значат, что пошло через релей</strong>. SunLogin сначала пробует <strong>обход P2P</strong>, чтобы связать обе стороны (минимальный пинг 20–50 мс); только при неудаче переходит на <strong>релей сервера вендора</strong> (80–200 мс) — клиент показывает «P2P» или «Relay» внизу слева. Схема — панель самопроверки подключения; более глубокие причины: симметричный NAT / UPnP роутера, DPI корпоративной сети и диапазоны портов, а также частота кадров, ограниченная частотой обновления монитора.</p>
+<figure><svg viewBox="0 0 720 320" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Иллюстрация панели самопроверки подключения SunLogin" style="width:100%;height:auto;border:1px solid #eee;border-radius:12px;background:#fff"><text x="20" y="28" font-family="system-ui,Arial" font-size="15.5" font-weight="700" fill="#1d1d1f">Панель самопроверки подключения (зелёный=норма / красный=проблема)</text><rect x="20" y="42" width="680" height="226" rx="14" fill="#f8fafc" stroke="#e2e8f0"/><text x="38" y="66" font-family="system-ui,Arial" font-size="12.5" font-weight="700" fill="#475569">Пункт проверки</text><text x="300" y="66" font-family="system-ui,Arial" font-size="12" fill="#94a3b8">Текущее состояние</text><text x="610" y="66" font-family="system-ui,Arial" font-size="12" fill="#94a3b8">Вердикт</text><line x1="38" y1="74" x2="682" y2="74" stroke="#e2e8f0" stroke-width="1"/><text x="38" y="98" font-family="system-ui,Arial" font-size="13" fill="#1d1d1f">Аккаунт совпадает с обеих сторон</text><text x="300" y="98" font-family="system-ui,Arial" font-size="12.5" fill="#16a34a">Один аккаунт SunLogin</text><circle cx="612" cy="94" r="6" fill="#16a34a"/><text x="628" y="98" font-family="system-ui,Arial" font-size="12" fill="#16a34a">Норма</text><text x="38" y="128" font-family="system-ui,Arial" font-size="13" fill="#1d1d1f">Хост в сети</text><text x="300" y="128" font-family="system-ui,Arial" font-size="12.5" fill="#16a34a">В сети · не спит</text><circle cx="612" cy="124" r="6" fill="#16a34a"/><text x="628" y="128" font-family="system-ui,Arial" font-size="12" fill="#16a34a">Норма</text><text x="38" y="158" font-family="system-ui,Arial" font-size="13" fill="#1d1d1f">Фаервол пропускает</text><text x="300" y="158" font-family="system-ui,Arial" font-size="12.5" fill="#ef4444">Заблокирован защитой</text><circle cx="612" cy="154" r="6" fill="#ef4444"/><text x="628" y="158" font-family="system-ui,Arial" font-size="12" fill="#ef4444">Проблема</text><text x="38" y="188" font-family="system-ui,Arial" font-size="13" fill="#1d1d1f">Режим подключения</text><text x="300" y="188" font-family="system-ui,Arial" font-size="12.5" fill="#ef4444">Релей · высокий пинг</text><circle cx="612" cy="184" r="6" fill="#ef4444"/><text x="628" y="188" font-family="system-ui,Arial" font-size="12" fill="#ef4444">Проблема</text><text x="38" y="218" font-family="system-ui,Arial" font-size="13" fill="#1d1d1f">Версия клиента</text><text x="300" y="218" font-family="system-ui,Arial" font-size="12.5" fill="#16a34a">Обе последние</text><circle cx="612" cy="214" r="6" fill="#16a34a"/><text x="628" y="218" font-family="system-ui,Arial" font-size="12" fill="#16a34a">Норма</text><text x="38" y="248" font-family="system-ui,Arial" font-size="13" fill="#1d1d1f">Пароль доступа</text><text x="300" y="248" font-family="system-ui,Arial" font-size="12.5" fill="#16a34a">Верный</text><circle cx="612" cy="244" r="6" fill="#16a34a"/><text x="628" y="248" font-family="system-ui,Arial" font-size="12" fill="#16a34a">Норма</text><text x="20" y="296" font-family="system-ui,Arial" font-size="11.5" fill="#94a3b8">Прим.: красный = проблема к решению; подключился но «релей» = высокий пинг, включите UPnP роутера ради P2P напрямую.</text></svg><figcaption>Рис 2: панель самопроверки подключения (зелёный = норма / красный = проблема)</figcaption></figure>
+<figure class="i4png"><picture><source type="image/webp" srcset="/img/board_ru.webp"><img src="/img/board_ru.png" alt="Иллюстрация панели самопроверки подключения SunLogin с зелёными/красными пунктами" loading="lazy" width="1120" height="746" style="width:100%;height:auto;border-radius:12px;border:1px solid #eee"></picture><figcaption>Рис.: не подключается → «установление канала», лаги → не пошло ли через «релей»—включите UPnP ради P2P напрямую</figcaption></figure>
+<h2>Полная таблица симптомов (сначала проверка L1 · корневая причина L2)</h2>
+<table id="tbl"></table>
+<section class="i4data">
+<h2>Данные подключения / лагов SunLogin (оценка 2026)</h2>
+<p>Ниже <strong>оценка на 2026</strong>, синтезирующая официальную справку SunLogin и опыт открытого сообщества удалённого доступа (это не официальные цифры вендора и не замеры из первых рук, только для справки):</p>
+<table>
+<tr><th>Измерение</th><th>Оценка</th></tr>
+<tr><td>Распределение причин сбоя подключения (оценка)</td><td>фаервол / защита <strong>≈50%</strong> &gt; хост офлайн / спит <strong>≈20%</strong> &gt; аккаунт / пароль <strong>≈15%</strong> &gt; версия / протокол <strong>≈10%</strong></td></tr>
+<tr><td>Распределение причин лагов (замеры сообщества)</td><td>релей <strong>35%</strong> &gt; слишком высокое качество 25% &gt; производительность хоста 20% &gt; плохая сеть 15% &gt; лимит fps 5%</td></tr>
+<tr><td>Пинг P2P напрямую против релея сервера</td><td>P2P около <strong>20–50 мс</strong>, релей около <strong>80–200 мс</strong></td></tr>
+<tr><td>Лимит кадров (бесплатно / платно / игровой)</td><td><strong>30 / 60 / 144</strong> fps (144 требует GPU + монитор на 144 Гц)</td></tr>
+<tr><td>Выгода включения UPnP ради P2P</td><td>доля пробивания заметно растёт; измеренный пинг может пойти с ~120 мс до ~35 мс</td></tr>
+<tr><td>Уровни пригодности по пингу</td><td>&lt;30 мс почти локально · 80–150 мс явно дёргается · &gt;150 мс почти только клики</td></tr>
+</table>
+<p><small>Основа оценки: базовая линия источников + временная экстраполяция (синтез официальной справки SunLogin и данных открытого сообщества удалённого доступа); меняется в зависимости от версии и сетевой среды; действует самая свежая официальная информация SunLogin.</small></p>
+</section>
+<h2>Быстрая оценка реальных случаев</h2>
+<ul class="scenes"><li>Рабочий ПК ни в какую не подключается, но мобильная точка доступа подключает сразу: обычно управление интернет-поведением / DPI корпоративной сети блокирует трафик удалённого доступа. Попросите ИТ разрешить в белом списке, или временно используйте мобильную точку на хосте.</li><li>Подключается, но мышь оставляет след и пинг выше 100 мс: «Relay» внизу слева — это корень; войдите в роутер и включите UPnP ради P2P; измеренный пинг может упасть с ~120 мс до ~35 мс.</li><li>Пароль доступа постоянно неверный: пароль доступа — это не пароль аккаунта входа; сбросьте его в «Настройках» хоста и подключитесь снова.</li><li>Устройство показывает в сети, но подключение по тайм-ауту: часто истёкший токен входа / хост уснул и потерял сеть; перевойдите на хосте, или заранее включите «Wake» и доступ без присмотра.</li><li>Перетаскивание окон явно дёргается, но пинг невысок: лимит кадров бесплатной версии 30 fps; платно до 60 fps, игровая версия до 144 fps (нужен совместимый монитор).</li><li>Чёрный экран, видно но нельзя работать: обычно не выданы разрешения (macOS требует отметить «запись экрана / универсальный доступ»), или CPU / RAM хоста на пределе и кодирование не успевает.</li></ul><div class="related"><h2>Связанное</h2><ul><li><a href="https://sunlogim.com/">Официальная загрузка SunLogin удалённого доступа</a></li><li><a href="https://sunlogim.com/lianjie/">Руководство по проверке подключения SunLogin</a></li><li><a href="https://sunlogni.com/">Скачать SunLogin удалённый доступ (родственный сайт)</a></li></ul></div></main>
+<footer>Шаги проверки, а также режимы рабочего стола / параметры кадров обобщены из официальной справки SunLogin (sunlogin.oray.com); P2P / релей, обход NAT, диапазоны портов корпоративной сети и чтение кодов ошибок синтезированы из опыта открытого сообщества удалённого доступа (неофициально). Только для справки; действует самая свежая официальная информация SunLogin. (неофициально·LLM-локализация)<br>Проект с открытым кодом · MIT License</footer>
+</div>
+<script src="/ru/codes.js"></script><script src="/app.js"></script>
+</body></html>
