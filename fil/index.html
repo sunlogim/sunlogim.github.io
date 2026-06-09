@@ -1,0 +1,151 @@
+<!DOCTYPE html><html lang="fil"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>SunLogin remote na koneksyon / lag diagnosis - ayusin ang failed na koneksyon, black screen, mataas na latency</title>
+<meta name="description" content="Hindi makakonekta ang SunLogin remote control, black screen, o lag na may mataas na latency? Maghanap ng sintomas (device offline, timeout, maling access password, firewall block, office network, kita pero di makontrol, relay mode, 30fps sa libreng bersyon) para sa opisyal na L1 checks at L2 network-layer root cause (P2P vs relay, NAT traversal, port ranges, frame-rate tiers), at itugma sa totoong kaso para mabilis na makakonekta muli.">
+<link rel="canonical" href="https://sunlogim.github.io/fil/">
+<link rel="alternate" hreflang="zh-Hans" href="https://sunlogim.github.io/">
+<link rel="alternate" hreflang="en" href="https://sunlogim.github.io/en/">
+<link rel="alternate" hreflang="ja" href="https://sunlogim.github.io/ja/">
+<link rel="alternate" hreflang="zh-Hant" href="https://sunlogim.github.io/zh-tw/">
+<link rel="alternate" hreflang="ko" href="https://sunlogim.github.io/ko/">
+<link rel="alternate" hreflang="id" href="https://sunlogim.github.io/id/">
+<link rel="alternate" hreflang="vi" href="https://sunlogim.github.io/vi/">
+<link rel="alternate" hreflang="th" href="https://sunlogim.github.io/th/">
+<link rel="alternate" hreflang="es" href="https://sunlogim.github.io/es/">
+<link rel="alternate" hreflang="pt-BR" href="https://sunlogim.github.io/pt-br/">
+<link rel="alternate" hreflang="de" href="https://sunlogim.github.io/de/">
+<link rel="alternate" hreflang="fr" href="https://sunlogim.github.io/fr/">
+<link rel="alternate" hreflang="ru" href="https://sunlogim.github.io/ru/">
+<link rel="alternate" hreflang="it" href="https://sunlogim.github.io/it/">
+<link rel="alternate" hreflang="pl" href="https://sunlogim.github.io/pl/">
+<link rel="alternate" hreflang="nl" href="https://sunlogim.github.io/nl/">
+<link rel="alternate" hreflang="tr" href="https://sunlogim.github.io/tr/">
+<link rel="alternate" hreflang="ar" href="https://sunlogim.github.io/ar/">
+<link rel="alternate" hreflang="hi" href="https://sunlogim.github.io/hi/">
+<link rel="alternate" hreflang="ms" href="https://sunlogim.github.io/ms/">
+<link rel="alternate" hreflang="fa" href="https://sunlogim.github.io/fa/">
+<link rel="alternate" hreflang="bn" href="https://sunlogim.github.io/bn/">
+<link rel="alternate" hreflang="ta" href="https://sunlogim.github.io/ta/">
+<link rel="alternate" hreflang="te" href="https://sunlogim.github.io/te/">
+<link rel="alternate" hreflang="fil" href="https://sunlogim.github.io/fil/">
+<link rel="alternate" hreflang="ur" href="https://sunlogim.github.io/ur/">
+<link rel="alternate" hreflang="lo" href="https://sunlogim.github.io/lo/">
+<link rel="alternate" hreflang="km" href="https://sunlogim.github.io/km/">
+<link rel="alternate" hreflang="my" href="https://sunlogim.github.io/my/">
+<link rel="alternate" hreflang="x-default" href="https://sunlogim.github.io/">
+<link rel="stylesheet" href="/style.css">
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "WebApplication",
+   "name": "SunLogin remote na koneksyon / lag diagnosis",
+   "url": "https://sunlogim.github.io/fil/",
+   "applicationCategory": "UtilitiesApplication",
+   "operatingSystem": "Web browser",
+   "inLanguage": "fil",
+   "description": "Hindi makakonekta ang SunLogin remote control, black screen, o lag na may mataas na latency? Maghanap ng sintomas (device offline, timeout, maling access password, firewall block, office network, kita pero di makontrol, relay mode, 30fps sa libreng bersyon) para sa opisyal na L1 checks at L2 network-layer root cause (P2P vs relay, NAT traversal, port ranges, frame-rate tiers), at itugma sa totoong kaso para mabilis na makakonekta muli.",
+   "isAccessibleForFree": true,
+   "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+   }
+  },
+  {
+   "@type": "FAQPage",
+   "inLanguage": "fil",
+   "url": "https://sunlogim.github.io/fil/",
+   "mainEntity": [
+    {
+     "@type": "Question",
+     "name": "SunLogin remote \"Device offline\" anong gagawin?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Tiyakin na nakabukas, online, di natutulog ang host PC, tumatakbo ang SunLogin client at \"naka-login\"; kung di stable ang network i-restart ang router o magpalit ng network Offline = talagang hindi online ang host, huwag tingnan muna ang network: pagkatapos matulog madalas nadidiskonekta ang network card, ang pagsara ng lid ng laptop ay pumuputol ng WiFi, ang power-saving mode ng Android ay pinapatay ang background; sa Windows i-check sa services.msc kung tumatakbo ang serbisyong \"SunLogin\" Pangmatagalang unattended na host: i-on ang \"auto-start + auto-login + unattended access\", sa Android idagdag ang SunLogin sa power-saving whitelist"
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "SunLogin remote \"Connection timeout\" anong gagawin?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Patayin muna ang firewall / antivirus sa dalawang dulo at subukan; mag-logout-login muli sa dalawa; i-update sa pinakabago; magpalit ng network environment (phone hotspot) 90% ng \"failed na koneksyon\" ay naiipit sa phase 2 \"pagbuo ng channel\": 15=di tumatagos ang P2P at bigo rin ang relay (sobrang sama ng network), 3=hinarang ang network layer; kung sa hotspot kumokonekta, pangunahin itong problema ng network / firewall I-localize sa 3 phase: account verification → pagbuo ng channel → image transmission; ang timeout ay halos palaging nasa \"pagbuo ng channel\""
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "SunLogin remote \"Maling access password\" anong gagawin?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Tiyakin na ang inilagay ay \"access password\" at hindi login password ng SunLogin account; i-reset ang access password sa host tapos kumonekta Ang access password ay hiwalay na remote password na itinatakda ng host; madalas binago o napagkamalan sa login password; pagkatapos baguhin gamitin ng controller ang bago Access password ≠ login password: tingnan / i-reset sa \"Settings → Security\" ng host"
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "SunLogin remote \"Firewall block\" anong gagawin?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Idagdag ang SunLogin sa trust ng firewall / security: sa Windows Defender Firewall \"allow an app\" tikan ang SunloginClient; magdagdag ng trust sa third-party antivirus Ang whitelist ay dapat buong installation folder (hal. C:\\Program Files (x86)\\Oray\\SunLogin\\), hindi lang ang main exe—tumatawag ang SunLogin ng ilang component habang tumatakbo Mabilis na pag-verify: isara nang buo ang security (hindi lang ang real-time protection) at kumonekta; kung kumonekta 100% ito ang humarang"
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "SunLogin remote \"Office network di makakonekta\" anong gagawin?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Hilingin sa company IT na payagan ang whitelist ng SunLogin; o pansamantalang gumamit ng phone hotspot sa host para lampasan; subukan ang SunLogin SOS version (ibang paraan ng koneksyon) Ang enterprise network ay madalas may internet behavior management device; ang SunLogin sa TCP 443 (parehong port ng HTTPS) ay nakikilala at hinaharang ng DPI; karanasan ng community: payagan ang TCP 51020–51030 + UDP 50000–50010 sa enterprise router, o palitan ang connection mode mula \"high-speed\" patungong \"compatible\" (80/443, mas generic) Para malaman kung office network: ilipat pareho sa phone hotspot; kung kumonekta 100% block ng office network"
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "SunLogin remote \"Black screen\" anong gagawin?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Bigyan ng permission ang SunLogin sa host: macOS \"System Settings → Privacy & Security\" tikan ang screen recording / accessibility / full disk access; sa Windows subukang magpalit ng desktop mode / kumonekta muli Ang black screen ay kadalasang kawalan ng capture permission o paglipat sa discrete GPU, lock screen protection; sa laptop na may discrete GPU maaaring iutos sa power policy na mag-capture ang SunLogin gamit ang iGPU Mula macOS Ventura lumipat sa \"System Settings\" ang permission path; ang paghanap ng \"screen recording\" sa search box ang pinakamabilis"
+     }
+    }
+   ]
+  }
+ ]
+}
+</script>
+</head>
+<body><div class="wrap"><main>
+<nav class="lang">Wika: <a href="/">简体中文</a> · <a href="/en/">English</a> · <a href="/ja/">日本語</a> · <a href="/zh-tw/">繁體中文</a> · <a href="/ko/">한국어</a> · <a href="/id/">Bahasa Indonesia</a> · <a href="/vi/">Tiếng Việt</a> · <a href="/th/">ไทย</a> · <a href="/es/">Español</a> · <a href="/pt-br/">Português (BR)</a> · <a href="/de/">Deutsch</a> · <a href="/fr/">Français</a> · <a href="/ru/">Русский</a> · <a href="/it/">Italiano</a> · <a href="/pl/">Polski</a> · <a href="/nl/">Nederlands</a> · <a href="/tr/">Türkçe</a> · <a href="/ar/">العربية</a> · <a href="/hi/">हिन्दी</a> · <a href="/ms/">Bahasa Melayu</a> · <a href="/fa/">فارسی</a> · <a href="/bn/">বাংলা</a> · <a href="/ta/">தமிழ்</a> · <a href="/te/">తెలుగు</a> · <strong>Filipino</strong> · <a href="/ur/">اردو</a> · <a href="/lo/">ພາສາລາວ</a> · <a href="/km/">ភាសាខ្មែរ</a> · <a href="/my/">မြန်မာ</a></nav>
+<h1>SunLogin remote na koneksyon / lag diagnosis</h1>
+<figure class="i4png"><picture><source type="image/webp" srcset="/img/cover_fil.webp"><img src="/img/cover_fil.png" alt="Ilustrasyon ng SunLogin remote connection at lag diagnosis tool" fetchpriority="high" width="1120" height="746" style="width:100%;height:auto;border-radius:12px;border:1px solid #eee"></picture><figcaption>Larawan: SunLogin remote na koneksyon / lag diagnosis (opisyal na L1 checks + L2 network-layer cause)</figcaption></figure>
+<p>Ang dalawang totoong sakit ng ulo sa SunLogin remote control ay <strong>di makakonekta</strong> at <strong>lag</strong>. Hanapin ang iyong <strong>sintomas</strong> (hal. <code>device offline</code>, <code>timeout</code>, <code>maling access password</code>, <code>firewall block</code>, <code>kita pero di makontrol</code>, <code>mataas na latency</code>, <code>libreng 30fps</code>): una ang <strong>opisyal na L1 checks</strong>, tapos ang <strong>L2 network-layer root cause</strong> (P2P direkta vs server relay, NAT traversal, port ranges), huli ang totoong kaso. Kailangan ng desktop client? Tingnan ang <a href="https://sunlogim.com/">opisyal na SunLogin download</a>.</p>
+<input id="q" placeholder="Maglagay ng sintomas, hal. failed na koneksyon / black screen / lag / offline" autocomplete="off">
+<button id="go">Hanapin</button>
+<div id="out"></div>
+<h2>Hakbang 1: gawin ang opisyal na checks (L1 - gawin muna itong 4)</h2>
+<p>Ang opisyal na checklist ng SunLogin para sa failed na koneksyon ay 4 hakbang lang, lahat nasa app: ① <strong>Account at device binding</strong>—naka-login ang controller at host sa parehong SunLogin account; ② <strong>Device state at network</strong>—nakabukas ang host, online at hindi natutulog (gamitin ang "Wake" sa natutulog na host, i-enable nang maaga); ③ <strong>Firewall at permissions</strong>—idagdag ang SunLogin sa firewall trust list, i-on ang "Allow remote control" at "Unattended access", itakda nang tama ang access password; ④ <strong>Version at restart</strong>—i-update ang dalawang dulo sa pinakabago, i-restart ang client, i-clear ang cache. Mas kumpletong gabay: <a href="https://sunlogim.com/lianjie/">gabay sa pag-check ng koneksyon ng SunLogin</a>.</p>
+<div class="cat"><div class="catbox"><b>Network / Traversal</b><span class="cs">timeout · firewall block · office network · relay / P2P</span><div>Bigo ang pagbuo ng channel o mataas na latency dahil sa relay. Check muna ang firewall trust + magpalit ng network; mas malalim, kung tumatagos ang P2P, enterprise DPI at uri ng NAT.</div></div><div class="catbox"><b>Account / Permissions</b><span class="cs">device offline · maling access password · ibang account · failed na wake</span><div>Online ang host + parehong account sa dalawang dulo ang kailangan. Access password ≠ login password; expired na token ay nangangailangan ng re-login; ang pagtulog ay nareresolba ng "Wake".</div></div><div class="catbox"><b>Display / Performance</b><span class="cs">black screen · kita di makontrol · lag · malabo · libreng 30fps</span><div>Mga problema sa karanasan pagkatapos kumonekta. Permissions (screen recording / accessibility), desktop mode, frame-rate tier at performance ng host ang susi.</div></div><div class="catbox"><b>Version / Protocol</b><span class="cs">di-tugmang protocol version · anomalya pagkatapos ng update</span><div>Malaking pagkakaiba ng version ay madaling magdulot ng incompatibility (code 30); i-update pareho sa pinakabago, i-restart at i-clear ang cache.</div></div></div><figure><svg viewBox="0 0 720 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Flowchart ng SunLogin connection at lag diagnosis" style="width:100%;height:auto;border:1px solid #eee;border-radius:12px;background:#fff"><text x="20" y="28" font-family="system-ui,Arial" font-size="15.5" font-weight="700" fill="#1d1d1f">Daloy ng SunLogin connection / lag diagnosis (ayon sa sintomas)</text><rect x="20" y="46" width="150" height="46" rx="10" fill="#111"/><text x="95" y="74" text-anchor="middle" font-family="system-ui,Arial" font-size="13" fill="#fff">Simulan ang remote connection</text><path d="M170 69 H206" stroke="#999" stroke-width="2" fill="none" marker-end="url(#a)"/><rect x="206" y="46" width="172" height="46" rx="10" fill="#fff5e6" stroke="#ffe0b0"/><text x="292" y="74" text-anchor="middle" font-family="system-ui,Arial" font-size="13" fill="#b45309">Kumokonekta?</text><rect x="440" y="20" width="262" height="56" rx="10" fill="#ecfdf5" stroke="#bbf7e0"/><text x="455" y="42" font-family="system-ui,Arial" font-size="12.5" fill="#047857">Kumonekta pero lag → tingnan ang performance:</text><text x="455" y="62" font-family="system-ui,Arial" font-size="11.5" fill="#065f46">relay? sobrang taas ng quality? fps limit? performance ng host</text><rect x="440" y="86" width="262" height="56" rx="10" fill="#fef2f2" stroke="#fecaca"/><text x="455" y="108" font-family="system-ui,Arial" font-size="12.5" fill="#b91c1c">Di makakonekta → tingnan ang uri ng error:</text><text x="455" y="128" font-family="system-ui,Arial" font-size="11.5" fill="#991b1b">offline? firewall? account / password? version</text><path d="M378 60 H410 V48 H440" stroke="#10b981" stroke-width="2" fill="none" marker-end="url(#a)"/><path d="M378 78 H410 V114 H440" stroke="#ef4444" stroke-width="2" fill="none" marker-end="url(#a)"/><text x="20" y="178" font-family="system-ui,Arial" font-size="13" font-weight="700" fill="#1d1d1f">Apat na uri ng depekto (tingnan ang L1 / L2 bawat item)</text><g font-family="system-ui,Arial" font-size="12"><rect x="20" y="190" width="162" height="92" rx="10" fill="#fff5e6" stroke="#ffe0b0"/><text x="32" y="212" font-weight="700" fill="#b45309">① Network / Traversal</text><text x="32" y="234" fill="#555" font-size="11">relay / P2P · firewall · office network</text><rect x="194" y="190" width="162" height="92" rx="10" fill="#eef4ff" stroke="#cfe0ff"/><text x="206" y="212" font-weight="700" fill="#1d4ed8">② Account / Permissions</text><text x="206" y="234" fill="#555" font-size="11">offline · access password · wake</text><rect x="368" y="190" width="162" height="92" rx="10" fill="#ecfdf5" stroke="#bbf7e0"/><text x="380" y="212" font-weight="700" fill="#047857">③ Display / Performance</text><text x="380" y="234" fill="#555" font-size="11">black screen · lag · quality · 30fps</text><rect x="542" y="190" width="160" height="92" rx="10" fill="#fef2f2" stroke="#fecaca"/><text x="554" y="212" font-weight="700" fill="#b91c1c">④ Version / Protocol</text><text x="554" y="234" fill="#555" font-size="11">di-tugmang version · anomalya ng update</text></g><defs><marker id="a" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0 0 L6 3 L0 6 z" fill="#999"/></marker></defs></svg><figcaption>Lar 1: daloy ng koneksyon / lag ng SunLogin—una kung makakonekta, tapos iuri ang sanhi</figcaption></figure>
+<h2>Hakbang 2: lag pa rin / di pa rin makakonekta → L2 network-layer root cause</h2>
+<p>Pangunahing ideya: <strong>ang di-makakonekta ay kadalasang naipit sa "pagbuo ng channel", habang ang lag ay kadalasang nangangahulugang dumaan sa relay</strong>. Sinusubukan muna ng SunLogin ang <strong>P2P traversal</strong> para ikonekta ang dalawang dulo (pinakamababang latency 20–50ms); kung mabigo lang ito bumabagsak ito sa <strong>server relay ng vendor</strong> (80–200ms) — ipinapakita ng client ang "P2P" o "Relay" sa kaliwang ibaba. Ang diagram ay isang connection self-check panel; mas malalim na sanhi: symmetric NAT / router UPnP, enterprise DPI at port ranges, at ang frame rate na nililimitahan ng refresh rate ng monitor.</p>
+<figure><svg viewBox="0 0 720 320" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Ilustrasyon ng SunLogin connection self-check panel" style="width:100%;height:auto;border:1px solid #eee;border-radius:12px;background:#fff"><text x="20" y="28" font-family="system-ui,Arial" font-size="15.5" font-weight="700" fill="#1d1d1f">Connection self-check panel (berde=normal / pula=problema)</text><rect x="20" y="42" width="680" height="226" rx="14" fill="#f8fafc" stroke="#e2e8f0"/><text x="38" y="66" font-family="system-ui,Arial" font-size="12.5" font-weight="700" fill="#475569">Item na ichi-check</text><text x="300" y="66" font-family="system-ui,Arial" font-size="12" fill="#94a3b8">Kasalukuyang estado</text><text x="610" y="66" font-family="system-ui,Arial" font-size="12" fill="#94a3b8">Hatol</text><line x1="38" y1="74" x2="682" y2="74" stroke="#e2e8f0" stroke-width="1"/><text x="38" y="98" font-family="system-ui,Arial" font-size="13" fill="#1d1d1f">Parehong account sa dalawa</text><text x="300" y="98" font-family="system-ui,Arial" font-size="12.5" fill="#16a34a">Parehong SunLogin account</text><circle cx="612" cy="94" r="6" fill="#16a34a"/><text x="628" y="98" font-family="system-ui,Arial" font-size="12" fill="#16a34a">Normal</text><text x="38" y="128" font-family="system-ui,Arial" font-size="13" fill="#1d1d1f">Online ang host</text><text x="300" y="128" font-family="system-ui,Arial" font-size="12.5" fill="#16a34a">Online · di natutulog</text><circle cx="612" cy="124" r="6" fill="#16a34a"/><text x="628" y="128" font-family="system-ui,Arial" font-size="12" fill="#16a34a">Normal</text><text x="38" y="158" font-family="system-ui,Arial" font-size="13" fill="#1d1d1f">Pinapayagan ng firewall</text><text x="300" y="158" font-family="system-ui,Arial" font-size="12.5" fill="#ef4444">Hinarang ng security</text><circle cx="612" cy="154" r="6" fill="#ef4444"/><text x="628" y="158" font-family="system-ui,Arial" font-size="12" fill="#ef4444">Problema</text><text x="38" y="188" font-family="system-ui,Arial" font-size="13" fill="#1d1d1f">Connection mode</text><text x="300" y="188" font-family="system-ui,Arial" font-size="12.5" fill="#ef4444">Relay · mataas na latency</text><circle cx="612" cy="184" r="6" fill="#ef4444"/><text x="628" y="188" font-family="system-ui,Arial" font-size="12" fill="#ef4444">Problema</text><text x="38" y="218" font-family="system-ui,Arial" font-size="13" fill="#1d1d1f">Version ng client</text><text x="300" y="218" font-family="system-ui,Arial" font-size="12.5" fill="#16a34a">Pareho pinakabago</text><circle cx="612" cy="214" r="6" fill="#16a34a"/><text x="628" y="218" font-family="system-ui,Arial" font-size="12" fill="#16a34a">Normal</text><text x="38" y="248" font-family="system-ui,Arial" font-size="13" fill="#1d1d1f">Access password</text><text x="300" y="248" font-family="system-ui,Arial" font-size="12.5" fill="#16a34a">Tama</text><circle cx="612" cy="244" r="6" fill="#16a34a"/><text x="628" y="248" font-family="system-ui,Arial" font-size="12" fill="#16a34a">Normal</text><text x="20" y="296" font-family="system-ui,Arial" font-size="11.5" fill="#94a3b8">Tala: pula = problemang aayusin; kumonekta pero "relay" = mataas na latency, i-on ang router UPnP para sa P2P direkta.</text></svg><figcaption>Lar 2: connection self-check panel (berde = normal / pula = problema)</figcaption></figure>
+<figure class="i4png"><picture><source type="image/webp" srcset="/img/board_fil.webp"><img src="/img/board_fil.png" alt="Ilustrasyon ng SunLogin connection self-check panel na berde/pulang items" loading="lazy" width="1120" height="746" style="width:100%;height:auto;border-radius:12px;border:1px solid #eee"></picture><figcaption>Larawan: di makakonekta → "pagbuo ng channel", lag → kung dumaan sa "relay"—i-on ang UPnP para sa P2P direkta</figcaption></figure>
+<h2>Buong talahanayan ng sintomas (check muna ang L1 · L2 root cause)</h2>
+<table id="tbl"></table>
+<section class="i4data">
+<h2>Data ng SunLogin connection / lag (tantya 2026)</h2>
+<p>Narito ang isang <strong>tantya 2026</strong> na nagsisintesis ng opisyal na tulong ng SunLogin at karanasan ng pampublikong remote-access community (hindi opisyal na bilang ng vendor, hindi first-hand na sukat, para sa sanggunian lamang):</p>
+<table>
+<tr><th>Dimensyon</th><th>Tantya</th></tr>
+<tr><td>Distribusyon ng sanhi ng failed na koneksyon (tantya)</td><td>firewall / security <strong>≈50%</strong> &gt; host offline / tulog <strong>≈20%</strong> &gt; account / password <strong>≈15%</strong> &gt; version / protocol <strong>≈10%</strong></td></tr>
+<tr><td>Distribusyon ng sanhi ng lag (sukat ng community)</td><td>relay <strong>35%</strong> &gt; sobrang taas ng quality 25% &gt; performance ng host 20% &gt; masamang network 15% &gt; frame limit 5%</td></tr>
+<tr><td>Latency ng P2P direkta vs server relay</td><td>P2P mga <strong>20–50ms</strong>, relay mga <strong>80–200ms</strong></td></tr>
+<tr><td>Frame cap (libre / bayad / gaming)</td><td><strong>30 / 60 / 144</strong> fps (kailangan ng 144 ang GPU + monitor na 144Hz)</td></tr>
+<tr><td>Benepisyo ng pag-on ng UPnP para sa P2P</td><td>tumataas nang husto ang penetration rate; ang sinukat na latency ay maaaring mula ~120ms hanggang ~35ms</td></tr>
+<tr><td>Tier ng usability ayon sa latency</td><td>&lt;30ms halos lokal · 80–150ms halatang nauutal · &gt;150ms halos click lang</td></tr>
+</table>
+<p><small>Batayan ng tantya: source baseline + temporal extrapolation (sintesis ng opisyal na tulong ng SunLogin at data ng pampublikong remote-access community); nagbabago ayon sa version at network environment; ang pinakabagong opisyal na impormasyon ng SunLogin ang umiiral.</small></p>
+</section>
+<h2>Mabilis na pagtaya sa totoong kaso</h2>
+<ul class="scenes"><li>Ayaw talagang kumonekta ng office PC pero agad kumokonekta ang phone hotspot: kadalasan ang internet behavior management / DPI ng office network ang humaharang sa remote traffic. Hilingin sa IT na payagan sa whitelist, o pansamantalang gumamit ng phone hotspot sa host.</li><li>Kumokonekta pero may mouse trail at lampas 100ms ang latency: ang "Relay" sa kaliwang ibaba ang ugat—mag-login sa router at i-on ang UPnP para sa P2P; ang sinukat na latency ay maaaring bumaba mula ~120ms hanggang ~35ms.</li><li>Paulit-ulit na maling access password: ang access password ay hindi password ng login account; i-reset ito sa "Settings" ng host tapos kumonekta muli.</li><li>Mukhang online ang device pero nagti-timeout ang koneksyon: kadalasan expired ang login token / natutulog ang host at nawalan ng network; mag-relogin sa host, o i-on ang "Wake" at unattended access nang maaga.</li><li>Halatang nauutal ang pag-drag ng window pero hindi mataas ang latency: ang frame cap ng libreng bersyon ay 30fps; ang bayad ay hanggang 60fps at ang gaming version hanggang 144fps (kailangan ng compatible na monitor).</li><li>Black screen, kita lang pero di magagamit: kadalasan walang permission (kailangan i-tick sa macOS ang "screen recording / accessibility"), o puno ang CPU / RAM ng host kaya hindi nakakahabol ang encoding.</li></ul><div class="related"><h2>Kaugnay</h2><ul><li><a href="https://sunlogim.com/">Opisyal na SunLogin remote download</a></li><li><a href="https://sunlogim.com/lianjie/">Gabay sa pag-check ng koneksyon ng SunLogin</a></li><li><a href="https://sunlogni.com/">I-download ang SunLogin remote (sister site)</a></li></ul></div></main>
+<footer>Ang mga hakbang ng pag-check at desktop modes / frame-rate parameters ay binuod mula sa opisyal na tulong ng SunLogin (sunlogin.oray.com); P2P / relay, NAT traversal, enterprise port ranges at pagbasa ng error codes ay sinintesis mula sa karanasan ng pampublikong remote-access community (hindi opisyal). Para sa sanggunian lamang; ang pinakabagong opisyal na impormasyon ng SunLogin ang umiiral. (hindi opisyal·LLM localization)<br>Open-source na proyekto · MIT License</footer>
+</div>
+<script src="/fil/codes.js"></script><script src="/app.js"></script>
+</body></html>
